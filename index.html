@@ -2121,17 +2121,6 @@ This is a gallery of semantic patches for use with <a href="http://coccinelle.li
 <pre>
 	old_class_name, and new_class_name are never used. This patch remove the
 	declaration and calls to kfree.
-	The semantic match that finds this problem is as follows:
-	(http://coccinelle.lip6.fr/)
-	// &lt;smpl&gt;
-	@r1 forall@
-	type T; identifier i;
-	@@
-	* T *i = NULL;
-	  ... when != i
-	* kfree(i);
-	// &lt;/smpl&gt;
-	Signed-off-by: Peter Senna Tschudin &lt;peter.senna@gmail.com&gt;
 
 </pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/urb2/urb2.cocci>urb2/urb2.cocci</A>  -  Delete unnecessary call to usb_kill_urb
