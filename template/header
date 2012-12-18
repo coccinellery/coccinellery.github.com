@@ -1,0 +1,24 @@
+Coccinellery: A gallery of semantic patches for use with Coccinelle
+http://coccinellery.org/
+
+Coccinellery Links
+Github repository: https://github.com/coccinelle/coccinellery
+Download all files (zip): https://github.com/coccinelle/coccinellery/archive/master.zip
+
+Coccinelle Info
+Coccinelle Home: http://coccinelle.lip6.fr/
+Contacts: http://coccinelle.lip6.fr/contact.php
+
+This is a gallery of semantic patches for use with Coccinelle
+(http://coccinelle.lip6.fr/). They are extracted automatically from a
+collection of semantic patches that have been used to create patches for the
+Linux Kernel and other software. The descriptions are derive from the commit
+messages contained in those patches. There is no guarantee that the
+descriptions are correct or understandable, and no guarantee that the semantic
+patches are correct, complete, or work with the latest version of Coccinelle.
+Comments and corrections may be sent to the Coccinelle mailing list:
+cocci@systeme.lip6.fr / https://systeme.lip6.fr/mailman/listinfo/cocci. To
+propose new semantic patches to add to the gallery, please make a pull request
+(https://help.github.com/articles/fork-a-repo) via Github to Coccinellery
+repository (https://github.com/coccinelle/coccinellery).
+
