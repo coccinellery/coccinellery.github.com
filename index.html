@@ -424,6 +424,11 @@ This is a gallery of semantic patches for use with <a href="http://coccinelle.li
 	After calling capi_ctr_get, error handling code should call
 	capi_ctr_put.
 </pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/clkderef/clkderef.cocci>clkderef/clkderef.cocci</A>  -  Use clk API instead of direct dereferences
+<pre>
+	A struct clk value is intended to be an abstract pointer, so it should be
+	manipulated using the various API functions.
+</pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/clkput/clkput.cocci>clkput/clkput.cocci</A>  -  Add missing clk_put
 <pre>
 	Reorder the labels at the end of the function to correspond to the order in
