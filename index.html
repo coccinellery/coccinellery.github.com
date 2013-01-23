@@ -773,9 +773,10 @@ This is a gallery of semantic patches for use with <a href="http://coccinelle.li
 	to !usb_endpoint_dir_out, and vice versa, to better correspond to the
 	intent of the original code.
 </pre>
-<A HREF=https://github.com/coccinelle/coccinellery/tree/master/errcast/errcast.cocci>errcast/errcast.cocci</A>  -  Not available\ncoccinellery-short = Not available\ncoccinellery-copyright = Copyright: 2012 - LIP6/INRIA\ncoccinellery-license = Licensed under GPLv2 or any later version.\ncoccinellery-author0 = Not available\n\nNot available\n
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/errcast/errcast.cocci>errcast/errcast.cocci</A>  -  use ERR_CAST
 <pre>
-	
+	ERR_CAST is more concise than PTR_ERR followed by ERR_PTR.  Using it
+	also occasionally removes the need for an err variable.
 </pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/even_more_pci/get_slot.cocci>even_more_pci/get_slot.cocci</A>  -  Add missing pci_dev_get
 <pre>
@@ -1604,6 +1605,13 @@ This is a gallery of semantic patches for use with <a href="http://coccinelle.li
 <pre>
 	Convert a 0 error return code to a negative one, as returned elsewhere in the
 	function.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/retest/retest.cocci>retest/retest.cocci</A>  -  Adjust duplicate test
+<pre>
+	Delete successive tests to the same location.  In this case intc_node has
+	already been tested for being NULL, and calling of_find_node_by_name will
+	not make it NULL.  On the other hand, of_find_node_by_name can return NULL
+	on failure.
 </pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/rirqp/rirqp.cocci>rirqp/rirqp.cocci</A>  -  Ensure arguments to request_irq and free_irq are compatible
 <pre>
