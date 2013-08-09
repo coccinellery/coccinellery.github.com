@@ -1983,6 +1983,72 @@ All files are stored in a git repository that can be accessed <a href="https://g
 	is never true.  Is this what is intended, or should the tests be expressed
 	in another way?
 </pre>
+<P>&nbsp;<P><HR><A NAME=Firehose><font color=red size=5>Target: Firehose</font></a><P>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/arref/arref.cocci>CONTRIB/firehose/arref/arref.cocci</A>  -  Adjust array index
+<pre>
+	Convert array index from the loop bound to the loop index.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/badand/badand.cocci>CONTRIB/firehose/badand/badand.cocci</A>  -  Convert &amp;&amp; to ||
+<pre>
+	The pattern !E &amp;&amp; !E-&gt;fld is nonsensical.  The patch below updates this
+	according to the assumption that &amp;&amp; should be ||.  But perhaps another
+	solution was intended.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/badkm2/badkm2.cocci>CONTRIB/firehose/badkm2/badkm2.cocci</A>  -  Ensure a consistent return value in error case
+<pre>
+	Typically, the return value desired for the failure of a function with an
+	integer return value is a negative integer.  In these cases, the return
+	value is sometimes a negative integer and sometimes 0, due to a subsequent
+	initialization of the return variable within the loop.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/bitcall/bitcall.cocci>CONTRIB/firehose/bitcall/bitcall.cocci</A>  -  convert &amp; to &amp;&amp;
+<pre>
+	The use of &amp; to obtain a conjunction that evaluates both of its arguments
+	seems unnecessarily tricky.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/da/da.cocci>CONTRIB/firehose/da/da.cocci</A>  -  Correct double assignment
+<pre>
+	The double assignment is meant to be a bit-or to combine two values.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/double_null/double_null.cocci>CONTRIB/firehose/double_null/double_null.cocci</A>  -  Correct NULL test
+<pre>
+	Test the value that was just allocated rather than the previously tested one.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/doubleinit/doubleinit.cocci>CONTRIB/firehose/doubleinit/doubleinit.cocci</A>  -  Remove duplicate structure field initialization
+<pre>
+	The definition of uml_netdev_ops has initializations of a local function
+	and eth_mac_addr for its ndo_set_mac_address field.  This change uses only
+	the local function.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/doubletest/doubletest.cocci>CONTRIB/firehose/doubletest/doubletest.cocci</A>  -  Remove double test
+<pre>
+	The current code tests the gpio_vid0 field twice.  Test the gpio_vid1
+	fields in place of the second gpio_vid0 test.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/drop_continue/drop_continue.cocci>CONTRIB/firehose/drop_continue/drop_continue.cocci</A>  -  Drop unnecessary continue
+<pre>
+	Continue is not needed at the bottom of a loop.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/if-semicolon/if-semicolon.cocci>CONTRIB/firehose/if-semicolon/if-semicolon.cocci</A>  -  Detect semicolon after if
+<pre>
+	Detect a semicolon after if(...) that is preventing the error check to
+	work correctly. Removing this semicolon will change the code behavior,
+	but this is intended.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/ifaddr/ifaddr.cocci>CONTRIB/firehose/ifaddr/ifaddr.cocci</A>  -  Test of a variable/field address
+<pre>
+	the address of a variable or field is non-zero is likely always to bo
+	non-zero
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/noderef/noderef.cocci>CONTRIB/firehose/noderef/noderef.cocci</A>  -  Correct size computation
+<pre>
+	The size argument to kcalloc should be the size of desired structure,
+	not the pointer to it.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/CONTRIB/firehose/ret/ret.cocci>CONTRIB/firehose/ret/ret.cocci</A>  -  Useless goto and return
+<pre>
+	Useless goto and return
+</pre>
 <!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
 	var sc_project=8773972; 
