@@ -1,0 +1,57 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SMSC9420
+	subgraph "cluster_SMSC9420"{
+		subgraph "cluster_smsc9420.h" {
+			style=filled
+			"commit_smsc9420.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2008-12-11"];
+			"smsc9420.h" [style=filled, fillcolor=white, fontcolor=black, label="smsc9420.h\n"];
+		}
+		subgraph "cluster_smsc9420.c" {
+			style=filled
+			"commit_smsc9420.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2008-12-11"];
+			"smsc9420.c" [style=filled, fillcolor=white, fontcolor=black, label="smsc9420.c\n"];
+			"structs-smsc9420.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-smsc9420.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nkmalloc_array\nnetif_*\nmdiobus_*\nudelay\npci_*\npci_request_regions\nskb_*\niounmap\nregister_netdev\nether_crc\nsmp_wmb\n"];
+			"funccall2-smsc9420.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\ncontainer_of\nioremap*\nkmalloc\nphy_*\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\npci_release_regions\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-smsc9420.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\nnetdev_alloc_skb\nenable_irq\nmsleep\ndisable_irq\neth_hw_addr_random\n"];
+		}
+		"K:SMSC9420" [label="Kconfig: SMSC9420\n /drivers/net/ethernet/smsc\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: SMSC_PHY
+	subgraph "cluster_SMSC_PHY"{
+		subgraph "cluster_smsc.c" {
+			style=filled
+			"commit_smsc.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2006-05-07"];
+			"smsc.c" [style=filled, fillcolor=white, fontcolor=black, label="smsc.c\n"];
+			"funccall0-smsc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nphy_*\nmsleep\n"];
+		}
+		"K:SMSC_PHY" [label="Kconfig: SMSC_PHY\n /drivers/net/phy\n ", shape=box];
+	}
+"smsc9420.c" -> "smsc9420.h"[color=blue];
+}

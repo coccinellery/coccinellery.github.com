@@ -1,0 +1,17 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NATSEMI
+	subgraph "cluster_NATSEMI"{
+		subgraph "cluster_natsemi.c" {
+			style=filled
+			"commit_natsemi.c" [style=filled, fillcolor=black, fontcolor=white, label="175\n2005-04-16"];
+			"natsemi.c" [style=filled, fillcolor=white, fontcolor=black, label="natsemi.c\n"];
+			"structs-natsemi.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-natsemi.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nadd_timer\nnetif_*\nudelay\npci_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nregister_netdev\nether_crc\n"];
+			"funccall2-natsemi.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="prefetch\nnapi_*\nethtool_*\ncontainer_of\nioremap*\nkmalloc\nnetdev_*\nunregister_netdev\nmemset\npci_release_regions\nfree_netdev\nrequest_irq\n"];
+			"funccall1-natsemi.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmii_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\ndevice_*\ndel_timer_sync\nnetdev_alloc_skb\nenable_irq\ndisable_irq\ninit_timer\n"];
+		}
+		"K:NATSEMI" [label="Kconfig: NATSEMI\n /drivers/net/ethernet/natsemi\n  PCI ", shape=box, fontcolor=red];
+	}
+}

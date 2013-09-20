@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SKGE
+	subgraph "cluster_SKGE"{
+		subgraph "cluster_skge.h" {
+			style=filled
+			"commit_skge.h" [style=filled, fillcolor=black, fontcolor=white, label="97\n2005-05-12"];
+			"skge.h" [style=filled, fillcolor=white, fontcolor=black, label="skge.h\n"];
+		}
+		subgraph "cluster_skge.c" {
+			style=filled
+			"commit_skge.c" [style=filled, fillcolor=black, fontcolor=white, label="485\n2005-05-12"];
+			"skge.c" [style=filled, fillcolor=white, fontcolor=black, label="skge.c\n"];
+			"structs-skge.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\nfile_operations\nnet_device_ops\nnotifier_block\npci_driver\n"];
+			"funccall4-skge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\nkzalloc\nmod_timer\npci_request_regions\nmemcpy_toio\nskb_*\niounmap\nether_crc_le\n"];
+			"funccall3-skge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nether_crc\nprefetch\nsmp_wmb\nnapi_*\nregister_netdevice_notifier\nunregister_netdevice_notifier\ndma_*\nethtool_*\ncontainer_of\nioremap*\nmemcpy_fromio\n"];
+			"funccall2-skge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="phy_*\nnetdev_*\nis_valid_ether_addr\n__netdev_alloc_skb\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nsetup_timer\npci_release_regions\nfree_netdev\nrequest_irq\nkcalloc\n"];
+			"funccall1-skge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\neth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\ndel_timer_sync\nenable_irq\ndisable_irq\n"];
+		}
+		"K:SKGE" [label="Kconfig: SKGE\n /drivers/net/ethernet/marvell\n  PCI ", shape=box, fontcolor=red];
+	}
+"skge.c" -> "skge.h"[color=blue];
+}

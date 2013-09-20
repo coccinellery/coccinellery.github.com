@@ -1,0 +1,32 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: AMD8111_ETH
+	subgraph "cluster_AMD8111_ETH"{
+		subgraph "cluster_amd8111e.h" {
+			style=filled
+			"commit_amd8111e.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2005-04-16"];
+			"amd8111e.h" [style=filled, fillcolor=white, fontcolor=black, label="amd8111e.h\n"];
+		}
+		subgraph "cluster_amd8111e.c" {
+			style=filled
+			"commit_amd8111e.c" [style=filled, fillcolor=black, fontcolor=white, label="129\n2005-04-16"];
+			"amd8111e.c" [style=filled, fillcolor=white, fontcolor=black, label="amd8111e.c\n"];
+			"structs-amd8111e.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-amd8111e.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nlocal_*\nunregister_netdev\nadd_timer\nnetif_*\npci_release_regions\nvlan_*\nudelay\npci_*\nrequest_irq\nfree_netdev\nmod_timer\npci_request_regions\ndev_*\n"];
+			"funccall1-amd8111e.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\nnapi_*\nspin_*\nmemcpy\ndel_timer_sync\ncontainer_of\nnetdev_alloc_skb\nioremap*\ninit_timer\nnetdev_*\n"];
+		}
+		"K:AMD8111_ETH" [label="Kconfig: AMD8111_ETH\n /drivers/net/ethernet/amd\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"amd8111e.c" -> "amd8111e.h"[color=blue];
+}

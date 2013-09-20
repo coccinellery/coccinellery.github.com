@@ -1,0 +1,73 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IXGBEVF
+	subgraph "cluster_IXGBEVF"{
+		subgraph "cluster_ixgbevf_main.c" {
+			style=filled
+			"commit_ixgbevf_main.c" [style=filled, fillcolor=black, fontcolor=white, label="281\n2010-01-09"];
+			"ixgbevf_main.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbevf_main.c\n"];
+			"structs-ixgbevf_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-ixgbevf_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nudelay\npci_*\nkzalloc\nread_*\nmod_timer\npci_request_regions\niounmap\nskb_*\ncompare_ether_addr\nregister_netdev\nprefetch\nnapi_*\neth_hdr\n"];
+			"funccall2-ixgbevf_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_link_local_ether_addr\ndma_*\ncontainer_of\nioremap*\nschedule_work\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nalloc_etherdev_mq\nmemset\nixgbevf_request_irq\npci_release_regions\nvlan_*\nsynchronize_irq\n"];
+			"funccall1-ixgbevf_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nrequest_irq\nkcalloc\nixgbevf_free_irq\ndev_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\nsmp_mb\ndel_timer_sync\nis_zero_ether_addr\neth_hw_addr_random\nmsleep\ninit_timer\n"];
+		}
+		subgraph "cluster_defines.h" {
+			style=filled
+			"commit_defines.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2010-01-09"];
+			"defines.h" [style=filled, fillcolor=white, fontcolor=black, label="defines.h\n"];
+		}
+		subgraph "cluster_regs.h" {
+			style=filled
+			"commit_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2010-01-09"];
+			"regs.h" [style=filled, fillcolor=white, fontcolor=black, label="regs.h\n"];
+		}
+		subgraph "cluster_ethtool.c" {
+			style=filled
+			"commit_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="39\n2010-01-09"];
+			"ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ethtool.c\n"];
+			"structs-ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmsleep_interruptible\nmemset\nnetif_*\nmemcpy\nvmalloc\npci_*\nethtool_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_mbx.h" {
+			style=filled
+			"commit_mbx.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2010-01-09"];
+			"mbx.h" [style=filled, fillcolor=white, fontcolor=black, label="mbx.h\n"];
+		}
+		subgraph "cluster_mbx.c" {
+			style=filled
+			"commit_mbx.c" [style=filled, fillcolor=black, fontcolor=white, label="13\n2010-01-09"];
+			"mbx.c" [style=filled, fillcolor=white, fontcolor=black, label="mbx.c\n"];
+			"funccall0-mbx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_vf.h" {
+			style=filled
+			"commit_vf.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2010-01-09"];
+			"vf.h" [style=filled, fillcolor=white, fontcolor=black, label="vf.h\n"];
+		}
+		subgraph "cluster_vf.c" {
+			style=filled
+			"commit_vf.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2010-01-09"];
+			"vf.c" [style=filled, fillcolor=white, fontcolor=black, label="vf.c\n"];
+			"funccall0-vf.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_link_local_ether_addr\nmdelay\nudelay\nmemcpy\nmemset\nnetdev_*\n"];
+		}
+		subgraph "cluster_ixgbevf.h" {
+			style=filled
+			"commit_ixgbevf.h" [style=filled, fillcolor=black, fontcolor=white, label="65\n2010-01-09"];
+			"ixgbevf.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbevf.h\n"];
+			"structs-ixgbevf.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+		}
+		"K:IXGBEVF" [label="Kconfig: IXGBEVF\n /drivers/net/ethernet/intel/ixgbevf\n  PCI_MSI ", shape=box, fontcolor=red];
+	}
+"ixgbevf_main.c" -> "ixgbevf.h"[color=blue];
+"ethtool.c" -> "ixgbevf.h"[color=blue];
+"mbx.h" -> "vf.h"[color=blue];
+"mbx.c" -> "mbx.h"[color=blue];
+"mbx.c" -> "ixgbevf.h"[color=blue];
+"vf.h" -> "regs.h"[color=blue];
+"vf.h" -> "defines.h"[color=blue];
+"vf.h" -> "mbx.h"[color=blue];
+"vf.c" -> "ixgbevf.h"[color=blue];
+"vf.c" -> "vf.h"[color=blue];
+"ixgbevf.h" -> "vf.h"[color=blue];
+}

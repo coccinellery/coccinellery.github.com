@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: DECLANCE
+	subgraph "cluster_DECLANCE"{
+		subgraph "cluster_declance.c" {
+			style=filled
+			"commit_declance.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2005-04-16"];
+			"declance.c" [style=filled, fillcolor=white, fontcolor=black, label="declance.c\n"];
+			"structs-declance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\ntc_driver\ntc_driver\n"];
+			"funccall2-declance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nrequest_mem_region\nmemset\nnetif_*\nudelay\nrequest_irq\nfree_netdev\nmod_timer\ndev_*\nskb_*\n"];
+			"funccall1-declance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_crc_le\nregister_netdev\neth_type_trans\nspin_*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nrelease_mem_region\nnetdev_*\ninit_timer\n"];
+		}
+		"K:DECLANCE" [label="Kconfig: DECLANCE\n /drivers/net/ethernet/amd\n  MACH_DECSTATION ", shape=box, fontcolor=red];
+	}
+}

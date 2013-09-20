@@ -1,0 +1,37 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: HYDRA
+	subgraph "cluster_HYDRA"{
+		subgraph "cluster_8390.h" {
+			style=filled
+			"commit_8390.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"8390.h" [style=filled, fillcolor=white, fontcolor=black, label="8390.h\n"];
+			"funccall0-8390.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_8390.c" {
+			style=filled
+			"commit_8390.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"8390.c" [style=filled, fillcolor=white, fontcolor=black, label="8390.c\n"];
+			"structs-8390.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+		}
+		subgraph "cluster_lib8390.c" {
+			style=filled
+			"commit_lib8390.c" [style=filled, fillcolor=black, fontcolor=white, label="87\n2005-04-16"];
+			"lib8390.c" [style=filled, fillcolor=white, fontcolor=black, label="lib8390.c\n"];
+			"funccall2-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="disable_irq_nosync_lockdep_irqsave\nmemset\nnetif_*\nmdelay\nenable_irq_lockdep_irqrestore\nenable_irq_lockdep\ndev_*\nskb_*\nether_crc\n"];
+			"funccall1-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nether_setup\nspin_*\nmemcpy\nnetdev_alloc_skb\nenable_irq\ndisable_irq\nnetdev_*\ndisable_irq_nosync_lockdep\n"];
+		}
+		subgraph "cluster_hydra.c" {
+			style=filled
+			"commit_hydra.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2005-04-16"];
+			"hydra.c" [style=filled, fillcolor=white, fontcolor=black, label="hydra.c\n"];
+			"structs-hydra.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall0-hydra.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nz_memcpy_fromio\nz_memcpy_toio\nregister_netdev\nunregister_netdev\nrequest_mem_region\nrelease_mem_region\nfree_netdev\nrequest_irq\n"];
+		}
+		"K:HYDRA" [label="Kconfig: HYDRA\n /drivers/net/ethernet/8390\n  ZORRO ", shape=box, fontcolor=red];
+	}
+"8390.c" -> "lib8390.c"[color=blue];
+"lib8390.c" -> "8390.h"[color=blue];
+"hydra.c" -> "lib8390.c"[color=blue];
+}

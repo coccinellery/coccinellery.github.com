@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: YELLOWFIN
+	subgraph "cluster_YELLOWFIN"{
+		subgraph "cluster_yellowfin.c" {
+			style=filled
+			"commit_yellowfin.c" [style=filled, fillcolor=black, fontcolor=white, label="111\n2005-04-16"];
+			"yellowfin.c" [style=filled, fillcolor=white, fontcolor=black, label="yellowfin.c\n"];
+			"structs-yellowfin.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-yellowfin.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nif_*\nunregister_netdev\nadd_timer\nmemset\nnetif_*\npci_release_regions\npci_iounmap\npci_*\nread_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-yellowfin.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_request_regions\ndev_*\nskb_*\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\nspin_*\nmemcmp\nnetdev_alloc_skb\nnetdev_*\ninit_timer\n"];
+		}
+		"K:YELLOWFIN" [label="Kconfig: YELLOWFIN\n /drivers/net/ethernet/packetengines\n  PCI ", shape=box, fontcolor=red];
+	}
+}

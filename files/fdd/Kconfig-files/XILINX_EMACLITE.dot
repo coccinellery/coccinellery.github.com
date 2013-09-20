@@ -1,0 +1,40 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: XILINX_EMACLITE
+	subgraph "cluster_XILINX_EMACLITE"{
+		subgraph "cluster_xilinx_emaclite.c" {
+			style=filled
+			"commit_xilinx_emaclite.c" [style=filled, fillcolor=black, fontcolor=white, label="67\n2009-08-20"];
+			"xilinx_emaclite.c" [style=filled, fillcolor=white, fontcolor=black, label="xilinx_emaclite.c\n"];
+			"structs-xilinx_emaclite.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall2-xilinx_emaclite.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nrequest_mem_region\nnetif_*\nmdiobus_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nregister_netdev\neth_type_trans\n"];
+			"funccall1-xilinx_emaclite.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nmemcpy\nnetdev_alloc_skb\nioremap*\nrelease_mem_region\nof_*\nenable_irq\nphy_*\nmsleep\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:XILINX_EMACLITE" [label="Kconfig: XILINX_EMACLITE\n /drivers/net/ethernet/xilinx\n  PPC32 || MICROBLAZE ", shape=box, fontcolor=red];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+}

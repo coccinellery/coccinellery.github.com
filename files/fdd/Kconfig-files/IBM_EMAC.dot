@@ -1,0 +1,134 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IBM_EMAC
+	subgraph "cluster_IBM_EMAC"{
+		subgraph "cluster_phy.h" {
+			style=filled
+			"commit_phy.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2005-04-16"];
+			"phy.h" [style=filled, fillcolor=white, fontcolor=black, label="phy.h\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2005-04-16"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"structs-phy.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="mii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\n"];
+			"funccall0-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nphy_*\n"];
+		}
+		subgraph "cluster_emac.h" {
+			style=filled
+			"commit_emac.h" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"emac.h" [style=filled, fillcolor=white, fontcolor=black, label="emac.h\n"];
+		}
+		subgraph "cluster_core.h" {
+			style=filled
+			"commit_core.h" [style=filled, fillcolor=black, fontcolor=white, label="45\n2005-04-16"];
+			"core.h" [style=filled, fillcolor=white, fontcolor=black, label="core.h\n"];
+			"funccall0-core.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\n"];
+		}
+		subgraph "cluster_core.c" {
+			style=filled
+			"commit_core.c" [style=filled, fillcolor=black, fontcolor=white, label="159\n2007-08-23"];
+			"core.c" [style=filled, fillcolor=white, fontcolor=black, label="core.c\n"];
+			"structs-core.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nethtool_ops\nnet_device_ops\nnet_device_ops\nnotifier_block\nplatform_driver\nof_device_id\n"];
+			"funccall2-core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nmemset\nnetif_*\nudelay\ncacheable_memcpy\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nmutex_*\nregister_netdev\nsmp_rmb\n"];
+			"funccall1-core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_crc\neth_type_trans\nwait_event_timeout\nspin_*\nmemcpy\ndma_*\nplatform_*\ncontainer_of\nalloc_skb\nioremap*\nschedule_work\nmemcpy_fromio\ncancel_delayed_work_sync\nof_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_mal.h" {
+			style=filled
+			"commit_mal.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2007-08-23"];
+			"mal.h" [style=filled, fillcolor=white, fontcolor=black, label="mal.h\n"];
+		}
+		subgraph "cluster_mal.c" {
+			style=filled
+			"commit_mal.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2007-08-23"];
+			"mal.c" [style=filled, fillcolor=white, fontcolor=black, label="mal.c\n"];
+			"structs-mal.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="platform_driver\nof_device_id\n"];
+			"funccall0-mal.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndev_*\nsmp_wmb\nnapi_*\nnetif_*\nspin_*\nkfree*\ndma_*\nplatform_*\ncontainer_of\nkzalloc\nof_*\nmsleep\nrequest_irq\n"];
+		}
+		"K:IBM_EMAC" [label="Kconfig: IBM_EMAC\n /drivers/net/ethernet/ibm/emac\n  PPC_DCR ", shape=box, fontcolor=red];
+	}
+	//Symbol: IBM_EMAC_DEBUG
+	subgraph "cluster_IBM_EMAC_DEBUG"{
+		subgraph "cluster_debug.h" {
+			style=filled
+			"commit_debug.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2007-08-23"];
+			"debug.h" [style=filled, fillcolor=white, fontcolor=black, label="debug.h\n"];
+		}
+		subgraph "cluster_debug.c" {
+			style=filled
+			"commit_debug.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"debug.c" [style=filled, fillcolor=white, fontcolor=black, label="debug.c\n"];
+			"structs-debug.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="sysrq_key_op\n"];
+			"funccall0-debug.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\n"];
+		}
+		"K:IBM_EMAC_DEBUG" [label="Kconfig: IBM_EMAC_DEBUG\n /drivers/net/ethernet/ibm/emac\n  IBM_EMAC ", shape=box];
+	}
+	//Symbol: IBM_EMAC_RGMII
+	subgraph "cluster_IBM_EMAC_RGMII"{
+		subgraph "cluster_rgmii.h" {
+			style=filled
+			"commit_rgmii.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2007-08-23"];
+			"rgmii.h" [style=filled, fillcolor=white, fontcolor=black, label="rgmii.h\n"];
+		}
+		subgraph "cluster_rgmii.c" {
+			style=filled
+			"commit_rgmii.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2007-08-23"];
+			"rgmii.c" [style=filled, fillcolor=white, fontcolor=black, label="rgmii.c\n"];
+			"structs-rgmii.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="platform_driver\nof_device_id\n"];
+			"funccall0-rgmii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nmutex_*\nkfree*\nplatform_*\nmemcpy_fromio\nkzalloc\nioremap*\nof_*\n"];
+		}
+		"K:IBM_EMAC_RGMII" [label="Kconfig: IBM_EMAC_RGMII\n /drivers/net/ethernet/ibm/emac\n ", shape=box];
+	}
+	//Symbol: IBM_EMAC_TAH
+	subgraph "cluster_IBM_EMAC_TAH"{
+		subgraph "cluster_tah.h" {
+			style=filled
+			"commit_tah.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2005-04-16"];
+			"tah.h" [style=filled, fillcolor=white, fontcolor=black, label="tah.h\n"];
+		}
+		subgraph "cluster_tah.c" {
+			style=filled
+			"commit_tah.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2007-08-23"];
+			"tah.c" [style=filled, fillcolor=white, fontcolor=black, label="tah.c\n"];
+			"structs-tah.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="platform_driver\nof_device_id\n"];
+			"funccall0-tah.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nmutex_*\nkfree*\nplatform_*\nmemcpy_fromio\nkzalloc\nioremap*\nof_*\n"];
+		}
+		"K:IBM_EMAC_TAH" [label="Kconfig: IBM_EMAC_TAH\n /drivers/net/ethernet/ibm/emac\n ", shape=box];
+	}
+	//Symbol: IBM_EMAC_ZMII
+	subgraph "cluster_IBM_EMAC_ZMII"{
+		subgraph "cluster_zmii.h" {
+			style=filled
+			"commit_zmii.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2007-08-23"];
+			"zmii.h" [style=filled, fillcolor=white, fontcolor=black, label="zmii.h\n"];
+		}
+		subgraph "cluster_zmii.c" {
+			style=filled
+			"commit_zmii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2007-08-23"];
+			"zmii.c" [style=filled, fillcolor=white, fontcolor=black, label="zmii.c\n"];
+			"structs-zmii.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="platform_driver\nof_device_id\n"];
+			"funccall0-zmii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nmutex_*\nkfree*\nplatform_*\nmemcpy_fromio\nkzalloc\nioremap*\nof_*\n"];
+		}
+		"K:IBM_EMAC_ZMII" [label="Kconfig: IBM_EMAC_ZMII\n /drivers/net/ethernet/ibm/emac\n ", shape=box];
+	}
+"phy.c" -> "emac.h"[color=blue];
+"phy.c" -> "phy.h"[color=blue];
+"core.h" -> "debug.h"[color=blue];
+"core.h" -> "emac.h"[color=blue];
+"core.h" -> "mal.h"[color=blue];
+"core.h" -> "phy.h"[color=blue];
+"core.h" -> "zmii.h"[color=blue];
+"core.h" -> "rgmii.h"[color=blue];
+"core.h" -> "tah.h"[color=blue];
+"core.c" -> "core.h"[color=blue];
+"mal.c" -> "core.h"[color=blue];
+"debug.h" -> "core.h"[color=blue];
+"debug.c" -> "core.h"[color=blue];
+"rgmii.c" -> "debug.h"[color=blue];
+"rgmii.c" -> "emac.h"[color=blue];
+"tah.c" -> "emac.h"[color=blue];
+"tah.c" -> "core.h"[color=blue];
+"zmii.c" -> "emac.h"[color=blue];
+"zmii.c" -> "core.h"[color=blue];
+}

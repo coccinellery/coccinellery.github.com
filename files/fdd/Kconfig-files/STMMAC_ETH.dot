@@ -1,0 +1,266 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: STMMAC_ETH
+	subgraph "cluster_STMMAC_ETH"{
+		subgraph "cluster_stmmac_ptp.h" {
+			style=filled
+			"commit_stmmac_ptp.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-03-26"];
+			"stmmac_ptp.h" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_ptp.h\n"];
+		}
+		subgraph "cluster_stmmac_ptp.c" {
+			style=filled
+			"commit_stmmac_ptp.c" [style=filled, fillcolor=black, fontcolor=white, label="3\n2013-03-26"];
+			"stmmac_ptp.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_ptp.c\n"];
+			"structs-stmmac_ptp.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ptp_clock_info\n"];
+			"funccall0-stmmac_ptp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nptp_*\nspin_*\n"];
+		}
+		subgraph "cluster_common.h" {
+			style=filled
+			"commit_common.h" [style=filled, fillcolor=black, fontcolor=white, label="85\n2009-10-14"];
+			"common.h" [style=filled, fillcolor=white, fontcolor=black, label="common.h\n"];
+		}
+		subgraph "cluster_descs.h" {
+			style=filled
+			"commit_descs.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2009-10-14"];
+			"descs.h" [style=filled, fillcolor=white, fontcolor=black, label="descs.h\n"];
+		}
+		subgraph "cluster_mmc.h" {
+			style=filled
+			"commit_mmc.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2011-09-01"];
+			"mmc.h" [style=filled, fillcolor=white, fontcolor=black, label="mmc.h\n"];
+		}
+		subgraph "cluster_stmmac_hwtstamp.c" {
+			style=filled
+			"commit_stmmac_hwtstamp.c" [style=filled, fillcolor=black, fontcolor=white, label="3\n2013-03-26"];
+			"stmmac_hwtstamp.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_hwtstamp.c\n"];
+			"funccall0-stmmac_hwtstamp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\n"];
+		}
+		subgraph "cluster_mmc_core.c" {
+			style=filled
+			"commit_mmc_core.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2011-09-01"];
+			"mmc_core.c" [style=filled, fillcolor=white, fontcolor=black, label="mmc_core.c\n"];
+		}
+		subgraph "cluster_norm_desc.c" {
+			style=filled
+			"commit_norm_desc.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2010-04-13"];
+			"norm_desc.c" [style=filled, fillcolor=white, fontcolor=black, label="norm_desc.c\n"];
+			"funccall0-norm_desc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		subgraph "cluster_descs_com.h" {
+			style=filled
+			"commit_descs_com.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2011-10-18"];
+			"descs_com.h" [style=filled, fillcolor=white, fontcolor=black, label="descs_com.h\n"];
+		}
+		subgraph "cluster_enh_desc.c" {
+			style=filled
+			"commit_enh_desc.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-04-13"];
+			"enh_desc.c" [style=filled, fillcolor=white, fontcolor=black, label="enh_desc.c\n"];
+			"funccall0-enh_desc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		subgraph "cluster_dwmac100_dma.c" {
+			style=filled
+			"commit_dwmac100_dma.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2009-10-14"];
+			"dwmac100_dma.c" [style=filled, fillcolor=white, fontcolor=black, label="dwmac100_dma.c\n"];
+			"funccall0-dwmac100_dma.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\n"];
+		}
+		subgraph "cluster_dwmac100.h" {
+			style=filled
+			"commit_dwmac100.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2009-10-14"];
+			"dwmac100.h" [style=filled, fillcolor=white, fontcolor=black, label="dwmac100.h\n"];
+		}
+		subgraph "cluster_dwmac_dma.h" {
+			style=filled
+			"commit_dwmac_dma.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2010-01-06"];
+			"dwmac_dma.h" [style=filled, fillcolor=white, fontcolor=black, label="dwmac_dma.h\n"];
+		}
+		subgraph "cluster_dwmac100_core.c" {
+			style=filled
+			"commit_dwmac100_core.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2010-04-13"];
+			"dwmac100_core.c" [style=filled, fillcolor=white, fontcolor=black, label="dwmac100_core.c\n"];
+			"funccall0-dwmac100_core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kzalloc\nether_crc\nmemset\nnetdev_*\n"];
+		}
+		subgraph "cluster_dwmac1000_dma.c" {
+			style=filled
+			"commit_dwmac1000_dma.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2009-10-14"];
+			"dwmac1000_dma.c" [style=filled, fillcolor=white, fontcolor=black, label="dwmac1000_dma.c\n"];
+			"funccall0-dwmac1000_dma.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\n"];
+		}
+		subgraph "cluster_dwmac1000.h" {
+			style=filled
+			"commit_dwmac1000.h" [style=filled, fillcolor=black, fontcolor=white, label="41\n2009-10-14"];
+			"dwmac1000.h" [style=filled, fillcolor=white, fontcolor=black, label="dwmac1000.h\n"];
+		}
+		subgraph "cluster_dwmac1000_core.c" {
+			style=filled
+			"commit_dwmac1000_core.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2010-01-06"];
+			"dwmac1000_core.c" [style=filled, fillcolor=white, fontcolor=black, label="dwmac1000_core.c\n"];
+			"funccall0-dwmac1000_core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kzalloc\nmemset\nnetdev_*\n"];
+		}
+		subgraph "cluster_dwmac_lib.c" {
+			style=filled
+			"commit_dwmac_lib.c" [style=filled, fillcolor=black, fontcolor=white, label="19\n2010-01-06"];
+			"dwmac_lib.c" [style=filled, fillcolor=white, fontcolor=black, label="dwmac_lib.c\n"];
+		}
+		subgraph "cluster_chain_mode.c" {
+			style=filled
+			"commit_chain_mode.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-10-18"];
+			"chain_mode.c" [style=filled, fillcolor=white, fontcolor=black, label="chain_mode.c\n"];
+			"funccall0-chain_mode.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nskb_*\n"];
+		}
+		subgraph "cluster_ring_mode.c" {
+			style=filled
+			"commit_ring_mode.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-10-18"];
+			"ring_mode.c" [style=filled, fillcolor=white, fontcolor=black, label="ring_mode.c\n"];
+			"funccall0-ring_mode.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nskb_*\n"];
+		}
+		subgraph "cluster_stmmac_mdio.c" {
+			style=filled
+			"commit_stmmac_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="39\n2009-10-14"];
+			"stmmac_mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_mdio.c\n"];
+			"funccall0-stmmac_mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdiobus_*\ndev_*\ncpu_relax\nnetdev_*\n"];
+		}
+		subgraph "cluster_stmmac_ethtool.c" {
+			style=filled
+			"commit_stmmac_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2009-10-14"];
+			"stmmac_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_ethtool.c\n"];
+			"structs-stmmac_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-stmmac_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="disable_irq_wake\nmemset\nnetif_*\nspin_*\ndevice_*\nmemcpy\nclk_*\nethtool_*\nptp_*\nenable_irq_wake\nphy_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_stmmac_main.c" {
+			style=filled
+			"commit_stmmac_main.c" [style=filled, fillcolor=black, fontcolor=white, label="277\n2009-10-14"];
+			"stmmac_main.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_main.c\n"];
+			"structs-stmmac_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nfile_operations\nfile_operations\nnet_device_ops\n"];
+			"funccall3-stmmac_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nkmalloc_array\nadd_timer\nnetif_*\nmod_timer\nskb_*\nregister_netdev\nprefetch\nnapi_*\ncopy_*\nether_setup\ndma_*\n"];
+			"funccall2-stmmac_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nphy_*\nnetdev_*\nis_valid_ether_addr\n__netdev_alloc_skb\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nclk_*\nstmmac_check_ether_addr\nfree_netdev\nrequest_irq\n"];
+			"funccall1-stmmac_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\neth_type_trans\nspin_*\nkfree*\ndevice_*\ndel_timer_sync\nenable_irq\ndisable_irq\neth_hw_addr_random\ninit_timer\n"];
+		}
+		subgraph "cluster_stmmac.h" {
+			style=filled
+			"commit_stmmac.h" [style=filled, fillcolor=black, fontcolor=white, label="119\n2009-10-14"];
+			"stmmac.h" [style=filled, fillcolor=white, fontcolor=black, label="stmmac.h\n"];
+			"structs-stmmac.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-stmmac.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_*\nplatform_*\n"];
+		}
+		"K:STMMAC_ETH" [label="Kconfig: STMMAC_ETH\n /drivers/net/ethernet/stmicro/stmmac\n  HAS_IOMEM && HAS_DMA ", shape=box, fontcolor=red];
+	}
+	//Symbol: STMMAC_PLATFORM
+	subgraph "cluster_STMMAC_PLATFORM"{
+		subgraph "cluster_stmmac_platform.c" {
+			style=filled
+			"commit_stmmac_platform.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2011-12-21"];
+			"stmmac_platform.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_platform.c\n"];
+			"structs-stmmac_platform.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dev_pm_ops\ndev_pm_ops\nplatform_driver\nof_device_id\n"];
+			"funccall0-stmmac_platform.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\ndev_*\nplatform_*\nof_*\nnetdev_*\ndevm_kzalloc\n"];
+		}
+		"K:STMMAC_PLATFORM" [label="Kconfig: STMMAC_PLATFORM\n /drivers/net/ethernet/stmicro/stmmac\n  STMMAC_ETH ", shape=box];
+	}
+	//Symbol: STMMAC_PCI
+	subgraph "cluster_STMMAC_PCI"{
+		subgraph "cluster_stmmac_pci.c" {
+			style=filled
+			"commit_stmmac_pci.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2011-12-21"];
+			"stmmac_pci.c" [style=filled, fillcolor=white, fontcolor=black, label="stmmac_pci.c\n"];
+			"structs-stmmac_pci.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="pci_driver\n"];
+			"funccall0-stmmac_pci.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_release_regions\npci_request_regions\npci_iounmap\npci_*\nmemset\nnetdev_*\n"];
+		}
+		"K:STMMAC_PCI" [label="Kconfig: STMMAC_PCI\n /drivers/net/ethernet/stmicro/stmmac\n  STMMAC_ETH && PCI ", shape=box];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+"stmmac_ptp.c" -> "stmmac.h"[color=blue];
+"stmmac_ptp.c" -> "stmmac_ptp.h"[color=blue];
+"common.h" -> "mmc.h"[color=blue];
+"common.h" -> "descs.h"[color=blue];
+"stmmac_hwtstamp.c" -> "common.h"[color=blue];
+"stmmac_hwtstamp.c" -> "stmmac_ptp.h"[color=blue];
+"mmc_core.c" -> "mmc.h"[color=blue];
+"norm_desc.c" -> "common.h"[color=blue];
+"norm_desc.c" -> "descs_com.h"[color=blue];
+"enh_desc.c" -> "common.h"[color=blue];
+"enh_desc.c" -> "descs_com.h"[color=blue];
+"dwmac100_dma.c" -> "dwmac100.h"[color=blue];
+"dwmac100_dma.c" -> "dwmac_dma.h"[color=blue];
+"dwmac100.h" -> "common.h"[color=blue];
+"dwmac100_core.c" -> "dwmac100.h"[color=blue];
+"dwmac1000_dma.c" -> "dwmac1000.h"[color=blue];
+"dwmac1000_dma.c" -> "dwmac_dma.h"[color=blue];
+"dwmac1000.h" -> "common.h"[color=blue];
+"dwmac1000_core.c" -> "dwmac1000.h"[color=blue];
+"dwmac_lib.c" -> "common.h"[color=blue];
+"dwmac_lib.c" -> "dwmac_dma.h"[color=blue];
+"chain_mode.c" -> "stmmac.h"[color=blue];
+"ring_mode.c" -> "stmmac.h"[color=blue];
+"stmmac_mdio.c" -> "stmmac.h"[color=blue];
+"stmmac_ethtool.c" -> "stmmac.h"[color=blue];
+"stmmac_ethtool.c" -> "dwmac_dma.h"[color=blue];
+"stmmac_main.c" -> "stmmac.h"[color=blue];
+"stmmac_main.c" -> "stmmac_ptp.h"[color=blue];
+"stmmac.h" -> "common.h"[color=blue];
+"stmmac_platform.c" -> "stmmac.h"[color=blue];
+"stmmac_pci.c" -> "stmmac.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+}

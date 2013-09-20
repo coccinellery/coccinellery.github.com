@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: LANCE
+	subgraph "cluster_LANCE"{
+		subgraph "cluster_lance.c" {
+			style=filled
+			"commit_lance.c" [style=filled, fillcolor=black, fontcolor=white, label="73\n2005-04-16"];
+			"lance.c" [style=filled, fillcolor=white, fontcolor=black, label="lance.c\n"];
+			"structs-lance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall2-lance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndev_alloc_skb\nrequest_region\nunregister_netdev\nmemset\nnetif_*\nmdelay\nkzalloc\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-lance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nregister_netdev\neth_type_trans\nkfree*\nspin_*\nrelease_region\nalloc_skb\nioremap*\nkmalloc\nnetdev_*\n"];
+		}
+		"K:LANCE" [label="Kconfig: LANCE\n /drivers/net/ethernet/amd\n  ISA && ISA_DMA_API ", shape=box, fontcolor=red];
+	}
+}

@@ -1,0 +1,30 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MAC89x0
+	subgraph "cluster_MAC89x0"{
+		subgraph "cluster_mac89x0.c" {
+			style=filled
+			"commit_mac89x0.c" [style=filled, fillcolor=black, fontcolor=white, label="61\n2005-04-16"];
+			"mac89x0.c" [style=filled, fillcolor=white, fontcolor=black, label="mac89x0.c\n"];
+			"structs-mac89x0.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall0-mac89x0.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nskb_*\ndev_*\nlocal_*\nregister_netdev\nunregister_netdev\neth_type_trans\nnetif_*\nmemcpy\nalloc_skb\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		subgraph "cluster_cs89x0.h" {
+			style=filled
+			"commit_cs89x0.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2005-04-16"];
+			"cs89x0.h" [style=filled, fillcolor=white, fontcolor=black, label="cs89x0.h\n"];
+		}
+		subgraph "cluster_cs89x0.c" {
+			style=filled
+			"commit_cs89x0.c" [style=filled, fillcolor=black, fontcolor=white, label="157\n2005-04-16"];
+			"cs89x0.c" [style=filled, fillcolor=white, fontcolor=black, label="cs89x0.c\n"];
+			"structs-cs89x0.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-cs89x0.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nunregister_netdev\nrequest_mem_region\nmemset\nnetif_*\nfree_pages\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nregister_netdev\n"];
+			"funccall1-cs89x0.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nmemcpy\nrelease_region\ndma_*\nplatform_*\nnetdev_alloc_skb\nioremap*\nrelease_mem_region\nenable_irq\ndisable_irq\nmsleep\nnetdev_*\n"];
+		}
+		"K:MAC89x0" [label="Kconfig: MAC89x0\n /drivers/net/ethernet/cirrus\n  MAC ", shape=box, fontcolor=red];
+	}
+"mac89x0.c" -> "cs89x0.h"[color=blue];
+"cs89x0.c" -> "cs89x0.h"[color=blue];
+}

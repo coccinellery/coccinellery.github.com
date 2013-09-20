@@ -1,0 +1,34 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUNGEM
+	subgraph "cluster_SUNGEM"{
+		subgraph "cluster_sungem.h" {
+			style=filled
+			"commit_sungem.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"sungem.h" [style=filled, fillcolor=white, fontcolor=black, label="sungem.h\n"];
+		}
+		subgraph "cluster_sungem.c" {
+			style=filled
+			"commit_sungem.c" [style=filled, fillcolor=black, fontcolor=white, label="197\n2005-04-16"];
+			"sungem.c" [style=filled, fillcolor=white, fontcolor=black, label="sungem.c\n"];
+			"structs-sungem.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-sungem.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdelay\nudelay\npci_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nether_crc_le\nregister_netdev\nnapi_*\nethtool_*\n"];
+			"funccall2-sungem.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nfind_eth_addr_in_vpd\nioremap*\nschedule_work\nphy_*\nnetdev_*\nis_valid_ether_addr\ngem_alloc_skb\nunregister_netdev\nmemset\npci_release_regions\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-sungem.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nmemcpy\nsmp_mb\ndel_timer_sync\nnetdev_alloc_skb\nalloc_skb\nenable_irq\nof_*\nmsleep\ndisable_irq\nsmp_processor_id\ninit_timer\n"];
+		}
+		"K:SUNGEM" [label="Kconfig: SUNGEM\n /drivers/net/ethernet/sun\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: SUNGEM_PHY
+	subgraph "cluster_SUNGEM_PHY"{
+		subgraph "cluster_sungem_phy.c" {
+			style=filled
+			"commit_sungem_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"sungem_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="sungem_phy.c\n"];
+			"structs-sungem_phy.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="mii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\n"];
+			"funccall0-sungem_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nof_*\nphy_*\n"];
+		}
+		"K:SUNGEM_PHY" [label="Kconfig: SUNGEM_PHY\n /drivers/net\n ", shape=box];
+	}
+"sungem.c" -> "sungem.h"[color=blue];
+}

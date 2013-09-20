@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCMCIA_XIRCOM
+	subgraph "cluster_PCMCIA_XIRCOM"{
+		subgraph "cluster_xircom_cb.c" {
+			style=filled
+			"commit_xircom_cb.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2005-04-16"];
+			"xircom_cb.c" [style=filled, fillcolor=white, fontcolor=black, label="xircom_cb.c\n"];
+			"structs-xircom_cb.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\n"];
+			"funccall2-xircom_cb.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nmemset\nnetif_*\npci_release_regions\nudelay\npci_iounmap\npci_*\nread_*\nrequest_irq\nfree_netdev\n"];
+			"funccall1-xircom_cb.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_request_regions\ndev_*\nskb_*\nregister_netdev\neth_type_trans\nspin_*\ndma_*\nnetdev_alloc_skb\nenable_irq\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:PCMCIA_XIRCOM" [label="Kconfig: PCMCIA_XIRCOM\n /drivers/net/ethernet/dec/tulip\n  CARDBUS ", shape=box, fontcolor=red];
+	}
+}

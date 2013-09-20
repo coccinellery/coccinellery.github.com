@@ -1,0 +1,209 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: CNIC
+	subgraph "cluster_CNIC"{
+		subgraph "cluster_cnic.h" {
+			style=filled
+			"commit_cnic.h" [style=filled, fillcolor=black, fontcolor=white, label="69\n2009-06-08"];
+			"cnic.h" [style=filled, fillcolor=white, fontcolor=black, label="cnic.h\n"];
+		}
+		subgraph "cluster_cnic.c" {
+			style=filled
+			"commit_cnic.c" [style=filled, fillcolor=black, fontcolor=white, label="297\n2009-06-08"];
+			"cnic.c" [style=filled, fillcolor=white, fontcolor=black, label="cnic.c\n"];
+			"structs-cnic.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="notifier_block\n"];
+			"funccall3-cnic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nudelay\npci_*\nkzalloc\nread_*\nsmp_mb__after_clear_bit\nprefetch\ncnic_request_irq\nregister_netdevice_notifier\nunregister_netdevice_notifier\ndma_*\n"];
+			"funccall2-cnic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="cnic_unregister_netdev\ncontainer_of\nsmp_mb__before_clear_bit\nnetdev_*\nis_valid_ether_addr\nmemset\nvlan_*\ncnic_register_netdev\ndestroy_workqueue\nrcu_*\nsynchronize_irq\nrequest_irq\n"];
+			"funccall1-cnic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kcalloc\ndev_*\nmutex_*\nwait_event_timeout\nspin_*\nkfree*\ncnic_storm_memset_hc_disable\nmemcpy\natomic_*\nmsleep\ncnic_free_irq\n"];
+		}
+		subgraph "cluster_cnic_if.h" {
+			style=filled
+			"commit_cnic_if.h" [style=filled, fillcolor=black, fontcolor=white, label="67\n2009-06-08"];
+			"cnic_if.h" [style=filled, fillcolor=white, fontcolor=black, label="cnic_if.h\n"];
+		}
+		subgraph "cluster_bnx2x.h" {
+			style=filled
+			"commit_bnx2x.h" [style=filled, fillcolor=black, fontcolor=white, label="495\n2007-11-15"];
+			"bnx2x.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x.h\n"];
+			"structs-bnx2x.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-bnx2x.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\ndma_*\nskb_*\ndev_*\nmsleep\nnetif_*\n"];
+		}
+		subgraph "cluster_bnx2x_reg.h" {
+			style=filled
+			"commit_bnx2x_reg.h" [style=filled, fillcolor=black, fontcolor=white, label="231\n2007-11-15"];
+			"bnx2x_reg.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_reg.h\n"];
+		}
+		subgraph "cluster_bnx2x_fw_defs.h" {
+			style=filled
+			"commit_bnx2x_fw_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="59\n2007-11-15"];
+			"bnx2x_fw_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_fw_defs.h\n"];
+		}
+		subgraph "cluster_bnx2x_hsi.h" {
+			style=filled
+			"commit_bnx2x_hsi.h" [style=filled, fillcolor=black, fontcolor=white, label="183\n2007-11-15"];
+			"bnx2x_hsi.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_hsi.h\n"];
+		}
+		subgraph "cluster_57xx_iscsi_constants.h" {
+			style=filled
+			"commit_57xx_iscsi_constants.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2009-06-08"];
+			"57xx_iscsi_constants.h" [style=filled, fillcolor=white, fontcolor=black, label="57xx_iscsi_constants.h\n"];
+		}
+		subgraph "cluster_57xx_iscsi_hsi.h" {
+			style=filled
+			"commit_57xx_iscsi_hsi.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2009-06-08"];
+			"57xx_iscsi_hsi.h" [style=filled, fillcolor=white, fontcolor=black, label="57xx_iscsi_hsi.h\n"];
+		}
+		subgraph "cluster_bnx2fc_constants.h" {
+			style=filled
+			"commit_bnx2fc_constants.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2011-02-04"];
+			"bnx2fc_constants.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2fc_constants.h\n"];
+		}
+		subgraph "cluster_cnic_defs.h" {
+			style=filled
+			"commit_cnic_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-06-08"];
+			"cnic_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="cnic_defs.h\n"];
+		}
+		subgraph "cluster_bnx2x_mfw_req.h" {
+			style=filled
+			"commit_bnx2x_mfw_req.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2012-06-26"];
+			"bnx2x_mfw_req.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_mfw_req.h\n"];
+		}
+		subgraph "cluster_bnx2x_link.h" {
+			style=filled
+			"commit_bnx2x_link.h" [style=filled, fillcolor=black, fontcolor=white, label="145\n2008-06-23"];
+			"bnx2x_link.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_link.h\n"];
+		}
+		subgraph "cluster_bnx2x_sp.h" {
+			style=filled
+			"commit_bnx2x_sp.h" [style=filled, fillcolor=black, fontcolor=white, label="55\n2011-06-14"];
+			"bnx2x_sp.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_sp.h\n"];
+		}
+		subgraph "cluster_bnx2x_dcb.h" {
+			style=filled
+			"commit_bnx2x_dcb.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-12-13"];
+			"bnx2x_dcb.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_dcb.h\n"];
+		}
+		subgraph "cluster_bnx2x_stats.h" {
+			style=filled
+			"commit_bnx2x_stats.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2010-07-27"];
+			"bnx2x_stats.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_stats.h\n"];
+		}
+		subgraph "cluster_bnx2x_vfpf.h" {
+			style=filled
+			"commit_bnx2x_vfpf.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2013-01-01"];
+			"bnx2x_vfpf.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_vfpf.h\n"];
+		}
+		subgraph "cluster_bnx2x_link.c" {
+			style=filled
+			"commit_bnx2x_link.c" [style=filled, fillcolor=black, fontcolor=white, label="495\n2008-06-23"];
+			"bnx2x_link.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_link.c\n"];
+			"funccall0-bnx2x_link.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nread_*\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_bnx2x_sp.c" {
+			style=filled
+			"commit_bnx2x_sp.c" [style=filled, fillcolor=black, fontcolor=white, label="93\n2011-06-14"];
+			"bnx2x_sp.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_sp.c\n"];
+			"funccall2-bnx2x_sp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nmemset\nnetif_*\nkzalloc\nkcalloc\n__storm_memset_struct\nsmp_mb__after_clear_bit\nmutex_*\nkfree*\n"];
+			"funccall1-bnx2x_sp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\nmemcmp\nsmp_mb\n__storm_memset_mac_filters\natomic_*\nsmp_mb__before_clear_bit\nmsleep\n"];
+		}
+		subgraph "cluster_bnx2x_dcb.c" {
+			style=filled
+			"commit_bnx2x_dcb.c" [style=filled, fillcolor=black, fontcolor=white, label="75\n2010-12-13"];
+			"bnx2x_dcb.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_dcb.c\n"];
+			"structs-bnx2x_dcb.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dcbnl_rtnl_ops\n"];
+			"funccall0-bnx2x_dcb.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nmemset\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_bnx2x_stats.c" {
+			style=filled
+			"commit_bnx2x_stats.c" [style=filled, fillcolor=black, fontcolor=white, label="83\n2010-07-27"];
+			"bnx2x_stats.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_stats.c\n"];
+			"funccall0-bnx2x_stats.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nmemset\nbnx2x_memset_stats\nnetdev_*\nnetif_*\nspin_*\n"];
+		}
+		subgraph "cluster_bnx2x_vfpf.c" {
+			style=filled
+			"commit_bnx2x_vfpf.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2013-01-01"];
+			"bnx2x_vfpf.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_vfpf.c\n"];
+			"funccall0-bnx2x_vfpf.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nstorm_memset_vf_mbx_valid\nmutex_*\nbnx2x_free_irq\nmemset\nkfree*\nmemcmp\nmemcpy\nkzalloc\nstorm_memset_vf_mbx_ack\nmsleep\nnetdev_*\n"];
+		}
+		"K:CNIC" [label="Kconfig: CNIC\n /drivers/net/ethernet/broadcom\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: BNX2
+	subgraph "cluster_BNX2"{
+		subgraph "cluster_bnx2.h" {
+			style=filled
+			"commit_bnx2.h" [style=filled, fillcolor=black, fontcolor=white, label="265\n2005-05-26"];
+			"bnx2.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2.h\n"];
+			"funccall0-bnx2.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_bnx2.c" {
+			style=filled
+			"commit_bnx2.c" [style=filled, fillcolor=black, fontcolor=white, label="871\n2005-05-26"];
+			"bnx2.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2.c\n"];
+			"structs-bnx2.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall4-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\nkzalloc\nmod_timer\npci_request_regions\nrequest_firmware\nskb_*\nbnx2_request_firmware\nether_crc_le\nregister_netdev\n__skb_*\nprefetch\n"];
+			"funccall3-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nmemcmp\ndma_*\nethtool_*\ncontainer_of\nschedule_work\nkmalloc\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\n__free_page\nalloc_etherdev_mq\nmemset\nmsleep_interruptible\n"];
+			"funccall2-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="bnx2_free_irq\npci_release_regions\nvlan_*\npci_iounmap\n__bnx2_free_irq\nrcu_*\nsynchronize_irq\nfree_netdev\nrequest_irq\ndev_*\nbnx2_request_irq\nmutex_*\neth_type_trans\nalloc_page\nspin_*\n"];
+			"funccall1-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nbnx2_release_firmware\nmemcpy\nsmp_mb\ndel_timer_sync\nnetdev_alloc_skb\natomic_*\nenable_irq\ndisable_irq\nmsleep\nsmp_processor_id\ninit_timer\n"];
+		}
+		subgraph "cluster_bnx2_fw.h" {
+			style=filled
+			"commit_bnx2_fw.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2005-05-26"];
+			"bnx2_fw.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2_fw.h\n"];
+			"structs-bnx2_fw.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="cpu_reg\ncpu_reg\ncpu_reg\ncpu_reg\ncpu_reg\n"];
+		}
+		"K:BNX2" [label="Kconfig: BNX2\n /drivers/net/ethernet/broadcom\n  PCI ", shape=box];
+	}
+	//Symbol: UIO
+	subgraph "cluster_UIO"{
+		subgraph "cluster_uio.c" {
+			style=filled
+			"commit_uio.c" [style=filled, fillcolor=black, fontcolor=white, label="79\n2006-12-07"];
+			"uio.c" [style=filled, fillcolor=white, fontcolor=black, label="uio.c\n"];
+			"structs-uio.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\nfile_operations\nfile_operations\nfs_ops\nfs_ops\nkobj_type\nkobj_type\nsysfs_ops\nsysfs_ops\n"];
+			"funccall0-uio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndev_*\nmutex_*\ncopy_*\nkfree*\ndevice_*\ncontainer_of\nkzalloc\natomic_*\nkmalloc\nvmalloc_to_page\nrequest_irq\n"];
+		}
+		"K:UIO" [label="Kconfig: UIO\n /drivers/uio\n ", shape=box];
+	}
+"cnic.c" -> "bnx2fc_constants.h"[color=blue];
+"cnic.c" -> "bnx2.h"[color=blue];
+"cnic.c" -> "cnic.h"[color=blue];
+"cnic.c" -> "57xx_iscsi_hsi.h"[color=blue];
+"cnic.c" -> "bnx2x.h"[color=blue];
+"cnic.c" -> "bnx2x_reg.h"[color=blue];
+"cnic.c" -> "bnx2x_fw_defs.h"[color=blue];
+"cnic.c" -> "57xx_iscsi_constants.h"[color=blue];
+"cnic.c" -> "cnic_defs.h"[color=blue];
+"cnic.c" -> "cnic_if.h"[color=blue];
+"cnic.c" -> "bnx2x_hsi.h"[color=blue];
+"cnic_if.h" -> "bnx2x_mfw_req.h"[color=blue];
+"bnx2x.h" -> "bnx2x_dcb.h"[color=blue];
+"bnx2x.h" -> "bnx2x_mfw_req.h"[color=blue];
+"bnx2x.h" -> "bnx2x_vfpf.h"[color=blue];
+"bnx2x.h" -> "bnx2x_stats.h"[color=blue];
+"bnx2x.h" -> "bnx2x_sp.h"[color=blue];
+"bnx2x.h" -> "bnx2x_reg.h"[color=blue];
+"bnx2x.h" -> "bnx2x_fw_defs.h"[color=blue];
+"bnx2x.h" -> "bnx2x_hsi.h"[color=blue];
+"bnx2x.h" -> "cnic_if.h"[color=blue];
+"bnx2x.h" -> "bnx2x_link.h"[color=blue];
+"bnx2x_hsi.h" -> "bnx2x_mfw_req.h"[color=blue];
+"bnx2x_hsi.h" -> "bnx2x_fw_defs.h"[color=blue];
+"bnx2x_dcb.h" -> "bnx2x_hsi.h"[color=blue];
+"bnx2x_link.c" -> "bnx2x_cmn.h"[color=blue];
+"bnx2x_link.c" -> "bnx2x.h"[color=blue];
+"bnx2x_sp.c" -> "bnx2x_cmn.h"[color=blue];
+"bnx2x_sp.c" -> "bnx2x_sp.h"[color=blue];
+"bnx2x_sp.c" -> "bnx2x.h"[color=blue];
+"bnx2x_dcb.c" -> "bnx2x_dcb.h"[color=blue];
+"bnx2x_dcb.c" -> "bnx2x_cmn.h"[color=blue];
+"bnx2x_dcb.c" -> "bnx2x.h"[color=blue];
+"bnx2x_stats.c" -> "bnx2x_cmn.h"[color=blue];
+"bnx2x_stats.c" -> "bnx2x_stats.h"[color=blue];
+"bnx2x_stats.c" -> "bnx2x_sriov.h"[color=blue];
+"bnx2x_vfpf.c" -> "bnx2x_cmn.h"[color=blue];
+"bnx2x_vfpf.c" -> "bnx2x.h"[color=blue];
+"bnx2.c" -> "bnx2_fw.h"[color=blue];
+"bnx2.c" -> "bnx2.h"[color=blue];
+"bnx2.c" -> "cnic_if.h"[color=blue];
+}

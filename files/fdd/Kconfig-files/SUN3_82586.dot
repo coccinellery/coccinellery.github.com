@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUN3_82586
+	subgraph "cluster_SUN3_82586"{
+		subgraph "cluster_sun3_82586.h" {
+			style=filled
+			"commit_sun3_82586.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"sun3_82586.h" [style=filled, fillcolor=white, fontcolor=black, label="sun3_82586.h\n"];
+		}
+		subgraph "cluster_sun3_82586.c" {
+			style=filled
+			"commit_sun3_82586.c" [style=filled, fillcolor=black, fontcolor=white, label="55\n2005-04-16"];
+			"sun3_82586.c" [style=filled, fillcolor=white, fontcolor=black, label="sun3_82586.c\n"];
+			"structs-sun3_82586.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall2-sun3_82586.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nlocal_*\nmemset\nnetif_*\nmdelay\nudelay\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-sun3_82586.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nregister_netdev\neth_type_trans\nmemcpy\nrelease_region\nnetdev_alloc_skb\nioremap*\nnetdev_*\n"];
+		}
+		"K:SUN3_82586" [label="Kconfig: SUN3_82586\n /drivers/net/ethernet/i825xx\n  SUN3 ", shape=box, fontcolor=red];
+	}
+"sun3_82586.c" -> "sun3_82586.h"[color=blue];
+}

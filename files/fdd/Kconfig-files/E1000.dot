@@ -1,0 +1,59 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: E1000
+	subgraph "cluster_E1000"{
+		subgraph "cluster_e1000_param.c" {
+			style=filled
+			"commit_e1000_param.c" [style=filled, fillcolor=black, fontcolor=white, label="67\n2005-04-16"];
+			"e1000_param.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_param.c\n"];
+		}
+		subgraph "cluster_e1000_osdep.h" {
+			style=filled
+			"commit_e1000_osdep.h" [style=filled, fillcolor=black, fontcolor=white, label="37\n2005-04-16"];
+			"e1000_osdep.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_osdep.h\n"];
+		}
+		subgraph "cluster_e1000_ethtool.c" {
+			style=filled
+			"commit_e1000_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="245\n2005-04-16"];
+			"e1000_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_ethtool.c\n"];
+			"structs-e1000_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall2-e1000_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmsleep_interruptible\nmemset\nnetif_*\nudelay\npci_*\nkcalloc\nrequest_irq\ndev_*\nskb_*\n"];
+			"funccall1-e1000_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\ndevice_*\nmemcpy\ndma_*\nethtool_*\nalloc_skb\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_e1000_hw.h" {
+			style=filled
+			"commit_e1000_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="139\n2005-04-16"];
+			"e1000_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_hw.h\n"];
+		}
+		subgraph "cluster_e1000_hw.c" {
+			style=filled
+			"commit_e1000_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="179\n2005-04-16"];
+			"e1000_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_hw.c\n"];
+			"funccall0-e1000_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmsleep\nspin_*\n"];
+		}
+		subgraph "cluster_e1000_main.c" {
+			style=filled
+			"commit_e1000_main.c" [style=filled, fillcolor=black, fontcolor=white, label="885\n2005-04-16"];
+			"e1000_main.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_main.c\n"];
+			"structs-e1000_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-e1000_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ne1000_free_irq\nif_*\nnetif_*\nmdelay\npci_*\nput_page\ne1000_request_irq\niounmap\nskb_*\nregister_netdev\nprefetch\nnapi_*\ndma_*\ncontainer_of\n"];
+			"funccall2-e1000_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ioremap*\nschedule_work\nkmalloc\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nvlan_*\npage_*\nsynchronize_irq\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\n"];
+			"funccall1-e1000_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\neth_type_trans\nalloc_page\nspin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\natomic_*\ncancel_delayed_work_sync\nenable_irq\nmsleep\ndisable_irq\n"];
+		}
+		subgraph "cluster_e1000.h" {
+			style=filled
+			"commit_e1000.h" [style=filled, fillcolor=black, fontcolor=white, label="155\n2005-04-16"];
+			"e1000.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000.h\n"];
+			"structs-e1000.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-e1000.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:E1000" [label="Kconfig: E1000\n /drivers/net/ethernet/intel/e1000\n  PCI ", shape=box, fontcolor=red];
+	}
+"e1000_param.c" -> "e1000.h"[color=blue];
+"e1000_ethtool.c" -> "e1000.h"[color=blue];
+"e1000_hw.h" -> "e1000_osdep.h"[color=blue];
+"e1000_hw.c" -> "e1000.h"[color=blue];
+"e1000_main.c" -> "e1000.h"[color=blue];
+"e1000.h" -> "e1000_hw.h"[color=blue];
+}

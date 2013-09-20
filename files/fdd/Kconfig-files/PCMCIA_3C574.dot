@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCMCIA_3C574
+	subgraph "cluster_PCMCIA_3C574"{
+		subgraph "cluster_3c574_cs.c" {
+			style=filled
+			"commit_3c574_cs.c" [style=filled, fillcolor=black, fontcolor=white, label="149\n2005-04-16"];
+			"3c574_cs.c" [style=filled, fillcolor=white, fontcolor=black, label="3c574_cs.c\n"];
+			"structs-3c574_cs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npcmcia_driver\npcmcia_device_id\n"];
+			"funccall2-3c574_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="tc574_wait_for_completion\npcmcia_*\nif_*\nlocal_*\nunregister_netdev\nadd_timer\nnetif_*\nmdelay\nread_*\npcmcia_request_irq\nfree_netdev\n"];
+			"funccall1-3c574_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\nregister_netdev\neth_type_trans\nkfree*\nspin_*\ndel_timer_sync\nnetdev_alloc_skb\nnetdev_*\ninit_timer\n"];
+		}
+		"K:PCMCIA_3C574" [label="Kconfig: PCMCIA_3C574\n /drivers/net/ethernet/3com\n  PCMCIA ", shape=box, fontcolor=red];
+	}
+}

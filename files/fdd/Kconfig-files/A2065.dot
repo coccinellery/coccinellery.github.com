@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: A2065
+	subgraph "cluster_A2065"{
+		subgraph "cluster_a2065.h" {
+			style=filled
+			"commit_a2065.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"a2065.h" [style=filled, fillcolor=white, fontcolor=black, label="a2065.h\n"];
+		}
+		subgraph "cluster_a2065.c" {
+			style=filled
+			"commit_a2065.c" [style=filled, fillcolor=black, fontcolor=white, label="83\n2005-04-16"];
+			"a2065.c" [style=filled, fillcolor=white, fontcolor=black, label="a2065.c\n"];
+			"structs-a2065.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall2-a2065.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nlocal_*\nunregister_netdev\nrequest_mem_region\nnetif_*\nfree_netdev\nrequest_irq\nmod_timer\ndev_*\n"];
+			"funccall1-a2065.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nether_crc_le\nregister_netdev\neth_type_trans\ndel_timer_sync\nnetdev_alloc_skb\nrelease_mem_region\nnetdev_*\ninit_timer\n"];
+		}
+		"K:A2065" [label="Kconfig: A2065\n /drivers/net/ethernet/amd\n  ZORRO ", shape=box, fontcolor=red];
+	}
+"a2065.c" -> "a2065.h"[color=blue];
+}

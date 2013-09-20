@@ -1,0 +1,48 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: R8169
+	subgraph "cluster_R8169"{
+		subgraph "cluster_r8169.c" {
+			style=filled
+			"commit_r8169.c" [style=filled, fillcolor=black, fontcolor=white, label="833\n2005-04-16"];
+			"r8169.c" [style=filled, fillcolor=white, fontcolor=black, label="r8169.c\n"];
+			"structs-r8169.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall4-r8169.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdelay\nudelay\npci_*\nrtl_udelay_loop_wait_high\nkzalloc\nkmalloc_node\nmod_timer\npci_request_regions\nrequest_firmware\niounmap\nskb_*\n"];
+			"funccall3-r8169.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nether_crc\nprefetch\nsmp_wmb\nnapi_*\ndma_*\nethtool_*\ncontainer_of\nrtl_release_firmware\nioremap*\nschedule_work\nmemcpy_fromio\nrelease_firmware\nnetdev_*\n"];
+			"funccall2-r8169.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nrtl_udelay_loop_wait_low\npcie_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\npci_release_regions\nrtl_msleep_loop_wait_high\nvlan_*\nfree_netdev\nrequest_irq\nrtl_msleep_loop_wait_low\nrtl_request_firmware\ndev_*\n"];
+			"funccall1-r8169.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nmutex_*\nsmp_rmb\neth_type_trans\nkfree*\ndevice_*\nmemcpy\nsmp_mb\ndel_timer_sync\nmsleep\ninit_timer\n"];
+		}
+		"K:R8169" [label="Kconfig: R8169\n /drivers/net/ethernet/realtek\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"firmware_class.c" -> "base.h"[color=blue];
+}

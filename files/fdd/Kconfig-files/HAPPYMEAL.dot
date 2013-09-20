@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: HAPPYMEAL
+	subgraph "cluster_HAPPYMEAL"{
+		subgraph "cluster_sunhme.h" {
+			style=filled
+			"commit_sunhme.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2005-04-16"];
+			"sunhme.h" [style=filled, fillcolor=white, fontcolor=black, label="sunhme.h\n"];
+			"funccall0-sunhme.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nalloc_skb\n"];
+		}
+		subgraph "cluster_sunhme.c" {
+			style=filled
+			"commit_sunhme.c" [style=filled, fillcolor=black, fontcolor=white, label="183\n2005-04-16"];
+			"sunhme.c" [style=filled, fillcolor=white, fontcolor=black, label="sunhme.c\n"];
+			"structs-sunhme.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\nplatform_driver\nof_device_id\nof_device_id\n"];
+			"funccall3-sunhme.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nadd_timer\nnetif_*\nhappy_meal_alloc_skb\nudelay\npci_*\npci_request_regions\nskb_*\niounmap\nof_iounmap\nether_crc_le\nregister_netdev\n"];
+			"funccall2-sunhme.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="quattro_sbus_free_irqs\ndma_*\nethtool_*\nfind_eth_addr_in_vpd\nioremap*\nkmalloc\nnetdev_*\ndel_timer\nunregister_netdev\nlocal_*\nmemset\npci_release_regions\n"];
+			"funccall1-sunhme.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="sbus_*\nfree_netdev\nrequest_irq\ndev_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\nplatform_*\nnetdev_alloc_skb\nof_*\ninit_timer\n"];
+		}
+		"K:HAPPYMEAL" [label="Kconfig: HAPPYMEAL\n /drivers/net/ethernet/sun\n  SBUS || PCI ", shape=box, fontcolor=red];
+	}
+"sunhme.c" -> "sunhme.h"[color=blue];
+}

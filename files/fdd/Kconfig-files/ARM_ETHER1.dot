@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ARM_ETHER1
+	subgraph "cluster_ARM_ETHER1"{
+		subgraph "cluster_ether1.h" {
+			style=filled
+			"commit_ether1.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"ether1.h" [style=filled, fillcolor=white, fontcolor=black, label="ether1.h\n"];
+			"funccall0-ether1.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_ether1.c" {
+			style=filled
+			"commit_ether1.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"ether1.c" [style=filled, fillcolor=white, fontcolor=black, label="ether1.c\n"];
+			"structs-ether1.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall2-ether1.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nlocal_*\nunregister_netdev\nmemset\nnetif_*\necard_release_resources\nfree_netdev\nrequest_irq\n"];
+			"funccall1-ether1.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\nregister_netdev\neth_type_trans\nkfree*\nnetdev_alloc_skb\nkmalloc\nnetdev_*\n"];
+		}
+		"K:ARM_ETHER1" [label="Kconfig: ARM_ETHER1\n /drivers/net/ethernet/i825xx\n  ARM && ARCH_ACORN ", shape=box, fontcolor=red];
+	}
+"ether1.c" -> "ether1.h"[color=blue];
+}

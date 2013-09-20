@@ -1,0 +1,43 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MVME147_NET
+	subgraph "cluster_MVME147_NET"{
+		subgraph "cluster_7990.h" {
+			style=filled
+			"commit_7990.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-04-16"];
+			"7990.h" [style=filled, fillcolor=white, fontcolor=black, label="7990.h\n"];
+		}
+		subgraph "cluster_7990.c" {
+			style=filled
+			"commit_7990.c" [style=filled, fillcolor=black, fontcolor=white, label="55\n2005-04-16"];
+			"7990.c" [style=filled, fillcolor=white, fontcolor=black, label="7990.c\n"];
+			"funccall0-7990.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nskb_*\ndev_*\nether_crc_le\neth_type_trans\nmemset\nnetif_*\nspin_*\nnetdev_alloc_skb\nrequest_irq\nnetdev_*\n"];
+		}
+		subgraph "cluster_hplance.h" {
+			style=filled
+			"commit_hplance.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2005-04-16"];
+			"hplance.h" [style=filled, fillcolor=white, fontcolor=black, label="hplance.h\n"];
+		}
+		subgraph "cluster_hplance.c" {
+			style=filled
+			"commit_hplance.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2005-04-16"];
+			"hplance.c" [style=filled, fillcolor=white, fontcolor=black, label="hplance.c\n"];
+			"structs-hplance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndio_driver\nnet_device_ops\n"];
+			"funccall0-hplance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nregister_netdev\nunregister_netdev\nrequest_mem_region\nrelease_mem_region\nfree_netdev\nnetdev_*\n"];
+		}
+		subgraph "cluster_mvme147.c" {
+			style=filled
+			"commit_mvme147.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2005-04-16"];
+			"mvme147.c" [style=filled, fillcolor=white, fontcolor=black, label="mvme147.c\n"];
+			"structs-mvme147.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall0-mvme147.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_pages\nregister_netdev\nunregister_netdev\nfree_netdev\nnetdev_*\n"];
+		}
+		"K:MVME147_NET" [label="Kconfig: MVME147_NET\n /drivers/net/ethernet/amd\n  MVME147 ", shape=box, fontcolor=red];
+	}
+"7990.c" -> "7990.h"[color=blue];
+"7990.c" -> "hplance.h"[color=blue];
+"hplance.c" -> "7990.h"[color=blue];
+"hplance.c" -> "hplance.h"[color=blue];
+"mvme147.c" -> "7990.h"[color=blue];
+}

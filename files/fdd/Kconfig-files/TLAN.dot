@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TLAN
+	subgraph "cluster_TLAN"{
+		subgraph "cluster_tlan.h" {
+			style=filled
+			"commit_tlan.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2005-04-16"];
+			"tlan.h" [style=filled, fillcolor=white, fontcolor=black, label="tlan.h\n"];
+		}
+		subgraph "cluster_tlan.c" {
+			style=filled
+			"commit_tlan.c" [style=filled, fillcolor=black, fontcolor=white, label="123\n2005-04-16"];
+			"tlan.c" [style=filled, fillcolor=white, fontcolor=black, label="tlan.c\n"];
+			"structs-tlan.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device\nnet_device_ops\npci_driver\n"];
+			"funccall2-tlan.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nadd_timer\nmemset\nnetif_*\npci_release_regions\nudelay\npci_*\nrequest_irq\nfree_netdev\nmod_timer\n"];
+			"funccall1-tlan.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_request_regions\ndev_*\nskb_*\nregister_netdev\neth_type_trans\nspin_*\nrelease_region\ndel_timer_sync\ncontainer_of\nschedule_work\nenable_irq\ndisable_irq\ninit_timer\nnetdev_*\n"];
+		}
+		"K:TLAN" [label="Kconfig: TLAN\n /drivers/net/ethernet/ti\n  PCI || EISA ", shape=box, fontcolor=red];
+	}
+"tlan.c" -> "tlan.h"[color=blue];
+}

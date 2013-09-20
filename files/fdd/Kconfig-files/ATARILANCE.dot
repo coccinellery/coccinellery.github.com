@@ -1,0 +1,15 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ATARILANCE
+	subgraph "cluster_ATARILANCE"{
+		subgraph "cluster_atarilance.c" {
+			style=filled
+			"commit_atarilance.c" [style=filled, fillcolor=black, fontcolor=white, label="73\n2005-04-16"];
+			"atarilance.c" [style=filled, fillcolor=white, fontcolor=black, label="atarilance.c\n"];
+			"structs-atarilance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall0-atarilance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nskb_*\ndev_*\nlocal_*\nregister_netdev\nunregister_netdev\neth_type_trans\nmemset\nnetif_*\nspin_*\nmemcpy\nnetdev_alloc_skb\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		"K:ATARILANCE" [label="Kconfig: ATARILANCE\n /drivers/net/ethernet/amd\n  ATARI ", shape=box, fontcolor=red];
+	}
+}

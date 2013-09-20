@@ -1,0 +1,21 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SMC9194
+	subgraph "cluster_SMC9194"{
+		subgraph "cluster_smc9194.h" {
+			style=filled
+			"commit_smc9194.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"smc9194.h" [style=filled, fillcolor=white, fontcolor=black, label="smc9194.h\n"];
+		}
+		subgraph "cluster_smc9194.c" {
+			style=filled
+			"commit_smc9194.c" [style=filled, fillcolor=black, fontcolor=white, label="65\n2005-04-16"];
+			"smc9194.c" [style=filled, fillcolor=white, fontcolor=black, label="smc9194.c\n"];
+			"structs-smc9194.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall0-smc9194.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nskb_*\ndev_*\nether_crc_le\nrequest_region\nregister_netdev\nunregister_netdev\neth_type_trans\nmemset\nnetif_*\nrelease_region\nnetdev_alloc_skb\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		"K:SMC9194" [label="Kconfig: SMC9194\n /drivers/net/ethernet/smsc\n  ISA || MAC && BROKEN ", shape=box, fontcolor=red];
+	}
+"smc9194.c" -> "smc9194.h"[color=blue];
+}

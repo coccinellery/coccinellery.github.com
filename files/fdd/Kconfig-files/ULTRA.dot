@@ -1,0 +1,38 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ULTRA
+	subgraph "cluster_ULTRA"{
+		subgraph "cluster_8390.h" {
+			style=filled
+			"commit_8390.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"8390.h" [style=filled, fillcolor=white, fontcolor=black, label="8390.h\n"];
+			"funccall0-8390.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_8390.c" {
+			style=filled
+			"commit_8390.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"8390.c" [style=filled, fillcolor=white, fontcolor=black, label="8390.c\n"];
+			"structs-8390.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+		}
+		subgraph "cluster_lib8390.c" {
+			style=filled
+			"commit_lib8390.c" [style=filled, fillcolor=black, fontcolor=white, label="87\n2005-04-16"];
+			"lib8390.c" [style=filled, fillcolor=white, fontcolor=black, label="lib8390.c\n"];
+			"funccall2-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="disable_irq_nosync_lockdep_irqsave\nmemset\nnetif_*\nmdelay\nenable_irq_lockdep_irqrestore\nenable_irq_lockdep\ndev_*\nskb_*\nether_crc\n"];
+			"funccall1-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nether_setup\nspin_*\nmemcpy\nnetdev_alloc_skb\nenable_irq\ndisable_irq\nnetdev_*\ndisable_irq_nosync_lockdep\n"];
+		}
+		subgraph "cluster_smc-ultra.c" {
+			style=filled
+			"commit_smc-ultra.c" [style=filled, fillcolor=black, fontcolor=white, label="45\n2005-04-16"];
+			"smc-ultra.c" [style=filled, fillcolor=white, fontcolor=black, label="smc-ultra.c\n"];
+			"structs-smc-ultra.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\npnp_device_id\nnet_device_ops\nisapnp_device_id\n"];
+			"funccall2-smc-ultra.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nunregister_netdev\nnetif_*\nfree_netdev\nrequest_irq\nmemcpy_toio\niounmap\n"];
+			"funccall1-smc-ultra.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nrelease_region\nmemcpy_fromio\nioremap*\nenable_irq\npnp_*\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:ULTRA" [label="Kconfig: ULTRA\n /drivers/net/ethernet/8390\n  ISA ", shape=box, fontcolor=red];
+	}
+"8390.c" -> "lib8390.c"[color=blue];
+"lib8390.c" -> "8390.h"[color=blue];
+"smc-ultra.c" -> "8390.h"[color=blue];
+}

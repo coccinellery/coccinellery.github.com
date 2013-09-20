@@ -1,0 +1,29 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MACSONIC
+	subgraph "cluster_MACSONIC"{
+		subgraph "cluster_macsonic.c" {
+			style=filled
+			"commit_macsonic.c" [style=filled, fillcolor=black, fontcolor=white, label="73\n2005-04-16"];
+			"macsonic.c" [style=filled, fillcolor=white, fontcolor=black, label="macsonic.c\n"];
+			"structs-macsonic.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall0-macsonic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndev_*\nlocal_*\nregister_netdev\nunregister_netdev\nmemcmp\ndma_*\nplatform_*\neth_hw_addr_random\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		subgraph "cluster_sonic.h" {
+			style=filled
+			"commit_sonic.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2005-04-16"];
+			"sonic.h" [style=filled, fillcolor=white, fontcolor=black, label="sonic.h\n"];
+			"funccall0-sonic.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_sonic.c" {
+			style=filled
+			"commit_sonic.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2005-04-16"];
+			"sonic.c" [style=filled, fillcolor=white, fontcolor=black, label="sonic.c\n"];
+			"funccall0-sonic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nskb_*\ndev_*\nnetdev_alloc_skb\neth_type_trans\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MACSONIC" [label="Kconfig: MACSONIC\n /drivers/net/ethernet/natsemi\n  MAC ", shape=box, fontcolor=red];
+	}
+"macsonic.c" -> "sonic.h"[color=blue];
+"macsonic.c" -> "sonic.c"[color=blue];
+}

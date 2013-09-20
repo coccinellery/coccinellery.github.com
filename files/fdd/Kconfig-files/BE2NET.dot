@@ -1,0 +1,67 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: BE2NET
+	subgraph "cluster_BE2NET"{
+		subgraph "cluster_be_roce.h" {
+			style=filled
+			"commit_be_roce.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2012-03-26"];
+			"be_roce.h" [style=filled, fillcolor=white, fontcolor=black, label="be_roce.h\n"];
+		}
+		subgraph "cluster_be_roce.c" {
+			style=filled
+			"commit_be_roce.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2012-03-26"];
+			"be_roce.c" [style=filled, fillcolor=white, fontcolor=black, label="be_roce.c\n"];
+			"funccall0-be_roce.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\npci_*\nmutex_*\nnetif_*\n"];
+		}
+		subgraph "cluster_be.h" {
+			style=filled
+			"commit_be.h" [style=filled, fillcolor=black, fontcolor=white, label="285\n2009-03-11"];
+			"be.h" [style=filled, fillcolor=white, fontcolor=black, label="be.h\n"];
+			"funccall0-be.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\n"];
+		}
+		subgraph "cluster_be_hw.h" {
+			style=filled
+			"commit_be_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="73\n2009-03-11"];
+			"be_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="be_hw.h\n"];
+		}
+		subgraph "cluster_be_ethtool.c" {
+			style=filled
+			"commit_be_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="179\n2009-03-11"];
+			"be_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="be_ethtool.c\n"];
+			"structs-be_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-be_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmemset\nnetif_*\nmemcmp\nmemcpy\npci_*\ndma_*\nethtool_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_be_cmds.h" {
+			style=filled
+			"commit_be_cmds.h" [style=filled, fillcolor=black, fontcolor=white, label="215\n2009-03-11"];
+			"be_cmds.h" [style=filled, fillcolor=white, fontcolor=black, label="be_cmds.h\n"];
+		}
+		subgraph "cluster_be_cmds.c" {
+			style=filled
+			"commit_be_cmds.c" [style=filled, fillcolor=black, fontcolor=white, label="375\n2009-03-11"];
+			"be_cmds.c" [style=filled, fillcolor=white, fontcolor=black, label="be_cmds.c\n"];
+			"funccall0-be_cmds.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nlocal_*\nmsleep_interruptible\nmemset\nwait_for_completion_timeout\nspin_*\nmemcmp\nmemcpy\nudelay\ndma_*\npci_*\natomic_*\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_be_main.c" {
+			style=filled
+			"commit_be_main.c" [style=filled, fillcolor=black, fontcolor=white, label="747\n2009-03-11"];
+			"be_main.c" [style=filled, fillcolor=white, fontcolor=black, label="be_main.c\n"];
+			"structs-be_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-be_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nmdelay\npci_*\nput_page\npci_request_regions\nrequest_firmware\nskb_*\nregister_netdev\nprefetch\nbe_vf_eth_addr_generate\nnapi_*\nmemcmp\ndma_*\ncontainer_of\n"];
+			"funccall2-be_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="phy_*\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nbe_alloc_pages\nunregister_netdev\nlocal_*\nnetdev_alloc_skb_ip_align\nmemset\npci_release_regions\nvlan_*\npci_iounmap\npage_*\nsynchronize_irq\nfree_netdev\n"];
+			"funccall1-be_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nkcalloc\ndev_*\nalloc_etherdev_mqs\nmutex_*\nalloc_pages\neth_type_trans\nspin_*\nkfree*\nmemcpy\nbe_vf_eth_addr_config\natomic_*\ncancel_delayed_work_sync\nis_zero_ether_addr\nmsleep\n"];
+		}
+		"K:BE2NET" [label="Kconfig: BE2NET\n /drivers/net/ethernet/emulex/benet\n  PCI ", shape=box, fontcolor=red];
+	}
+"be_roce.c" -> "be_cmds.h"[color=blue];
+"be_roce.c" -> "be.h"[color=blue];
+"be.h" -> "be_roce.h"[color=blue];
+"be.h" -> "be_hw.h"[color=blue];
+"be_ethtool.c" -> "be_cmds.h"[color=blue];
+"be_ethtool.c" -> "be.h"[color=blue];
+"be_cmds.c" -> "be_cmds.h"[color=blue];
+"be_cmds.c" -> "be.h"[color=blue];
+"be_main.c" -> "be_cmds.h"[color=blue];
+"be_main.c" -> "be.h"[color=blue];
+}

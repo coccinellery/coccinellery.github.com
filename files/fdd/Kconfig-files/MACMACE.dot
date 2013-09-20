@@ -1,0 +1,31 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MACMACE
+	subgraph "cluster_MACMACE"{
+		subgraph "cluster_macmace.c" {
+			style=filled
+			"commit_macmace.c" [style=filled, fillcolor=black, fontcolor=white, label="61\n2005-04-16"];
+			"macmace.c" [style=filled, fillcolor=white, fontcolor=black, label="macmace.c\n"];
+			"structs-macmace.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-macmace.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nlocal_*\nunregister_netdev\nnetif_*\nudelay\nfree_netdev\nrequest_irq\ndev_*\nskb_*\n"];
+			"funccall1-macmace.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_crc_le\nregister_netdev\neth_type_trans\nmemcpy\ndma_*\nplatform_*\nnetdev_alloc_skb\nnetdev_*\n"];
+		}
+		subgraph "cluster_mace.h" {
+			style=filled
+			"commit_mace.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2005-04-16"];
+			"mace.h" [style=filled, fillcolor=white, fontcolor=black, label="mace.h\n"];
+		}
+		subgraph "cluster_mace.c" {
+			style=filled
+			"commit_mace.c" [style=filled, fillcolor=black, fontcolor=white, label="79\n2005-04-16"];
+			"mace.c" [style=filled, fillcolor=white, fontcolor=black, label="mace.c\n"];
+			"structs-mace.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nof_device_id\n"];
+			"funccall2-mace.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nunregister_netdev\nadd_timer\nmemset\nnetif_*\nudelay\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\n"];
+			"funccall1-mace.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_crc_le\nregister_netdev\neth_type_trans\nmacio_release_resources\nkfree*\nspin_*\nnetdev_alloc_skb\nioremap*\nof_*\nkmalloc\ninit_timer\nnetdev_*\n"];
+		}
+		"K:MACMACE" [label="Kconfig: MACMACE\n /drivers/net/ethernet/apple\n  MAC ", shape=box, fontcolor=red];
+	}
+"macmace.c" -> "mace.h"[color=blue];
+"mace.c" -> "mace.h"[color=blue];
+}

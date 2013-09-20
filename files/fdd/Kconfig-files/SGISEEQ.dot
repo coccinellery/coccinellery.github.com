@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SGISEEQ
+	subgraph "cluster_SGISEEQ"{
+		subgraph "cluster_sgiseeq.h" {
+			style=filled
+			"commit_sgiseeq.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-04-16"];
+			"sgiseeq.h" [style=filled, fillcolor=white, fontcolor=black, label="sgiseeq.h\n"];
+		}
+		subgraph "cluster_sgiseeq.c" {
+			style=filled
+			"commit_sgiseeq.c" [style=filled, fillcolor=black, fontcolor=white, label="85\n2005-04-16"];
+			"sgiseeq.c" [style=filled, fillcolor=white, fontcolor=black, label="sgiseeq.c\n"];
+			"structs-sgiseeq.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-sgiseeq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nnetdev_alloc_skb_ip_align\nnetif_*\nudelay\nfree_netdev\nrequest_irq\ndev_*\nskb_*\nregister_netdev\n"];
+			"funccall1-sgiseeq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="hpc3_eth_reset\neth_type_trans\nspin_*\nmemcpy\nmemcmp\ndma_*\nplatform_*\nnetdev_alloc_skb\nfree_page\nnetdev_*\n"];
+		}
+		"K:SGISEEQ" [label="Kconfig: SGISEEQ\n /drivers/net/ethernet/seeq\n  SGI_HAS_SEEQ ", shape=box, fontcolor=red];
+	}
+"sgiseeq.c" -> "sgiseeq.h"[color=blue];
+}

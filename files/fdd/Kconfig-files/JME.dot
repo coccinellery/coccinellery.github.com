@@ -1,0 +1,34 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: JME
+	subgraph "cluster_JME"{
+		subgraph "cluster_jme.h" {
+			style=filled
+			"commit_jme.h" [style=filled, fillcolor=black, fontcolor=white, label="61\n2008-09-16"];
+			"jme.h" [style=filled, fillcolor=white, fontcolor=black, label="jme.h\n"];
+			"funccall0-jme.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nnapi_*\nnetif_*\n"];
+		}
+		subgraph "cluster_jme.c" {
+			style=filled
+			"commit_jme.c" [style=filled, fillcolor=black, fontcolor=white, label="163\n2008-09-16"];
+			"jme.c" [style=filled, fillcolor=white, fontcolor=black, label="jme.c\n"];
+			"structs-jme.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-jme.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmdio_memcpy\nif_*\nnetif_*\nmdelay\nudelay\npci_*\npci_request_regions\nmmapio_memcpy\niounmap\nskb_*\nregister_netdev\nether_crc\n"];
+			"funccall2-jme.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="smp_wmb\ndma_*\nethtool_*\nioremap*\nkmalloc\nnetdev_*\nunregister_netdev\nlocal_*\nmemset\npci_release_regions\njme_free_irq\nvlan_*\nfree_netdev\n"];
+			"funccall1-jme.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\ndev_*\nmii_*\njme_request_irq\neth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\natomic_*\nnetdev_alloc_skb\nmsleep\n"];
+		}
+		"K:JME" [label="Kconfig: JME\n /drivers/net/ethernet\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"jme.c" -> "jme.h"[color=blue];
+}

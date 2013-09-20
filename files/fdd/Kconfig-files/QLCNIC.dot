@@ -1,0 +1,190 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: QLCNIC
+	subgraph "cluster_QLCNIC"{
+		subgraph "cluster_qlcnic_sriov_common.c" {
+			style=filled
+			"commit_qlcnic_sriov_common.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2013-03-29"];
+			"qlcnic_sriov_common.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_sriov_common.c\n"];
+			"funccall2-qlcnic_sriov_common.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="random_ether_addr\nmemset\nwait_for_completion_timeout\nqlcnic_schedule_work\nnetif_*\nmdelay\ndestroy_workqueue\npci_*\nkzalloc\n"];
+			"funccall1-qlcnic_sriov_common.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kcalloc\ndev_*\nmutex_*\nkfree*\nspin_*\ncontainer_of\ncancel_delayed_work_sync\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_qlcnic_sriov.h" {
+			style=filled
+			"commit_qlcnic_sriov.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2013-03-29"];
+			"qlcnic_sriov.h" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_sriov.h\n"];
+		}
+		subgraph "cluster_qlcnic_hdr.h" {
+			style=filled
+			"commit_qlcnic_hdr.h" [style=filled, fillcolor=black, fontcolor=white, label="75\n2010-01-13"];
+			"qlcnic_hdr.h" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_hdr.h\n"];
+		}
+		subgraph "cluster_qlcnic_minidump.c" {
+			style=filled
+			"commit_qlcnic_minidump.c" [style=filled, fillcolor=black, fontcolor=white, label="13\n2012-11-28"];
+			"qlcnic_minidump.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_minidump.c\n"];
+			"funccall0-qlcnic_minidump.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\ndev_*\nmutex_*\nnetif_*\n"];
+		}
+		subgraph "cluster_qlcnic_83xx_vnic.c" {
+			style=filled
+			"commit_qlcnic_83xx_vnic.c" [style=filled, fillcolor=black, fontcolor=white, label="5\n2013-01-01"];
+			"qlcnic_83xx_vnic.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_83xx_vnic.c\n"];
+			"funccall0-qlcnic_83xx_vnic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n"];
+		}
+		subgraph "cluster_qlcnic_83xx_init.c" {
+			style=filled
+			"commit_qlcnic_83xx_init.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2013-01-01"];
+			"qlcnic_83xx_init.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_83xx_init.c\n"];
+			"funccall0-qlcnic_83xx_init.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_firmware\ndev_*\nmemset\nqlcnic_schedule_work\nnetif_*\nspin_*\nkfree*\nmdelay\nudelay\ncontainer_of\nkzalloc\ncancel_delayed_work_sync\nmsleep\nrelease_firmware\n"];
+		}
+		subgraph "cluster_qlcnic_83xx_hw.h" {
+			style=filled
+			"commit_qlcnic_83xx_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="59\n2013-01-01"];
+			"qlcnic_83xx_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_83xx_hw.h\n"];
+		}
+		subgraph "cluster_qlcnic_83xx_hw.c" {
+			style=filled
+			"commit_qlcnic_83xx_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2013-01-01"];
+			"qlcnic_83xx_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_83xx_hw.c\n"];
+			"funccall2-qlcnic_83xx_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmemset\nnetif_*\nmdelay\npci_*\nsynchronize_irq\nkcalloc\nrequest_irq\ndev_*\nmutex_*\n"];
+			"funccall1-qlcnic_83xx_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nkfree*\nspin_*\nmemcpy\ncontainer_of\nethtool_*\ncancel_delayed_work_sync\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_qlcnic_minidump.c" {
+			style=filled
+			"commit_qlcnic_minidump.c" [style=filled, fillcolor=black, fontcolor=white, label="13\n2012-11-28"];
+			"qlcnic_minidump.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_minidump.c\n"];
+			"funccall0-qlcnic_minidump.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\ndev_*\nmutex_*\nnetif_*\n"];
+		}
+		subgraph "cluster_qlcnic_sysfs.c" {
+			style=filled
+			"commit_qlcnic_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2012-11-28"];
+			"qlcnic_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_sysfs.c\n"];
+			"structs-qlcnic_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndevice_attribute\ndevice_attribute\n"];
+			"funccall0-qlcnic_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\nmemcpy\ndev_*\ncontainer_of\nkcalloc\nmemset\nkfree*\n"];
+		}
+		subgraph "cluster_qlcnic_io.c" {
+			style=filled
+			"commit_qlcnic_io.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2012-11-28"];
+			"qlcnic_io.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_io.c\n"];
+			"funccall2-qlcnic_io.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\nvlan_*\npci_*\nkzalloc\nether_addr_equal\ndev_*\nskb_*\neth_type_trans\n"];
+			"funccall1-qlcnic_io.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nspin_*\nmemcpy\nmemcmp\nsmp_mb\ndma_*\ncontainer_of\nnetdev_alloc_skb\nnetdev_*\n"];
+		}
+		subgraph "cluster_qlcnic_ctx.c" {
+			style=filled
+			"commit_qlcnic_ctx.c" [style=filled, fillcolor=black, fontcolor=white, label="107\n2010-01-13"];
+			"qlcnic_ctx.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_ctx.c\n"];
+			"funccall0-qlcnic_ctx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmemset\nkfree*\nmemcpy\nmdelay\npci_*\ndma_*\nkcalloc\n"];
+		}
+		subgraph "cluster_qlcnic_ethtool.c" {
+			style=filled
+			"commit_qlcnic_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="175\n2010-01-13"];
+			"qlcnic_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_ethtool.c\n"];
+			"structs-qlcnic_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\nethtool_ops\n"];
+			"funccall0-qlcnic_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ndev_*\nmemset\nnetif_*\nmemcmp\nmemcpy\npci_*\nethtool_*\nnetdev_alloc_skb\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_qlcnic_init.c" {
+			style=filled
+			"commit_qlcnic_init.c" [style=filled, fillcolor=black, fontcolor=white, label="147\n2010-01-13"];
+			"qlcnic_init.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_init.c\n"];
+			"funccall0-qlcnic_init.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_firmware\ndev_*\nmemset\nspin_*\nkfree*\nmemcpy\nudelay\npci_*\nkcalloc\nmsleep\nrelease_firmware\n"];
+		}
+		subgraph "cluster_qlcnic_main.c" {
+			style=filled
+			"commit_qlcnic_main.c" [style=filled, fillcolor=black, fontcolor=white, label="471\n2010-01-13"];
+			"qlcnic_main.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_main.c\n"];
+			"structs-qlcnic_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\nnet_device_ops\nnotifier_block\nnotifier_block\npci_driver\npci_error_handlers\nfirmware\n"];
+			"funccall3-qlcnic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nqlcnic_free_irq\nnetif_*\npci_*\nis_unicast_ether_addr\nkzalloc\npci_request_regions\nqlcnic_request_firmware\niounmap\nregister_netdev\nnapi_*\nregister_netdevice_notifier\nunregister_netdevice_notifier\nmemcmp\n"];
+			"funccall2-qlcnic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_multicast_ether_addr\ncontainer_of\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nqlcnic_request_irq\nmemset\nqlcnic_schedule_work\npci_release_regions\nvlan_*\ndestroy_workqueue\nrcu_*\nqlcnic_release_firmware\nfree_netdev\n"];
+			"funccall1-qlcnic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nkcalloc\nether_addr_equal\ndev_*\nmutex_*\nspin_*\nkfree*\nmemcpy\nsmp_mb\nenable_irq\ncancel_delayed_work_sync\nmsleep\ndisable_irq\n"];
+		}
+		subgraph "cluster_qlcnic_hw.h" {
+			style=filled
+			"commit_qlcnic_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2013-01-01"];
+			"qlcnic_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_hw.h\n"];
+			"structs-qlcnic_hw.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+		}
+		subgraph "cluster_qlcnic_hw.c" {
+			style=filled
+			"commit_qlcnic_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="147\n2010-01-13"];
+			"qlcnic_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_hw.c\n"];
+			"funccall0-qlcnic_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nnetif_*\nspin_*\nkfree*\nmemcmp\nmemcpy\nsmp_mb\npci_*\nkzalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_qlcnic.h" {
+			style=filled
+			"commit_qlcnic.h" [style=filled, fillcolor=black, fontcolor=white, label="365\n2010-01-13"];
+			"qlcnic.h" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic.h\n"];
+			"structs-qlcnic.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-qlcnic.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n"];
+		}
+		"K:QLCNIC" [label="Kconfig: QLCNIC\n /drivers/net/ethernet/qlogic/qlcnic\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: QLCNIC_SRIOV
+	subgraph "cluster_QLCNIC_SRIOV"{
+		subgraph "cluster_qlcnic_sriov_pf.c" {
+			style=filled
+			"commit_qlcnic_sriov_pf.c" [style=filled, fillcolor=black, fontcolor=white, label="19\n2013-03-29"];
+			"qlcnic_sriov_pf.c" [style=filled, fillcolor=white, fontcolor=black, label="qlcnic_sriov_pf.c\n"];
+			"funccall0-qlcnic_sriov_pf.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\ndev_*\ncompare_ether_addr\nnetif_*\nspin_*\nmemcpy\ndestroy_workqueue\npci_*\ncontainer_of\nnetdev_*\n"];
+		}
+		"K:QLCNIC_SRIOV" [label="Kconfig: QLCNIC_SRIOV\n /drivers/net/ethernet/qlogic/qlcnic\n  QLCNIC && PCI_IOV ", shape=box];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+"qlcnic_sriov_common.c" -> "qlcnic_83xx_hw.h"[color=blue];
+"qlcnic_sriov_common.c" -> "qlcnic_sriov.h"[color=blue];
+"qlcnic_sriov_common.c" -> "qlcnic.h"[color=blue];
+"qlcnic_sriov.h" -> "qlcnic.h"[color=blue];
+"qlcnic_hdr.h" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic_83xx_hw.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic_hdr.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic.h"[color=blue];
+"qlcnic_83xx_vnic.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_83xx_vnic.c" -> "qlcnic.h"[color=blue];
+"qlcnic_83xx_init.c" -> "qlcnic_sriov.h"[color=blue];
+"qlcnic_83xx_init.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_83xx_init.c" -> "qlcnic.h"[color=blue];
+"qlcnic_83xx_hw.h" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_83xx_hw.c" -> "qlcnic_sriov.h"[color=blue];
+"qlcnic_83xx_hw.c" -> "qlcnic.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic_83xx_hw.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic_hdr.h"[color=blue];
+"qlcnic_minidump.c" -> "qlcnic.h"[color=blue];
+"qlcnic_sysfs.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_sysfs.c" -> "qlcnic.h"[color=blue];
+"qlcnic_io.c" -> "qlcnic.h"[color=blue];
+"qlcnic_ctx.c" -> "qlcnic.h"[color=blue];
+"qlcnic_ethtool.c" -> "qlcnic.h"[color=blue];
+"qlcnic_init.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_init.c" -> "qlcnic.h"[color=blue];
+"qlcnic_main.c" -> "qlcnic_sriov.h"[color=blue];
+"qlcnic_main.c" -> "qlcnic_hw.h"[color=blue];
+"qlcnic_main.c" -> "qlcnic.h"[color=blue];
+"qlcnic_hw.c" -> "qlcnic_hdr.h"[color=blue];
+"qlcnic_hw.c" -> "qlcnic.h"[color=blue];
+"qlcnic.h" -> "qlcnic_83xx_hw.h"[color=blue];
+"qlcnic.h" -> "qlcnic_hw.h"[color=blue];
+"qlcnic.h" -> "qlcnic_hdr.h"[color=blue];
+"qlcnic_sriov_pf.c" -> "qlcnic_sriov.h"[color=blue];
+"qlcnic_sriov_pf.c" -> "qlcnic.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

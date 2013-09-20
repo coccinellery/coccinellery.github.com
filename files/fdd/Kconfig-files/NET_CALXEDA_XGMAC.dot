@@ -1,0 +1,17 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NET_CALXEDA_XGMAC
+	subgraph "cluster_NET_CALXEDA_XGMAC"{
+		subgraph "cluster_xgmac.c" {
+			style=filled
+			"commit_xgmac.c" [style=filled, fillcolor=black, fontcolor=white, label="39\n2011-11-22"];
+			"xgmac.c" [style=filled, fillcolor=white, fontcolor=black, label="xgmac.c\n"];
+			"structs-xgmac.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\ngmac\ngmac\ngmac\ngmac\ngmac\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall3-xgmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_mem_region\nnetif_*\nudelay\nkzalloc\nenable_irq_wake\nskb_*\niounmap\nregister_netdev\nether_crc\nnapi_*\ncpu_relax\n"];
+			"funccall2-xgmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_setup\ndma_*\nethtool_*\ncontainer_of\nioremap*\nrelease_mem_region\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\ndisable_irq_wake\n"];
+			"funccall1-xgmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nrequest_irq\ndev_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\ndevice_*\nplatform_*\nenable_irq\ndisable_irq\neth_hw_addr_random\n"];
+		}
+		"K:NET_CALXEDA_XGMAC" [label="Kconfig: NET_CALXEDA_XGMAC\n /drivers/net/ethernet/calxeda\n  HAS_IOMEM && HAS_DMA ", shape=box, fontcolor=red];
+	}
+}

@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TYPHOON
+	subgraph "cluster_TYPHOON"{
+		subgraph "cluster_typhoon.h" {
+			style=filled
+			"commit_typhoon.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2005-04-16"];
+			"typhoon.h" [style=filled, fillcolor=white, fontcolor=black, label="typhoon.h\n"];
+			"funccall0-typhoon.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		subgraph "cluster_typhoon.c" {
+			style=filled
+			"commit_typhoon.c" [style=filled, fillcolor=black, fontcolor=white, label="191\n2005-04-16"];
+			"typhoon.c" [style=filled, fillcolor=white, fontcolor=black, label="typhoon.c\n"];
+			"structs-typhoon.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\nfirmware\n"];
+			"funccall3-typhoon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ntyphoon_request_firmware\nnetif_*\nudelay\npci_*\npci_request_regions\nrequest_firmware\nskb_*\nregister_netdev\nether_crc\nsmp_wmb\n"];
+			"funccall2-typhoon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nmemcmp\nethtool_*\ncontainer_of\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nmemset\npci_release_regions\nvlan_*\n"];
+			"funccall1-typhoon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_iounmap\nfree_netdev\nrequest_irq\ndev_*\neth_type_trans\nsmp_rmb\nspin_*\nmemcpy\nnetdev_alloc_skb\nmsleep\n"];
+		}
+		"K:TYPHOON" [label="Kconfig: TYPHOON\n /drivers/net/ethernet/3com\n  PCI ", shape=box, fontcolor=red];
+	}
+"typhoon.c" -> "typhoon.h"[color=blue];
+}

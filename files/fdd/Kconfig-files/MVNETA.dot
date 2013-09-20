@@ -1,0 +1,28 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MVNETA
+	subgraph "cluster_MVNETA"{
+		subgraph "cluster_mvneta.c" {
+			style=filled
+			"commit_mvneta.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2012-08-17"];
+			"mvneta.c" [style=filled, fillcolor=white, fontcolor=black, label="mvneta.c\n"];
+			"structs-mvneta.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall3-mvneta.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndev_alloc_skb\nadd_timer\nnetif_*\nmdelay\nudelay\nkzalloc\nskb_*\niounmap\nregister_netdev\nprefetch\nnapi_*\nmemcmp\n"];
+			"funccall2-mvneta.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nkmalloc\nphy_*\nnetdev_*\nis_valid_ether_addr\ndel_timer\nunregister_netdev\nlocal_*\nmemset\nclk_*\npage_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-mvneta.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nalloc_etherdev_mqs\neth_type_trans\nkfree*\nmemcpy\nplatform_*\nnetdev_alloc_skb\nof_*\neth_hw_addr_random\nsmp_processor_id\ninit_timer\n"];
+		}
+		"K:MVNETA" [label="Kconfig: MVNETA\n /drivers/net/ethernet/marvell\n  MACH_ARMADA_370_XP ", shape=box, fontcolor=red];
+	}
+	//Symbol: MVMDIO
+	subgraph "cluster_MVMDIO"{
+		subgraph "cluster_mvmdio.c" {
+			style=filled
+			"commit_mvmdio.c" [style=filled, fillcolor=black, fontcolor=white, label="19\n2012-11-12"];
+			"mvmdio.c" [style=filled, fillcolor=white, fontcolor=black, label="mvmdio.c\n"];
+			"structs-mvmdio.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dio_driver\nplatform_driver\nof_device_id\n"];
+			"funccall0-mvmdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nwait_event_timeout\ndevm_request_irq\nkfree*\nmdiobus_*\nudelay\nclk_*\nplatform_*\nkmalloc\nof_*\n"];
+		}
+		"K:MVMDIO" [label="Kconfig: MVMDIO\n /drivers/net/ethernet/marvell\n ", shape=box];
+	}
+}

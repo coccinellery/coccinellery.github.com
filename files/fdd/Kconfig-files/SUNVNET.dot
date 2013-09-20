@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUNVNET
+	subgraph "cluster_SUNVNET"{
+		subgraph "cluster_sunvnet.h" {
+			style=filled
+			"commit_sunvnet.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2007-07-09"];
+			"sunvnet.h" [style=filled, fillcolor=white, fontcolor=black, label="sunvnet.h\n"];
+			"funccall0-sunvnet.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		subgraph "cluster_sunvnet.c" {
+			style=filled
+			"commit_sunvnet.c" [style=filled, fillcolor=black, fontcolor=white, label="63\n2007-07-09"];
+			"sunvnet.c" [style=filled, fillcolor=white, fontcolor=black, label="sunvnet.c\n"];
+			"structs-sunvnet.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nvio_driver\nvio_driver\nvio_driver_ops\n"];
+			"funccall2-sunvnet.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="local_*\nmemset\nnetif_*\nudelay\nkzalloc\nfree_netdev\nether_addr_equal\ndev_*\nskb_*\nmutex_*\n"];
+			"funccall1-sunvnet.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\neth_type_trans\nkfree*\nspin_*\nmemcpy\nmemcmp\ndel_timer_sync\nnetdev_alloc_skb\nnetdev_*\n"];
+		}
+		"K:SUNVNET" [label="Kconfig: SUNVNET\n /drivers/net/ethernet/sun\n  SUN_LDOMS ", shape=box, fontcolor=red];
+	}
+"sunvnet.c" -> "sunvnet.h"[color=blue];
+}

@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: 3C515
+	subgraph "cluster_3C515"{
+		subgraph "cluster_3c515.c" {
+			style=filled
+			"commit_3c515.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2005-04-16"];
+			"3c515.c" [style=filled, fillcolor=white, fontcolor=black, label="3c515.c\n"];
+			"structs-3c515.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\npnp_device_id\nethtool_ops\nethtool_ops\nnet_device_ops\nisapnp_device_id\n"];
+			"funccall2-3c515.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nrequest_region\nunregister_netdev\nadd_timer\nnetif_*\nudelay\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-3c515.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nregister_netdev\neth_type_trans\nspin_*\nmemcpy\nrelease_region\nnetdev_alloc_skb\npnp_*\nnetdev_*\ninit_timer\n"];
+		}
+		"K:3C515" [label="Kconfig: 3C515\n /drivers/net/ethernet/3com\n  (ISA || EISA) && ISA_DMA_API ", shape=box, fontcolor=red];
+	}
+}

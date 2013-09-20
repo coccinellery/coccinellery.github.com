@@ -1,0 +1,91 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NETXEN_NIC
+	subgraph "cluster_NETXEN_NIC"{
+		subgraph "cluster_netxen_nic_ctx.c" {
+			style=filled
+			"commit_netxen_nic_ctx.c" [style=filled, fillcolor=black, fontcolor=white, label="73\n2008-07-21"];
+			"netxen_nic_ctx.c" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_ctx.c\n"];
+			"funccall0-netxen_nic_ctx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\npci_*\ndev_*\nkmalloc\nmsleep\nmemset\nkfree*\n"];
+		}
+		subgraph "cluster_netxen_nic_ethtool.c" {
+			style=filled
+			"commit_netxen_nic_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="161\n2006-10-21"];
+			"netxen_nic_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_ethtool.c\n"];
+			"structs-netxen_nic_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-netxen_nic_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\npci_*\nethtool_*\nmemset\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_netxen_nic_hdr.h" {
+			style=filled
+			"commit_netxen_nic_hdr.h" [style=filled, fillcolor=black, fontcolor=white, label="85\n2006-10-21"];
+			"netxen_nic_hdr.h" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_hdr.h\n"];
+		}
+		subgraph "cluster_netxen_nic_init.c" {
+			style=filled
+			"commit_netxen_nic_init.c" [style=filled, fillcolor=black, fontcolor=white, label="295\n2006-10-21"];
+			"netxen_nic_init.c" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_init.c\n"];
+			"funccall2-netxen_nic_init.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="msleep_interruptible\nmemset\nnetif_*\nudelay\npci_*\nkzalloc\nkcalloc\nrequest_firmware\ndev_*\nskb_*\n"];
+			"funccall1-netxen_nic_init.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nnapi_*\nkfree*\nspin_*\nsmp_mb\nnetdev_alloc_skb\nmsleep\nrelease_firmware\nnetdev_*\n"];
+		}
+		subgraph "cluster_netxen_nic_main.c" {
+			style=filled
+			"commit_netxen_nic_main.c" [style=filled, fillcolor=black, fontcolor=white, label="559\n2006-10-21"];
+			"netxen_nic_main.c" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_main.c\n"];
+			"structs-netxen_nic_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndevice_attribute\ndevice_attribute\nnet_device_ops\nnotifier_block\nnotifier_block\npci_driver\npci_error_handlers\nfirmware\n"];
+			"funccall3-netxen_nic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetxen_nic_free_irq\nnetif_*\npci_*\nkzalloc\nnetxen_release_firmware\npci_request_regions\nskb_*\niounmap\nregister_netdev\nnapi_*\nregister_netdevice_notifier\nunregister_netdevice_notifier\n"];
+			"funccall2-netxen_nic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\ncontainer_of\nioremap*\nschedule_work\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nmemset\npci_release_regions\nvlan_*\nrcu_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-netxen_nic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netxen_nic_request_irq\ndev_*\nspin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\nnetxen_schedule_work\nnetxen_request_firmware\ncancel_delayed_work_sync\nenable_irq\nmsleep\ndisable_irq\n"];
+		}
+		subgraph "cluster_netxen_nic_hw.h" {
+			style=filled
+			"commit_netxen_nic_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="45\n2006-10-21"];
+			"netxen_nic_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_hw.h\n"];
+		}
+		subgraph "cluster_netxen_nic_hw.c" {
+			style=filled
+			"commit_netxen_nic_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="281\n2006-10-21"];
+			"netxen_nic_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic_hw.c\n"];
+			"funccall2-netxen_nic_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\nmdelay\nudelay\npci_*\nkzalloc\nread_*\ndev_*\niounmap\n"];
+			"funccall1-netxen_nic_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nmemcpy\nmemcmp\nsmp_mb\nioremap*\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_netxen_nic.h" {
+			style=filled
+			"commit_netxen_nic.h" [style=filled, fillcolor=black, fontcolor=white, label="353\n2006-10-21"];
+			"netxen_nic.h" [style=filled, fillcolor=white, fontcolor=black, label="netxen_nic.h\n"];
+			"structs-netxen_nic.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-netxen_nic.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="smp_mb\npci_*\n"];
+		}
+		"K:NETXEN_NIC" [label="Kconfig: NETXEN_NIC\n /drivers/net/ethernet/qlogic/netxen\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+"netxen_nic_ctx.c" -> "netxen_nic_hw.h"[color=blue];
+"netxen_nic_ethtool.c" -> "netxen_nic.h"[color=blue];
+"netxen_nic_ethtool.c" -> "netxen_nic_hw.h"[color=blue];
+"netxen_nic_init.c" -> "netxen_nic.h"[color=blue];
+"netxen_nic_init.c" -> "netxen_nic_hw.h"[color=blue];
+"netxen_nic_main.c" -> "netxen_nic_hw.h"[color=blue];
+"netxen_nic_hw.c" -> "netxen_nic.h"[color=blue];
+"netxen_nic_hw.c" -> "netxen_nic_hw.h"[color=blue];
+"netxen_nic.h" -> "netxen_nic_hdr.h"[color=blue];
+"netxen_nic.h" -> "netxen_nic_hw.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

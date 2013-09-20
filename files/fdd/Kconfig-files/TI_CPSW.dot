@@ -1,0 +1,103 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TI_CPSW
+	subgraph "cluster_TI_CPSW"{
+		subgraph "cluster_cpts.h" {
+			style=filled
+			"commit_cpts.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2012-10-29"];
+			"cpts.h" [style=filled, fillcolor=white, fontcolor=black, label="cpts.h\n"];
+		}
+		subgraph "cluster_cpts.c" {
+			style=filled
+			"commit_cpts.c" [style=filled, fillcolor=black, fontcolor=white, label="9\n2012-10-29"];
+			"cpts.c" [style=filled, fillcolor=white, fontcolor=black, label="cpts.c\n"];
+			"structs-cpts.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ptp_clock_info\n"];
+			"funccall0-cpts.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="clk_*\nskb_*\ncontainer_of\nptp_*\ncancel_delayed_work_sync\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_cpsw.c" {
+			style=filled
+			"commit_cpsw.c" [style=filled, fillcolor=black, fontcolor=white, label="115\n2012-03-18"];
+			"cpsw.c" [style=filled, fillcolor=white, fontcolor=black, label="cpsw.c\n"];
+			"structs-cpsw.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall3-cpsw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrandom_ether_addr\nif_*\ncpsw_disable_irq\nrequest_mem_region\nnetif_*\nkzalloc\ndisable_irq_nosync\nskb_*\niounmap\nregister_netdev\nnapi_*\ncopy_*\n"];
+			"funccall2-cpsw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="cpu_relax\ncontainer_of\nioremap*\nrelease_mem_region\nphy_*\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nclk_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-cpsw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kcalloc\ndev_*\n__netdev_alloc_skb_ip_align\neth_random_addr\neth_type_trans\ndevm_kzalloc\nspin_*\nkfree*\nmemcpy\nplatform_*\nenable_irq\nof_*\ncpsw_enable_irq\n"];
+		}
+		subgraph "cluster_cpsw_ale.h" {
+			style=filled
+			"commit_cpsw_ale.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2012-03-18"];
+			"cpsw_ale.h" [style=filled, fillcolor=white, fontcolor=black, label="cpsw_ale.h\n"];
+		}
+		subgraph "cluster_cpsw_ale.c" {
+			style=filled
+			"commit_cpsw_ale.c" [style=filled, fillcolor=black, fontcolor=white, label="5\n2012-03-18"];
+			"cpsw_ale.c" [style=filled, fillcolor=white, fontcolor=black, label="cpsw_ale.c\n"];
+			"funccall0-cpsw_ale.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nis_broadcast_ether_addr\nadd_timer\nkfree*\nmemcmp\ndel_timer_sync\nkzalloc\ninit_timer\n"];
+		}
+		"K:TI_CPSW" [label="Kconfig: TI_CPSW\n /drivers/net/ethernet/ti\n  ARM && (ARCH_DAVINCI || SOC_AM33XX) ", shape=box, fontcolor=red];
+	}
+	//Symbol: TI_DAVINCI_CPDMA
+	subgraph "cluster_TI_DAVINCI_CPDMA"{
+		subgraph "cluster_davinci_cpdma.h" {
+			style=filled
+			"commit_davinci_cpdma.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2010-09-15"];
+			"davinci_cpdma.h" [style=filled, fillcolor=white, fontcolor=black, label="davinci_cpdma.h\n"];
+		}
+		subgraph "cluster_davinci_cpdma.c" {
+			style=filled
+			"commit_davinci_cpdma.c" [style=filled, fillcolor=black, fontcolor=white, label="39\n2010-09-15"];
+			"davinci_cpdma.c" [style=filled, fillcolor=white, fontcolor=black, label="davinci_cpdma.c\n"];
+			"funccall0-davinci_cpdma.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nspin_*\nkfree*\nmemcpy\nudelay\ndma_*\nioremap*\nkzalloc\n"];
+		}
+		"K:TI_DAVINCI_CPDMA" [label="Kconfig: TI_DAVINCI_CPDMA\n /drivers/net/ethernet/ti\n  ARM && (ARCH_DAVINCI || ARCH_OMAP3 || SOC_AM33XX) ", shape=box];
+	}
+	//Symbol: TI_DAVINCI_MDIO
+	subgraph "cluster_TI_DAVINCI_MDIO"{
+		subgraph "cluster_davinci_mdio.c" {
+			style=filled
+			"commit_davinci_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2010-09-15"];
+			"davinci_mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="davinci_mdio.c\n"];
+			"structs-davinci_mdio.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dev_pm_ops\ndio_driver\nmdio_platform_data\nplatform_driver\nof_device_id\n"];
+			"funccall0-davinci_mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nspin_*\nkfree*\nmdiobus_*\nclk_*\nplatform_*\nkzalloc\ndevm_request_mem_region\nof_*\nmsleep\n"];
+		}
+		"K:TI_DAVINCI_MDIO" [label="Kconfig: TI_DAVINCI_MDIO\n /drivers/net/ethernet/ti\n  ARM && (ARCH_DAVINCI || ARCH_OMAP3 || SOC_AM33XX) ", shape=box];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+"cpts.c" -> "cpts.h"[color=blue];
+"cpsw.c" -> "davinci_cpdma.h"[color=blue];
+"cpsw.c" -> "cpsw_ale.h"[color=blue];
+"cpsw.c" -> "cpts.h"[color=blue];
+"cpsw_ale.c" -> "cpsw_ale.h"[color=blue];
+"davinci_cpdma.c" -> "davinci_cpdma.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+}

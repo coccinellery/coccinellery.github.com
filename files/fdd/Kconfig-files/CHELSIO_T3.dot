@@ -1,0 +1,222 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: CHELSIO_T3
+	subgraph "cluster_CHELSIO_T3"{
+		subgraph "cluster_aq100x.c" {
+			style=filled
+			"commit_aq100x.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2009-05-29"];
+			"aq100x.c" [style=filled, fillcolor=white, fontcolor=black, label="aq100x.c\n"];
+			"funccall0-aq100x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="msleep\n"];
+		}
+		subgraph "cluster_common.h" {
+			style=filled
+			"commit_common.h" [style=filled, fillcolor=black, fontcolor=white, label="87\n2007-01-18"];
+			"common.h" [style=filled, fillcolor=white, fontcolor=black, label="common.h\n"];
+			"funccall0-common.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n"];
+		}
+		subgraph "cluster_regs.h" {
+			style=filled
+			"commit_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-01-18"];
+			"regs.h" [style=filled, fillcolor=white, fontcolor=black, label="regs.h\n"];
+		}
+		subgraph "cluster_version.h" {
+			style=filled
+			"commit_version.h" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-01-18"];
+			"version.h" [style=filled, fillcolor=white, fontcolor=black, label="version.h\n"];
+		}
+		subgraph "cluster_adapter.h" {
+			style=filled
+			"commit_adapter.h" [style=filled, fillcolor=black, fontcolor=white, label="85\n2007-01-18"];
+			"adapter.h" [style=filled, fillcolor=white, fontcolor=black, label="adapter.h\n"];
+			"funccall0-adapter.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nnetdev_*\n"];
+		}
+		subgraph "cluster_t3cdev.h" {
+			style=filled
+			"commit_t3cdev.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2005-04-16"];
+			"t3cdev.h" [style=filled, fillcolor=white, fontcolor=black, label="t3cdev.h\n"];
+		}
+		subgraph "cluster_cxgb3_offload.h" {
+			style=filled
+			"commit_cxgb3_offload.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2007-01-18"];
+			"cxgb3_offload.h" [style=filled, fillcolor=white, fontcolor=black, label="cxgb3_offload.h\n"];
+		}
+		subgraph "cluster_t3_cpl.h" {
+			style=filled
+			"commit_t3_cpl.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2007-01-18"];
+			"t3_cpl.h" [style=filled, fillcolor=white, fontcolor=black, label="t3_cpl.h\n"];
+		}
+		subgraph "cluster_cxgb3_offload.c" {
+			style=filled
+			"commit_cxgb3_offload.c" [style=filled, fillcolor=black, fontcolor=white, label="107\n2007-01-18"];
+			"cxgb3_offload.c" [style=filled, fillcolor=white, fontcolor=black, label="cxgb3_offload.c\n"];
+			"structs-cxgb3_offload.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="notifier_block\n"];
+			"funccall2-cxgb3_offload.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="local_*\nnetif_*\npci_*\nrcu_*\nkzalloc\nread_*\ndev_*\nskb_*\nmutex_*\nis_vmalloc_addr\n"];
+			"funccall1-cxgb3_offload.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__skb_*\nkfree*\nspin_*\nmemcmp\ncontainer_of\natomic_*\nschedule_work\nalloc_skb\nnetdev_*\n"];
+		}
+		subgraph "cluster_cxgb3_ioctl.h" {
+			style=filled
+			"commit_cxgb3_ioctl.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2007-01-18"];
+			"cxgb3_ioctl.h" [style=filled, fillcolor=white, fontcolor=black, label="cxgb3_ioctl.h\n"];
+		}
+		subgraph "cluster_cxgb3_ctl_defs.h" {
+			style=filled
+			"commit_cxgb3_ctl_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-01-18"];
+			"cxgb3_ctl_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="cxgb3_ctl_defs.h\n"];
+		}
+		subgraph "cluster_cxgb3_defs.h" {
+			style=filled
+			"commit_cxgb3_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2007-01-18"];
+			"cxgb3_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="cxgb3_defs.h\n"];
+		}
+		subgraph "cluster_firmware_exports.h" {
+			style=filled
+			"commit_firmware_exports.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2007-01-18"];
+			"firmware_exports.h" [style=filled, fillcolor=white, fontcolor=black, label="firmware_exports.h\n"];
+		}
+		subgraph "cluster_l2t.h" {
+			style=filled
+			"commit_l2t.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-01-18"];
+			"l2t.h" [style=filled, fillcolor=white, fontcolor=black, label="l2t.h\n"];
+			"funccall0-l2t.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="rcu_*\natomic_*\n"];
+		}
+		subgraph "cluster_l2t.c" {
+			style=filled
+			"commit_l2t.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2007-01-18"];
+			"l2t.c" [style=filled, fillcolor=white, fontcolor=black, label="l2t.c\n"];
+			"funccall0-l2t.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\n__skb_*\nspin_*\nmemcpy\nmemcmp\nvlan_*\nrcu_*\natomic_*\nalloc_skb\nread_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_sge.c" {
+			style=filled
+			"commit_sge.c" [style=filled, fillcolor=black, fontcolor=white, label="207\n2007-01-18"];
+			"sge.c" [style=filled, fillcolor=white, fontcolor=black, label="sge.c\n"];
+			"funccall2-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="local_*\nmemset\nsetup_timer\nnetif_*\nvlan_*\npci_*\npage_*\nput_page\nkcalloc\nsmp_mb__after_clear_bit\nmod_timer\ndev_*\nskb_*\nis_eth_tcp\nalloc_pages\n"];
+			"funccall1-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__skb_*\neth_type_trans\nprefetch\nnapi_*\n__free_pages\nkfree*\nspin_*\nmemcpy\nsmp_mb\ndma_*\ndel_timer_sync\ncontainer_of\nalloc_skb\nnetdev_*\n"];
+		}
+		subgraph "cluster_sge_defs.h" {
+			style=filled
+			"commit_sge_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2007-01-18"];
+			"sge_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="sge_defs.h\n"];
+		}
+		subgraph "cluster_xgmac.c" {
+			style=filled
+			"commit_xgmac.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2007-01-18"];
+			"xgmac.c" [style=filled, fillcolor=white, fontcolor=black, label="xgmac.c\n"];
+			"funccall0-xgmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmsleep\nmemset\n"];
+		}
+		subgraph "cluster_mc5.c" {
+			style=filled
+			"commit_mc5.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2007-01-18"];
+			"mc5.c" [style=filled, fillcolor=white, fontcolor=black, label="mc5.c\n"];
+		}
+		subgraph "cluster_t3_hw.c" {
+			style=filled
+			"commit_t3_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="145\n2007-01-18"];
+			"t3_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="t3_hw.c\n"];
+			"structs-t3_hw.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="mdio_ops\nmdio_ops\n"];
+			"funccall0-t3_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\npcie_*\nmemcpy\nudelay\nmemcmp\npci_*\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_vsc8211.c" {
+			style=filled
+			"commit_vsc8211.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-01-18"];
+			"vsc8211.c" [style=filled, fillcolor=white, fontcolor=black, label="vsc8211.c\n"];
+			"funccall0-vsc8211.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmsleep\n"];
+		}
+		subgraph "cluster_ael1002.c" {
+			style=filled
+			"commit_ael1002.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2007-01-18"];
+			"ael1002.c" [style=filled, fillcolor=white, fontcolor=black, label="ael1002.c\n"];
+			"funccall0-ael1002.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="msleep\n"];
+		}
+		subgraph "cluster_cxgb3_main.c" {
+			style=filled
+			"commit_cxgb3_main.c" [style=filled, fillcolor=black, fontcolor=white, label="275\n2007-01-18"];
+			"cxgb3_main.c" [style=filled, fillcolor=white, fontcolor=black, label="cxgb3_main.c\n"];
+			"structs-cxgb3_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nattribute_group\nattribute_group\nethtool_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-cxgb3_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\npci_*\nkzalloc\npci_request_regions\nrequest_firmware\nskb_*\niounmap\nregister_netdev\n__skb_*\nnapi_*\ncopy_*\n"];
+			"funccall2-cxgb3_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\nioremap*\nkmalloc\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nlocal_*\nalloc_etherdev_mq\nmemset\npci_release_regions\nfree_irq_resources\n"];
+			"funccall1-cxgb3_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="destroy_workqueue\nfree_netdev\nrequest_irq\ndev_*\nmutex_*\nspin_*\nkfree*\nmemcpy\nalloc_skb\ncancel_delayed_work_sync\nmsleep\n"];
+		}
+		"K:CHELSIO_T3" [label="Kconfig: CHELSIO_T3\n /drivers/net/ethernet/chelsio/cxgb3\n  PCI && INET ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+	//Symbol: MDIO
+	subgraph "cluster_MDIO"{
+		subgraph "cluster_mdio.c" {
+			style=filled
+			"commit_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-04-29"];
+			"mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio.c\n"];
+			"funccall0-mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\n"];
+		}
+		"K:MDIO" [label="Kconfig: MDIO\n /drivers/net\n ", shape=box];
+	}
+"aq100x.c" -> "regs.h"[color=blue];
+"aq100x.c" -> "common.h"[color=blue];
+"common.h" -> "adapter.h"[color=blue];
+"common.h" -> "version.h"[color=blue];
+"adapter.h" -> "t3cdev.h"[color=blue];
+"cxgb3_offload.h" -> "t3_cpl.h"[color=blue];
+"cxgb3_offload.h" -> "l2t.h"[color=blue];
+"cxgb3_offload.h" -> "t3cdev.h"[color=blue];
+"cxgb3_offload.c" -> "regs.h"[color=blue];
+"cxgb3_offload.c" -> "common.h"[color=blue];
+"cxgb3_offload.c" -> "cxgb3_ioctl.h"[color=blue];
+"cxgb3_offload.c" -> "cxgb3_ctl_defs.h"[color=blue];
+"cxgb3_offload.c" -> "l2t.h"[color=blue];
+"cxgb3_offload.c" -> "cxgb3_defs.h"[color=blue];
+"cxgb3_offload.c" -> "firmware_exports.h"[color=blue];
+"cxgb3_offload.c" -> "cxgb3_offload.h"[color=blue];
+"cxgb3_defs.h" -> "t3cdev.h"[color=blue];
+"cxgb3_defs.h" -> "cxgb3_offload.h"[color=blue];
+"l2t.h" -> "t3cdev.h"[color=blue];
+"l2t.c" -> "t3_cpl.h"[color=blue];
+"l2t.c" -> "l2t.h"[color=blue];
+"l2t.c" -> "common.h"[color=blue];
+"l2t.c" -> "firmware_exports.h"[color=blue];
+"l2t.c" -> "cxgb3_defs.h"[color=blue];
+"l2t.c" -> "t3cdev.h"[color=blue];
+"sge.c" -> "sge_defs.h"[color=blue];
+"sge.c" -> "regs.h"[color=blue];
+"sge.c" -> "t3_cpl.h"[color=blue];
+"sge.c" -> "common.h"[color=blue];
+"sge.c" -> "firmware_exports.h"[color=blue];
+"sge.c" -> "cxgb3_offload.h"[color=blue];
+"xgmac.c" -> "regs.h"[color=blue];
+"xgmac.c" -> "common.h"[color=blue];
+"mc5.c" -> "regs.h"[color=blue];
+"mc5.c" -> "common.h"[color=blue];
+"t3_hw.c" -> "sge_defs.h"[color=blue];
+"t3_hw.c" -> "regs.h"[color=blue];
+"t3_hw.c" -> "common.h"[color=blue];
+"t3_hw.c" -> "firmware_exports.h"[color=blue];
+"vsc8211.c" -> "common.h"[color=blue];
+"ael1002.c" -> "regs.h"[color=blue];
+"ael1002.c" -> "common.h"[color=blue];
+"cxgb3_main.c" -> "regs.h"[color=blue];
+"cxgb3_main.c" -> "common.h"[color=blue];
+"cxgb3_main.c" -> "cxgb3_ioctl.h"[color=blue];
+"cxgb3_main.c" -> "cxgb3_ctl_defs.h"[color=blue];
+"cxgb3_main.c" -> "t3_cpl.h"[color=blue];
+"cxgb3_main.c" -> "firmware_exports.h"[color=blue];
+"cxgb3_main.c" -> "cxgb3_offload.h"[color=blue];
+"cxgb3_main.c" -> "version.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

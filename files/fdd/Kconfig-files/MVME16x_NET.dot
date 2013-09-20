@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MVME16x_NET
+	subgraph "cluster_MVME16x_NET"{
+		subgraph "cluster_82596.c" {
+			style=filled
+			"commit_82596.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2005-04-16"];
+			"82596.c" [style=filled, fillcolor=white, fontcolor=black, label="82596.c\n"];
+			"structs-82596.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall2-82596.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nmemset\nnetif_*\nudelay\n__get_free_pages\nrequest_irq\nfree_netdev\ndev_*\n"];
+			"funccall1-82596.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nregister_netdev\neth_type_trans\nspin_*\nmemcpy\nnetdev_alloc_skb\nnetdev_*\nfree_page\n"];
+		}
+		"K:MVME16x_NET" [label="Kconfig: MVME16x_NET\n /drivers/net/ethernet/i825xx\n  MVME16x ", shape=box, fontcolor=red];
+	}
+}

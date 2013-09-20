@@ -1,0 +1,62 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ATL1E
+	subgraph "cluster_ATL1E"{
+		subgraph "cluster_atl1e_param.c" {
+			style=filled
+			"commit_atl1e_param.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2008-07-18"];
+			"atl1e_param.c" [style=filled, fillcolor=white, fontcolor=black, label="atl1e_param.c\n"];
+			"funccall0-atl1e_param.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_atl1e_ethtool.c" {
+			style=filled
+			"commit_atl1e_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2008-07-18"];
+			"atl1e_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="atl1e_ethtool.c\n"];
+			"structs-atl1e_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-atl1e_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\nkfree*\ndevice_*\nmemcpy\npci_*\nethtool_*\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_atl1e_hw.h" {
+			style=filled
+			"commit_atl1e_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2008-07-18"];
+			"atl1e_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="atl1e_hw.h\n"];
+		}
+		subgraph "cluster_atl1e_hw.c" {
+			style=filled
+			"commit_atl1e_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2008-07-18"];
+			"atl1e_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="atl1e_hw.c\n"];
+			"funccall0-atl1e_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nether_crc_le\ncpu_relax\nmemcpy\nudelay\npci_*\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_atl1e_main.c" {
+			style=filled
+			"commit_atl1e_main.c" [style=filled, fillcolor=black, fontcolor=white, label="131\n2008-07-18"];
+			"atl1e_main.c" [style=filled, fillcolor=white, fontcolor=black, label="atl1e_main.c\n"];
+			"structs-atl1e_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-atl1e_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\natl1e_free_irq\nif_*\nnetif_*\npci_*\nkzalloc\npci_request_regions\nskb_*\niounmap\nregister_netdev\natl1e_del_timer\nnapi_*\n"];
+			"funccall2-atl1e_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nschedule_work\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\npci_release_regions\nvlan_*\nsynchronize_irq\nfree_netdev\nrequest_irq\n"];
+			"funccall1-atl1e_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\neth_type_trans\natl1e_request_irq\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\natomic_*\nenable_irq\nmsleep\ndisable_irq\ninit_timer\n"];
+		}
+		subgraph "cluster_atl1e.h" {
+			style=filled
+			"commit_atl1e.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2008-07-18"];
+			"atl1e.h" [style=filled, fillcolor=white, fontcolor=black, label="atl1e.h\n"];
+			"structs-atl1e.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+		}
+		"K:ATL1E" [label="Kconfig: ATL1E\n /drivers/net/ethernet/atheros/atl1e\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"atl1e_param.c" -> "atl1e.h"[color=blue];
+"atl1e_ethtool.c" -> "atl1e.h"[color=blue];
+"atl1e_hw.c" -> "atl1e.h"[color=blue];
+"atl1e_main.c" -> "atl1e.h"[color=blue];
+"atl1e.h" -> "atl1e_hw.h"[color=blue];
+}

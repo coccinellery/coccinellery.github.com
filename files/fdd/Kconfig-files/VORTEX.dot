@@ -1,0 +1,27 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: VORTEX
+	subgraph "cluster_VORTEX"{
+		subgraph "cluster_3c59x.c" {
+			style=filled
+			"commit_3c59x.c" [style=filled, fillcolor=black, fontcolor=white, label="231\n2005-04-16"];
+			"3c59x.c" [style=filled, fillcolor=white, fontcolor=black, label="3c59x.c\n"];
+			"structs-3c59x.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device\neisa_device_id\ndev_pm_ops\neisa_driver\nethtool_ops\nethtool_ops\nisa_driver\nnet_device_ops\nnet_device_ops\npci_driver\neisa_device_id\n"];
+			"funccall3-3c59x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\n__netdev_alloc_skb\nrequest_region\nif_*\nlocal_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nadd_timer\nnetif_*\npci_release_regions\n"];
+			"funccall2-3c59x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\npci_iounmap\npci_*\nrequest_irq\nfree_netdev\nmod_timer\npci_request_regions\ndev_*\nskb_*\nmii_*\nregister_netdev\n"];
+			"funccall1-3c59x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\ndevice_*\nmemcpy\nrelease_region\ndel_timer_sync\nnetdev_alloc_skb\ninit_timer\nnetdev_*\n"];
+		}
+		"K:VORTEX" [label="Kconfig: VORTEX\n /drivers/net/ethernet/3com\n  (PCI || EISA) && HAS_IOPORT ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

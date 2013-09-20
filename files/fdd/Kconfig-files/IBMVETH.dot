@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IBMVETH
+	subgraph "cluster_IBMVETH"{
+		subgraph "cluster_ibmveth.h" {
+			style=filled
+			"commit_ibmveth.h" [style=filled, fillcolor=black, fontcolor=white, label="45\n2005-04-16"];
+			"ibmveth.h" [style=filled, fillcolor=white, fontcolor=black, label="ibmveth.h\n"];
+		}
+		subgraph "cluster_ibmveth.c" {
+			style=filled
+			"commit_ibmveth.c" [style=filled, fillcolor=black, fontcolor=white, label="263\n2005-04-16"];
+			"ibmveth.c" [style=filled, fillcolor=white, fontcolor=black, label="ibmveth.c\n"];
+			"structs-ibmveth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nethtool_ops\nfs_ops\nkobj_type\nkobj_type\nnet_device_ops\nsysfs_ops\nvio_driver\n"];
+			"funccall4-ibmveth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ibmveth_rxq_recycle_buffer\nfree_irq\nibmveth_rxq_buffer_valid\nibmveth_rxq_frame_offset\nibmveth_rxq_csum_good\nnetif_*\nibmveth_replenish_buffer_pool\nibmveth_remove_buffer_from_pool\nibmveth_register_logical_lan\nibmveth_rxq_get_buffer\nskb_*\nregister_netdev\n__skb_*\n"];
+			"funccall3-ibmveth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\ndma_*\nibmveth_rxq_toggle\nethtool_*\ncontainer_of\nkmalloc\nibmveth_set_csum_offload\nnetdev_*\nunregister_netdev\nibmveth_rxq_pending_buffer\nibmveth_init_buffer_pool\nmemset\nibmveth_alloc_buffer_pool\n"];
+			"funccall2-ibmveth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ibmveth_flush_buffer\nibmveth_rxq_harvest_buffer\nibmveth_cleanup\nibmveth_rxq_frame_length\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\nibmveth_open\nibmveth_set_features\nsmp_rmb\nibmveth_rxq_flags\neth_type_trans\n"];
+			"funccall1-ibmveth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ibmveth_send\nkfree*\nibmveth_interrupt\nibmveth_replenish_task\nibmveth_close\nmemcpy\natomic_*\nnetdev_alloc_skb\nibmveth_get_desired_dma\nibmveth_free_buffer_pool\nfree_page\n"];
+		}
+		"K:IBMVETH" [label="Kconfig: IBMVETH\n /drivers/net/ethernet/ibm\n  PPC_PSERIES ", shape=box, fontcolor=red];
+	}
+"ibmveth.c" -> "ibmveth.h"[color=blue];
+}

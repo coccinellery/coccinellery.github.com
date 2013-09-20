@@ -1,0 +1,87 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: EHEA
+	subgraph "cluster_EHEA"{
+		subgraph "cluster_ehea_phyp.h" {
+			style=filled
+			"commit_ehea_phyp.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2006-09-13"];
+			"ehea_phyp.h" [style=filled, fillcolor=white, fontcolor=black, label="ehea_phyp.h\n"];
+			"funccall0-ehea_phyp.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nioremap*\n"];
+		}
+		subgraph "cluster_ehea_hw.h" {
+			style=filled
+			"commit_ehea_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2006-09-13"];
+			"ehea_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="ehea_hw.h\n"];
+		}
+		subgraph "cluster_ehea_phyp.c" {
+			style=filled
+			"commit_ehea_phyp.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2006-09-13"];
+			"ehea_phyp.c" [style=filled, fillcolor=white, fontcolor=black, label="ehea_phyp.c\n"];
+			"funccall0-ehea_phyp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="msleep_interruptible\n"];
+		}
+		subgraph "cluster_ehea_ethtool.c" {
+			style=filled
+			"commit_ehea_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="45\n2006-09-13"];
+			"ehea_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ehea_ethtool.c\n"];
+			"structs-ehea_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-ehea_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nethtool_*\natomic_*\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_ehea_qmr.h" {
+			style=filled
+			"commit_ehea_qmr.h" [style=filled, fillcolor=black, fontcolor=white, label="37\n2006-09-13"];
+			"ehea_qmr.h" [style=filled, fillcolor=white, fontcolor=black, label="ehea_qmr.h\n"];
+			"funccall0-ehea_qmr.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="prefetch\n"];
+		}
+		subgraph "cluster_ehea_qmr.c" {
+			style=filled
+			"commit_ehea_qmr.c" [style=filled, fillcolor=black, fontcolor=white, label="69\n2006-09-13"];
+			"ehea_qmr.c" [style=filled, fillcolor=white, fontcolor=black, label="ehea_qmr.c\n"];
+			"funccall0-ehea_qmr.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc_array\nmutex_*\nkzalloc\nfree_page\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ehea_phyp.h" {
+			style=filled
+			"commit_ehea_phyp.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2006-09-13"];
+			"ehea_phyp.h" [style=filled, fillcolor=white, fontcolor=black, label="ehea_phyp.h\n"];
+			"funccall0-ehea_phyp.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nioremap*\n"];
+		}
+		subgraph "cluster_ehea_phyp.c" {
+			style=filled
+			"commit_ehea_phyp.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2006-09-13"];
+			"ehea_phyp.c" [style=filled, fillcolor=white, fontcolor=black, label="ehea_phyp.c\n"];
+			"funccall0-ehea_phyp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="msleep_interruptible\n"];
+		}
+		subgraph "cluster_ehea_main.c" {
+			style=filled
+			"commit_ehea_main.c" [style=filled, fillcolor=black, fontcolor=white, label="383\n2006-09-13"];
+			"ehea_main.c" [style=filled, fillcolor=white, fontcolor=black, label="ehea_main.c\n"];
+			"structs-ehea_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="DEVICE_ATTR\nnet_device\nnet_device_ops\nnotifier_block\nnotifier_block\nof_platform_driver\nplatform_driver\nof_device_id\n"];
+			"funccall3-ehea_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netif_*\nkzalloc\nprefetchw\nskb_*\nregister_netdev\nibmebus_request_irq\nprefetch\nnapi_*\ncontainer_of\nschedule_work\nnetdev_*\nis_valid_ether_addr\n"];
+			"funccall2-ehea_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="unregister_netdev\nnetdev_alloc_skb_ip_align\nalloc_etherdev_mq\nmemset\nibmebus_free_irq\nvlan_*\nfree_netdev\nkcalloc\ndev_*\nmutex_*\nehea_get_eth_dn\neth_type_trans\n"];
+			"funccall1-ehea_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_event_timeout\nspin_*\nkfree*\nmemcpy\ndevice_*\natomic_*\nnetdev_alloc_skb\nof_*\ncancel_delayed_work_sync\nfree_page\nsmp_processor_id\n"];
+		}
+		subgraph "cluster_ehea.h" {
+			style=filled
+			"commit_ehea.h" [style=filled, fillcolor=black, fontcolor=white, label="157\n2006-09-13"];
+			"ehea.h" [style=filled, fillcolor=white, fontcolor=black, label="ehea.h\n"];
+			"structs-ehea.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+		}
+		"K:EHEA" [label="Kconfig: EHEA\n /drivers/net/ethernet/ibm/ehea\n  IBMEBUS && SPARSEMEM ", shape=box, fontcolor=red];
+	}
+"ehea_phyp.h" -> "ehea.h"[color=blue];
+"ehea_phyp.h" -> "ehea_hw.h"[color=blue];
+"ehea_phyp.c" -> "ehea_phyp.h"[color=blue];
+"ehea_ethtool.c" -> "ehea.h"[color=blue];
+"ehea_ethtool.c" -> "ehea_phyp.h"[color=blue];
+"ehea_qmr.h" -> "ehea.h"[color=blue];
+"ehea_qmr.h" -> "ehea_hw.h"[color=blue];
+"ehea_qmr.c" -> "ehea.h"[color=blue];
+"ehea_qmr.c" -> "ehea_phyp.h"[color=blue];
+"ehea_qmr.c" -> "ehea_qmr.h"[color=blue];
+"ehea_phyp.h" -> "ehea.h"[color=blue];
+"ehea_phyp.h" -> "ehea_hw.h"[color=blue];
+"ehea_phyp.c" -> "ehea_phyp.h"[color=blue];
+"ehea_main.c" -> "ehea.h"[color=blue];
+"ehea_main.c" -> "ehea_phyp.h"[color=blue];
+"ehea_main.c" -> "ehea_qmr.h"[color=blue];
+}

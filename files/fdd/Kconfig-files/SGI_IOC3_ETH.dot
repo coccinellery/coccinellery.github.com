@@ -1,0 +1,27 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SGI_IOC3_ETH
+	subgraph "cluster_SGI_IOC3_ETH"{
+		subgraph "cluster_ioc3-eth.c" {
+			style=filled
+			"commit_ioc3-eth.c" [style=filled, fillcolor=black, fontcolor=white, label="105\n2005-04-16"];
+			"ioc3-eth.c" [style=filled, fillcolor=white, fontcolor=black, label="ioc3-eth.c\n"];
+			"structs-ioc3-eth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-ioc3-eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nadd_timer\nmemset\nnetif_*\nfree_pages\npci_release_regions\nudelay\npci_*\n__get_free_pages\n"];
+			"funccall2-ioc3-eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nfree_netdev\npci_request_regions\ndev_*\nskb_*\niounmap\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\neth_hdr\n"];
+			"funccall1-ioc3-eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\ndel_timer_sync\nalloc_skb\nioremap*\nioc3_alloc_skb\nfree_page\ninit_timer\nnetdev_*\n"];
+		}
+		"K:SGI_IOC3_ETH" [label="Kconfig: SGI_IOC3_ETH\n /drivers/net/ethernet/sgi\n  PCI && SGI_IP27 ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

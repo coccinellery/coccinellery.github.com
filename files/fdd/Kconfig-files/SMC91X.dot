@@ -1,0 +1,34 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SMC91X
+	subgraph "cluster_SMC91X"{
+		subgraph "cluster_smc91x.h" {
+			style=filled
+			"commit_smc91x.h" [style=filled, fillcolor=black, fontcolor=white, label="159\n2005-04-16"];
+			"smc91x.h" [style=filled, fillcolor=white, fontcolor=black, label="smc91x.h\n"];
+			"funccall0-smc91x.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nlocal_*\ncpu_relax\n"];
+		}
+		subgraph "cluster_smc91x.c" {
+			style=filled
+			"commit_smc91x.c" [style=filled, fillcolor=black, fontcolor=white, label="177\n2005-04-16"];
+			"smc91x.c" [style=filled, fillcolor=white, fontcolor=black, label="smc91x.c\n"];
+			"structs-smc91x.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall3-smc91x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_mem_region\nnetif_*\nudelay\nskb_*\niounmap\nregister_netdev\ncpu_relax\nether_setup\nethtool_*\ncontainer_of\n"];
+			"funccall2-smc91x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ioremap*\nschedule_work\nrelease_mem_region\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nlocal_*\nmemset\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-smc91x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\neth_type_trans\nspin_*\nmemcpy\nplatform_*\nnetdev_alloc_skb\nenable_irq\nof_*\nmsleep\ndisable_irq\n"];
+		}
+		"K:SMC91X" [label="Kconfig: SMC91X\n /drivers/net/ethernet/smsc\n  ARM || M32R || SUPERH || MIPS || BLACKFIN || MN10300 || COLDFIRE || ARM64 ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"smc91x.c" -> "smc91x.h"[color=blue];
+}

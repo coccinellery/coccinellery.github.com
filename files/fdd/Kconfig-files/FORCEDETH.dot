@@ -1,0 +1,18 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: FORCEDETH
+	subgraph "cluster_FORCEDETH"{
+		subgraph "cluster_forcedeth.c" {
+			style=filled
+			"commit_forcedeth.c" [style=filled, fillcolor=black, fontcolor=white, label="605\n2005-04-16"];
+			"forcedeth.c" [style=filled, fillcolor=white, fontcolor=black, label="forcedeth.c\n"];
+			"structs-forcedeth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nnet_device\nethtool_ops\nnet_device_ops\nnet_device_ops\npci_driver\n"];
+			"funccall4-forcedeth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nudelay\npci_*\nmod_timer\npci_request_regions\niounmap\nskb_*\nregister_netdev\nprefetch\nnapi_*\ndisable_irq_lockdep\n"];
+			"funccall3-forcedeth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nethtool_*\ncontainer_of\nioremap*\nkmalloc\nphy_*\nnetdev_*\nnv_disable_irq\nis_valid_ether_addr\nunregister_netdev\nmemset\npci_release_regions\n"];
+			"funccall2-forcedeth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="init_timer_deferrable\nvlan_*\nnv_free_irq\nsynchronize_irq\nfree_netdev\nrequest_irq\nkcalloc\nenable_irq_lockdep\nnv_request_irq\ndev_*\nmii_*\neth_type_trans\n"];
+			"funccall1-forcedeth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nkfree*\ndevice_*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nenable_irq\neth_hw_addr_random\nmsleep\ndisable_irq\ninit_timer\nnv_enable_irq\n"];
+		}
+		"K:FORCEDETH" [label="Kconfig: FORCEDETH\n /drivers/net/ethernet/nvidia\n  PCI ", shape=box, fontcolor=red];
+	}
+}

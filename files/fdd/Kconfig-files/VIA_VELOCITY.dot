@@ -1,0 +1,34 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: VIA_VELOCITY
+	subgraph "cluster_VIA_VELOCITY"{
+		subgraph "cluster_via-velocity.h" {
+			style=filled
+			"commit_via-velocity.h" [style=filled, fillcolor=black, fontcolor=white, label="57\n2005-04-16"];
+			"via-velocity.h" [style=filled, fillcolor=white, fontcolor=black, label="via-velocity.h\n"];
+			"funccall0-via-velocity.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmemcpy\nrcu_*\n"];
+		}
+		subgraph "cluster_via-velocity.c" {
+			style=filled
+			"commit_via-velocity.c" [style=filled, fillcolor=black, fontcolor=white, label="255\n2005-04-16"];
+			"via-velocity.c" [style=filled, fillcolor=white, fontcolor=black, label="via-velocity.c\n"];
+			"structs-via-velocity.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\nnotifier_block\npci_driver\n"];
+			"funccall3-via-velocity.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdelay\nudelay\npci_*\nkzalloc\npci_request_regions\nskb_*\niounmap\nregister_netdev\n"];
+			"funccall2-via-velocity.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__skb_*\nnapi_*\nethtool_*\ncontainer_of\nioremap*\nnetdev_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\npci_release_regions\nvlan_*\n"];
+			"funccall1-via-velocity.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nrequest_irq\nkcalloc\ndev_*\nmii_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\nnetdev_alloc_skb\n"];
+		}
+		"K:VIA_VELOCITY" [label="Kconfig: VIA_VELOCITY\n /drivers/net/ethernet/via\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"via-velocity.c" -> "via-velocity.h"[color=blue];
+}

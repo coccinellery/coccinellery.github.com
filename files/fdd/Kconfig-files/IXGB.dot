@@ -1,0 +1,78 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IXGB
+	subgraph "cluster_IXGB"{
+		subgraph "cluster_ixgb_param.c" {
+			style=filled
+			"commit_ixgb_param.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"ixgb_param.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_param.c\n"];
+		}
+		subgraph "cluster_ixgb_ids.h" {
+			style=filled
+			"commit_ixgb_ids.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2005-04-16"];
+			"ixgb_ids.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_ids.h\n"];
+		}
+		subgraph "cluster_ixgb_osdep.h" {
+			style=filled
+			"commit_ixgb_osdep.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2005-04-16"];
+			"ixgb_osdep.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_osdep.h\n"];
+		}
+		subgraph "cluster_ixgb_ethtool.c" {
+			style=filled
+			"commit_ixgb_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-04-16"];
+			"ixgb_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_ethtool.c\n"];
+			"structs-ixgb_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-ixgb_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\npci_*\nethtool_*\nkmalloc\nnetdev_*\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_ixgb_ee.h" {
+			style=filled
+			"commit_ixgb_ee.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2005-04-16"];
+			"ixgb_ee.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_ee.h\n"];
+		}
+		subgraph "cluster_ixgb_ee.c" {
+			style=filled
+			"commit_ixgb_ee.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2005-04-16"];
+			"ixgb_ee.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_ee.c\n"];
+			"funccall0-ixgb_ee.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_ixgb_hw.h" {
+			style=filled
+			"commit_ixgb_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="31\n2005-04-16"];
+			"ixgb_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_hw.h\n"];
+		}
+		subgraph "cluster_ixgb_hw.c" {
+			style=filled
+			"commit_ixgb_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="45\n2005-04-16"];
+			"ixgb_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_hw.c\n"];
+			"funccall0-ixgb_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nis_multicast_ether_addr\nis_broadcast_ether_addr\nis_zero_ether_addr\nmsleep\n"];
+		}
+		subgraph "cluster_ixgb_main.c" {
+			style=filled
+			"commit_ixgb_main.c" [style=filled, fillcolor=black, fontcolor=white, label="359\n2005-04-16"];
+			"ixgb_main.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgb_main.c\n"];
+			"structs-ixgb_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-ixgb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\npci_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nregister_netdev\nprefetch\nnapi_*\ndma_*\n"];
+			"funccall2-ixgb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nschedule_work\nkmalloc\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\npci_release_regions\nvlan_*\nsynchronize_irq\n"];
+			"funccall1-ixgb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nrequest_irq\ndev_*\neth_type_trans\nkfree*\nmemcpy\ndel_timer_sync\nsmp_mb\nenable_irq\ndisable_irq\ninit_timer\n"];
+		}
+		subgraph "cluster_ixgb.h" {
+			style=filled
+			"commit_ixgb.h" [style=filled, fillcolor=black, fontcolor=white, label="75\n2005-04-16"];
+			"ixgb.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgb.h\n"];
+			"structs-ixgb.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+		}
+		"K:IXGB" [label="Kconfig: IXGB\n /drivers/net/ethernet/intel/ixgb\n  PCI ", shape=box, fontcolor=red];
+	}
+"ixgb_param.c" -> "ixgb.h"[color=blue];
+"ixgb_ethtool.c" -> "ixgb.h"[color=blue];
+"ixgb_ee.c" -> "ixgb_hw.h"[color=blue];
+"ixgb_ee.c" -> "ixgb_ee.h"[color=blue];
+"ixgb_hw.h" -> "ixgb_osdep.h"[color=blue];
+"ixgb_hw.c" -> "ixgb_hw.h"[color=blue];
+"ixgb_hw.c" -> "ixgb_ids.h"[color=blue];
+"ixgb_main.c" -> "ixgb.h"[color=blue];
+"ixgb.h" -> "ixgb_hw.h"[color=blue];
+"ixgb.h" -> "ixgb_ids.h"[color=blue];
+"ixgb.h" -> "ixgb_ee.h"[color=blue];
+}

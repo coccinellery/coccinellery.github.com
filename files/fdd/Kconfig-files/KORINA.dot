@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: KORINA
+	subgraph "cluster_KORINA"{
+		subgraph "cluster_korina.c" {
+			style=filled
+			"commit_korina.c" [style=filled, fillcolor=black, fontcolor=white, label="85\n2008-03-19"];
+			"korina.c" [style=filled, fillcolor=white, fontcolor=black, label="korina.c\n"];
+			"structs-korina.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-korina.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nsetup_timer\nnetif_*\nrequest_irq\nfree_netdev\nmod_timer\ndev_*\nskb_*\niounmap\nmii_*\nether_crc_le\n"];
+			"funccall1-korina.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\neth_type_trans\nnapi_*\nkfree*\nspin_*\nmemcpy\ndma_*\nplatform_*\ncontainer_of\nioremap*\nschedule_work\nenable_irq\nkmalloc\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:KORINA" [label="Kconfig: KORINA\n /drivers/net/ethernet\n  MIKROTIK_RB532 ", shape=box, fontcolor=red];
+	}
+}

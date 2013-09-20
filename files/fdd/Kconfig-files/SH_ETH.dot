@@ -1,0 +1,71 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SH_ETH
+	subgraph "cluster_SH_ETH"{
+		subgraph "cluster_sh_eth.h" {
+			style=filled
+			"commit_sh_eth.h" [style=filled, fillcolor=black, fontcolor=white, label="65\n2008-06-09"];
+			"sh_eth.h" [style=filled, fillcolor=white, fontcolor=black, label="sh_eth.h\n"];
+			"funccall0-sh_eth.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_sh_eth.c" {
+			style=filled
+			"commit_sh_eth.c" [style=filled, fillcolor=black, fontcolor=white, label="223\n2008-06-09"];
+			"sh_eth.c" [style=filled, fillcolor=white, fontcolor=black, label="sh_eth.c\n"];
+			"structs-sh_eth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nethtool_ops\nmdiobb_ops\nnet_device_ops\nplatform_driver\nsh_eth_cpu_data\nsh_eth_cpu_data\nsh_eth_cpu_data\nsh_eth_cpu_data\nsh_eth_cpu_data\nsh_eth_cpu_data\nsh_eth_cpu_data\nsh_eth_cpu_data\n"];
+			"funccall6-sh_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc_array\nsh_eth_tsu_get_post_reg_offset\nsh_eth_tsu_disable_cam_entry_table\nsh_eth_phy_start\nmdiobus_*\nsh_eth_reset\nsh_eth_tsu_find_empty\nsh_eth_reset_hw_crc\nsh_eth_tsu_write\nskb_*\nsh_eth_tsu_get_post_mask\nsh_eth_ring_free\nsh_eth_set_receive_align\n"];
+			"funccall5-sh_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="sh_eth_rcv_snd_disable\nsh_eth_rcv_snd_enable\nmemcmp\nis_multicast_ether_addr\ndma_*\nsh_eth_tsu_find_entry\ncontainer_of\nsh_eth_ring_init\nnetdev_*\nsh_eth_tsu_enable_cam_entry_post\nsh_eth_read\nunregister_netdev\nmemset\n"];
+			"funccall4-sh_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="sh_eth_phy_init\nsh_eth_error\nsynchronize_irq\nfree_netdev\nrequest_irq\nsh_eth_dev_init\nsh_eth_is_gether\nsh_eth_tsu_add_entry\nsh_eth_set_default_cpu_data\nsh_eth_tsu_busy\nsh_eth_check_reset\nsh_eth_tsu_purge_mcast\neth_type_trans\n"];
+			"funccall3-sh_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nkfree*\nsh_eth_get_register_offset\nsh_eth_txfree\nplatform_*\nnetdev_alloc_skb\nsh_eth_select_mii\nfree_irq\nsh_eth_tsu_del_entry\nsh_eth_tsu_disable_cam_entry_post\nnetif_*\nudelay\nmdelay\n"];
+			"funccall2-sh_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="sh_eth_tsu_get_post_bit\nsh_eth_tsu_init\nsh_eth_soft_swap\nread_*\nsh_eth_tsu_read\nsh_eth_tsu_read_entry\nregister_netdev\nsh_eth_get_cpu_data\nether_setup\nsh_eth_rx\nsh_eth_tsu_purge_all\nphy_*\nis_valid_ether_addr\n"];
+			"funccall1-sh_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="sh_eth_get_vtag_index\ndev_*\nsh_eth_free_dma_buffer\nsh_eth_ring_format\ndevm_kzalloc\nsh_eth_tsu_write_entry\nsh_eth_write\nmemcpy\nsh_eth_tsu_get_offset\neth_hw_addr_random\nsh_eth_get_edtrr_trns\n"];
+		}
+		"K:SH_ETH" [label="Kconfig: SH_ETH\n /drivers/net/ethernet/renesas\n  (SUPERH || ARCH_SHMOBILE) && (CPU_SUBTYPE_SH7710 || CPU_SUBTYPE_SH7712 || CPU_SUBTYPE_SH7763 || CPU_SUBTYPE_SH7619 || CPU_SUBTYPE_SH7724 || CPU_SUBTYPE_SH7734 || CPU_SUBTYPE_SH7757 || ARCH_R8A7740 || ARCH_R8A7778 || ARCH_R8A7779) ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: MDIO_BITBANG
+	subgraph "cluster_MDIO_BITBANG"{
+		subgraph "cluster_mdio-bitbang.c" {
+			style=filled
+			"commit_mdio-bitbang.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-10-01"];
+			"mdio-bitbang.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio-bitbang.c\n"];
+			"funccall0-mdio-bitbang.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdiobus_*\n"];
+		}
+		"K:MDIO_BITBANG" [label="Kconfig: MDIO_BITBANG\n /drivers/net/phy\n ", shape=box];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+"sh_eth.c" -> "sh_eth.h"[color=blue];
+}

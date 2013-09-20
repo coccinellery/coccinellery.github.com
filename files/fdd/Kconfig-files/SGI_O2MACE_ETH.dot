@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SGI_O2MACE_ETH
+	subgraph "cluster_SGI_O2MACE_ETH"{
+		subgraph "cluster_meth.h" {
+			style=filled
+			"commit_meth.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2005-04-16"];
+			"meth.h" [style=filled, fillcolor=white, fontcolor=black, label="meth.h\n"];
+		}
+		subgraph "cluster_meth.c" {
+			style=filled
+			"commit_meth.c" [style=filled, fillcolor=black, fontcolor=white, label="71\n2005-04-16"];
+			"meth.c" [style=filled, fillcolor=white, fontcolor=black, label="meth.c\n"];
+			"structs-meth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall3-meth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmeth_init_rx_ring\nmeth_rx\nnetif_*\nmeth_add_to_tx_ring\nudelay\nmeth_reset\nmeth_free_tx_ring\nmeth_tx_short_prepare\nskb_*\nmeth_tx_1page_prepare\n"];
+			"funccall2-meth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nether_crc\ndma_*\nmeth_error\nmeth_check_link\nnetdev_*\nmeth_tx_cleanup\nunregister_netdev\nmemset\nfree_netdev\nrequest_irq\n"];
+			"funccall1-meth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="meth_free_rx_ring\nmeth_init_tx_ring\nmeth_tx_2page_prepare\ndev_*\neth_type_trans\nspin_*\nkfree*\nmeth_tx_full\nmemcpy\nplatform_*\nalloc_skb\n"];
+		}
+		"K:SGI_O2MACE_ETH" [label="Kconfig: SGI_O2MACE_ETH\n /drivers/net/ethernet/sgi\n  SGI_IP32 = y ", shape=box, fontcolor=red];
+	}
+"meth.c" -> "meth.h"[color=blue];
+}

@@ -1,0 +1,99 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: B44
+	subgraph "cluster_B44"{
+		subgraph "cluster_b44.h" {
+			style=filled
+			"commit_b44.h" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"b44.h" [style=filled, fillcolor=white, fontcolor=black, label="b44.h\n"];
+		}
+		subgraph "cluster_b44.c" {
+			style=filled
+			"commit_b44.c" [style=filled, fillcolor=black, fontcolor=white, label="263\n2005-04-16"];
+			"b44.c" [style=filled, fillcolor=white, fontcolor=black, label="b44.c\n"];
+			"structs-b44.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\nssb_driver\n"];
+			"funccall3-b44.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nadd_timer\nnetif_*\nudelay\npci_*\nkzalloc\nmod_timer\nskb_*\nregister_netdev\nnapi_*\n"];
+			"funccall2-b44.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nethtool_*\ncontainer_of\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-b44.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nalloc_skb\nnetdev_alloc_skb\nenable_irq\ndisable_irq\ninit_timer\n"];
+		}
+		"K:B44" [label="Kconfig: B44\n /drivers/net/ethernet/broadcom\n  SSB_POSSIBLE && HAS_DMA ", shape=box, fontcolor=red];
+	}
+	//Symbol: SSB
+	subgraph "cluster_SSB"{
+		subgraph "cluster_driver_chipcommon_pmu.c" {
+			style=filled
+			"commit_driver_chipcommon_pmu.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2009-02-03"];
+			"driver_chipcommon_pmu.c" [style=filled, fillcolor=white, fontcolor=black, label="driver_chipcommon_pmu.c\n"];
+			"funccall0-driver_chipcommon_pmu.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_ssb_private.h" {
+			style=filled
+			"commit_ssb_private.h" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-09-18"];
+			"ssb_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ssb_private.h\n"];
+		}
+		subgraph "cluster_driver_chipcommon.c" {
+			style=filled
+			"commit_driver_chipcommon.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2007-09-18"];
+			"driver_chipcommon.c" [style=filled, fillcolor=white, fontcolor=black, label="driver_chipcommon.c\n"];
+			"funccall0-driver_chipcommon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_*\nspin_*\n"];
+		}
+		subgraph "cluster_scan.c" {
+			style=filled
+			"commit_scan.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2007-09-18"];
+			"scan.c" [style=filled, fillcolor=white, fontcolor=black, label="scan.c\n"];
+			"funccall0-scan.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_iounmap\niounmap\npci_*\nssb_iounmap\nioremap*\n"];
+		}
+		subgraph "cluster_main.c" {
+			style=filled
+			"commit_main.c" [style=filled, fillcolor=black, fontcolor=white, label="113\n2007-09-18"];
+			"main.c" [style=filled, fillcolor=white, fontcolor=black, label="main.c\n"];
+			"structs-main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nssb_iounmap\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\nmemcpy\nudelay\npci_*\nplatform_*\ncontainer_of\nkzalloc\n"];
+		}
+		"K:SSB" [label="Kconfig: SSB\n /drivers/ssb\n  SSB_POSSIBLE ", shape=box];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: SSB_PCIHOST
+	subgraph "cluster_SSB_PCIHOST"{
+		subgraph "cluster_pcihost_wrapper.c" {
+			style=filled
+			"commit_pcihost_wrapper.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-09-18"];
+			"pcihost_wrapper.c" [style=filled, fillcolor=white, fontcolor=black, label="pcihost_wrapper.c\n"];
+			"funccall0-pcihost_wrapper.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_release_regions\npci_request_regions\npci_*\ndev_*\nkzalloc\nkfree*\n"];
+		}
+		subgraph "cluster_pci.c" {
+			style=filled
+			"commit_pci.c" [style=filled, fillcolor=black, fontcolor=white, label="101\n2007-09-18"];
+			"pci.c" [style=filled, fillcolor=white, fontcolor=black, label="pci.c\n"];
+			"funccall0-pci.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nmemset\nspin_*\nkfree*\ndevice_*\nudelay\npci_*\ncontainer_of\nkcalloc\nmsleep\n"];
+		}
+		"K:SSB_PCIHOST" [label="Kconfig: SSB_PCIHOST\n /drivers/ssb\n  SSB_PCIHOST_POSSIBLE ", shape=box];
+	}
+	//Symbol: SSB_DRIVER_PCICORE
+	subgraph "cluster_SSB_DRIVER_PCICORE"{
+		subgraph "cluster_driver_pcicore.c" {
+			style=filled
+			"commit_driver_pcicore.c" [style=filled, fillcolor=black, fontcolor=white, label="59\n2007-09-18"];
+			"driver_pcicore.c" [style=filled, fillcolor=white, fontcolor=black, label="driver_pcicore.c\n"];
+			"funccall0-driver_pcicore.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\niounmap\npci_*\nioremap*\nmsleep\nspin_*\n"];
+		}
+		"K:SSB_DRIVER_PCICORE" [label="Kconfig: SSB_DRIVER_PCICORE\n /drivers/ssb\n  SSB_DRIVER_PCICORE_POSSIBLE ", shape=box];
+	}
+"b44.c" -> "b44.h"[color=blue];
+"driver_chipcommon_pmu.c" -> "ssb_private.h"[color=blue];
+"driver_chipcommon.c" -> "ssb_private.h"[color=blue];
+"scan.c" -> "ssb_private.h"[color=blue];
+"main.c" -> "ssb_private.h"[color=blue];
+"pci.c" -> "ssb_private.h"[color=blue];
+"driver_pcicore.c" -> "ssb_private.h"[color=blue];
+}

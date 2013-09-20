@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: DM9102
+	subgraph "cluster_DM9102"{
+		subgraph "cluster_dmfe.c" {
+			style=filled
+			"commit_dmfe.c" [style=filled, fillcolor=black, fontcolor=white, label="123\n2005-04-16"];
+			"dmfe.c" [style=filled, fillcolor=white, fontcolor=black, label="dmfe.c\n"];
+			"structs-dmfe.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-dmfe.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nadd_timer\nmemset\nnetif_*\npci_release_regions\nmdelay\nudelay\npci_iounmap\npci_*\nread_*\nrequest_irq\nfree_netdev\npci_request_regions\n"];
+			"funccall1-dmfe.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\nregister_netdev\neth_type_trans\nspin_*\ndel_timer_sync\nnetdev_alloc_skb\nof_*\nenable_irq\nphy_*\ndisable_irq\ninit_timer\nnetdev_*\n"];
+		}
+		"K:DM9102" [label="Kconfig: DM9102\n /drivers/net/ethernet/dec/tulip\n  PCI ", shape=box, fontcolor=red];
+	}
+}

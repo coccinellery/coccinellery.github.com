@@ -1,0 +1,32 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: FTMAC100
+	subgraph "cluster_FTMAC100"{
+		subgraph "cluster_ftmac100.h" {
+			style=filled
+			"commit_ftmac100.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-02-28"];
+			"ftmac100.h" [style=filled, fillcolor=white, fontcolor=black, label="ftmac100.h\n"];
+		}
+		subgraph "cluster_ftmac100.c" {
+			style=filled
+			"commit_ftmac100.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2011-02-28"];
+			"ftmac100.c" [style=filled, fillcolor=white, fontcolor=black, label="ftmac100.c\n"];
+			"structs-ftmac100.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-ftmac100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nif_*\nunregister_netdev\nrelease_resource\n__free_page\nrequest_mem_region\nnetdev_alloc_skb_ip_align\nnetif_*\nudelay\nfree_netdev\nrequest_irq\ndev_*\nskb_*\n"];
+			"funccall1-ftmac100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nmii_*\nregister_netdev\neth_type_trans\nalloc_page\nnapi_*\nspin_*\ndma_*\nplatform_*\ncontainer_of\nioremap*\neth_hw_addr_random\nnetdev_*\n"];
+		}
+		"K:FTMAC100" [label="Kconfig: FTMAC100\n /drivers/net/ethernet/faraday\n  ARM ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"ftmac100.c" -> "ftmac100.h"[color=blue];
+}

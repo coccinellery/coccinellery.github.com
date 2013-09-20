@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUNBMAC
+	subgraph "cluster_SUNBMAC"{
+		subgraph "cluster_sunbmac.h" {
+			style=filled
+			"commit_sunbmac.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2005-04-16"];
+			"sunbmac.h" [style=filled, fillcolor=white, fontcolor=black, label="sunbmac.h\n"];
+			"funccall0-sunbmac.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nalloc_skb\n"];
+		}
+		subgraph "cluster_sunbmac.c" {
+			style=filled
+			"commit_sunbmac.c" [style=filled, fillcolor=black, fontcolor=white, label="107\n2005-04-16"];
+			"sunbmac.c" [style=filled, fillcolor=white, fontcolor=black, label="sunbmac.c\n"];
+			"structs-sunbmac.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\ngmac\ngmac\ngmac\ngmac\ngmac\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall2-sunbmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nunregister_netdev\nadd_timer\nnetif_*\nudelay\nbig_mac_alloc_skb\nread_*\nsbus_*\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-sunbmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nof_iounmap\nether_crc_le\nbigmac_ether_init\nregister_netdev\neth_type_trans\nspin_*\ndma_*\nnetdev_alloc_skb\nof_*\nnetdev_*\ninit_timer\n"];
+		}
+		"K:SUNBMAC" [label="Kconfig: SUNBMAC\n /drivers/net/ethernet/sun\n  SBUS ", shape=box, fontcolor=red];
+	}
+"sunbmac.c" -> "sunbmac.h"[color=blue];
+}

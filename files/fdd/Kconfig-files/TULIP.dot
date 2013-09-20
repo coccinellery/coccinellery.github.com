@@ -1,0 +1,72 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TULIP
+	subgraph "cluster_TULIP"{
+		subgraph "cluster_pnic2.c" {
+			style=filled
+			"commit_pnic2.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2005-04-16"];
+			"pnic2.c" [style=filled, fillcolor=white, fontcolor=black, label="pnic2.c\n"];
+			"funccall0-pnic2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\nudelay\ndel_timer_sync\ndev_*\nadd_timer\nnetdev_*\n"];
+		}
+		subgraph "cluster_pnic.c" {
+			style=filled
+			"commit_pnic.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2005-04-16"];
+			"pnic.c" [style=filled, fillcolor=white, fontcolor=black, label="pnic.c\n"];
+			"funccall0-pnic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\ndev_*\nenable_irq\ndisable_irq\nnetdev_*\nspin_*\n"];
+		}
+		subgraph "cluster_21142.c" {
+			style=filled
+			"commit_21142.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2005-04-16"];
+			"21142.c" [style=filled, fillcolor=white, fontcolor=black, label="21142.c\n"];
+			"funccall0-21142.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\ndev_*\nadd_timer\nnetif_*\nudelay\ndel_timer_sync\ncontainer_of\nnetdev_*\n"];
+		}
+		subgraph "cluster_tulip_core.c" {
+			style=filled
+			"commit_tulip_core.c" [style=filled, fillcolor=black, fontcolor=white, label="177\n2005-04-16"];
+			"tulip_core.c" [style=filled, fillcolor=white, fontcolor=black, label="tulip_core.c\n"];
+			"structs-tulip_core.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-tulip_core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nadd_timer\nmemset\nnetif_*\npci_release_regions\nudelay\npci_iounmap\npci_*\nrequest_irq\nfree_netdev\npci_request_regions\ndev_*\nether_crc_le\n"];
+			"funccall1-tulip_core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nether_crc\nnapi_*\nkfree*\nspin_*\ndevice_*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nschedule_work\nof_*\nenable_irq\ndisable_irq\ninit_timer\nnetdev_*\n"];
+		}
+		subgraph "cluster_timer.c" {
+			style=filled
+			"commit_timer.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2005-04-16"];
+			"timer.c" [style=filled, fillcolor=white, fontcolor=black, label="timer.c\n"];
+			"funccall0-timer.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\ndev_*\ncontainer_of\nnetdev_*\nnetif_*\nspin_*\n"];
+		}
+		subgraph "cluster_media.c" {
+			style=filled
+			"commit_media.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"media.c" [style=filled, fillcolor=white, fontcolor=black, label="media.c\n"];
+			"funccall0-media.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\ndev_*\nmii_*\nnetdev_*\nspin_*\n"];
+		}
+		subgraph "cluster_interrupt.c" {
+			style=filled
+			"commit_interrupt.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2005-04-16"];
+			"interrupt.c" [style=filled, fillcolor=white, fontcolor=black, label="interrupt.c\n"];
+			"funccall0-interrupt.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\nskb_*\ndev_*\neth_type_trans\nnapi_*\nnetif_*\nspin_*\nmemcpy\npci_*\ndma_*\ncontainer_of\nnetdev_alloc_skb\nphy_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_eeprom.c" {
+			style=filled
+			"commit_eeprom.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2005-04-16"];
+			"eeprom.c" [style=filled, fillcolor=white, fontcolor=black, label="eeprom.c\n"];
+			"funccall0-eeprom.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nkmalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_tulip.h" {
+			style=filled
+			"commit_tulip.h" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"tulip.h" [style=filled, fillcolor=white, fontcolor=black, label="tulip.h\n"];
+			"funccall0-tulip.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nnetdev_*\n"];
+		}
+		"K:TULIP" [label="Kconfig: TULIP\n /drivers/net/ethernet/dec/tulip\n  PCI ", shape=box, fontcolor=red];
+	}
+"pnic2.c" -> "tulip.h"[color=blue];
+"pnic.c" -> "tulip.h"[color=blue];
+"21142.c" -> "tulip.h"[color=blue];
+"tulip_core.c" -> "tulip.h"[color=blue];
+"timer.c" -> "tulip.h"[color=blue];
+"media.c" -> "tulip.h"[color=blue];
+"interrupt.c" -> "tulip.h"[color=blue];
+"eeprom.c" -> "tulip.h"[color=blue];
+}

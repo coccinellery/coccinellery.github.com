@@ -1,0 +1,40 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TC35815
+	subgraph "cluster_TC35815"{
+		subgraph "cluster_tc35815.c" {
+			style=filled
+			"commit_tc35815.c" [style=filled, fillcolor=black, fontcolor=white, label="163\n2005-04-16"];
+			"tc35815.c" [style=filled, fillcolor=white, fontcolor=black, label="tc35815.c\n"];
+			"structs-tc35815.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-tc35815.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nnetif_*\nmdiobus_*\nmdelay\nudelay\npci_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\nregister_netdev\neth_type_trans\nprefetch\n"];
+			"funccall1-tc35815.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\ncpu_relax\nkfree*\nspin_*\nmemcpy\ncontainer_of\nnetdev_alloc_skb\nschedule_work\nenable_irq\nkmalloc\neth_hw_addr_random\nphy_*\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:TC35815" [label="Kconfig: TC35815\n /drivers/net/ethernet/toshiba\n  PCI && MIPS ", shape=box, fontcolor=red];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+}

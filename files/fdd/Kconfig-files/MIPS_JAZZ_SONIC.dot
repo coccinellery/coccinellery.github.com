@@ -1,0 +1,29 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MIPS_JAZZ_SONIC
+	subgraph "cluster_MIPS_JAZZ_SONIC"{
+		subgraph "cluster_jazzsonic.c" {
+			style=filled
+			"commit_jazzsonic.c" [style=filled, fillcolor=black, fontcolor=white, label="65\n2005-04-16"];
+			"jazzsonic.c" [style=filled, fillcolor=white, fontcolor=black, label="jazzsonic.c\n"];
+			"structs-jazzsonic.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall0-jazzsonic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndev_*\nregister_netdev\nunregister_netdev\nrequest_mem_region\ndma_*\nplatform_*\nrelease_mem_region\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		subgraph "cluster_sonic.h" {
+			style=filled
+			"commit_sonic.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2005-04-16"];
+			"sonic.h" [style=filled, fillcolor=white, fontcolor=black, label="sonic.h\n"];
+			"funccall0-sonic.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_sonic.c" {
+			style=filled
+			"commit_sonic.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2005-04-16"];
+			"sonic.c" [style=filled, fillcolor=white, fontcolor=black, label="sonic.c\n"];
+			"funccall0-sonic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nskb_*\ndev_*\nnetdev_alloc_skb\neth_type_trans\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MIPS_JAZZ_SONIC" [label="Kconfig: MIPS_JAZZ_SONIC\n /drivers/net/ethernet/natsemi\n  MACH_JAZZ ", shape=box, fontcolor=red];
+	}
+"jazzsonic.c" -> "sonic.h"[color=blue];
+"jazzsonic.c" -> "sonic.c"[color=blue];
+}

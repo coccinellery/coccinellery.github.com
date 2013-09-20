@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCMCIA_XIRC2PS
+	subgraph "cluster_PCMCIA_XIRC2PS"{
+		subgraph "cluster_xirc2ps_cs.c" {
+			style=filled
+			"commit_xirc2ps_cs.c" [style=filled, fillcolor=black, fontcolor=white, label="181\n2005-04-16"];
+			"xirc2ps_cs.c" [style=filled, fillcolor=white, fontcolor=black, label="xirc2ps_cs.c\n"];
+			"structs-xirc2ps_cs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npcmcia_driver\npcmcia_device_id\n"];
+			"funccall2-xirc2ps_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pcmcia_*\nif_*\nunregister_netdev\nnetif_*\nudelay\npcmcia_request_irq\nfree_netdev\ndev_*\nskb_*\niounmap\n"];
+			"funccall1-xirc2ps_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nregister_netdev\neth_type_trans\nkfree*\ncontainer_of\nnetdev_alloc_skb\nschedule_work\nioremap*\nmsleep\nnetdev_*\n"];
+		}
+		"K:PCMCIA_XIRC2PS" [label="Kconfig: PCMCIA_XIRC2PS\n /drivers/net/ethernet/xircom\n  PCMCIA ", shape=box, fontcolor=red];
+	}
+}

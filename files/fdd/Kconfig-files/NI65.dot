@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NI65
+	subgraph "cluster_NI65"{
+		subgraph "cluster_ni65.h" {
+			style=filled
+			"commit_ni65.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"ni65.h" [style=filled, fillcolor=white, fontcolor=black, label="ni65.h\n"];
+		}
+		subgraph "cluster_ni65.c" {
+			style=filled
+			"commit_ni65.c" [style=filled, fillcolor=black, fontcolor=white, label="57\n2005-04-16"];
+			"ni65.c" [style=filled, fillcolor=white, fontcolor=black, label="ni65.c\n"];
+			"structs-ni65.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall2-ni65.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nunregister_netdev\nmemset\nnetif_*\nmdelay\nrequest_irq\nfree_netdev\ndev_*\nskb_*\n"];
+			"funccall1-ni65.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\neth_type_trans\nkfree*\nspin_*\nrelease_region\nnetdev_alloc_skb\nalloc_skb\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		"K:NI65" [label="Kconfig: NI65\n /drivers/net/ethernet/amd\n  ISA && ISA_DMA_API ", shape=box, fontcolor=red];
+	}
+"ni65.c" -> "ni65.h"[color=blue];
+}

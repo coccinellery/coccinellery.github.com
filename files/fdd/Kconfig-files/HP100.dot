@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: HP100
+	subgraph "cluster_HP100"{
+		subgraph "cluster_hp100.h" {
+			style=filled
+			"commit_hp100.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-04-16"];
+			"hp100.h" [style=filled, fillcolor=white, fontcolor=black, label="hp100.h\n"];
+		}
+		subgraph "cluster_hp100.c" {
+			style=filled
+			"commit_hp100.c" [style=filled, fillcolor=black, fontcolor=white, label="113\n2005-04-16"];
+			"hp100.c" [style=filled, fillcolor=white, fontcolor=black, label="hp100.c\n"];
+			"structs-hp100.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device\neisa_device_id\neisa_driver\nisa_driver\nnet_device_ops\nnet_device_ops\npci_driver\neisa_device_id\n"];
+			"funccall2-hp100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nunregister_netdev\nmemset_io\nmemset\nnetif_*\nmdelay\nudelay\npci_*\nrequest_irq\nfree_netdev\nmemcpy_toio\n"];
+			"funccall1-hp100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\niounmap\nregister_netdev\neth_type_trans\nspin_*\nmemcmp\nrelease_region\nnetdev_alloc_skb\nioremap*\nmemcpy_fromio\nnetdev_*\n"];
+		}
+		"K:HP100" [label="Kconfig: HP100\n /drivers/net/ethernet/hp\n  ISA || EISA || PCI ", shape=box, fontcolor=red];
+	}
+"hp100.c" -> "hp100.h"[color=blue];
+}

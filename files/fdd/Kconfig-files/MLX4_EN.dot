@@ -1,0 +1,445 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MLX4_EN
+	subgraph "cluster_MLX4_EN"{
+		subgraph "cluster_en_clock.c" {
+			style=filled
+			"commit_en_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="5\n2013-04-23"];
+			"en_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="en_clock.c\n"];
+			"funccall0-en_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nmemset\nnetdev_*\n"];
+		}
+		subgraph "cluster_en_selftest.c" {
+			style=filled
+			"commit_en_selftest.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2010-08-24"];
+			"en_selftest.c" [style=filled, fillcolor=white, fontcolor=black, label="en_selftest.c\n"];
+			"funccall0-en_selftest.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nskb_*\nnetdev_alloc_skb\nmsleep\nmemset\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_en_netdev.c" {
+			style=filled
+			"commit_en_netdev.c" [style=filled, fillcolor=black, fontcolor=white, label="255\n2008-10-22"];
+			"en_netdev.c" [style=filled, fillcolor=white, fontcolor=black, label="en_netdev.c\n"];
+			"structs-en_netdev.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\nnet_device_ops\n"];
+			"funccall2-en_netdev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nunregister_netdev\nmemset\nether_addr_equal_64bits\nnetif_*\nkzalloc\nfree_netdev\nskb_*\nalloc_etherdev_mqs\nmutex_*\nregister_netdev\nnapi_*\n"];
+			"funccall1-en_netdev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="copy_*\nkfree*\nspin_*\nmemcmp\nmemcpy\nfree_irq_cpu_rmap\ncontainer_of\nkmalloc\neth_hw_addr_random\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_en_resources.c" {
+			style=filled
+			"commit_en_resources.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2008-10-22"];
+			"en_resources.c" [style=filled, fillcolor=white, fontcolor=black, label="en_resources.c\n"];
+			"funccall0-en_resources.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc\nmemset\nkfree*\n"];
+		}
+		subgraph "cluster_en_cq.c" {
+			style=filled
+			"commit_en_cq.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2008-10-22"];
+			"en_cq.c" [style=filled, fillcolor=white, fontcolor=black, label="en_cq.c\n"];
+			"funccall0-en_cq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nmemset\nnetif_*\nspin_*\n"];
+		}
+		subgraph "cluster_en_port.h" {
+			style=filled
+			"commit_en_port.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2008-10-22"];
+			"en_port.h" [style=filled, fillcolor=white, fontcolor=black, label="en_port.h\n"];
+		}
+		subgraph "cluster_en_port.c" {
+			style=filled
+			"commit_en_port.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2008-10-22"];
+			"en_port.c" [style=filled, fillcolor=white, fontcolor=black, label="en_port.c\n"];
+			"funccall0-en_port.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetdev_*\nspin_*\n"];
+		}
+		subgraph "cluster_en_ethtool.c" {
+			style=filled
+			"commit_en_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="111\n2008-10-22"];
+			"en_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="en_ethtool.c\n"];
+			"structs-en_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-en_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nis_broadcast_ether_addr\nmemset\nnetif_*\nspin_*\nkfree*\nmemcpy\npci_*\nethtool_*\nkzalloc\nis_zero_ether_addr\nip_eth_mc_map\nnetdev_*\n"];
+		}
+		subgraph "cluster_en_rx.c" {
+			style=filled
+			"commit_en_rx.c" [style=filled, fillcolor=black, fontcolor=white, label="137\n2008-10-22"];
+			"en_rx.c" [style=filled, fillcolor=white, fontcolor=black, label="en_rx.c\n"];
+			"funccall2-en_rx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nether_addr_equal_64bits\nnetif_*\nvmalloc\npage_*\nput_page\nrcu_*\ndev_*\nskb_*\nalloc_pages\n__skb_*\n"];
+			"funccall1-en_rx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nnapi_*\nkfree*\nmemcpy\ndma_*\nis_multicast_ether_addr\ncontainer_of\nnetdev_alloc_skb\nkmalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_en_tx.c" {
+			style=filled
+			"commit_en_tx.c" [style=filled, fillcolor=black, fontcolor=white, label="117\n2008-10-22"];
+			"en_tx.c" [style=filled, fillcolor=white, fontcolor=black, label="en_tx.c\n"];
+			"funccall0-en_tx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ndev_*\n__skb_*\nmemset\nnetif_*\nkfree*\nvlan_*\nmemcpy\nvmalloc\ndma_*\ncontainer_of\nkmalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_en_main.c" {
+			style=filled
+			"commit_en_main.c" [style=filled, fillcolor=black, fontcolor=white, label="65\n2008-10-22"];
+			"en_main.c" [style=filled, fillcolor=white, fontcolor=black, label="en_main.c\n"];
+			"funccall0-en_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nmutex_*\nspin_*\nkfree*\ndestroy_workqueue\nkzalloc\nioremap*\nnetdev_*\n"];
+		}
+		subgraph "cluster_mlx4_en.h" {
+			style=filled
+			"commit_mlx4_en.h" [style=filled, fillcolor=black, fontcolor=white, label="179\n2008-10-22"];
+			"mlx4_en.h" [style=filled, fillcolor=white, fontcolor=black, label="mlx4_en.h\n"];
+			"funccall0-mlx4_en.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n"];
+		}
+		"K:MLX4_EN" [label="Kconfig: MLX4_EN\n /drivers/net/ethernet/mellanox/mlx4\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MLX4_EN_DCB
+	subgraph "cluster_MLX4_EN_DCB"{
+		subgraph "cluster_en_dcb_nl.c" {
+			style=filled
+			"commit_en_dcb_nl.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2012-04-04"];
+			"en_dcb_nl.c" [style=filled, fillcolor=white, fontcolor=black, label="en_dcb_nl.c\n"];
+			"structs-en_dcb_nl.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dcbnl_rtnl_ops\ndcbnl_rtnl_ops\n"];
+			"funccall0-en_dcb_nl.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nnetdev_*\n"];
+		}
+		"K:MLX4_EN_DCB" [label="Kconfig: MLX4_EN_DCB\n /drivers/net/ethernet/mellanox/mlx4\n  MLX4_EN && DCB ", shape=box];
+	}
+	//Symbol: MLX4_CORE
+	subgraph "cluster_MLX4_CORE"{
+		subgraph "cluster_resource_tracker.c" {
+			style=filled
+			"commit_resource_tracker.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2011-12-13"];
+			"resource_tracker.c" [style=filled, fillcolor=white, fontcolor=black, label="resource_tracker.c\n"];
+			"funccall0-resource_tracker.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nis_broadcast_ether_addr\nmemset\nspin_*\nkfree*\nadd_eth_header\nvlan_*\nmemcmp\nmemcpy\nis_multicast_ether_addr\nvalidate_eth_header_mac\ncontainer_of\nkzalloc\natomic_*\n"];
+		}
+		subgraph "cluster_mlx4.h" {
+			style=filled
+			"commit_mlx4.h" [style=filled, fillcolor=black, fontcolor=white, label="161\n2007-05-08"];
+			"mlx4.h" [style=filled, fillcolor=white, fontcolor=black, label="mlx4.h\n"];
+			"funccall0-mlx4.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\ncontainer_of\n"];
+		}
+		subgraph "cluster_srq.c" {
+			style=filled
+			"commit_srq.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2007-05-08"];
+			"srq.c" [style=filled, fillcolor=white, fontcolor=black, label="srq.c\n"];
+			"funccall0-srq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_for_completion\natomic_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_sense.c" {
+			style=filled
+			"commit_sense.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2009-03-18"];
+			"sense.c" [style=filled, fillcolor=white, fontcolor=black, label="sense.c\n"];
+			"funccall0-sense.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\ncancel_delayed_work_sync\n"];
+		}
+		subgraph "cluster_reset.c" {
+			style=filled
+			"commit_reset.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2007-05-08"];
+			"reset.c" [style=filled, fillcolor=white, fontcolor=black, label="reset.c\n"];
+			"funccall0-reset.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\npci_*\npcie_*\nioremap*\nkmalloc\nmsleep\nkfree*\n"];
+		}
+		subgraph "cluster_qp.c" {
+			style=filled
+			"commit_qp.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2007-05-08"];
+			"qp.c" [style=filled, fillcolor=white, fontcolor=black, label="qp.c\n"];
+			"funccall0-qp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_for_completion\nmemcpy\natomic_*\nkcalloc\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_profile.c" {
+			style=filled
+			"commit_profile.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2007-05-08"];
+			"profile.c" [style=filled, fillcolor=white, fontcolor=black, label="profile.c\n"];
+			"funccall0-profile.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kcalloc\nkfree*\n"];
+		}
+		subgraph "cluster_port.c" {
+			style=filled
+			"commit_port.c" [style=filled, fillcolor=black, fontcolor=white, label="71\n2008-10-22"];
+			"port.c" [style=filled, fillcolor=white, fontcolor=black, label="port.c\n"];
+			"funccall0-port.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mlx4_common_dump_eth_stats\nmemcpy\nmutex_*\nmemset\n"];
+		}
+		subgraph "cluster_pd.c" {
+			style=filled
+			"commit_pd.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2005-04-16"];
+			"pd.c" [style=filled, fillcolor=white, fontcolor=black, label="pd.c\n"];
+			"funccall0-pd.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\npci_*\nmutex_*\nioremap*\nkmalloc\nkfree*\n"];
+		}
+		subgraph "cluster_mr.c" {
+			style=filled
+			"commit_mr.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2007-05-08"];
+			"mr.c" [style=filled, fillcolor=white, fontcolor=black, label="mr.c\n"];
+			"funccall0-mr.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nis_vmalloc_addr\nkmalloc\nkcalloc\nmemset\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_mcg.c" {
+			style=filled
+			"commit_mcg.c" [style=filled, fillcolor=black, fontcolor=white, label="89\n2007-05-08"];
+			"mcg.c" [style=filled, fillcolor=white, fontcolor=black, label="mcg.c\n"];
+			"funccall0-mcg.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcmp\nmemcpy\nmutex_*\nkzalloc\nkmalloc\nmemset\nkfree*\n"];
+		}
+		subgraph "cluster_main.c" {
+			style=filled
+			"commit_main.c" [style=filled, fillcolor=black, fontcolor=white, label="271\n2007-05-08"];
+			"main.c" [style=filled, fillcolor=white, fontcolor=black, label="main.c\n"];
+			"structs-main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="pci_driver\npci_error_handlers\n"];
+			"funccall2-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\npci_release_regions\ndestroy_workqueue\npci_*\nkzalloc\nkcalloc\npci_request_regions\ndev_*\niounmap\n"];
+			"funccall1-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nkfree*\nspin_*\ndevice_*\nmemcpy\ndma_*\ncontainer_of\nioremap*\nmsleep\n"];
+		}
+		subgraph "cluster_intf.c" {
+			style=filled
+			"commit_intf.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2007-05-08"];
+			"intf.c" [style=filled, fillcolor=white, fontcolor=black, label="intf.c\n"];
+			"funccall0-intf.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nkmalloc\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_icm.h" {
+			style=filled
+			"commit_icm.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-05-08"];
+			"icm.h" [style=filled, fillcolor=white, fontcolor=black, label="icm.h\n"];
+		}
+		subgraph "cluster_icm.c" {
+			style=filled
+			"commit_icm.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2007-05-08"];
+			"icm.c" [style=filled, fillcolor=white, fontcolor=black, label="icm.c\n"];
+			"funccall0-icm.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nalloc_pages\n__free_pages\nkfree*\npci_*\ndma_*\nkmalloc\nkcalloc\n"];
+		}
+		subgraph "cluster_fw.h" {
+			style=filled
+			"commit_fw.h" [style=filled, fillcolor=black, fontcolor=white, label="65\n2007-05-08"];
+			"fw.h" [style=filled, fillcolor=white, fontcolor=black, label="fw.h\n"];
+		}
+		subgraph "cluster_fw.c" {
+			style=filled
+			"commit_fw.c" [style=filled, fillcolor=black, fontcolor=white, label="167\n2007-05-08"];
+			"fw.c" [style=filled, fillcolor=white, fontcolor=black, label="fw.c\n"];
+			"funccall0-fw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		subgraph "cluster_eq.c" {
+			style=filled
+			"commit_eq.c" [style=filled, fillcolor=black, fontcolor=white, label="97\n2007-05-08"];
+			"eq.c" [style=filled, fillcolor=white, fontcolor=black, label="eq.c\n"];
+			"funccall0-eq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\niounmap\nmutex_*\nmemset\nspin_*\nkfree*\nmemcpy\ndma_*\npci_*\ncontainer_of\nioremap*\nkmalloc\nmlx4_free_irqs\nkcalloc\nrequest_irq\n"];
+		}
+		subgraph "cluster_cq.c" {
+			style=filled
+			"commit_cq.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-05-08"];
+			"cq.c" [style=filled, fillcolor=white, fontcolor=black, label="cq.c\n"];
+			"funccall0-cq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_for_completion\natomic_*\nsynchronize_irq\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_cmd.c" {
+			style=filled
+			"commit_cmd.c" [style=filled, fillcolor=black, fontcolor=white, label="85\n2007-05-08"];
+			"cmd.c" [style=filled, fillcolor=white, fontcolor=black, label="cmd.c\n"];
+			"funccall0-cmd.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nmutex_*\nmemset\nwait_for_completion_timeout\nspin_*\nkfree*\nmemcpy\ndestroy_workqueue\ndma_*\npci_*\ncontainer_of\nioremap*\nkzalloc\nkmalloc\nkcalloc\n"];
+		}
+		subgraph "cluster_catas.c" {
+			style=filled
+			"commit_catas.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"catas.c" [style=filled, fillcolor=white, fontcolor=black, label="catas.c\n"];
+			"funccall0-catas.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\niounmap\nadd_timer\nspin_*\npci_*\ndel_timer_sync\nioremap*\ninit_timer\n"];
+		}
+		subgraph "cluster_alloc.c" {
+			style=filled
+			"commit_alloc.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-05-08"];
+			"alloc.c" [style=filled, fillcolor=white, fontcolor=black, label="alloc.c\n"];
+			"funccall0-alloc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nmemset\nspin_*\nkfree*\ndma_*\nkzalloc\nkmalloc\nkcalloc\n"];
+		}
+		"K:MLX4_CORE" [label="Kconfig: MLX4_CORE\n /drivers/net/ethernet/mellanox/mlx4\n ", shape=box];
+	}
+	//Symbol: MLX4_CORE
+	subgraph "cluster_MLX4_CORE"{
+		subgraph "cluster_resource_tracker.c" {
+			style=filled
+			"commit_resource_tracker.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2011-12-13"];
+			"resource_tracker.c" [style=filled, fillcolor=white, fontcolor=black, label="resource_tracker.c\n"];
+			"funccall0-resource_tracker.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nis_broadcast_ether_addr\nmemset\nspin_*\nkfree*\nadd_eth_header\nvlan_*\nmemcmp\nmemcpy\nis_multicast_ether_addr\nvalidate_eth_header_mac\ncontainer_of\nkzalloc\natomic_*\n"];
+		}
+		subgraph "cluster_srq.c" {
+			style=filled
+			"commit_srq.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2007-05-08"];
+			"srq.c" [style=filled, fillcolor=white, fontcolor=black, label="srq.c\n"];
+			"funccall0-srq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_for_completion\natomic_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_sense.c" {
+			style=filled
+			"commit_sense.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2009-03-18"];
+			"sense.c" [style=filled, fillcolor=white, fontcolor=black, label="sense.c\n"];
+			"funccall0-sense.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\ncancel_delayed_work_sync\n"];
+		}
+		subgraph "cluster_reset.c" {
+			style=filled
+			"commit_reset.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2007-05-08"];
+			"reset.c" [style=filled, fillcolor=white, fontcolor=black, label="reset.c\n"];
+			"funccall0-reset.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\npci_*\npcie_*\nioremap*\nkmalloc\nmsleep\nkfree*\n"];
+		}
+		subgraph "cluster_qp.c" {
+			style=filled
+			"commit_qp.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2007-05-08"];
+			"qp.c" [style=filled, fillcolor=white, fontcolor=black, label="qp.c\n"];
+			"funccall0-qp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_for_completion\nmemcpy\natomic_*\nkcalloc\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_profile.c" {
+			style=filled
+			"commit_profile.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2007-05-08"];
+			"profile.c" [style=filled, fillcolor=white, fontcolor=black, label="profile.c\n"];
+			"funccall0-profile.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kcalloc\nkfree*\n"];
+		}
+		subgraph "cluster_port.c" {
+			style=filled
+			"commit_port.c" [style=filled, fillcolor=black, fontcolor=white, label="71\n2008-10-22"];
+			"port.c" [style=filled, fillcolor=white, fontcolor=black, label="port.c\n"];
+			"funccall0-port.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mlx4_common_dump_eth_stats\nmemcpy\nmutex_*\nmemset\n"];
+		}
+		subgraph "cluster_pd.c" {
+			style=filled
+			"commit_pd.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2005-04-16"];
+			"pd.c" [style=filled, fillcolor=white, fontcolor=black, label="pd.c\n"];
+			"funccall0-pd.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\npci_*\nmutex_*\nioremap*\nkmalloc\nkfree*\n"];
+		}
+		subgraph "cluster_mr.c" {
+			style=filled
+			"commit_mr.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2007-05-08"];
+			"mr.c" [style=filled, fillcolor=white, fontcolor=black, label="mr.c\n"];
+			"funccall0-mr.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nis_vmalloc_addr\nkmalloc\nkcalloc\nmemset\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_mcg.c" {
+			style=filled
+			"commit_mcg.c" [style=filled, fillcolor=black, fontcolor=white, label="89\n2007-05-08"];
+			"mcg.c" [style=filled, fillcolor=white, fontcolor=black, label="mcg.c\n"];
+			"funccall0-mcg.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcmp\nmemcpy\nmutex_*\nkzalloc\nkmalloc\nmemset\nkfree*\n"];
+		}
+		subgraph "cluster_main.c" {
+			style=filled
+			"commit_main.c" [style=filled, fillcolor=black, fontcolor=white, label="271\n2007-05-08"];
+			"main.c" [style=filled, fillcolor=white, fontcolor=black, label="main.c\n"];
+			"structs-main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="pci_driver\npci_error_handlers\n"];
+			"funccall2-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\npci_release_regions\ndestroy_workqueue\npci_*\nkzalloc\nkcalloc\npci_request_regions\ndev_*\niounmap\n"];
+			"funccall1-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nkfree*\nspin_*\ndevice_*\nmemcpy\ndma_*\ncontainer_of\nioremap*\nmsleep\n"];
+		}
+		subgraph "cluster_intf.c" {
+			style=filled
+			"commit_intf.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2007-05-08"];
+			"intf.c" [style=filled, fillcolor=white, fontcolor=black, label="intf.c\n"];
+			"funccall0-intf.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nkmalloc\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_icm.h" {
+			style=filled
+			"commit_icm.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-05-08"];
+			"icm.h" [style=filled, fillcolor=white, fontcolor=black, label="icm.h\n"];
+		}
+		subgraph "cluster_icm.c" {
+			style=filled
+			"commit_icm.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2007-05-08"];
+			"icm.c" [style=filled, fillcolor=white, fontcolor=black, label="icm.c\n"];
+			"funccall0-icm.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nalloc_pages\n__free_pages\nkfree*\npci_*\ndma_*\nkmalloc\nkcalloc\n"];
+		}
+		subgraph "cluster_fw.h" {
+			style=filled
+			"commit_fw.h" [style=filled, fillcolor=black, fontcolor=white, label="65\n2007-05-08"];
+			"fw.h" [style=filled, fillcolor=white, fontcolor=black, label="fw.h\n"];
+		}
+		subgraph "cluster_fw.c" {
+			style=filled
+			"commit_fw.c" [style=filled, fillcolor=black, fontcolor=white, label="167\n2007-05-08"];
+			"fw.c" [style=filled, fillcolor=white, fontcolor=black, label="fw.c\n"];
+			"funccall0-fw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		subgraph "cluster_eq.c" {
+			style=filled
+			"commit_eq.c" [style=filled, fillcolor=black, fontcolor=white, label="97\n2007-05-08"];
+			"eq.c" [style=filled, fillcolor=white, fontcolor=black, label="eq.c\n"];
+			"funccall0-eq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\niounmap\nmutex_*\nmemset\nspin_*\nkfree*\nmemcpy\ndma_*\npci_*\ncontainer_of\nioremap*\nkmalloc\nmlx4_free_irqs\nkcalloc\nrequest_irq\n"];
+		}
+		subgraph "cluster_cq.c" {
+			style=filled
+			"commit_cq.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-05-08"];
+			"cq.c" [style=filled, fillcolor=white, fontcolor=black, label="cq.c\n"];
+			"funccall0-cq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_for_completion\natomic_*\nsynchronize_irq\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_cmd.c" {
+			style=filled
+			"commit_cmd.c" [style=filled, fillcolor=black, fontcolor=white, label="85\n2007-05-08"];
+			"cmd.c" [style=filled, fillcolor=white, fontcolor=black, label="cmd.c\n"];
+			"funccall0-cmd.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nmutex_*\nmemset\nwait_for_completion_timeout\nspin_*\nkfree*\nmemcpy\ndestroy_workqueue\ndma_*\npci_*\ncontainer_of\nioremap*\nkzalloc\nkmalloc\nkcalloc\n"];
+		}
+		subgraph "cluster_catas.c" {
+			style=filled
+			"commit_catas.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"catas.c" [style=filled, fillcolor=white, fontcolor=black, label="catas.c\n"];
+			"funccall0-catas.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\niounmap\nadd_timer\nspin_*\npci_*\ndel_timer_sync\nioremap*\ninit_timer\n"];
+		}
+		subgraph "cluster_alloc.c" {
+			style=filled
+			"commit_alloc.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2007-05-08"];
+			"alloc.c" [style=filled, fillcolor=white, fontcolor=black, label="alloc.c\n"];
+			"funccall0-alloc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nmemset\nspin_*\nkfree*\ndma_*\nkzalloc\nkmalloc\nkcalloc\n"];
+		}
+		"K:MLX4_CORE" [label="Kconfig: MLX4_CORE\n /drivers/net/ethernet/mellanox/mlx4\n ", shape=box];
+	}
+"en_clock.c" -> "mlx4_en.h"[color=blue];
+"en_selftest.c" -> "mlx4_en.h"[color=blue];
+"en_netdev.c" -> "en_port.h"[color=blue];
+"en_netdev.c" -> "mlx4_en.h"[color=blue];
+"en_resources.c" -> "mlx4_en.h"[color=blue];
+"en_cq.c" -> "mlx4_en.h"[color=blue];
+"en_port.c" -> "en_port.h"[color=blue];
+"en_port.c" -> "mlx4_en.h"[color=blue];
+"en_ethtool.c" -> "en_port.h"[color=blue];
+"en_ethtool.c" -> "mlx4_en.h"[color=blue];
+"en_rx.c" -> "mlx4_en.h"[color=blue];
+"en_tx.c" -> "mlx4_en.h"[color=blue];
+"en_main.c" -> "mlx4_en.h"[color=blue];
+"mlx4_en.h" -> "en_port.h"[color=blue];
+"en_dcb_nl.c" -> "mlx4_en.h"[color=blue];
+"resource_tracker.c" -> "fw.h"[color=blue];
+"resource_tracker.c" -> "mlx4.h"[color=blue];
+"srq.c" -> "mlx4.h"[color=blue];
+"srq.c" -> "icm.h"[color=blue];
+"sense.c" -> "mlx4.h"[color=blue];
+"reset.c" -> "mlx4.h"[color=blue];
+"qp.c" -> "mlx4.h"[color=blue];
+"qp.c" -> "icm.h"[color=blue];
+"profile.c" -> "fw.h"[color=blue];
+"profile.c" -> "mlx4.h"[color=blue];
+"port.c" -> "mlx4.h"[color=blue];
+"pd.c" -> "mlx4.h"[color=blue];
+"pd.c" -> "icm.h"[color=blue];
+"mr.c" -> "mlx4.h"[color=blue];
+"mr.c" -> "icm.h"[color=blue];
+"mcg.c" -> "mlx4.h"[color=blue];
+"main.c" -> "fw.h"[color=blue];
+"main.c" -> "mlx4.h"[color=blue];
+"main.c" -> "icm.h"[color=blue];
+"intf.c" -> "mlx4.h"[color=blue];
+"icm.c" -> "fw.h"[color=blue];
+"icm.c" -> "mlx4.h"[color=blue];
+"icm.c" -> "icm.h"[color=blue];
+"fw.h" -> "mlx4.h"[color=blue];
+"fw.h" -> "icm.h"[color=blue];
+"fw.c" -> "fw.h"[color=blue];
+"fw.c" -> "icm.h"[color=blue];
+"eq.c" -> "fw.h"[color=blue];
+"eq.c" -> "mlx4.h"[color=blue];
+"cq.c" -> "mlx4.h"[color=blue];
+"cq.c" -> "icm.h"[color=blue];
+"cmd.c" -> "fw.h"[color=blue];
+"cmd.c" -> "mlx4.h"[color=blue];
+"catas.c" -> "mlx4.h"[color=blue];
+"alloc.c" -> "mlx4.h"[color=blue];
+"resource_tracker.c" -> "fw.h"[color=blue];
+"resource_tracker.c" -> "mlx4.h"[color=blue];
+"srq.c" -> "mlx4.h"[color=blue];
+"srq.c" -> "icm.h"[color=blue];
+"sense.c" -> "mlx4.h"[color=blue];
+"reset.c" -> "mlx4.h"[color=blue];
+"qp.c" -> "mlx4.h"[color=blue];
+"qp.c" -> "icm.h"[color=blue];
+"profile.c" -> "fw.h"[color=blue];
+"profile.c" -> "mlx4.h"[color=blue];
+"port.c" -> "mlx4.h"[color=blue];
+"pd.c" -> "mlx4.h"[color=blue];
+"pd.c" -> "icm.h"[color=blue];
+"mr.c" -> "mlx4.h"[color=blue];
+"mr.c" -> "icm.h"[color=blue];
+"mcg.c" -> "mlx4.h"[color=blue];
+"main.c" -> "fw.h"[color=blue];
+"main.c" -> "mlx4.h"[color=blue];
+"main.c" -> "icm.h"[color=blue];
+"intf.c" -> "mlx4.h"[color=blue];
+"icm.c" -> "fw.h"[color=blue];
+"icm.c" -> "mlx4.h"[color=blue];
+"icm.c" -> "icm.h"[color=blue];
+"fw.h" -> "mlx4.h"[color=blue];
+"fw.h" -> "icm.h"[color=blue];
+"fw.c" -> "fw.h"[color=blue];
+"fw.c" -> "icm.h"[color=blue];
+"eq.c" -> "fw.h"[color=blue];
+"eq.c" -> "mlx4.h"[color=blue];
+"cq.c" -> "mlx4.h"[color=blue];
+"cq.c" -> "icm.h"[color=blue];
+"cmd.c" -> "fw.h"[color=blue];
+"cmd.c" -> "mlx4.h"[color=blue];
+"catas.c" -> "mlx4.h"[color=blue];
+"alloc.c" -> "mlx4.h"[color=blue];
+}

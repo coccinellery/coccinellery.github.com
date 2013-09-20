@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCMCIA_FMVJ18X
+	subgraph "cluster_PCMCIA_FMVJ18X"{
+		subgraph "cluster_fmvj18x_cs.c" {
+			style=filled
+			"commit_fmvj18x_cs.c" [style=filled, fillcolor=black, fontcolor=white, label="169\n2005-04-16"];
+			"fmvj18x_cs.c" [style=filled, fillcolor=white, fontcolor=black, label="fmvj18x_cs.c\n"];
+			"structs-fmvj18x_cs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npcmcia_driver\npcmcia_device_id\n"];
+			"funccall2-fmvj18x_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pcmcia_*\nlocal_*\nunregister_netdev\nmemset\nnetif_*\nudelay\npcmcia_request_irq\nfree_netdev\ndev_*\n"];
+			"funccall1-fmvj18x_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nether_crc_le\nregister_netdev\neth_type_trans\nkfree*\nioremap*\nnetdev_alloc_skb\nnetdev_*\n"];
+		}
+		"K:PCMCIA_FMVJ18X" [label="Kconfig: PCMCIA_FMVJ18X\n /drivers/net/ethernet/fujitsu\n  PCMCIA ", shape=box, fontcolor=red];
+	}
+}

@@ -1,0 +1,62 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SPIDER_NET
+	subgraph "cluster_SPIDER_NET"{
+		subgraph "cluster_spider_net_ethtool.c" {
+			style=filled
+			"commit_spider_net_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2005-09-05"];
+			"spider_net_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="spider_net_ethtool.c\n"];
+			"structs-spider_net_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-spider_net_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\npci_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_spider_net.h" {
+			style=filled
+			"commit_spider_net.h" [style=filled, fillcolor=black, fontcolor=white, label="75\n2005-09-05"];
+			"spider_net.h" [style=filled, fillcolor=white, fontcolor=black, label="spider_net.h\n"];
+		}
+		subgraph "cluster_spider_net.c" {
+			style=filled
+			"commit_spider_net.c" [style=filled, fillcolor=black, fontcolor=white, label="265\n2005-09-05"];
+			"spider_net.c" [style=filled, fillcolor=white, fontcolor=black, label="spider_net.c\n"];
+			"structs-spider_net.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\n"];
+			"funccall3-spider_net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\npci_*\nmod_timer\npci_request_regions\nrequest_firmware\nskb_*\niounmap\nregister_netdev\nnapi_*\nmemcmp\ndma_*\n"];
+			"funccall2-spider_net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nioremap*\nschedule_work\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nmemset\npci_release_regions\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-spider_net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nmemcpy\ndel_timer_sync\natomic_*\nnetdev_alloc_skb\nenable_irq\nof_*\ndisable_irq\ninit_timer\n"];
+		}
+		"K:SPIDER_NET" [label="Kconfig: SPIDER_NET\n /drivers/net/ethernet/toshiba\n  PCI && (PPC_IBM_CELL_BLADE || PPC_CELLEB) ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+	//Symbol: SUNGEM_PHY
+	subgraph "cluster_SUNGEM_PHY"{
+		subgraph "cluster_sungem_phy.c" {
+			style=filled
+			"commit_sungem_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"sungem_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="sungem_phy.c\n"];
+			"structs-sungem_phy.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="mii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_def\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\nmii_phy_ops\n"];
+			"funccall0-sungem_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nof_*\nphy_*\n"];
+		}
+		"K:SUNGEM_PHY" [label="Kconfig: SUNGEM_PHY\n /drivers/net\n ", shape=box];
+	}
+"spider_net_ethtool.c" -> "spider_net.h"[color=blue];
+"spider_net.c" -> "spider_net.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

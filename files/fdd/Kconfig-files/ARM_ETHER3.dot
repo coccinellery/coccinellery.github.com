@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ARM_ETHER3
+	subgraph "cluster_ARM_ETHER3"{
+		subgraph "cluster_ether3.h" {
+			style=filled
+			"commit_ether3.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"ether3.h" [style=filled, fillcolor=white, fontcolor=black, label="ether3.h\n"];
+			"funccall0-ether3.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_ether3.c" {
+			style=filled
+			"commit_ether3.c" [style=filled, fillcolor=black, fontcolor=white, label="55\n2005-04-16"];
+			"ether3.c" [style=filled, fillcolor=white, fontcolor=black, label="ether3.c\n"];
+			"structs-ether3.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall2-ether3.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nlocal_*\nunregister_netdev\nadd_timer\nmemset\nnetif_*\necard_release_resources\nudelay\nfree_netdev\nrequest_irq\n"];
+			"funccall1-ether3.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\nregister_netdev\neth_type_trans\nkfree*\nnetdev_alloc_skb\nkmalloc\ndisable_irq\nnetdev_*\ninit_timer\n"];
+		}
+		"K:ARM_ETHER3" [label="Kconfig: ARM_ETHER3\n /drivers/net/ethernet/seeq\n  ARM && ARCH_ACORN ", shape=box, fontcolor=red];
+	}
+"ether3.c" -> "ether3.h"[color=blue];
+}

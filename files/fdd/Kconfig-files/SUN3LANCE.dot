@@ -1,0 +1,15 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUN3LANCE
+	subgraph "cluster_SUN3LANCE"{
+		subgraph "cluster_sun3lance.c" {
+			style=filled
+			"commit_sun3lance.c" [style=filled, fillcolor=black, fontcolor=white, label="71\n2005-04-16"];
+			"sun3lance.c" [style=filled, fillcolor=white, fontcolor=black, label="sun3lance.c\n"];
+			"structs-sun3lance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall0-sun3lance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nskb_*\ndev_*\nlocal_*\nregister_netdev\nunregister_netdev\neth_type_trans\nmemset\nnetif_*\nnetdev_alloc_skb\nioremap*\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		"K:SUN3LANCE" [label="Kconfig: SUN3LANCE\n /drivers/net/ethernet/amd\n  SUN3 || SUN3X ", shape=box, fontcolor=red];
+	}
+}

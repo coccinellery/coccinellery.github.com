@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TILE_NET
+	subgraph "cluster_TILE_NET"{
+		subgraph "cluster_tilepro.c" {
+			style=filled
+			"commit_tilepro.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2010-11-01"];
+			"tilepro.c" [style=filled, fillcolor=white, fontcolor=black, label="tilepro.c\n"];
+			"structs-tilepro.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall2-tilepro.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\ndel_timer\nunregister_netdev\nmemset\nnetif_*\npage_*\nmod_timer_pinned\nprefetch_L1\nfree_netdev\nrequest_irq\nether_addr_equal\nskb_*\nregister_netdev\nalloc_pages\neth_type_trans\n"];
+			"funccall1-tilepro.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\n__free_pages\nether_setup\nkfree*\nspin_*\nsmp_call_function\nmemcpy\nis_multicast_ether_addr\ncontainer_of\nnetdev_alloc_skb\ncancel_delayed_work_sync\neth_hw_addr_random\nsmp_processor_id\ninit_timer\nnetdev_*\n"];
+		}
+		subgraph "cluster_tilegx.c" {
+			style=filled
+			"commit_tilegx.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2012-06-07"];
+			"tilegx.c" [style=filled, fillcolor=white, fontcolor=black, label="tilegx.c\n"];
+			"structs-tilegx.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nnet_device_ops\n"];
+			"funccall2-tilegx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\ndev_alloc_skb\nfree_pages_exact\nlocal_*\nmemset\nnetif_*\nfree_pages\nsmp_call_function_single\npage_*\nfree_netdev\nrequest_irq\ndev_*\nskb_*\ncompare_ether_addr\nmutex_*\n"];
+			"funccall1-tilegx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nalloc_pages\neth_type_trans\nnapi_*\n__free_pages\nether_setup\nhomecache_alloc_pages\nmemcpy\nalloc_pages_exact\nis_multicast_ether_addr\ncontainer_of\natomic_*\neth_hw_addr_random\nsmp_processor_id\nnetdev_*\n"];
+		}
+		"K:TILE_NET" [label="Kconfig: TILE_NET\n /drivers/net/ethernet/tile\n  TILE ", shape=box, fontcolor=red];
+	}
+}

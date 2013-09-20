@@ -1,0 +1,38 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCMCIA_PCNET
+	subgraph "cluster_PCMCIA_PCNET"{
+		subgraph "cluster_8390.h" {
+			style=filled
+			"commit_8390.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"8390.h" [style=filled, fillcolor=white, fontcolor=black, label="8390.h\n"];
+			"funccall0-8390.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_8390.c" {
+			style=filled
+			"commit_8390.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"8390.c" [style=filled, fillcolor=white, fontcolor=black, label="8390.c\n"];
+			"structs-8390.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+		}
+		subgraph "cluster_lib8390.c" {
+			style=filled
+			"commit_lib8390.c" [style=filled, fillcolor=black, fontcolor=white, label="87\n2005-04-16"];
+			"lib8390.c" [style=filled, fillcolor=white, fontcolor=black, label="lib8390.c\n"];
+			"funccall2-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="disable_irq_nosync_lockdep_irqsave\nmemset\nnetif_*\nmdelay\nenable_irq_lockdep_irqrestore\nenable_irq_lockdep\ndev_*\nskb_*\nether_crc\n"];
+			"funccall1-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nether_setup\nspin_*\nmemcpy\nnetdev_alloc_skb\nenable_irq\ndisable_irq\nnetdev_*\ndisable_irq_nosync_lockdep\n"];
+		}
+		subgraph "cluster_pcnet_cs.c" {
+			style=filled
+			"commit_pcnet_cs.c" [style=filled, fillcolor=black, fontcolor=white, label="219\n2005-04-16"];
+			"pcnet_cs.c" [style=filled, fillcolor=white, fontcolor=black, label="pcnet_cs.c\n"];
+			"structs-pcnet_cs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npcmcia_driver\npcmcia_device_id\n"];
+			"funccall2-pcnet_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\npcmcia_*\nif_*\nunregister_netdev\nadd_timer\nnetif_*\nmdelay\nudelay\nread_*\nfree_netdev\n"];
+			"funccall1-pcnet_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\ndev_*\niounmap\nmii_*\nregister_netdev\ndel_timer_sync\nioremap*\nnetdev_*\ninit_timer\n"];
+		}
+		"K:PCMCIA_PCNET" [label="Kconfig: PCMCIA_PCNET\n /drivers/net/ethernet/8390\n  PCMCIA ", shape=box, fontcolor=red];
+	}
+"8390.c" -> "lib8390.c"[color=blue];
+"lib8390.c" -> "8390.h"[color=blue];
+"pcnet_cs.c" -> "8390.h"[color=blue];
+}

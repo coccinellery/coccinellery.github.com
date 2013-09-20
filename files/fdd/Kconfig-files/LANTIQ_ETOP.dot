@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: LANTIQ_ETOP
+	subgraph "cluster_LANTIQ_ETOP"{
+		subgraph "cluster_lantiq_etop.c" {
+			style=filled
+			"commit_lantiq_etop.c" [style=filled, fillcolor=black, fontcolor=white, label="31\n2011-05-06"];
+			"lantiq_etop.c" [style=filled, fillcolor=white, fontcolor=black, label="lantiq_etop.c\n"];
+			"structs-lantiq_etop.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-lantiq_etop.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nalloc_etherdev_mq\nmemset\nnetif_*\nmdiobus_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\neth_random_addr\nregister_netdev\neth_type_trans\nnapi_*\n"];
+			"funccall1-lantiq_etop.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_setup\nkfree*\nspin_*\nltq_etop_alloc_skb\neth_mac_addr\nmemcpy\neth_change_mtu\ndma_*\nplatform_*\ncontainer_of\nnetdev_alloc_skb\ndevm_request_mem_region\nkmalloc\nphy_*\nnetdev_*\n"];
+		}
+		"K:LANTIQ_ETOP" [label="Kconfig: LANTIQ_ETOP\n /drivers/net/ethernet\n  SOC_TYPE_XWAY ", shape=box, fontcolor=red];
+	}
+}

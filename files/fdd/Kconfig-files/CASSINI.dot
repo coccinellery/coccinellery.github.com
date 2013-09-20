@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: CASSINI
+	subgraph "cluster_CASSINI"{
+		subgraph "cluster_cassini.h" {
+			style=filled
+			"commit_cassini.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2005-09-27"];
+			"cassini.h" [style=filled, fillcolor=white, fontcolor=black, label="cassini.h\n"];
+		}
+		subgraph "cluster_cassini.c" {
+			style=filled
+			"commit_cassini.c" [style=filled, fillcolor=black, fontcolor=white, label="193\n2005-09-27"];
+			"cassini.c" [style=filled, fillcolor=white, fontcolor=black, label="cassini.c\n"];
+			"structs-cassini.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-cassini.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdelay\nudelay\npci_*\nmod_timer\npci_request_regions\nrequest_firmware\nskb_*\nether_crc_le\nregister_netdev\n__skb_*\nnapi_*\n__free_pages\n"];
+			"funccall2-cassini.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\nschedule_work\nkmalloc\nrelease_firmware\nnetdev_*\nunregister_netdev\nmemset\ncas_enable_irq\npci_release_regions\nvmalloc\npci_iounmap\npage_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-cassini.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nalloc_pages\neth_type_trans\ncas_disable_irq\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\natomic_*\nof_*\ninit_timer\n"];
+		}
+		"K:CASSINI" [label="Kconfig: CASSINI\n /drivers/net/ethernet/sun\n  PCI ", shape=box, fontcolor=red];
+	}
+"cassini.c" -> "cassini.h"[color=blue];
+}

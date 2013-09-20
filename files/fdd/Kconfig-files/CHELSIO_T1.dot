@@ -1,0 +1,209 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: CHELSIO_T1
+	subgraph "cluster_CHELSIO_T1"{
+		subgraph "cluster_my3126.c" {
+			style=filled
+			"commit_my3126.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2006-12-01"];
+			"my3126.c" [style=filled, fillcolor=white, fontcolor=black, label="my3126.c\n"];
+			"structs-my3126.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="gphy\n"];
+			"funccall0-my3126.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\ncontainer_of\nkzalloc\ncancel_delayed_work_sync\nmsleep\nkfree*\n"];
+		}
+		subgraph "cluster_cphy.h" {
+			style=filled
+			"commit_cphy.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2005-03-30"];
+			"cphy.h" [style=filled, fillcolor=white, fontcolor=black, label="cphy.h\n"];
+			"funccall0-cphy.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_elmer0.h" {
+			style=filled
+			"commit_elmer0.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2005-03-30"];
+			"elmer0.h" [style=filled, fillcolor=white, fontcolor=black, label="elmer0.h\n"];
+		}
+		subgraph "cluster_suni1x10gexp_regs.h" {
+			style=filled
+			"commit_suni1x10gexp_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2005-03-30"];
+			"suni1x10gexp_regs.h" [style=filled, fillcolor=white, fontcolor=black, label="suni1x10gexp_regs.h\n"];
+		}
+		subgraph "cluster_common.h" {
+			style=filled
+			"commit_common.h" [style=filled, fillcolor=black, fontcolor=white, label="47\n2005-03-30"];
+			"common.h" [style=filled, fillcolor=white, fontcolor=black, label="common.h\n"];
+			"funccall0-common.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_mv88x201x.c" {
+			style=filled
+			"commit_mv88x201x.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2005-03-30"];
+			"mv88x201x.c" [style=filled, fillcolor=white, fontcolor=black, label="mv88x201x.c\n"];
+			"structs-mv88x201x.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="gphy\n"];
+			"funccall0-mv88x201x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nkzalloc\nmsleep\nkfree*\n"];
+		}
+		subgraph "cluster_subr.c" {
+			style=filled
+			"commit_subr.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-03-30"];
+			"subr.c" [style=filled, fillcolor=white, fontcolor=black, label="subr.c\n"];
+			"structs-subr.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="mdio_ops\nmdio_ops\n"];
+			"funccall0-subr.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmemcpy\npci_*\ndev_*\nnetif_*\nspin_*\n"];
+		}
+		subgraph "cluster_regs.h" {
+			style=filled
+			"commit_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-03-30"];
+			"regs.h" [style=filled, fillcolor=white, fontcolor=black, label="regs.h\n"];
+		}
+		subgraph "cluster_gmac.h" {
+			style=filled
+			"commit_gmac.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2005-03-30"];
+			"gmac.h" [style=filled, fillcolor=white, fontcolor=black, label="gmac.h\n"];
+		}
+		subgraph "cluster_fpga_defs.h" {
+			style=filled
+			"commit_fpga_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2006-12-01"];
+			"fpga_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="fpga_defs.h\n"];
+		}
+		subgraph "cluster_sge.h" {
+			style=filled
+			"commit_sge.h" [style=filled, fillcolor=black, fontcolor=white, label="31\n2005-03-30"];
+			"sge.h" [style=filled, fillcolor=white, fontcolor=black, label="sge.h\n"];
+		}
+		subgraph "cluster_sge.c" {
+			style=filled
+			"commit_sge.c" [style=filled, fillcolor=black, fontcolor=white, label="155\n2005-03-30"];
+			"sge.c" [style=filled, fillcolor=white, fontcolor=black, label="sge.c\n"];
+			"funccall2-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_alloc_skb\nnetdev_alloc_skb_ip_align\nmemset\nnetif_*\nvlan_*\npci_*\nkzalloc\nmod_timer\ndev_*\nskb_*\n__skb_*\n"];
+			"funccall1-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nprefetch\nnapi_*\nkfree*\nspin_*\ndma_*\ndel_timer_sync\neth_hdr_len\ncontainer_of\nnetdev_*\ninit_timer\n"];
+		}
+		subgraph "cluster_cpl5_cmd.h" {
+			style=filled
+			"commit_cpl5_cmd.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2005-03-30"];
+			"cpl5_cmd.h" [style=filled, fillcolor=white, fontcolor=black, label="cpl5_cmd.h\n"];
+		}
+		subgraph "cluster_pm3393.c" {
+			style=filled
+			"commit_pm3393.c" [style=filled, fillcolor=black, fontcolor=white, label="35\n2005-03-30"];
+			"pm3393.c" [style=filled, fillcolor=white, fontcolor=black, label="pm3393.c\n"];
+			"structs-pm3393.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="gmac\n"];
+			"funccall0-pm3393.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nether_crc\nmemset\nnetif_*\nkfree*\nmemcpy\nudelay\nkzalloc\nmsleep\n"];
+		}
+		subgraph "cluster_tp.h" {
+			style=filled
+			"commit_tp.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2005-03-30"];
+			"tp.h" [style=filled, fillcolor=white, fontcolor=black, label="tp.h\n"];
+		}
+		subgraph "cluster_tp.c" {
+			style=filled
+			"commit_tp.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2005-03-30"];
+			"tp.c" [style=filled, fillcolor=white, fontcolor=black, label="tp.c\n"];
+			"funccall0-tp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kzalloc\nkfree*\n"];
+		}
+		subgraph "cluster_espi.h" {
+			style=filled
+			"commit_espi.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2005-03-30"];
+			"espi.h" [style=filled, fillcolor=white, fontcolor=black, label="espi.h\n"];
+		}
+		subgraph "cluster_espi.c" {
+			style=filled
+			"commit_espi.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2005-03-30"];
+			"espi.c" [style=filled, fillcolor=white, fontcolor=black, label="espi.c\n"];
+			"funccall0-espi.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kzalloc\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_cxgb2.c" {
+			style=filled
+			"commit_cxgb2.c" [style=filled, fillcolor=black, fontcolor=white, label="117\n2005-03-30"];
+			"cxgb2.c" [style=filled, fillcolor=white, fontcolor=black, label="cxgb2.c\n"];
+			"structs-cxgb2.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-cxgb2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nlocal_*\nunregister_netdev\nmemset\nnetif_*\npci_release_regions\nvlan_*\nudelay\npci_*\nrequest_irq\nfree_netdev\n"];
+			"funccall1-cxgb2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="smp_mb__after_clear_bit\npci_request_regions\niounmap\nregister_netdev\nnapi_*\nspin_*\nmemcpy\ncontainer_of\nethtool_*\nioremap*\nschedule_work\nnetdev_*\n"];
+		}
+		"K:CHELSIO_T1" [label="Kconfig: CHELSIO_T1\n /drivers/net/ethernet/chelsio/cxgb\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: CHELSIO_T1_1G
+	subgraph "cluster_CHELSIO_T1_1G"{
+		subgraph "cluster_vsc7326.c" {
+			style=filled
+			"commit_vsc7326.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2006-12-01"];
+			"vsc7326.c" [style=filled, fillcolor=white, fontcolor=black, label="vsc7326.c\n"];
+			"structs-vsc7326.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="gmac\n"];
+			"funccall0-vsc7326.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\nkzalloc\nmemset\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_vsc7326_reg.h" {
+			style=filled
+			"commit_vsc7326_reg.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2006-12-01"];
+			"vsc7326_reg.h" [style=filled, fillcolor=white, fontcolor=black, label="vsc7326_reg.h\n"];
+		}
+		subgraph "cluster_mv88e1xxx.h" {
+			style=filled
+			"commit_mv88e1xxx.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2006-12-01"];
+			"mv88e1xxx.h" [style=filled, fillcolor=white, fontcolor=black, label="mv88e1xxx.h\n"];
+		}
+		subgraph "cluster_mv88e1xxx.c" {
+			style=filled
+			"commit_mv88e1xxx.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2006-12-01"];
+			"mv88e1xxx.c" [style=filled, fillcolor=white, fontcolor=black, label="mv88e1xxx.c\n"];
+			"structs-mv88e1xxx.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="gphy\n"];
+			"funccall0-mv88e1xxx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nkzalloc\nsimple_mdio_read\nnetdev_*\nkfree*\n"];
+		}
+		"K:CHELSIO_T1_1G" [label="Kconfig: CHELSIO_T1_1G\n /drivers/net/ethernet/chelsio/cxgb\n  CHELSIO_T1 ", shape=box];
+	}
+	//Symbol: MDIO
+	subgraph "cluster_MDIO"{
+		subgraph "cluster_mdio.c" {
+			style=filled
+			"commit_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-04-29"];
+			"mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio.c\n"];
+			"funccall0-mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\n"];
+		}
+		"K:MDIO" [label="Kconfig: MDIO\n /drivers/net\n ", shape=box];
+	}
+"my3126.c" -> "suni1x10gexp_regs.h"[color=blue];
+"my3126.c" -> "elmer0.h"[color=blue];
+"my3126.c" -> "cphy.h"[color=blue];
+"cphy.h" -> "common.h"[color=blue];
+"mv88x201x.c" -> "elmer0.h"[color=blue];
+"mv88x201x.c" -> "cphy.h"[color=blue];
+"subr.c" -> "elmer0.h"[color=blue];
+"subr.c" -> "espi.h"[color=blue];
+"subr.c" -> "sge.h"[color=blue];
+"subr.c" -> "fpga_defs.h"[color=blue];
+"subr.c" -> "regs.h"[color=blue];
+"subr.c" -> "gmac.h"[color=blue];
+"subr.c" -> "cphy.h"[color=blue];
+"subr.c" -> "common.h"[color=blue];
+"subr.c" -> "tp.h"[color=blue];
+"gmac.h" -> "common.h"[color=blue];
+"sge.c" -> "regs.h"[color=blue];
+"sge.c" -> "espi.h"[color=blue];
+"sge.c" -> "sge.h"[color=blue];
+"sge.c" -> "cpl5_cmd.h"[color=blue];
+"sge.c" -> "common.h"[color=blue];
+"pm3393.c" -> "suni1x10gexp_regs.h"[color=blue];
+"pm3393.c" -> "regs.h"[color=blue];
+"pm3393.c" -> "elmer0.h"[color=blue];
+"pm3393.c" -> "gmac.h"[color=blue];
+"pm3393.c" -> "common.h"[color=blue];
+"tp.h" -> "common.h"[color=blue];
+"tp.c" -> "fpga_defs.h"[color=blue];
+"tp.c" -> "regs.h"[color=blue];
+"tp.c" -> "tp.h"[color=blue];
+"tp.c" -> "common.h"[color=blue];
+"espi.h" -> "common.h"[color=blue];
+"espi.c" -> "regs.h"[color=blue];
+"espi.c" -> "espi.h"[color=blue];
+"espi.c" -> "common.h"[color=blue];
+"cxgb2.c" -> "elmer0.h"[color=blue];
+"cxgb2.c" -> "espi.h"[color=blue];
+"cxgb2.c" -> "sge.h"[color=blue];
+"cxgb2.c" -> "cpl5_cmd.h"[color=blue];
+"cxgb2.c" -> "regs.h"[color=blue];
+"cxgb2.c" -> "gmac.h"[color=blue];
+"cxgb2.c" -> "cphy.h"[color=blue];
+"cxgb2.c" -> "common.h"[color=blue];
+"cxgb2.c" -> "tp.h"[color=blue];
+"vsc7326.c" -> "vsc7326_reg.h"[color=blue];
+"vsc7326.c" -> "elmer0.h"[color=blue];
+"vsc7326.c" -> "gmac.h"[color=blue];
+"mv88e1xxx.c" -> "elmer0.h"[color=blue];
+"mv88e1xxx.c" -> "cphy.h"[color=blue];
+"mv88e1xxx.c" -> "mv88e1xxx.h"[color=blue];
+"mv88e1xxx.c" -> "common.h"[color=blue];
+}

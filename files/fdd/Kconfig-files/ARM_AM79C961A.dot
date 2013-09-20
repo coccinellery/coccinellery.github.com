@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ARM_AM79C961A
+	subgraph "cluster_ARM_AM79C961A"{
+		subgraph "cluster_am79c961a.h" {
+			style=filled
+			"commit_am79c961a.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2005-04-16"];
+			"am79c961a.h" [style=filled, fillcolor=white, fontcolor=black, label="am79c961a.h\n"];
+		}
+		subgraph "cluster_am79c961a.c" {
+			style=filled
+			"commit_am79c961a.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2005-04-16"];
+			"am79c961a.c" [style=filled, fillcolor=white, fontcolor=black, label="am79c961a.c\n"];
+			"structs-am79c961a.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-am79c961a.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nlocal_*\nadd_timer\nmemset\nnetif_*\nudelay\nread_*\nrequest_irq\nfree_netdev\nmod_timer\ndev_*\nskb_*\n"];
+			"funccall1-am79c961a.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_crc_le\nregister_netdev\neth_type_trans\nkfree*\nspin_*\nrelease_region\ndel_timer_sync\nplatform_*\nnetdev_alloc_skb\nkmalloc\ninit_timer\nnetdev_*\n"];
+		}
+		"K:ARM_AM79C961A" [label="Kconfig: ARM_AM79C961A\n /drivers/net/ethernet/amd\n  ARM && ARCH_EBSA110 ", shape=box, fontcolor=red];
+	}
+"am79c961a.c" -> "am79c961a.h"[color=blue];
+}

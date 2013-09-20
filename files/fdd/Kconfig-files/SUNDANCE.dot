@@ -1,0 +1,26 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUNDANCE
+	subgraph "cluster_SUNDANCE"{
+		subgraph "cluster_sundance.c" {
+			style=filled
+			"commit_sundance.c" [style=filled, fillcolor=black, fontcolor=white, label="149\n2005-04-16"];
+			"sundance.c" [style=filled, fillcolor=white, fontcolor=black, label="sundance.c\n"];
+			"structs-sundance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-sundance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nif_*\nunregister_netdev\nadd_timer\nmemset\nnetif_*\npci_release_regions\nmdelay\nudelay\npci_iounmap\npci_*\nrequest_irq\nfree_netdev\npci_request_regions\n"];
+			"funccall1-sundance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\nspin_*\ndevice_*\nmemcpy\ndel_timer_sync\ndma_*\nnetdev_alloc_skb\ninit_timer\nnetdev_*\n"];
+		}
+		"K:SUNDANCE" [label="Kconfig: SUNDANCE\n /drivers/net/ethernet/dlink\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

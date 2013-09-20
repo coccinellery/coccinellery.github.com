@@ -1,0 +1,41 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: KS8851
+	subgraph "cluster_KS8851"{
+		subgraph "cluster_ks8851.h" {
+			style=filled
+			"commit_ks8851.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2009-07-16"];
+			"ks8851.h" [style=filled, fillcolor=white, fontcolor=black, label="ks8851.h\n"];
+		}
+		subgraph "cluster_ks8851.c" {
+			style=filled
+			"commit_ks8851.c" [style=filled, fillcolor=black, fontcolor=white, label="85\n2009-07-16"];
+			"ks8851.c" [style=filled, fillcolor=white, fontcolor=black, label="ks8851.c\n"];
+			"structs-ks8851.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\nnet_device_ops\nspi_driver\n"];
+			"funccall2-ks8851.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nnetif_*\nmdelay\nfree_netdev\ndev_*\nskb_*\nmii_*\n"];
+			"funccall1-ks8851.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nregister_netdev\nether_crc\neth_type_trans\nspin_*\nmemcmp\nmemcpy\ncontainer_of\nschedule_work\neth_hw_addr_random\nnetdev_*\n"];
+		}
+		"K:KS8851" [label="Kconfig: KS8851\n /drivers/net/ethernet/micrel\n  SPI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: EEPROM_93CX6
+	subgraph "cluster_EEPROM_93CX6"{
+		subgraph "cluster_eeprom_93cx6.c" {
+			style=filled
+			"commit_eeprom_93cx6.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-05-11"];
+			"eeprom_93cx6.c" [style=filled, fillcolor=white, fontcolor=black, label="eeprom_93cx6.c\n"];
+		}
+		"K:EEPROM_93CX6" [label="Kconfig: EEPROM_93CX6\n /drivers/misc/eeprom\n ", shape=box];
+	}
+"ks8851.c" -> "ks8851.h"[color=blue];
+}

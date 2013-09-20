@@ -1,0 +1,64 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ALX
+	subgraph "cluster_ALX"{
+		subgraph "cluster_hw.h" {
+			style=filled
+			"commit_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-06-17"];
+			"hw.h" [style=filled, fillcolor=white, fontcolor=black, label="hw.h\n"];
+		}
+		subgraph "cluster_reg.h" {
+			style=filled
+			"commit_reg.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-06-17"];
+			"reg.h" [style=filled, fillcolor=white, fontcolor=black, label="reg.h\n"];
+		}
+		subgraph "cluster_hw.c" {
+			style=filled
+			"commit_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-06-17"];
+			"hw.c" [style=filled, fillcolor=white, fontcolor=black, label="hw.c\n"];
+			"funccall0-hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\ndev_*\npcie_*\nspin_*\nudelay\nmdelay\npci_*\nethtool_*\nmsleep\n"];
+		}
+		subgraph "cluster_ethtool.c" {
+			style=filled
+			"commit_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-06-17"];
+			"ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ethtool.c\n"];
+			"structs-ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\npci_*\nethtool_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_main.c" {
+			style=filled
+			"commit_main.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-06-17"];
+			"main.c" [style=filled, fillcolor=white, fontcolor=black, label="main.c\n"];
+			"structs-main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall2-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nalx_request_irq\n__netdev_alloc_skb\nif_*\nunregister_netdev\nmemset\nnetif_*\npci_*\nalx_free_irq\nsynchronize_irq\nkcalloc\nrequest_irq\nfree_netdev\ndev_*\n"];
+			"funccall1-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nregister_netdev\nether_crc\neth_type_trans\nnapi_*\nkfree*\nspin_*\ndevice_*\nmemcpy\ndma_*\ncontainer_of\nschedule_work\neth_hw_addr_random\nnetdev_*\n"];
+		}
+		subgraph "cluster_alx.h" {
+			style=filled
+			"commit_alx.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-06-17"];
+			"alx.h" [style=filled, fillcolor=white, fontcolor=black, label="alx.h\n"];
+		}
+		"K:ALX" [label="Kconfig: ALX\n /drivers/net/ethernet/atheros/alx\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MDIO
+	subgraph "cluster_MDIO"{
+		subgraph "cluster_mdio.c" {
+			style=filled
+			"commit_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-04-29"];
+			"mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio.c\n"];
+			"funccall0-mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\n"];
+		}
+		"K:MDIO" [label="Kconfig: MDIO\n /drivers/net\n ", shape=box];
+	}
+"hw.h" -> "reg.h"[color=blue];
+"hw.c" -> "reg.h"[color=blue];
+"hw.c" -> "hw.h"[color=blue];
+"ethtool.c" -> "reg.h"[color=blue];
+"ethtool.c" -> "hw.h"[color=blue];
+"ethtool.c" -> "alx.h"[color=blue];
+"main.c" -> "reg.h"[color=blue];
+"main.c" -> "hw.h"[color=blue];
+"main.c" -> "alx.h"[color=blue];
+"alx.h" -> "hw.h"[color=blue];
+}

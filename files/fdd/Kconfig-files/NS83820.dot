@@ -1,0 +1,17 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NS83820
+	subgraph "cluster_NS83820"{
+		subgraph "cluster_ns83820.c" {
+			style=filled
+			"commit_ns83820.c" [style=filled, fillcolor=black, fontcolor=white, label="157\n2005-04-16"];
+			"ns83820.c" [style=filled, fillcolor=white, fontcolor=black, label="ns83820.c\n"];
+			"structs-ns83820.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-ns83820.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\n__netdev_alloc_skb\nunregister_netdev\nmemset\nnetif_*\nvlan_*\nudelay\nregister_netdevice\npci_*\npage_*\nsynchronize_irq\n"];
+			"funccall2-ns83820.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nfree_netdev\nmod_timer\ndev_*\nskb_*\niounmap\neth_type_trans\nprefetch\nkfree*\nspin_*\ndel_timer_sync\n"];
+			"funccall1-ns83820.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\nioremap*\nschedule_work\natomic_*\nphy_*\nmsleep\ninit_timer\nnetdev_*\n"];
+		}
+		"K:NS83820" [label="Kconfig: NS83820\n /drivers/net/ethernet/natsemi\n  PCI ", shape=box, fontcolor=red];
+	}
+}

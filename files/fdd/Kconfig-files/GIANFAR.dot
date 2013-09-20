@@ -1,0 +1,118 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: GIANFAR
+	subgraph "cluster_GIANFAR"{
+		subgraph "cluster_gianfar_sysfs.c" {
+			style=filled
+			"commit_gianfar_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-11-11"];
+			"gianfar_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="gianfar_sysfs.c\n"];
+			"funccall0-gianfar_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nlocal_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_gianfar_ethtool.c" {
+			style=filled
+			"commit_gianfar_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="117\n2005-04-16"];
+			"gianfar_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="gianfar_ethtool.c\n"];
+			"structs-gianfar_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall2-gianfar_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc_array\nlocal_*\nnetif_*\nkzalloc\nkcalloc\nmutex_*\nis_broadcast_ether_addr\nkfree*\n"];
+			"funccall1-gianfar_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\nmemcmp\ndevice_*\nkmalloc\nphy_*\nis_zero_ether_addr\nnetdev_*\n"];
+		}
+		subgraph "cluster_gianfar.h" {
+			style=filled
+			"commit_gianfar.h" [style=filled, fillcolor=black, fontcolor=white, label="185\n2005-04-16"];
+			"gianfar.h" [style=filled, fillcolor=white, fontcolor=black, label="gianfar.h\n"];
+		}
+		subgraph "cluster_gianfar.c" {
+			style=filled
+			"commit_gianfar.c" [style=filled, fillcolor=black, fontcolor=white, label="485\n2005-04-16"];
+			"gianfar.c" [style=filled, fillcolor=white, fontcolor=black, label="gianfar.c\n"];
+			"structs-gianfar.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall3-gianfar.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nkmalloc_array\nnetif_*\nudelay\nkzalloc\nskb_*\niounmap\nregister_netdev\n__skb_*\nether_crc\nnapi_*\ncopy_*\ndma_*\n"];
+			"funccall2-gianfar.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nschedule_work\nphy_*\nnetdev_*\ngfar_alloc_skb_resources\ngfar_alloc_skb\nunregister_netdev\nlocal_*\nmemset_io\nalloc_etherdev_mq\nmemset\nvlan_*\nfree_netdev\n"];
+			"funccall1-gianfar.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\ndev_*\nmutex_*\neth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\nnetdev_alloc_skb\nenable_irq\nof_*\ndisable_irq\n"];
+		}
+		"K:GIANFAR" [label="Kconfig: GIANFAR\n /drivers/net/ethernet/freescale\n  FSL_SOC ", shape=box, fontcolor=red];
+	}
+	//Symbol: PTP_1588_CLOCK_GIANFAR
+	subgraph "cluster_PTP_1588_CLOCK_GIANFAR"{
+		subgraph "cluster_gianfar_ptp.c" {
+			style=filled
+			"commit_gianfar_ptp.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2011-04-22"];
+			"gianfar_ptp.c" [style=filled, fillcolor=white, fontcolor=black, label="gianfar_ptp.c\n"];
+			"structs-gianfar_ptp.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="platform_driver\nptp_clock_info\nof_device_id\n"];
+			"funccall0-gianfar_ptp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\niounmap\ndev_*\nrelease_resource\nspin_*\nkfree*\nplatform_*\ncontainer_of\nptp_*\nioremap*\nkzalloc\nof_*\nrequest_irq\n"];
+		}
+		"K:PTP_1588_CLOCK_GIANFAR" [label="Kconfig: PTP_1588_CLOCK_GIANFAR\n /drivers/net/ethernet/freescale\n  GIANFAR ", shape=box];
+	}
+	//Symbol: FSL_PQ_MDIO
+	subgraph "cluster_FSL_PQ_MDIO"{
+		subgraph "cluster_fsl_pq_mdio.c" {
+			style=filled
+			"commit_fsl_pq_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="123\n2005-09-23"];
+			"fsl_pq_mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="fsl_pq_mdio.c\n"];
+			"structs-fsl_pq_mdio.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dio_driver\nplatform_driver\nof_device_id\n"];
+			"funccall0-fsl_pq_mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdiobus_*\niounmap\ndev_*\nmutex_*\nof_*\nspin_*\nkfree*\n"];
+		}
+		"K:FSL_PQ_MDIO" [label="Kconfig: FSL_PQ_MDIO\n /drivers/net/ethernet/freescale\n  FSL_SOC ", shape=box];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+"gianfar_sysfs.c" -> "gianfar.h"[color=blue];
+"gianfar_ethtool.c" -> "gianfar.h"[color=blue];
+"gianfar.c" -> "gianfar.h"[color=blue];
+"gianfar_ptp.c" -> "gianfar.h"[color=blue];
+"fsl_pq_mdio.c" -> "gianfar.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+}

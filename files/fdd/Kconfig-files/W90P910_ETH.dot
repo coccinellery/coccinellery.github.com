@@ -1,0 +1,50 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: W90P910_ETH
+	subgraph "cluster_W90P910_ETH"{
+		subgraph "cluster_w90p910_ether.c" {
+			style=filled
+			"commit_w90p910_ether.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2009-07-16"];
+			"w90p910_ether.c" [style=filled, fillcolor=white, fontcolor=black, label="w90p910_ether.c\n"];
+			"structs-w90p910_ether.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-w90p910_ether.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nif_*\nunregister_netdev\nrequest_mem_region\nsetup_timer\nnetif_*\nclk_*\nfree_netdev\nrequest_irq\nmod_timer\ndev_*\nskb_*\niounmap\n"];
+			"funccall1-w90p910_ether.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nregister_netdev\neth_type_trans\nether_setup\nw90p910_ether_setup\nmemcpy\ndma_*\ndel_timer_sync\nplatform_*\nnetdev_alloc_skb\nioremap*\nrelease_mem_region\nnetdev_*\n"];
+		}
+		"K:W90P910_ETH" [label="Kconfig: W90P910_ETH\n /drivers/net/ethernet/nuvoton\n  ARM && ARCH_W90X900 ", shape=box, fontcolor=red];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

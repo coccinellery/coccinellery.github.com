@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NIU
+	subgraph "cluster_NIU"{
+		subgraph "cluster_niu.h" {
+			style=filled
+			"commit_niu.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2007-10-09"];
+			"niu.h" [style=filled, fillcolor=white, fontcolor=black, label="niu.h\n"];
+		}
+		subgraph "cluster_niu.c" {
+			style=filled
+			"commit_niu.c" [style=filled, fillcolor=black, fontcolor=white, label="269\n2007-10-09"];
+			"niu.c" [style=filled, fillcolor=white, fontcolor=black, label="niu.c\n"];
+			"structs-niu.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndevice_attribute\nethtool_ops\nnet_device_ops\npci_driver\nplatform_driver\nof_device_id\n"];
+			"funccall4-niu.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nadd_timer\ntcam_user_eth_class_enable\nnetif_*\nmdelay\nudelay\npci_*\nniu_request_irq\nkzalloc\n__get_free_pages\npci_request_regions\nof_iounmap\niounmap\nskb_*\nether_crc_le\n"];
+			"funccall3-niu.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nsmp_wmb\nnapi_*\nmemcmp\ndma_*\nethtool_*\ncontainer_of\nschedule_work\nphy_*\nnetdev_*\nniu_free_irq\nis_valid_ether_addr\npcie_*\nunregister_netdev\n__free_page\n"];
+			"funccall2-niu.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="alloc_etherdev_mq\nmemset\nfree_pages\npci_release_regions\nvlan_*\npage_*\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\nmii_*\nmutex_*\neth_type_trans\nalloc_page\nspin_*\n"];
+			"funccall1-niu.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\ndevice_*\nmemcpy\nsmp_mb\ndel_timer_sync\nplatform_*\nnetdev_alloc_skb\natomic_*\nof_*\nmsleep\nsmp_processor_id\ninit_timer\n"];
+		}
+		"K:NIU" [label="Kconfig: NIU\n /drivers/net/ethernet/sun\n  PCI ", shape=box, fontcolor=red];
+	}
+"niu.c" -> "niu.h"[color=blue];
+}

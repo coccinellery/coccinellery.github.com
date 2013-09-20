@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ENC28J60
+	subgraph "cluster_ENC28J60"{
+		subgraph "cluster_enc28j60.c" {
+			style=filled
+			"commit_enc28j60.c" [style=filled, fillcolor=black, fontcolor=white, label="61\n2008-01-14"];
+			"enc28j60.c" [style=filled, fillcolor=white, fontcolor=black, label="enc28j60.c\n"];
+			"structs-enc28j60.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nspi_driver\n"];
+			"funccall2-enc28j60.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nnetif_*\nudelay\nrequest_irq\nfree_netdev\ndev_*\nskb_*\nmutex_*\n"];
+			"funccall1-enc28j60.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\neth_type_trans\ncpu_relax\nmemcpy\ncontainer_of\nethtool_*\nnetdev_alloc_skb\nschedule_work\neth_hw_addr_random\nnetdev_*\n"];
+		}
+		subgraph "cluster_enc28j60_hw.h" {
+			style=filled
+			"commit_enc28j60_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2008-01-14"];
+			"enc28j60_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="enc28j60_hw.h\n"];
+		}
+		"K:ENC28J60" [label="Kconfig: ENC28J60\n /drivers/net/ethernet/microchip\n  SPI ", shape=box, fontcolor=red];
+	}
+"enc28j60.c" -> "enc28j60_hw.h"[color=blue];
+}

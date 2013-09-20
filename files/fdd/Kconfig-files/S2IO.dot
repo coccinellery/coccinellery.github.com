@@ -1,0 +1,31 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: S2IO
+	subgraph "cluster_S2IO"{
+		subgraph "cluster_s2io.h" {
+			style=filled
+			"commit_s2io.h" [style=filled, fillcolor=black, fontcolor=white, label="175\n2005-04-16"];
+			"s2io.h" [style=filled, fillcolor=white, fontcolor=black, label="s2io.h\n"];
+			"structs-s2io.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-s2io.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\n"];
+		}
+		subgraph "cluster_s2io.c" {
+			style=filled
+			"commit_s2io.c" [style=filled, fillcolor=black, fontcolor=white, label="543\n2005-04-16"];
+			"s2io.c" [style=filled, fillcolor=white, fontcolor=black, label="s2io.c\n"];
+			"structs-s2io.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-s2io.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nmdelay\nudelay\npci_*\nkzalloc\nread_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nregister_netdev\nprefetch\n"];
+			"funccall2-s2io.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nethtool_*\ncontainer_of\nschedule_work\nkmalloc\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nalloc_etherdev_mq\nmemset\npci_release_regions\nvlan_*\nfree_netdev\n"];
+			"funccall1-s2io.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nkcalloc\ndev_*\neth_type_trans\nwait_event_timeout\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nenable_irq\nmsleep\ndisable_irq\n"];
+		}
+		subgraph "cluster_s2io-regs.h" {
+			style=filled
+			"commit_s2io-regs.h" [style=filled, fillcolor=black, fontcolor=white, label="47\n2005-04-16"];
+			"s2io-regs.h" [style=filled, fillcolor=white, fontcolor=black, label="s2io-regs.h\n"];
+		}
+		"K:S2IO" [label="Kconfig: S2IO\n /drivers/net/ethernet/neterion\n  PCI ", shape=box, fontcolor=red];
+	}
+"s2io.c" -> "s2io-regs.h"[color=blue];
+"s2io.c" -> "s2io.h"[color=blue];
+}

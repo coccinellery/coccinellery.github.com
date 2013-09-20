@@ -1,0 +1,27 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: E100
+	subgraph "cluster_E100"{
+		subgraph "cluster_e100.c" {
+			style=filled
+			"commit_e100.c" [style=filled, fillcolor=black, fontcolor=white, label="307\n2005-04-16"];
+			"e100.c" [style=filled, fillcolor=white, fontcolor=black, label="e100.c\n"];
+			"structs-e100.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-e100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ne100_rx_alloc_skb\nif_*\nnetif_*\nudelay\npci_*\nmod_timer\npci_request_regions\nrequest_firmware\nskb_*\nregister_netdev\nnapi_*\ncpu_relax\nmemcmp\nethtool_*\n"];
+			"funccall2-e100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nschedule_work\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nmsleep_interruptible\ne100_enable_irq\npci_release_regions\npci_iounmap\nfree_netdev\nrequest_irq\nkcalloc\n"];
+			"funccall1-e100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\ne100_disable_irq\nmii_*\neth_type_trans\ne100_request_firmware\nspin_*\nkfree*\ndevice_*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nmsleep\ninit_timer\n"];
+		}
+		"K:E100" [label="Kconfig: E100\n /drivers/net/ethernet/intel\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

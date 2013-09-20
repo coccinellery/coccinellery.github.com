@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: WIZNET_W5300
+	subgraph "cluster_WIZNET_W5300"{
+		subgraph "cluster_w5300.c" {
+			style=filled
+			"commit_w5300.c" [style=filled, fillcolor=black, fontcolor=white, label="19\n2012-04-04"];
+			"w5300.c" [style=filled, fillcolor=white, fontcolor=black, label="w5300.c\n"];
+			"structs-w5300.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-w5300.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nnetdev_alloc_skb_ip_align\nnetif_*\nmdelay\nfree_netdev\nrequest_irq\ndev_*\nskb_*\nregister_netdev\neth_type_trans\n"];
+			"funccall1-w5300.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\ncpu_relax\nether_setup\nspin_*\ndevm_kzalloc\nmemcpy\nplatform_*\ncontainer_of\ndevm_request_mem_region\neth_hw_addr_random\nnetdev_*\n"];
+		}
+		"K:WIZNET_W5300" [label="Kconfig: WIZNET_W5300\n /drivers/net/ethernet/wiznet\n  HAS_IOMEM ", shape=box, fontcolor=red];
+	}
+}

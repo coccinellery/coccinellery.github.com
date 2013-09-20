@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUNQE
+	subgraph "cluster_SUNQE"{
+		subgraph "cluster_sunqe.h" {
+			style=filled
+			"commit_sunqe.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2005-04-16"];
+			"sunqe.h" [style=filled, fillcolor=white, fontcolor=black, label="sunqe.h\n"];
+		}
+		subgraph "cluster_sunqe.c" {
+			style=filled
+			"commit_sunqe.c" [style=filled, fillcolor=black, fontcolor=white, label="95\n2005-04-16"];
+			"sunqe.c" [style=filled, fillcolor=white, fontcolor=black, label="sunqe.c\n"];
+			"structs-sunqe.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall2-sunqe.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nmemset\nnetif_*\nqec_ether_init\nmdelay\nudelay\nkzalloc\nsbus_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\n"];
+			"funccall1-sunqe.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="of_iounmap\nether_crc_le\nregister_netdev\neth_type_trans\nkfree*\nspin_*\nmemcpy\ndma_*\nplatform_*\nnetdev_alloc_skb\nof_*\nnetdev_*\n"];
+		}
+		"K:SUNQE" [label="Kconfig: SUNQE\n /drivers/net/ethernet/sun\n  SBUS ", shape=box, fontcolor=red];
+	}
+"sunqe.c" -> "sunqe.h"[color=blue];
+}

@@ -1,0 +1,159 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: FS_ENET
+	subgraph "cluster_FS_ENET"{
+		subgraph "cluster_fs_enet-main.c" {
+			style=filled
+			"commit_fs_enet-main.c" [style=filled, fillcolor=black, fontcolor=white, label="149\n2005-10-28"];
+			"fs_enet-main.c" [style=filled, fillcolor=white, fontcolor=black, label="fs_enet-main.c\n"];
+			"structs-fs_enet-main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\nof_device_id\n"];
+			"funccall2-fs_enet-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nnetif_*\nkzalloc\nrequest_irq\nfree_netdev\ndev_*\nskb_*\nregister_netdev\neth_type_trans\nnapi_*\nkfree*\n"];
+			"funccall1-fs_enet-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\ndma_*\ncontainer_of\nnetdev_alloc_skb\nof_*\nenable_irq\nphy_*\ndisable_irq\ninit_timer\nnetdev_*\n"];
+		}
+		subgraph "cluster_fs_enet.h" {
+			style=filled
+			"commit_fs_enet.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-10-28"];
+			"fs_enet.h" [style=filled, fillcolor=white, fontcolor=black, label="fs_enet.h\n"];
+		}
+		"K:FS_ENET" [label="Kconfig: FS_ENET\n /drivers/net/ethernet/freescale/fs_enet\n  NET_VENDOR_FREESCALE && (CPM1 || CPM2 || PPC_MPC512x) ", shape=box, fontcolor=red];
+	}
+	//Symbol: FS_ENET_HAS_SCC
+	subgraph "cluster_FS_ENET_HAS_SCC"{
+		subgraph "cluster_mac-scc.c" {
+			style=filled
+			"commit_mac-scc.c" [style=filled, fillcolor=black, fontcolor=white, label="53\n2005-10-28"];
+			"mac-scc.c" [style=filled, fillcolor=white, fontcolor=black, label="mac-scc.c\n"];
+			"structs-mac-scc.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="fs_ops\n"];
+			"funccall0-mac-scc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\niounmap\ndev_*\nmemcpy_fromio\nof_*\nnetdev_*\n"];
+		}
+		"K:FS_ENET_HAS_SCC" [label="Kconfig: FS_ENET_HAS_SCC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && (CPM1 || CPM2) ", shape=box];
+	}
+	//Symbol: FS_ENET_HAS_FCC
+	subgraph "cluster_FS_ENET_HAS_FCC"{
+		subgraph "cluster_mac-fcc.c" {
+			style=filled
+			"commit_mac-fcc.c" [style=filled, fillcolor=black, fontcolor=white, label="53\n2005-10-28"];
+			"mac-fcc.c" [style=filled, fillcolor=white, fontcolor=black, label="mac-fcc.c\n"];
+			"structs-mac-fcc.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="fs_ops\n"];
+			"funccall0-mac-fcc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nmemset_io\nudelay\ndma_*\nmemcpy_fromio\nof_*\nnetdev_*\n"];
+		}
+		"K:FS_ENET_HAS_FCC" [label="Kconfig: FS_ENET_HAS_FCC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && CPM2 ", shape=box];
+	}
+	//Symbol: FS_ENET_HAS_FEC
+	subgraph "cluster_FS_ENET_HAS_FEC"{
+		subgraph "cluster_mac-fec.c" {
+			style=filled
+			"commit_mac-fec.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2005-10-28"];
+			"mac-fec.c" [style=filled, fillcolor=white, fontcolor=black, label="mac-fec.c\n"];
+			"structs-mac-fec.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="fs_ops\n"];
+			"funccall0-mac-fec.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\ndma_*\ndev_*\nmemcpy_fromio\nof_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_fec.h" {
+			style=filled
+			"commit_fec.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2006-08-14"];
+			"fec.h" [style=filled, fillcolor=white, fontcolor=black, label="fec.h\n"];
+		}
+		"K:FS_ENET_HAS_FEC" [label="Kconfig: FS_ENET_HAS_FEC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && (CPM1 || FS_ENET_MPC5121_FEC) ", shape=box];
+	}
+	//Symbol: FS_ENET_MDIO_FEC
+	subgraph "cluster_FS_ENET_MDIO_FEC"{
+		subgraph "cluster_mii-fec.c" {
+			style=filled
+			"commit_mii-fec.c" [style=filled, fillcolor=black, fontcolor=white, label="55\n2006-08-14"];
+			"mii-fec.c" [style=filled, fillcolor=white, fontcolor=black, label="mii-fec.c\n"];
+			"structs-mii-fec.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dio_driver\nplatform_driver\nof_device_id\nof_device_id\n"];
+			"funccall0-mii-fec.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nkfree*\nmdiobus_*\nkzalloc\nioremap*\nkmalloc\nof_*\n"];
+		}
+		"K:FS_ENET_MDIO_FEC" [label="Kconfig: FS_ENET_MDIO_FEC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && (CPM1 || FS_ENET_MPC5121_FEC) ", shape=box];
+	}
+	//Symbol: FS_ENET_MDIO_FCC
+	subgraph "cluster_FS_ENET_MDIO_FCC"{
+		subgraph "cluster_mii-bitbang.c" {
+			style=filled
+			"commit_mii-bitbang.c" [style=filled, fillcolor=black, fontcolor=white, label="49\n2005-10-28"];
+			"mii-bitbang.c" [style=filled, fillcolor=white, fontcolor=black, label="mii-bitbang.c\n"];
+			"structs-mii-bitbang.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dio_driver\nmdiobb_ops\nplatform_driver\nof_device_id\n"];
+			"funccall0-mii-bitbang.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nkfree*\nmdiobus_*\ncontainer_of\nkzalloc\nioremap*\nkmalloc\nof_*\n"];
+		}
+		"K:FS_ENET_MDIO_FCC" [label="Kconfig: FS_ENET_MDIO_FCC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && CPM2 ", shape=box];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: FS_ENET_HAS_FEC
+	subgraph "cluster_FS_ENET_HAS_FEC"{
+		subgraph "cluster_mac-fec.c" {
+			style=filled
+			"commit_mac-fec.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2005-10-28"];
+			"mac-fec.c" [style=filled, fillcolor=white, fontcolor=black, label="mac-fec.c\n"];
+			"structs-mac-fec.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="fs_ops\n"];
+			"funccall0-mac-fec.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\ndma_*\ndev_*\nmemcpy_fromio\nof_*\nnetdev_*\n"];
+		}
+		"K:FS_ENET_HAS_FEC" [label="Kconfig: FS_ENET_HAS_FEC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && (CPM1 || FS_ENET_MPC5121_FEC) ", shape=box];
+	}
+	//Symbol: FS_ENET_MDIO_FEC
+	subgraph "cluster_FS_ENET_MDIO_FEC"{
+		subgraph "cluster_mii-fec.c" {
+			style=filled
+			"commit_mii-fec.c" [style=filled, fillcolor=black, fontcolor=white, label="55\n2006-08-14"];
+			"mii-fec.c" [style=filled, fillcolor=white, fontcolor=black, label="mii-fec.c\n"];
+			"structs-mii-fec.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dio_driver\nplatform_driver\nof_device_id\nof_device_id\n"];
+			"funccall0-mii-fec.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nkfree*\nmdiobus_*\nkzalloc\nioremap*\nkmalloc\nof_*\n"];
+		}
+		"K:FS_ENET_MDIO_FEC" [label="Kconfig: FS_ENET_MDIO_FEC\n /drivers/net/ethernet/freescale/fs_enet\n  FS_ENET && (CPM1 || FS_ENET_MPC5121_FEC) ", shape=box];
+	}
+	//Symbol: MDIO_BITBANG
+	subgraph "cluster_MDIO_BITBANG"{
+		subgraph "cluster_mdio-bitbang.c" {
+			style=filled
+			"commit_mdio-bitbang.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-10-01"];
+			"mdio-bitbang.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio-bitbang.c\n"];
+			"funccall0-mdio-bitbang.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdiobus_*\n"];
+		}
+		"K:MDIO_BITBANG" [label="Kconfig: MDIO_BITBANG\n /drivers/net/phy\n ", shape=box];
+	}
+"fs_enet-main.c" -> "fs_enet.h"[color=blue];
+"mac-scc.c" -> "fs_enet.h"[color=blue];
+"mac-fcc.c" -> "fs_enet.h"[color=blue];
+"mac-fec.c" -> "fs_enet.h"[color=blue];
+"mac-fec.c" -> "fec.h"[color=blue];
+"mii-fec.c" -> "fs_enet.h"[color=blue];
+"mii-fec.c" -> "fec.h"[color=blue];
+"mii-bitbang.c" -> "fs_enet.h"[color=blue];
+"mac-fec.c" -> "fs_enet.h"[color=blue];
+"mac-fec.c" -> "fec.h"[color=blue];
+"mii-fec.c" -> "fs_enet.h"[color=blue];
+"mii-fec.c" -> "fec.h"[color=blue];
+}

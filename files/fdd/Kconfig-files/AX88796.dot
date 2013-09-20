@@ -1,0 +1,81 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: AX88796
+	subgraph "cluster_AX88796"{
+		subgraph "cluster_ax88796.c" {
+			style=filled
+			"commit_ax88796.c" [style=filled, fillcolor=black, fontcolor=white, label="87\n2007-07-03"];
+			"ax88796.c" [style=filled, fillcolor=white, fontcolor=black, label="ax88796.c\n"];
+			"structs-ax88796.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nmdiobb_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-ax88796.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nrequest_mem_region\nnetif_*\nmdiobus_*\nudelay\nrequest_irq\nfree_netdev\ndev_*\niounmap\n"];
+			"funccall1-ax88796.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nkfree*\nmemcpy\ncontainer_of\nplatform_*\nioremap*\nrelease_mem_region\nkmalloc\nphy_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_lib8390.c" {
+			style=filled
+			"commit_lib8390.c" [style=filled, fillcolor=black, fontcolor=white, label="87\n2005-04-16"];
+			"lib8390.c" [style=filled, fillcolor=white, fontcolor=black, label="lib8390.c\n"];
+			"funccall2-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="disable_irq_nosync_lockdep_irqsave\nmemset\nnetif_*\nmdelay\nenable_irq_lockdep_irqrestore\nenable_irq_lockdep\ndev_*\nskb_*\nether_crc\n"];
+			"funccall1-lib8390.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nether_setup\nspin_*\nmemcpy\nnetdev_alloc_skb\nenable_irq\ndisable_irq\nnetdev_*\ndisable_irq_nosync_lockdep\n"];
+		}
+		subgraph "cluster_8390.h" {
+			style=filled
+			"commit_8390.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"8390.h" [style=filled, fillcolor=white, fontcolor=black, label="8390.h\n"];
+			"funccall0-8390.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_8390.c" {
+			style=filled
+			"commit_8390.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2005-04-16"];
+			"8390.c" [style=filled, fillcolor=white, fontcolor=black, label="8390.c\n"];
+			"structs-8390.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+		}
+		"K:AX88796" [label="Kconfig: AX88796\n /drivers/net/ethernet/8390\n  ARM || MIPS || SUPERH ", shape=box, fontcolor=red];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: MDIO_BITBANG
+	subgraph "cluster_MDIO_BITBANG"{
+		subgraph "cluster_mdio-bitbang.c" {
+			style=filled
+			"commit_mdio-bitbang.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-10-01"];
+			"mdio-bitbang.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio-bitbang.c\n"];
+			"funccall0-mdio-bitbang.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdiobus_*\n"];
+		}
+		"K:MDIO_BITBANG" [label="Kconfig: MDIO_BITBANG\n /drivers/net/phy\n ", shape=box];
+	}
+	//Symbol: EEPROM_93CX6
+	subgraph "cluster_EEPROM_93CX6"{
+		subgraph "cluster_eeprom_93cx6.c" {
+			style=filled
+			"commit_eeprom_93cx6.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2007-05-11"];
+			"eeprom_93cx6.c" [style=filled, fillcolor=white, fontcolor=black, label="eeprom_93cx6.c\n"];
+		}
+		"K:EEPROM_93CX6" [label="Kconfig: EEPROM_93CX6\n /drivers/misc/eeprom\n ", shape=box];
+	}
+"ax88796.c" -> "lib8390.c"[color=blue];
+"lib8390.c" -> "8390.h"[color=blue];
+"8390.c" -> "lib8390.c"[color=blue];
+}

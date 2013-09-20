@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TEHUTI
+	subgraph "cluster_TEHUTI"{
+		subgraph "cluster_tehuti.h" {
+			style=filled
+			"commit_tehuti.h" [style=filled, fillcolor=black, fontcolor=white, label="29\n2007-09-17"];
+			"tehuti.h" [style=filled, fillcolor=white, fontcolor=black, label="tehuti.h\n"];
+		}
+		subgraph "cluster_tehuti.c" {
+			style=filled
+			"commit_tehuti.c" [style=filled, fillcolor=black, fontcolor=white, label="135\n2007-09-17"];
+			"tehuti.c" [style=filled, fillcolor=white, fontcolor=black, label="tehuti.c\n"];
+			"structs-tehuti.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-tehuti.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nmdelay\nudelay\npci_*\npci_request_regions\nrequest_firmware\nskb_*\niounmap\nregister_netdev\nnapi_*\n"];
+			"funccall2-tehuti.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="copy_*\nprint_eth_id\nbdx_rx_alloc_skbs\nethtool_*\ncontainer_of\nioremap*\nrelease_firmware\nnetdev_*\nunregister_netdev\nlocal_*\nmemset\n"];
+			"funccall1-tehuti.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_release_regions\nvlan_*\nvmalloc\nfree_netdev\nrequest_irq\ndev_*\neth_type_trans\nspin_*\nmemcpy\nnetdev_alloc_skb\n"];
+		}
+		"K:TEHUTI" [label="Kconfig: TEHUTI\n /drivers/net/ethernet/tehuti\n  PCI ", shape=box, fontcolor=red];
+	}
+"tehuti.c" -> "tehuti.h"[color=blue];
+}

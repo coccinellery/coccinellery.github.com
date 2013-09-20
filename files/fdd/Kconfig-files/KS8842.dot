@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: KS8842
+	subgraph "cluster_KS8842"{
+		subgraph "cluster_ks8842.c" {
+			style=filled
+			"commit_ks8842.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2009-06-04"];
+			"ks8842.c" [style=filled, fillcolor=white, fontcolor=black, label="ks8842.c\n"];
+			"structs-ks8842.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-ks8842.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nrequest_mem_region\nnetdev_alloc_skb_ip_align\nnetif_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nregister_netdev\neth_type_trans\nkfree*\n"];
+			"funccall1-ks8842.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\ndma_*\nplatform_*\ncontainer_of\nnetdev_alloc_skb\nioremap*\nschedule_work\nrelease_mem_region\nkmalloc\neth_hw_addr_random\nmsleep\nnetdev_*\n"];
+		}
+		"K:KS8842" [label="Kconfig: KS8842\n /drivers/net/ethernet/micrel\n  HAS_IOMEM && DMA_ENGINE ", shape=box, fontcolor=red];
+	}
+}

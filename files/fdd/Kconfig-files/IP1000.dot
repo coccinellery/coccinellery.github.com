@@ -1,0 +1,32 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IP1000
+	subgraph "cluster_IP1000"{
+		subgraph "cluster_ipg.h" {
+			style=filled
+			"commit_ipg.h" [style=filled, fillcolor=black, fontcolor=white, label="43\n2007-09-17"];
+			"ipg.h" [style=filled, fillcolor=white, fontcolor=black, label="ipg.h\n"];
+		}
+		subgraph "cluster_ipg.c" {
+			style=filled
+			"commit_ipg.c" [style=filled, fillcolor=black, fontcolor=white, label="111\n2007-09-17"];
+			"ipg.c" [style=filled, fillcolor=white, fontcolor=black, label="ipg.c\n"];
+			"structs-ipg.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-ipg.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nnetif_*\npci_release_regions\nmdelay\npci_iounmap\npci_*\nread_*\nsynchronize_irq\nrequest_irq\nfree_netdev\n"];
+			"funccall1-ipg.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_request_regions\ndev_*\nskb_*\nmii_*\nmutex_*\nregister_netdev\neth_type_trans\nspin_*\nmemcpy\ndma_*\ncontainer_of\nnetdev_*\n"];
+		}
+		"K:IP1000" [label="Kconfig: IP1000\n /drivers/net/ethernet/icplus\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"ipg.c" -> "ipg.h"[color=blue];
+}

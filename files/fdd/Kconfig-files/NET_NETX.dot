@@ -1,0 +1,26 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: NET_NETX
+	subgraph "cluster_NET_NETX"{
+		subgraph "cluster_netx-eth.c" {
+			style=filled
+			"commit_netx-eth.c" [style=filled, fillcolor=black, fontcolor=white, label="55\n2006-06-22"];
+			"netx-eth.c" [style=filled, fillcolor=white, fontcolor=black, label="netx-eth.c\n"];
+			"structs-netx-eth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-netx-eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="xc_request_firmware\nis_valid_ether_addr\nfree_irq\nnetx_eth_enable\nunregister_netdev\nmemset_io\nnetif_*\nudelay\nrequest_irq\nfree_netdev\nmemcpy_toio\ndev_*\n"];
+			"funccall1-netx-eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nmii_*\nregister_netdev\neth_type_trans\nnetx_eth_receive\nether_setup\nspin_*\nplatform_*\nnetdev_alloc_skb\nmemcpy_fromio\nnetdev_*\n"];
+		}
+		"K:NET_NETX" [label="Kconfig: NET_NETX\n /drivers/net/ethernet\n  ARCH_NETX ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

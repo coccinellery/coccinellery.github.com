@@ -1,0 +1,32 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ARM_KS8695_ETHER
+	subgraph "cluster_ARM_KS8695_ETHER"{
+		subgraph "cluster_ks8695net.h" {
+			style=filled
+			"commit_ks8695net.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2008-12-11"];
+			"ks8695net.h" [style=filled, fillcolor=white, fontcolor=black, label="ks8695net.h\n"];
+		}
+		subgraph "cluster_ks8695net.c" {
+			style=filled
+			"commit_ks8695net.c" [style=filled, fillcolor=black, fontcolor=white, label="67\n2008-12-11"];
+			"ks8695net.c" [style=filled, fillcolor=white, fontcolor=black, label="ks8695net.c\n"];
+			"structs-ks8695net.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-ks8695net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nrelease_resource\nrequest_mem_region\nmemset\nnetif_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nregister_netdev\n"];
+			"funccall1-ks8695net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nnapi_*\nkfree*\nspin_*\nmemcpy\ndma_*\nplatform_*\nethtool_*\ncontainer_of\nnetdev_alloc_skb\nioremap*\nmsleep\nnetdev_*\n"];
+		}
+		"K:ARM_KS8695_ETHER" [label="Kconfig: ARM_KS8695_ETHER\n /drivers/net/ethernet/micrel\n  ARM && ARCH_KS8695 ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"ks8695net.c" -> "ks8695net.h"[color=blue];
+}

@@ -1,0 +1,64 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: BNX2
+	subgraph "cluster_BNX2"{
+		subgraph "cluster_bnx2.h" {
+			style=filled
+			"commit_bnx2.h" [style=filled, fillcolor=black, fontcolor=white, label="265\n2005-05-26"];
+			"bnx2.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2.h\n"];
+			"funccall0-bnx2.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_bnx2.c" {
+			style=filled
+			"commit_bnx2.c" [style=filled, fillcolor=black, fontcolor=white, label="871\n2005-05-26"];
+			"bnx2.c" [style=filled, fillcolor=white, fontcolor=black, label="bnx2.c\n"];
+			"structs-bnx2.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall4-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\nkzalloc\nmod_timer\npci_request_regions\nrequest_firmware\nskb_*\nbnx2_request_firmware\nether_crc_le\nregister_netdev\n__skb_*\nprefetch\n"];
+			"funccall3-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nmemcmp\ndma_*\nethtool_*\ncontainer_of\nschedule_work\nkmalloc\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\n__free_page\nalloc_etherdev_mq\nmemset\nmsleep_interruptible\n"];
+			"funccall2-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="bnx2_free_irq\npci_release_regions\nvlan_*\npci_iounmap\n__bnx2_free_irq\nrcu_*\nsynchronize_irq\nfree_netdev\nrequest_irq\ndev_*\nbnx2_request_irq\nmutex_*\neth_type_trans\nalloc_page\nspin_*\n"];
+			"funccall1-bnx2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nbnx2_release_firmware\nmemcpy\nsmp_mb\ndel_timer_sync\nnetdev_alloc_skb\natomic_*\nenable_irq\ndisable_irq\nmsleep\nsmp_processor_id\ninit_timer\n"];
+		}
+		subgraph "cluster_cnic_if.h" {
+			style=filled
+			"commit_cnic_if.h" [style=filled, fillcolor=black, fontcolor=white, label="67\n2009-06-08"];
+			"cnic_if.h" [style=filled, fillcolor=white, fontcolor=black, label="cnic_if.h\n"];
+		}
+		subgraph "cluster_bnx2_fw.h" {
+			style=filled
+			"commit_bnx2_fw.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2005-05-26"];
+			"bnx2_fw.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2_fw.h\n"];
+			"structs-bnx2_fw.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="cpu_reg\ncpu_reg\ncpu_reg\ncpu_reg\ncpu_reg\n"];
+		}
+		subgraph "cluster_bnx2x_mfw_req.h" {
+			style=filled
+			"commit_bnx2x_mfw_req.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2012-06-26"];
+			"bnx2x_mfw_req.h" [style=filled, fillcolor=white, fontcolor=black, label="bnx2x_mfw_req.h\n"];
+		}
+		"K:BNX2" [label="Kconfig: BNX2\n /drivers/net/ethernet/broadcom\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+"bnx2.c" -> "bnx2_fw.h"[color=blue];
+"bnx2.c" -> "bnx2.h"[color=blue];
+"bnx2.c" -> "cnic_if.h"[color=blue];
+"cnic_if.h" -> "bnx2x_mfw_req.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

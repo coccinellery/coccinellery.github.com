@@ -1,0 +1,221 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: BNA
+	subgraph "cluster_BNA"{
+		subgraph "cluster_cna_fwimg.c" {
+			style=filled
+			"commit_cna_fwimg.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2010-08-23"];
+			"cna_fwimg.c" [style=filled, fillcolor=white, fontcolor=black, label="cna_fwimg.c\n"];
+			"structs-cna_fwimg.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-cna_fwimg.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_firmware\n"];
+		}
+		subgraph "cluster_bfi.h" {
+			style=filled
+			"commit_bfi.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-08-23"];
+			"bfi.h" [style=filled, fillcolor=white, fontcolor=black, label="bfi.h\n"];
+		}
+		subgraph "cluster_cna.h" {
+			style=filled
+			"commit_cna.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2009-09-23"];
+			"cna.h" [style=filled, fillcolor=white, fontcolor=black, label="cna.h\n"];
+		}
+		subgraph "cluster_bfa_defs.h" {
+			style=filled
+			"commit_bfa_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2010-08-23"];
+			"bfa_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_defs.h\n"];
+		}
+		subgraph "cluster_bfi_enet.h" {
+			style=filled
+			"commit_bfi_enet.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2011-08-08"];
+			"bfi_enet.h" [style=filled, fillcolor=white, fontcolor=black, label="bfi_enet.h\n"];
+		}
+		subgraph "cluster_bna_types.h" {
+			style=filled
+			"commit_bna_types.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-08-23"];
+			"bna_types.h" [style=filled, fillcolor=white, fontcolor=black, label="bna_types.h\n"];
+		}
+		subgraph "cluster_bfa_defs_status.h" {
+			style=filled
+			"commit_bfa_defs_status.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2010-08-23"];
+			"bfa_defs_status.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_defs_status.h\n"];
+		}
+		subgraph "cluster_bfa_defs_mfg_comm.h" {
+			style=filled
+			"commit_bfa_defs_mfg_comm.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2010-08-23"];
+			"bfa_defs_mfg_comm.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_defs_mfg_comm.h\n"];
+		}
+		subgraph "cluster_bfa_cs.h" {
+			style=filled
+			"commit_bfa_cs.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2009-09-23"];
+			"bfa_cs.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_cs.h\n"];
+		}
+		subgraph "cluster_bna_hw_defs.h" {
+			style=filled
+			"commit_bna_hw_defs.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-08-08"];
+			"bna_hw_defs.h" [style=filled, fillcolor=white, fontcolor=black, label="bna_hw_defs.h\n"];
+		}
+		subgraph "cluster_bfi_reg.h" {
+			style=filled
+			"commit_bfi_reg.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2011-06-13"];
+			"bfi_reg.h" [style=filled, fillcolor=white, fontcolor=black, label="bfi_reg.h\n"];
+		}
+		subgraph "cluster_bfa_defs_cna.h" {
+			style=filled
+			"commit_bfa_defs_cna.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2010-08-23"];
+			"bfa_defs_cna.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_defs_cna.h\n"];
+		}
+		subgraph "cluster_bfa_cee.h" {
+			style=filled
+			"commit_bfa_cee.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2010-08-23"];
+			"bfa_cee.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_cee.h\n"];
+		}
+		subgraph "cluster_bfa_cee.c" {
+			style=filled
+			"commit_bfa_cee.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2010-08-23"];
+			"bfa_cee.c" [style=filled, fillcolor=white, fontcolor=black, label="bfa_cee.c\n"];
+			"funccall0-bfa_cee.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\n"];
+		}
+		subgraph "cluster_bfi_cna.h" {
+			style=filled
+			"commit_bfi_cna.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2010-08-23"];
+			"bfi_cna.h" [style=filled, fillcolor=white, fontcolor=black, label="bfi_cna.h\n"];
+		}
+		subgraph "cluster_bfa_ioc_ct.c" {
+			style=filled
+			"commit_bfa_ioc_ct.c" [style=filled, fillcolor=black, fontcolor=white, label="45\n2010-03-05"];
+			"bfa_ioc_ct.c" [style=filled, fillcolor=white, fontcolor=black, label="bfa_ioc_ct.c\n"];
+			"structs-bfa_ioc_ct.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-bfa_ioc_ct.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_bfa_ioc.h" {
+			style=filled
+			"commit_bfa_ioc.h" [style=filled, fillcolor=black, fontcolor=white, label="43\n2010-08-23"];
+			"bfa_ioc.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_ioc.h\n"];
+			"funccall0-bfa_ioc.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		subgraph "cluster_bfa_ioc.c" {
+			style=filled
+			"commit_bfa_ioc.c" [style=filled, fillcolor=black, fontcolor=white, label="67\n2010-08-23"];
+			"bfa_ioc.c" [style=filled, fillcolor=white, fontcolor=black, label="bfa_ioc.c\n"];
+			"funccall0-bfa_ioc.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\nudelay\nmemcpy\ndel_timer\nmemset\n"];
+		}
+		subgraph "cluster_bfa_msgq.h" {
+			style=filled
+			"commit_bfa_msgq.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-08-08"];
+			"bfa_msgq.h" [style=filled, fillcolor=white, fontcolor=black, label="bfa_msgq.h\n"];
+		}
+		subgraph "cluster_bfa_msgq.c" {
+			style=filled
+			"commit_bfa_msgq.c" [style=filled, fillcolor=black, fontcolor=white, label="5\n2011-08-08"];
+			"bfa_msgq.c" [style=filled, fillcolor=white, fontcolor=black, label="bfa_msgq.c\n"];
+			"funccall0-bfa_msgq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nmemset\n"];
+		}
+		subgraph "cluster_bna_tx_rx.c" {
+			style=filled
+			"commit_bna_tx_rx.c" [style=filled, fillcolor=black, fontcolor=white, label="13\n2011-08-08"];
+			"bna_tx_rx.c" [style=filled, fillcolor=white, fontcolor=black, label="bna_tx_rx.c\n"];
+			"funccall0-bna_tx_rx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nmemset\n"];
+		}
+		subgraph "cluster_bna_enet.c" {
+			style=filled
+			"commit_bna_enet.c" [style=filled, fillcolor=black, fontcolor=white, label="9\n2011-08-08"];
+			"bna_enet.c" [style=filled, fillcolor=white, fontcolor=black, label="bna_enet.c\n"];
+			"funccall0-bna_enet.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="bnad_cb_ioceth_failed\nbnad_cb_ioceth_disabled\nbna_ioceth_uninit\nbna_ioceth_init\nbnad_cb_ioceth_ready\ncall_ioceth_stop_cbfn\nmemset\n"];
+		}
+		subgraph "cluster_bnad_debugfs.c" {
+			style=filled
+			"commit_bnad_debugfs.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2011-12-22"];
+			"bnad_debugfs.c" [style=filled, fillcolor=white, fontcolor=black, label="bnad_debugfs.c\n"];
+			"structs-bnad_debugfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="file_operations\nfile_operations\nfile_operations\nfile_operations\nfile_operations\n"];
+			"funccall0-bnad_debugfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncopy_*\nspin_*\nkfree*\nwait_for_completion\npci_*\nkzalloc\natomic_*\n"];
+		}
+		subgraph "cluster_bnad_ethtool.c" {
+			style=filled
+			"commit_bnad_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="49\n2010-08-23"];
+			"bnad_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="bnad_ethtool.c\n"];
+			"structs-bnad_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-bnad_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_firmware\nmutex_*\nmemset\nnetif_*\nspin_*\nkfree*\nwait_for_completion\nmemcpy\ndel_timer_sync\npci_*\nethtool_*\nkzalloc\nrelease_firmware\nnetdev_*\n"];
+		}
+		subgraph "cluster_bnad.h" {
+			style=filled
+			"commit_bnad.h" [style=filled, fillcolor=black, fontcolor=white, label="69\n2010-08-23"];
+			"bnad.h" [style=filled, fillcolor=white, fontcolor=black, label="bnad.h\n"];
+			"structs-bnad.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\nfirmware\n"];
+		}
+		subgraph "cluster_bnad.c" {
+			style=filled
+			"commit_bnad.c" [style=filled, fillcolor=black, fontcolor=white, label="139\n2010-08-23"];
+			"bnad.c" [style=filled, fillcolor=white, fontcolor=black, label="bnad.c\n"];
+			"structs-bnad.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\n"];
+			"funccall4-bnad.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nbna_ib_ack_disable_irq\nnetif_*\npci_*\nput_page\nkzalloc\nmod_timer\npci_request_regions\nbna_ioceth_enable\nskb_*\niounmap\nregister_netdev\n"];
+			"funccall3-bnad.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="prefetch\nnapi_*\nwait_for_completion\ndma_*\ncontainer_of\nioremap*\nsmp_mb__before_clear_bit\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\n"];
+			"funccall2-bnad.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nwait_for_completion_timeout\nsetup_timer\npci_release_regions\nvlan_*\ndestroy_workqueue\nbnad_ioceth_enable\nbnad_ioceth_disable\nsynchronize_irq\nfree_netdev\nrequest_irq\nkcalloc\n"];
+			"funccall1-bnad.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nalloc_pages\neth_type_trans\nbna_ioceth_disable\nspin_*\nkfree*\nmemcpy\nsmp_mb\ndel_timer_sync\nis_zero_ether_addr\n"];
+		}
+		subgraph "cluster_bna.h" {
+			style=filled
+			"commit_bna.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-08-23"];
+			"bna.h" [style=filled, fillcolor=white, fontcolor=black, label="bna.h\n"];
+			"funccall0-bna.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcmp\n"];
+		}
+		"K:BNA" [label="Kconfig: BNA\n /drivers/net/ethernet/brocade/bna\n  PCI ", shape=box, fontcolor=red];
+	}
+"cna_fwimg.c" -> "cna.h"[color=blue];
+"cna_fwimg.c" -> "bfi.h"[color=blue];
+"cna_fwimg.c" -> "bnad.h"[color=blue];
+"bfi.h" -> "bfa_defs.h"[color=blue];
+"bfa_defs.h" -> "bfa_defs_mfg_comm.h"[color=blue];
+"bfa_defs.h" -> "cna.h"[color=blue];
+"bfa_defs.h" -> "bfa_defs_status.h"[color=blue];
+"bfi_enet.h" -> "bfi.h"[color=blue];
+"bfi_enet.h" -> "bfa_defs.h"[color=blue];
+"bna_types.h" -> "bna_hw_defs.h"[color=blue];
+"bna_types.h" -> "cna.h"[color=blue];
+"bna_types.h" -> "bfa_msgq.h"[color=blue];
+"bna_types.h" -> "bfa_cee.h"[color=blue];
+"bfa_defs_mfg_comm.h" -> "bfa_defs.h"[color=blue];
+"bfa_cs.h" -> "cna.h"[color=blue];
+"bna_hw_defs.h" -> "bfi_reg.h"[color=blue];
+"bfa_defs_cna.h" -> "bfa_defs.h"[color=blue];
+"bfa_cee.h" -> "bfa_ioc.h"[color=blue];
+"bfa_cee.h" -> "bfa_defs_cna.h"[color=blue];
+"bfa_cee.c" -> "bfa_ioc.h"[color=blue];
+"bfa_cee.c" -> "bfa_cee.h"[color=blue];
+"bfa_cee.c" -> "bfi_cna.h"[color=blue];
+"bfi_cna.h" -> "bfi.h"[color=blue];
+"bfi_cna.h" -> "bfa_defs_cna.h"[color=blue];
+"bfa_ioc_ct.c" -> "cna.h"[color=blue];
+"bfa_ioc_ct.c" -> "bfa_defs.h"[color=blue];
+"bfa_ioc_ct.c" -> "bfi.h"[color=blue];
+"bfa_ioc_ct.c" -> "bfa_ioc.h"[color=blue];
+"bfa_ioc_ct.c" -> "bfi_reg.h"[color=blue];
+"bfa_ioc.h" -> "cna.h"[color=blue];
+"bfa_ioc.h" -> "bfi.h"[color=blue];
+"bfa_ioc.h" -> "bfa_cs.h"[color=blue];
+"bfa_ioc.c" -> "bfa_defs.h"[color=blue];
+"bfa_ioc.c" -> "bfa_ioc.h"[color=blue];
+"bfa_ioc.c" -> "bfi_reg.h"[color=blue];
+"bfa_msgq.h" -> "bfa_ioc.h"[color=blue];
+"bfa_msgq.h" -> "bfi.h"[color=blue];
+"bfa_msgq.h" -> "bfa_defs.h"[color=blue];
+"bfa_msgq.h" -> "bfa_cs.h"[color=blue];
+"bfa_msgq.c" -> "bfa_ioc.h"[color=blue];
+"bfa_msgq.c" -> "bfa_msgq.h"[color=blue];
+"bfa_msgq.c" -> "bfi.h"[color=blue];
+"bna_tx_rx.c" -> "bfi.h"[color=blue];
+"bna_tx_rx.c" -> "bna.h"[color=blue];
+"bna_enet.c" -> "bna.h"[color=blue];
+"bnad_debugfs.c" -> "bnad.h"[color=blue];
+"bnad_ethtool.c" -> "cna.h"[color=blue];
+"bnad_ethtool.c" -> "bna.h"[color=blue];
+"bnad_ethtool.c" -> "bnad.h"[color=blue];
+"bnad.h" -> "bna.h"[color=blue];
+"bnad.c" -> "cna.h"[color=blue];
+"bnad.c" -> "bna.h"[color=blue];
+"bnad.c" -> "bnad.h"[color=blue];
+"bna.h" -> "bfi_enet.h"[color=blue];
+"bna.h" -> "bfa_ioc.h"[color=blue];
+"bna.h" -> "bfa_defs.h"[color=blue];
+"bna.h" -> "bna_types.h"[color=blue];
+}

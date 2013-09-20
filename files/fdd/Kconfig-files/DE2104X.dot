@@ -1,0 +1,17 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: DE2104X
+	subgraph "cluster_DE2104X"{
+		subgraph "cluster_de2104x.c" {
+			style=filled
+			"commit_de2104x.c" [style=filled, fillcolor=black, fontcolor=white, label="157\n2005-04-16"];
+			"de2104x.c" [style=filled, fillcolor=white, fontcolor=black, label="de2104x.c\n"];
+			"structs-de2104x.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-de2104x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nadd_timer\nnetif_*\nmdelay\nudelay\npci_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nether_crc_le\n"];
+			"funccall2-de2104x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nethtool_*\nioremap*\nnetdev_*\nunregister_netdev\nmemset\npci_release_regions\nsynchronize_irq\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-de2104x.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nenable_irq\nmsleep\ndisable_irq\ninit_timer\n"];
+		}
+		"K:DE2104X" [label="Kconfig: DE2104X\n /drivers/net/ethernet/dec/tulip\n  PCI ", shape=box, fontcolor=red];
+	}
+}

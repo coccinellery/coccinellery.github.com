@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: BMAC
+	subgraph "cluster_BMAC"{
+		subgraph "cluster_bmac.h" {
+			style=filled
+			"commit_bmac.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2005-04-16"];
+			"bmac.h" [style=filled, fillcolor=white, fontcolor=black, label="bmac.h\n"];
+		}
+		subgraph "cluster_bmac.c" {
+			style=filled
+			"commit_bmac.c" [style=filled, fillcolor=black, fontcolor=white, label="95\n2005-04-16"];
+			"bmac.c" [style=filled, fillcolor=white, fontcolor=black, label="bmac.c\n"];
+			"structs-bmac.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nof_device_id\n"];
+			"funccall2-bmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ndel_timer\nunregister_netdev\nadd_timer\nmemset\nnetif_*\nudelay\nread_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nether_crc_le\n"];
+			"funccall1-bmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\neth_type_trans\nmacio_release_resources\nkfree*\nspin_*\nmemcpy\nnetdev_alloc_skb\nioremap*\nof_*\nenable_irq\nkmalloc\ndisable_irq\ninit_timer\nnetdev_*\n"];
+		}
+		"K:BMAC" [label="Kconfig: BMAC\n /drivers/net/ethernet/apple\n  PPC_PMAC && PPC32 ", shape=box, fontcolor=red];
+	}
+"bmac.c" -> "bmac.h"[color=blue];
+}

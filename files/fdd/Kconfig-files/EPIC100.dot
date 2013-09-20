@@ -1,0 +1,26 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: EPIC100
+	subgraph "cluster_EPIC100"{
+		subgraph "cluster_epic100.c" {
+			style=filled
+			"commit_epic100.c" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"epic100.c" [style=filled, fillcolor=white, fontcolor=black, label="epic100.c\n"];
+			"structs-epic100.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-epic100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nadd_timer\nmemset\nnetif_*\npci_release_regions\nudelay\npci_iounmap\npci_*\nread_*\nrequest_irq\nfree_netdev\npci_request_regions\ndev_*\n"];
+			"funccall1-epic100.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\nnapi_*\nspin_*\nmemcmp\nmemcpy\ndel_timer_sync\ncontainer_of\nnetdev_alloc_skb\ninit_timer\nnetdev_*\n"];
+		}
+		"K:EPIC100" [label="Kconfig: EPIC100\n /drivers/net/ethernet/smsc\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

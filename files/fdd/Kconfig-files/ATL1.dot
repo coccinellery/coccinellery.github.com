@@ -1,0 +1,47 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ATL1
+	subgraph "cluster_ATL1"{
+		subgraph "cluster_atl1.h" {
+			style=filled
+			"commit_atl1.h" [style=filled, fillcolor=black, fontcolor=white, label="47\n2007-02-08"];
+			"atl1.h" [style=filled, fillcolor=white, fontcolor=black, label="atl1.h\n"];
+		}
+		subgraph "cluster_atlx.h" {
+			style=filled
+			"commit_atlx.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2008-02-02"];
+			"atlx.h" [style=filled, fillcolor=white, fontcolor=black, label="atlx.h\n"];
+		}
+		subgraph "cluster_atlx.c" {
+			style=filled
+			"commit_atlx.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2008-02-02"];
+			"atlx.c" [style=filled, fillcolor=white, fontcolor=black, label="atlx.c\n"];
+			"funccall0-atlx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\ndev_*\nnetif_*\nspin_*\nmemcpy\ncontainer_of\nschedule_work\nsynchronize_irq\nnetdev_*\n"];
+		}
+		subgraph "cluster_atl1.c" {
+			style=filled
+			"commit_atl1.c" [style=filled, fillcolor=black, fontcolor=white, label="265\n2007-02-08"];
+			"atl1.c" [style=filled, fillcolor=white, fontcolor=black, label="atl1.c\n"];
+			"structs-atl1.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-atl1.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\nkzalloc\nmod_timer\npci_request_regions\nskb_*\nether_crc_le\nregister_netdev\nnapi_*\ncpu_relax\nmemcmp\n"];
+			"funccall2-atl1.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\nschedule_work\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nsetup_timer\npci_release_regions\nvlan_*\npci_iounmap\nfree_netdev\nrequest_irq\n"];
+			"funccall1-atl1.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\neth_random_addr\neth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\ndel_timer_sync\natomic_*\nenable_irq\nmsleep\ndisable_irq\n"];
+		}
+		"K:ATL1" [label="Kconfig: ATL1\n /drivers/net/ethernet/atheros/atlx\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+"atl1.h" -> "atlx.h"[color=blue];
+"atlx.c" -> "atlx.h"[color=blue];
+"atl1.c" -> "atl1.h"[color=blue];
+"atl1.c" -> "atlx.c"[color=blue];
+}

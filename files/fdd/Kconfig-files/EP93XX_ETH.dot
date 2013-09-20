@@ -1,0 +1,26 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: EP93XX_ETH
+	subgraph "cluster_EP93XX_ETH"{
+		subgraph "cluster_ep93xx_eth.c" {
+			style=filled
+			"commit_ep93xx_eth.c" [style=filled, fillcolor=black, fontcolor=white, label="77\n2006-09-22"];
+			"ep93xx_eth.c" [style=filled, fillcolor=white, fontcolor=black, label="ep93xx_eth.c\n"];
+			"structs-ep93xx_eth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall2-ep93xx_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nrelease_resource\nrequest_mem_region\nnetif_*\nrequest_irq\nfree_netdev\ndev_*\nskb_*\niounmap\nmii_*\nregister_netdev\neth_type_trans\nnapi_*\n"];
+			"funccall1-ep93xx_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nmemcpy\ndma_*\nplatform_*\ncontainer_of\nnetdev_alloc_skb\nioremap*\nep93xx_eth_remove\nkmalloc\nis_zero_ether_addr\neth_hw_addr_random\nmsleep\nnetdev_*\n"];
+		}
+		"K:EP93XX_ETH" [label="Kconfig: EP93XX_ETH\n /drivers/net/ethernet/cirrus\n  ARM && ARCH_EP93XX ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

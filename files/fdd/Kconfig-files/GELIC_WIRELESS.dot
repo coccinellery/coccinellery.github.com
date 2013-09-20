@@ -1,0 +1,40 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: GELIC_WIRELESS
+	subgraph "cluster_GELIC_WIRELESS"{
+		subgraph "cluster_ps3_gelic_wireless.h" {
+			style=filled
+			"commit_ps3_gelic_wireless.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2008-02-07"];
+			"ps3_gelic_wireless.h" [style=filled, fillcolor=white, fontcolor=black, label="ps3_gelic_wireless.h\n"];
+			"funccall0-ps3_gelic_wireless.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		subgraph "cluster_ps3_gelic_wireless.c" {
+			style=filled
+			"commit_ps3_gelic_wireless.c" [style=filled, fillcolor=black, fontcolor=white, label="91\n2008-02-07"];
+			"ps3_gelic_wireless.c" [style=filled, fillcolor=white, fontcolor=black, label="ps3_gelic_wireless.c\n"];
+			"structs-ps3_gelic_wireless.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\niw_handler_def\nnet_device_ops\n"];
+			"funccall2-ps3_gelic_wireless.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nunregister_netdev\nmemset\nwait_for_completion_timeout\nnetif_*\ndestroy_workqueue\nkzalloc\n__get_free_page\nfree_netdev\ndev_*\n"];
+			"funccall1-ps3_gelic_wireless.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_addr_equal\nmutex_*\nkfree*\nspin_*\nwait_for_completion\nmemcpy\nmemcmp\ncontainer_of\nnetdev_*\nfree_page\n"];
+		}
+		subgraph "cluster_ps3_gelic_net.h" {
+			style=filled
+			"commit_ps3_gelic_net.h" [style=filled, fillcolor=black, fontcolor=white, label="43\n2007-07-05"];
+			"ps3_gelic_net.h" [style=filled, fillcolor=white, fontcolor=black, label="ps3_gelic_net.h\n"];
+			"funccall0-ps3_gelic_net.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_ps3_gelic_net.c" {
+			style=filled
+			"commit_ps3_gelic_net.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2007-07-05"];
+			"ps3_gelic_net.c" [style=filled, fillcolor=white, fontcolor=black, label="ps3_gelic_net.c\n"];
+			"structs-ps3_gelic_net.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\n"];
+			"funccall2-ps3_gelic_net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\ndev_alloc_skb\nunregister_netdev\nmemset\nnetif_*\nkzalloc\ngelic_card_get_ether_port_status\nrequest_irq\nfree_netdev\ndev_*\nskb_*\ngelic_ether_setup_netdev_ops\n"];
+			"funccall1-ps3_gelic_net.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nregister_netdev\neth_type_trans\nnapi_*\nkfree*\nspin_*\nmemcpy\ndma_*\nethtool_*\ncontainer_of\nschedule_work\natomic_*\nnetdev_*\n"];
+		}
+		"K:GELIC_WIRELESS" [label="Kconfig: GELIC_WIRELESS\n /drivers/net/ethernet/toshiba\n  GELIC_NET && WLAN ", shape=box, fontcolor=red];
+	}
+"ps3_gelic_wireless.c" -> "ps3_gelic_net.h"[color=blue];
+"ps3_gelic_wireless.c" -> "ps3_gelic_wireless.h"[color=blue];
+"ps3_gelic_net.c" -> "ps3_gelic_net.h"[color=blue];
+"ps3_gelic_net.c" -> "ps3_gelic_wireless.h"[color=blue];
+}

@@ -1,0 +1,88 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: BFIN_MAC
+	subgraph "cluster_BFIN_MAC"{
+		subgraph "cluster_bfin_mac.h" {
+			style=filled
+			"commit_bfin_mac.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2007-07-17"];
+			"bfin_mac.h" [style=filled, fillcolor=white, fontcolor=black, label="bfin_mac.h\n"];
+		}
+		subgraph "cluster_bfin_mac.c" {
+			style=filled
+			"commit_bfin_mac.c" [style=filled, fillcolor=black, fontcolor=white, label="179\n2007-07-25"];
+			"bfin_mac.c" [style=filled, fillcolor=white, fontcolor=black, label="bfin_mac.c\n"];
+			"structs-bfin_mac.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\nplatform_driver\nptp_clock_info\n"];
+			"funccall3-bfin_mac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\nmdiobus_*\nudelay\nbfin_get_ether_addr\nenable_irq_wake\nmod_timer\nskb_*\nregister_netdev\nether_crc\ncopy_*\nether_setup\ndma_*\n"];
+			"funccall2-bfin_mac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nkmalloc\nphy_*\nnetdev_*\nis_valid_ether_addr\ndel_timer\nunregister_netdev\nmemset\ndisable_irq_wake\nptp_*\nfree_netdev\nrequest_irq\ndev_*\n"];
+			"funccall1-bfin_mac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\ndevice_*\nplatform_*\nnetdev_alloc_skb\nenable_irq\ndisable_irq\neth_hw_addr_random\ninit_timer\n"];
+		}
+		"K:BFIN_MAC" [label="Kconfig: BFIN_MAC\n /drivers/net/ethernet/adi\n  BF516 || BF518 || BF526 || BF527 || BF536 || BF537 ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+"bfin_mac.c" -> "bfin_mac.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+}

@@ -1,0 +1,87 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCH_GBE
+	subgraph "cluster_PCH_GBE"{
+		subgraph "cluster_pch_gbe_main.c" {
+			style=filled
+			"commit_pch_gbe_main.c" [style=filled, fillcolor=black, fontcolor=white, label="113\n2010-09-21"];
+			"pch_gbe_main.c" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_main.c\n"];
+			"structs-pch_gbe_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-pch_gbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\nkzalloc\nmod_timer\npci_request_regions\nskb_*\niounmap\nregister_netdev\nnapi_*\ncopy_*\ncpu_relax\ndma_*\n"];
+			"funccall2-pch_gbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\nschedule_work\nkmalloc\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nmemset\nsetup_timer\npci_release_regions\nptp_*\nsynchronize_irq\npch_gbe_free_irq\nfree_netdev\npch_gbe_request_irq\n"];
+			"funccall1-pch_gbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\ndev_*\nmii_*\neth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\natomic_*\nenable_irq\ndisable_irq\n"];
+		}
+		subgraph "cluster_pch_gbe_api.h" {
+			style=filled
+			"commit_pch_gbe_api.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2010-09-21"];
+			"pch_gbe_api.h" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_api.h\n"];
+		}
+		subgraph "cluster_pch_gbe_api.c" {
+			style=filled
+			"commit_pch_gbe_api.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2010-09-21"];
+			"pch_gbe_api.c" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_api.c\n"];
+		}
+		subgraph "cluster_pch_gbe_param.c" {
+			style=filled
+			"commit_pch_gbe_param.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2010-09-21"];
+			"pch_gbe_param.c" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_param.c\n"];
+		}
+		subgraph "cluster_pch_gbe_ethtool.c" {
+			style=filled
+			"commit_pch_gbe_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="23\n2010-09-21"];
+			"pch_gbe_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_ethtool.c\n"];
+			"structs-pch_gbe_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-pch_gbe_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nnetif_*\nkfree*\nmemcpy\npci_*\nethtool_*\nkzalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_pch_gbe_phy.h" {
+			style=filled
+			"commit_pch_gbe_phy.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2010-09-21"];
+			"pch_gbe_phy.h" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_phy.h\n"];
+		}
+		subgraph "cluster_pch_gbe_phy.c" {
+			style=filled
+			"commit_pch_gbe_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2010-09-21"];
+			"pch_gbe_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe_phy.c\n"];
+			"funccall0-pch_gbe_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\nmii_*\nethtool_*\ncontainer_of\n"];
+		}
+		subgraph "cluster_pch_gbe.h" {
+			style=filled
+			"commit_pch_gbe.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2010-09-21"];
+			"pch_gbe.h" [style=filled, fillcolor=white, fontcolor=black, label="pch_gbe.h\n"];
+			"structs-pch_gbe.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+		}
+		"K:PCH_GBE" [label="Kconfig: PCH_GBE\n /drivers/net/ethernet/oki-semi/pch_gbe\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: PTP_1588_CLOCK_PCH
+	subgraph "cluster_PTP_1588_CLOCK_PCH"{
+		subgraph "cluster_ptp_pch.c" {
+			style=filled
+			"commit_ptp_pch.c" [style=filled, fillcolor=black, fontcolor=white, label="23\n2012-03-07"];
+			"ptp_pch.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_pch.c\n"];
+			"structs-ptp_pch.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="pci_driver\nptp_clock_info\n"];
+			"funccall0-ptp_pch.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\niounmap\ndev_*\npch_eth_enable_set\nrequest_mem_region\nspin_*\nkfree*\npci_*\ncontainer_of\nptp_*\nioremap*\nkzalloc\nrelease_mem_region\nrequest_irq\n"];
+		}
+		"K:PTP_1588_CLOCK_PCH" [label="Kconfig: PTP_1588_CLOCK_PCH\n /drivers/ptp\n ", shape=box];
+	}
+"pch_gbe_main.c" -> "pch_gbe_api.h"[color=blue];
+"pch_gbe_main.c" -> "pch_gbe.h"[color=blue];
+"pch_gbe_api.h" -> "pch_gbe_phy.h"[color=blue];
+"pch_gbe_api.c" -> "pch_gbe_phy.h"[color=blue];
+"pch_gbe_api.c" -> "pch_gbe.h"[color=blue];
+"pch_gbe_param.c" -> "pch_gbe.h"[color=blue];
+"pch_gbe_ethtool.c" -> "pch_gbe_api.h"[color=blue];
+"pch_gbe_ethtool.c" -> "pch_gbe.h"[color=blue];
+"pch_gbe_phy.c" -> "pch_gbe_phy.h"[color=blue];
+"pch_gbe_phy.c" -> "pch_gbe.h"[color=blue];
+}

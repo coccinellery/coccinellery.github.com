@@ -1,0 +1,15 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCMCIA_NMCLAN
+	subgraph "cluster_PCMCIA_NMCLAN"{
+		subgraph "cluster_nmclan_cs.c" {
+			style=filled
+			"commit_nmclan_cs.c" [style=filled, fillcolor=black, fontcolor=white, label="137\n2005-04-16"];
+			"nmclan_cs.c" [style=filled, fillcolor=white, fontcolor=black, label="nmclan_cs.c\n"];
+			"structs-nmclan_cs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npcmcia_driver\npcmcia_device_id\n"];
+			"funccall0-nmclan_cs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pcmcia_*\nskb_*\ndev_*\nregister_netdev\nunregister_netdev\neth_type_trans\nmemset\nnetif_*\nspin_*\nkfree*\nmemcpy\nudelay\nnetdev_alloc_skb\nfree_netdev\nnetdev_*\n"];
+		}
+		"K:PCMCIA_NMCLAN" [label="Kconfig: PCMCIA_NMCLAN\n /drivers/net/ethernet/amd\n  PCMCIA ", shape=box, fontcolor=red];
+	}
+}

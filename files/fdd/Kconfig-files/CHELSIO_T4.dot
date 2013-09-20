@@ -1,0 +1,123 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: CHELSIO_T4
+	subgraph "cluster_CHELSIO_T4"{
+		subgraph "cluster_sge.c" {
+			style=filled
+			"commit_sge.c" [style=filled, fillcolor=black, fontcolor=white, label="63\n2010-04-01"];
+			"sge.c" [style=filled, fillcolor=white, fontcolor=black, label="sge.c\n"];
+			"funccall3-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_alloc_skb\n__skb_alloc_page\nnetif_*\nput_page\nsmp_mb__after_clear_bit\nmod_timer\nskb_*\n__skb_*\nprefetch\nsmp_wmb\nnapi_*\n"];
+			"funccall2-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="copy_*\n__free_pages\ndma_*\ncontainer_of\nnetdev_*\nlocal_*\nmemset\nis_eth_imm\nsetup_timer\nvlan_*\npage_*\n"];
+			"funccall1-sge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\neth_txq_stop\neth_type_trans\nalloc_pages\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nt4_eth_eq_free\nkzalloc_node\n"];
+		}
+		subgraph "cluster_t4_regs.h" {
+			style=filled
+			"commit_t4_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2010-04-01"];
+			"t4_regs.h" [style=filled, fillcolor=white, fontcolor=black, label="t4_regs.h\n"];
+		}
+		subgraph "cluster_t4_msg.h" {
+			style=filled
+			"commit_t4_msg.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-04-01"];
+			"t4_msg.h" [style=filled, fillcolor=white, fontcolor=black, label="t4_msg.h\n"];
+		}
+		subgraph "cluster_t4fw_api.h" {
+			style=filled
+			"commit_t4fw_api.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2010-04-01"];
+			"t4fw_api.h" [style=filled, fillcolor=white, fontcolor=black, label="t4fw_api.h\n"];
+		}
+		subgraph "cluster_cxgb4_uld.h" {
+			style=filled
+			"commit_cxgb4_uld.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-04-01"];
+			"cxgb4_uld.h" [style=filled, fillcolor=white, fontcolor=black, label="cxgb4_uld.h\n"];
+			"funccall0-cxgb4_uld.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\npci_*\natomic_*\n"];
+		}
+		subgraph "cluster_t4_hw.h" {
+			style=filled
+			"commit_t4_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2010-04-01"];
+			"t4_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="t4_hw.h\n"];
+		}
+		subgraph "cluster_t4_hw.c" {
+			style=filled
+			"commit_t4_hw.c" [style=filled, fillcolor=black, fontcolor=white, label="81\n2010-04-01"];
+			"t4_hw.c" [style=filled, fillcolor=white, fontcolor=black, label="t4_hw.c\n"];
+			"funccall0-t4_hw.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\npcie_*\nmemset\nmemcpy\nudelay\nmdelay\nmemcmp\nvmalloc\npci_*\nmsleep\n"];
+		}
+		subgraph "cluster_l2t.h" {
+			style=filled
+			"commit_l2t.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2010-04-01"];
+			"l2t.h" [style=filled, fillcolor=white, fontcolor=black, label="l2t.h\n"];
+		}
+		subgraph "cluster_l2t.c" {
+			style=filled
+			"commit_l2t.c" [style=filled, fillcolor=black, fontcolor=white, label="13\n2010-04-01"];
+			"l2t.c" [style=filled, fillcolor=white, fontcolor=black, label="l2t.c\n"];
+			"structs-l2t.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="file_operations\nseq_operations\n"];
+			"funccall0-l2t.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n__skb_*\nspin_*\nkfree*\nvlan_*\nmemcpy\nmemcmp\ncontainer_of\natomic_*\nalloc_skb\nread_*\n"];
+		}
+		subgraph "cluster_cxgb4_main.c" {
+			style=filled
+			"commit_cxgb4_main.c" [style=filled, fillcolor=black, fontcolor=white, label="203\n2010-04-01"];
+			"cxgb4_main.c" [style=filled, fillcolor=white, fontcolor=black, label="cxgb4_main.c\n"];
+			"structs-cxgb4_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nfile_operations\nnet_device_ops\nnotifier_block\npci_driver\npci_driver\npci_error_handlers\n"];
+			"funccall3-cxgb4_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\npci_*\nkzalloc\nread_*\nbitmap_release_region\npci_request_regions\nrequest_firmware\niounmap\nregister_netdev\n__skb_*\nt4_sge_alloc_eth_txq\nnapi_*\n"];
+			"funccall2-cxgb4_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="copy_*\nethtool_*\ncontainer_of\nioremap*\nkmalloc\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\npcie_*\nunregister_netdev\nalloc_etherdev_mq\nmemset\npci_release_regions\n"];
+			"funccall1-cxgb4_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="vlan_*\ndestroy_workqueue\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\nmutex_*\nis_vmalloc_addr\nspin_*\nkfree*\nmemcpy\natomic_*\nalloc_skb\n"];
+		}
+		subgraph "cluster_cxgb4.h" {
+			style=filled
+			"commit_cxgb4.h" [style=filled, fillcolor=black, fontcolor=white, label="79\n2010-04-01"];
+			"cxgb4.h" [style=filled, fillcolor=white, fontcolor=black, label="cxgb4.h\n"];
+			"funccall0-cxgb4.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nnetdev_*\n"];
+		}
+		"K:CHELSIO_T4" [label="Kconfig: CHELSIO_T4\n /drivers/net/ethernet/chelsio/cxgb4\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+	//Symbol: MDIO
+	subgraph "cluster_MDIO"{
+		subgraph "cluster_mdio.c" {
+			style=filled
+			"commit_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-04-29"];
+			"mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio.c\n"];
+			"funccall0-mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\n"];
+		}
+		"K:MDIO" [label="Kconfig: MDIO\n /drivers/net\n ", shape=box];
+	}
+"sge.c" -> "t4_msg.h"[color=blue];
+"sge.c" -> "cxgb4.h"[color=blue];
+"sge.c" -> "t4_regs.h"[color=blue];
+"sge.c" -> "t4fw_api.h"[color=blue];
+"t4_hw.c" -> "cxgb4.h"[color=blue];
+"t4_hw.c" -> "t4_regs.h"[color=blue];
+"t4_hw.c" -> "t4fw_api.h"[color=blue];
+"l2t.c" -> "t4_msg.h"[color=blue];
+"l2t.c" -> "cxgb4.h"[color=blue];
+"l2t.c" -> "l2t.h"[color=blue];
+"l2t.c" -> "t4fw_api.h"[color=blue];
+"cxgb4_main.c" -> "t4_msg.h"[color=blue];
+"cxgb4_main.c" -> "cxgb4.h"[color=blue];
+"cxgb4_main.c" -> "t4_regs.h"[color=blue];
+"cxgb4_main.c" -> "l2t.h"[color=blue];
+"cxgb4_main.c" -> "t4fw_api.h"[color=blue];
+"cxgb4.h" -> "t4_hw.h"[color=blue];
+"cxgb4.h" -> "cxgb4_uld.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

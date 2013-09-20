@@ -1,0 +1,27 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: 8139CP
+	subgraph "cluster_8139CP"{
+		subgraph "cluster_8139cp.c" {
+			style=filled
+			"commit_8139cp.c" [style=filled, fillcolor=black, fontcolor=white, label="245\n2005-04-16"];
+			"8139cp.c" [style=filled, fillcolor=white, fontcolor=black, label="8139cp.c\n"];
+			"structs-8139cp.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-8139cp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\ncp_enable_irq\nread_*\npci_request_regions\nskb_*\niounmap\nregister_netdev\n"];
+			"funccall2-8139cp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ether_crc\nnapi_*\ndma_*\ncontainer_of\nioremap*\nmemcpy_fromio\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\n"];
+			"funccall1-8139cp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_release_regions\nvlan_*\nfree_netdev\nrequest_irq\ndev_*\nmii_*\neth_type_trans\nspin_*\nmemcpy\nenable_irq\ndisable_irq\n"];
+		}
+		"K:8139CP" [label="Kconfig: 8139CP\n /drivers/net/ethernet/realtek\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

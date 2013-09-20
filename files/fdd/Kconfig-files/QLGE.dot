@@ -1,0 +1,48 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: QLGE
+	subgraph "cluster_QLGE"{
+		subgraph "cluster_qlge_ethtool.c" {
+			style=filled
+			"commit_qlge_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="71\n2008-09-18"];
+			"qlge_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="qlge_ethtool.c\n"];
+			"structs-qlge_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-qlge_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nmsleep_interruptible\nmemset\nnetif_*\nspin_*\nmemcpy\npci_*\nethtool_*\nnetdev_alloc_skb\natomic_*\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_qlge_mpi.c" {
+			style=filled
+			"commit_qlge_mpi.c" [style=filled, fillcolor=black, fontcolor=white, label="83\n2008-09-18"];
+			"qlge_mpi.c" [style=filled, fillcolor=white, fontcolor=black, label="qlge_mpi.c\n"];
+			"funccall0-qlge_mpi.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nmemset\nwait_for_completion_timeout\nnetif_*\nmemcpy\nmdelay\npci_*\ncontainer_of\ncancel_delayed_work_sync\nmsleep\n"];
+		}
+		subgraph "cluster_qlge_dbg.c" {
+			style=filled
+			"commit_qlge_dbg.c" [style=filled, fillcolor=black, fontcolor=white, label="47\n2008-09-18"];
+			"qlge_dbg.c" [style=filled, fillcolor=white, fontcolor=black, label="qlge_dbg.c\n"];
+			"funccall0-qlge_dbg.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\nkfree*\nmemcpy\nmdelay\ncontainer_of\natomic_*\nkmalloc\nmsleep\n"];
+		}
+		subgraph "cluster_qlge_main.c" {
+			style=filled
+			"commit_qlge_main.c" [style=filled, fillcolor=black, fontcolor=white, label="405\n2008-09-18"];
+			"qlge_main.c" [style=filled, fillcolor=white, fontcolor=black, label="qlge_main.c\n"];
+			"structs-qlge_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall4-qlge_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nkmalloc_array\nadd_timer\nnetif_*\nudelay\npci_*\nput_page\nmod_timer\npci_request_regions\niounmap\nskb_*\nregister_netdev\n__skb_*\n"];
+			"funccall3-qlge_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="prefetch\nnapi_*\n__free_pages\ncpu_relax\ndma_*\ncontainer_of\nioremap*\nkmalloc\nnetdev_*\nis_valid_ether_addr\npcie_*\nunregister_netdev\nalloc_etherdev_mq\n"];
+			"funccall2-qlge_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\npci_release_regions\ninit_timer_deferrable\nvlan_*\nvmalloc\ndestroy_workqueue\npage_*\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\nmutex_*\nql_request_irq\n"];
+			"funccall1-qlge_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="alloc_pages\neth_type_trans\nql_free_irq\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\natomic_*\ncancel_delayed_work_sync\nmsleep\nsmp_processor_id\n"];
+		}
+		subgraph "cluster_qlge.h" {
+			style=filled
+			"commit_qlge.h" [style=filled, fillcolor=black, fontcolor=white, label="157\n2008-09-18"];
+			"qlge.h" [style=filled, fillcolor=white, fontcolor=black, label="qlge.h\n"];
+			"structs-qlge.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\ngmac\nfirmware\n"];
+			"funccall0-qlge.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="smp_processor_id\n"];
+		}
+		"K:QLGE" [label="Kconfig: QLGE\n /drivers/net/ethernet/qlogic/qlge\n  PCI ", shape=box, fontcolor=red];
+	}
+"qlge_ethtool.c" -> "qlge.h"[color=blue];
+"qlge_mpi.c" -> "qlge.h"[color=blue];
+"qlge_dbg.c" -> "qlge.h"[color=blue];
+"qlge_main.c" -> "qlge.h"[color=blue];
+}

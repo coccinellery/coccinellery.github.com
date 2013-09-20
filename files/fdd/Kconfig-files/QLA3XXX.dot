@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: QLA3XXX
+	subgraph "cluster_QLA3XXX"{
+		subgraph "cluster_qla3xxx.h" {
+			style=filled
+			"commit_qla3xxx.h" [style=filled, fillcolor=black, fontcolor=white, label="37\n2006-07-25"];
+			"qla3xxx.h" [style=filled, fillcolor=white, fontcolor=black, label="qla3xxx.h\n"];
+		}
+		subgraph "cluster_qla3xxx.c" {
+			style=filled
+			"commit_qla3xxx.c" [style=filled, fillcolor=black, fontcolor=white, label="223\n2006-07-25"];
+			"qla3xxx.c" [style=filled, fillcolor=white, fontcolor=black, label="qla3xxx.c\n"];
+			"structs-qla3xxx.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-qla3xxx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nkmalloc_array\nnetif_*\nmdelay\nudelay\npci_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nregister_netdev\nprefetch\n"];
+			"funccall2-qla3xxx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\ndma_*\nethtool_*\ncontainer_of\nkmalloc\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nmemset\npci_release_regions\ndestroy_workqueue\nfree_netdev\n"];
+			"funccall1-qla3xxx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\ndev_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\natomic_*\nnetdev_alloc_skb\nmsleep\ninit_timer\n"];
+		}
+		"K:QLA3XXX" [label="Kconfig: QLA3XXX\n /drivers/net/ethernet/qlogic\n  PCI ", shape=box, fontcolor=red];
+	}
+"qla3xxx.c" -> "qla3xxx.h"[color=blue];
+}

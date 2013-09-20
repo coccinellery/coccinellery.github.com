@@ -1,0 +1,25 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ACENIC
+	subgraph "cluster_ACENIC"{
+		subgraph "cluster_acenic.h" {
+			style=filled
+			"commit_acenic.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"acenic.h" [style=filled, fillcolor=white, fontcolor=black, label="acenic.h\n"];
+			"structs-acenic.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-acenic.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\nspin_*\n"];
+		}
+		subgraph "cluster_acenic.c" {
+			style=filled
+			"commit_acenic.c" [style=filled, fillcolor=black, fontcolor=white, label="127\n2005-04-16"];
+			"acenic.c" [style=filled, fillcolor=white, fontcolor=black, label="acenic.c\n"];
+			"structs-acenic.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-acenic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nlocal_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nnetif_*\nvlan_*\nudelay\npci_*\nread_*\nsynchronize_irq\n"];
+			"funccall2-acenic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nfree_netdev\nprefetchw\nrequest_firmware\ndev_*\nskb_*\niounmap\nregister_netdev\neth_type_trans\ncpu_relax\nkfree*\n"];
+			"funccall1-acenic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\ndma_*\nethtool_*\nioremap*\natomic_*\nkmalloc\nrelease_firmware\nnetdev_*\n"];
+		}
+		"K:ACENIC" [label="Kconfig: ACENIC\n /drivers/net/ethernet/alteon\n  PCI ", shape=box, fontcolor=red];
+	}
+"acenic.c" -> "acenic.h"[color=blue];
+}

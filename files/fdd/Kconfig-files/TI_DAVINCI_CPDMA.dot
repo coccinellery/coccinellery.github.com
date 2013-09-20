@@ -1,0 +1,20 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TI_DAVINCI_CPDMA
+	subgraph "cluster_TI_DAVINCI_CPDMA"{
+		subgraph "cluster_davinci_cpdma.h" {
+			style=filled
+			"commit_davinci_cpdma.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2010-09-15"];
+			"davinci_cpdma.h" [style=filled, fillcolor=white, fontcolor=black, label="davinci_cpdma.h\n"];
+		}
+		subgraph "cluster_davinci_cpdma.c" {
+			style=filled
+			"commit_davinci_cpdma.c" [style=filled, fillcolor=black, fontcolor=white, label="39\n2010-09-15"];
+			"davinci_cpdma.c" [style=filled, fillcolor=white, fontcolor=black, label="davinci_cpdma.c\n"];
+			"funccall0-davinci_cpdma.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nspin_*\nkfree*\nmemcpy\nudelay\ndma_*\nioremap*\nkzalloc\n"];
+		}
+		"K:TI_DAVINCI_CPDMA" [label="Kconfig: TI_DAVINCI_CPDMA\n /drivers/net/ethernet/ti\n  ARM && (ARCH_DAVINCI || ARCH_OMAP3 || SOC_AM33XX) ", shape=box, fontcolor=red];
+	}
+"davinci_cpdma.c" -> "davinci_cpdma.h"[color=blue];
+}

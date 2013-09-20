@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: DL2K
+	subgraph "cluster_DL2K"{
+		subgraph "cluster_dl2k.h" {
+			style=filled
+			"commit_dl2k.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2005-04-16"];
+			"dl2k.h" [style=filled, fillcolor=white, fontcolor=black, label="dl2k.h\n"];
+		}
+		subgraph "cluster_dl2k.c" {
+			style=filled
+			"commit_dl2k.c" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"dl2k.c" [style=filled, fillcolor=white, fontcolor=black, label="dl2k.c\n"];
+			"structs-dl2k.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-dl2k.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nadd_timer\nnetif_*\npci_release_regions\nmdelay\npci_iounmap\npci_*\nread_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-dl2k.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_request_regions\ndev_*\nskb_*\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\nspin_*\nmemcpy\ndel_timer_sync\nethtool_*\ninit_timer\nnetdev_*\n"];
+		}
+		"K:DL2K" [label="Kconfig: DL2K\n /drivers/net/ethernet/dlink\n  PCI ", shape=box, fontcolor=red];
+	}
+"dl2k.c" -> "dl2k.h"[color=blue];
+}

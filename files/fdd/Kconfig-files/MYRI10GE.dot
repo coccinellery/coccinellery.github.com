@@ -1,0 +1,50 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: MYRI10GE
+	subgraph "cluster_MYRI10GE"{
+		subgraph "cluster_myri10ge.c" {
+			style=filled
+			"commit_myri10ge.c" [style=filled, fillcolor=black, fontcolor=white, label="449\n2006-05-23"];
+			"myri10ge.c" [style=filled, fillcolor=white, fontcolor=black, label="myri10ge.c\n"];
+			"structs-myri10ge.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nnotifier_block\npci_driver\n"];
+			"funccall4-myri10ge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nadd_timer\nnetif_*\nudelay\npci_*\nput_page\nkzalloc\nmod_timer\nrequest_firmware\niounmap\nskb_*\nregister_netdev\n"];
+			"funccall3-myri10ge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="prefetch\nnapi_*\ncpu_relax\nmemcmp\ndma_*\nethtool_*\ncontainer_of\nmyri10ge_free_irq\nmyri10ge_request_irq\nioremap*\nschedule_work\nmemcpy_fromio\n"];
+			"funccall2-myri10ge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\npcie_*\nunregister_netdev\nalloc_etherdev_mq\nmemset\nsetup_timer\nvmalloc\npage_*\nfree_netdev\n"];
+			"funccall1-myri10ge.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nkcalloc\ndev_*\nalloc_pages\nalloc_page\nwait_event_timeout\nkfree*\nmemcpy\ndel_timer_sync\nmsleep\n"];
+		}
+		subgraph "cluster_myri10ge_mcp.h" {
+			style=filled
+			"commit_myri10ge_mcp.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2006-05-23"];
+			"myri10ge_mcp.h" [style=filled, fillcolor=white, fontcolor=black, label="myri10ge_mcp.h\n"];
+		}
+		subgraph "cluster_myri10ge_mcp_gen_header.h" {
+			style=filled
+			"commit_myri10ge_mcp_gen_header.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2006-05-23"];
+			"myri10ge_mcp_gen_header.h" [style=filled, fillcolor=white, fontcolor=black, label="myri10ge_mcp_gen_header.h\n"];
+		}
+		"K:MYRI10GE" [label="Kconfig: MYRI10GE\n /drivers/net/ethernet/myricom/myri10ge\n  PCI && INET ", shape=box, fontcolor=red];
+	}
+	//Symbol: FW_LOADER
+	subgraph "cluster_FW_LOADER"{
+		subgraph "cluster_firmware_class.c" {
+			style=filled
+			"commit_firmware_class.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2005-04-16"];
+			"firmware_class.c" [style=filled, fillcolor=white, fontcolor=black, label="firmware_class.c\n"];
+			"structs-firmware_class.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\nfirmware\nfirmware\nfirmware\n"];
+			"funccall2-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__free_page\nmemset\n_request_firmware_prepare\nvmalloc\nkzalloc\n_request_firmware\n_request_firmware_load\ndev_*\nrequest_firmware\nmutex_*\nalloc_page\n"];
+			"funccall1-firmware_class.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nwait_for_completion\nmemcpy\ndevice_*\ncontainer_of\nschedule_work\nkmalloc\ncancel_delayed_work_sync\nrelease_firmware\n"];
+		}
+		subgraph "cluster_base.h" {
+			style=filled
+			"commit_base.h" [style=filled, fillcolor=black, fontcolor=white, label="115\n2005-04-16"];
+			"base.h" [style=filled, fillcolor=white, fontcolor=black, label="base.h\n"];
+			"structs-base.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+			"funccall0-base.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\n"];
+		}
+		"K:FW_LOADER" [label="Kconfig: FW_LOADER\n /drivers/base\n  EXPERT ", shape=box];
+	}
+"myri10ge.c" -> "myri10ge_mcp.h"[color=blue];
+"myri10ge.c" -> "myri10ge_mcp_gen_header.h"[color=blue];
+"firmware_class.c" -> "base.h"[color=blue];
+}

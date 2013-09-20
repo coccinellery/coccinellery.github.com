@@ -1,0 +1,218 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IGB
+	subgraph "cluster_IGB"{
+		subgraph "cluster_igb_hwmon.c" {
+			style=filled
+			"commit_igb_hwmon.c" [style=filled, fillcolor=black, fontcolor=white, label="9\n2012-12-07"];
+			"igb_hwmon.c" [style=filled, fillcolor=white, fontcolor=black, label="igb_hwmon.c\n"];
+			"structs-igb_hwmon.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="i2c_board_info\n"];
+			"funccall0-igb_hwmon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\ncontainer_of\nkcalloc\nkfree*\n"];
+		}
+		subgraph "cluster_e1000_hw.h" {
+			style=filled
+			"commit_e1000_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="101\n2008-01-24"];
+			"e1000_hw.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_hw.h\n"];
+			"funccall0-e1000_hw.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_e1000_regs.h" {
+			style=filled
+			"commit_e1000_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="81\n2008-01-24"];
+			"e1000_regs.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_regs.h\n"];
+		}
+		subgraph "cluster_e1000_defines.h" {
+			style=filled
+			"commit_e1000_defines.h" [style=filled, fillcolor=black, fontcolor=white, label="121\n2007-09-17"];
+			"e1000_defines.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_defines.h\n"];
+		}
+		subgraph "cluster_igb_ptp.c" {
+			style=filled
+			"commit_igb_ptp.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2012-03-16"];
+			"igb_ptp.c" [style=filled, fillcolor=white, fontcolor=black, label="igb_ptp.c\n"];
+			"funccall0-igb_ptp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ndev_*\nmemset\ncopy_*\nspin_*\ncontainer_of\nptp_*\nschedule_work\ncancel_delayed_work_sync\nnetdev_*\n"];
+		}
+		subgraph "cluster_e1000_i210.h" {
+			style=filled
+			"commit_e1000_i210.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2012-04-06"];
+			"e1000_i210.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_i210.h\n"];
+		}
+		subgraph "cluster_e1000_i210.c" {
+			style=filled
+			"commit_e1000_i210.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2012-04-06"];
+			"e1000_i210.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_i210.c\n"];
+			"funccall0-e1000_i210.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\n"];
+		}
+		subgraph "cluster_e1000_mbx.h" {
+			style=filled
+			"commit_e1000_mbx.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2009-02-19"];
+			"e1000_mbx.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_mbx.h\n"];
+		}
+		subgraph "cluster_e1000_mbx.c" {
+			style=filled
+			"commit_e1000_mbx.c" [style=filled, fillcolor=black, fontcolor=white, label="21\n2009-02-19"];
+			"e1000_mbx.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_mbx.c\n"];
+			"funccall0-e1000_mbx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_e1000_phy.h" {
+			style=filled
+			"commit_e1000_phy.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2008-01-24"];
+			"e1000_phy.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_phy.h\n"];
+		}
+		subgraph "cluster_e1000_phy.c" {
+			style=filled
+			"commit_e1000_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="69\n2007-09-17"];
+			"e1000_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_phy.c\n"];
+			"funccall0-e1000_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\nmsleep\n"];
+		}
+		subgraph "cluster_e1000_nvm.h" {
+			style=filled
+			"commit_e1000_nvm.h" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"e1000_nvm.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_nvm.h\n"];
+		}
+		subgraph "cluster_e1000_nvm.c" {
+			style=filled
+			"commit_e1000_nvm.c" [style=filled, fillcolor=black, fontcolor=white, label="39\n2008-01-24"];
+			"e1000_nvm.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_nvm.c\n"];
+			"funccall0-e1000_nvm.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmemset\n"];
+		}
+		subgraph "cluster_e1000_mac.h" {
+			style=filled
+			"commit_e1000_mac.h" [style=filled, fillcolor=black, fontcolor=white, label="41\n2008-01-24"];
+			"e1000_mac.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_mac.h\n"];
+		}
+		subgraph "cluster_e1000_mac.c" {
+			style=filled
+			"commit_e1000_mac.c" [style=filled, fillcolor=black, fontcolor=white, label="93\n2008-01-24"];
+			"e1000_mac.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_mac.c\n"];
+			"funccall0-e1000_mac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nis_multicast_ether_addr\nmsleep\nmemset\n"];
+		}
+		subgraph "cluster_e1000_82575.h" {
+			style=filled
+			"commit_e1000_82575.h" [style=filled, fillcolor=black, fontcolor=white, label="83\n2008-01-24"];
+			"e1000_82575.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000_82575.h\n"];
+		}
+		subgraph "cluster_e1000_82575.c" {
+			style=filled
+			"commit_e1000_82575.c" [style=filled, fillcolor=black, fontcolor=white, label="195\n2008-01-24"];
+			"e1000_82575.c" [style=filled, fillcolor=white, fontcolor=black, label="e1000_82575.c\n"];
+			"funccall0-e1000_82575.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nmsleep\nmemset\n"];
+		}
+		subgraph "cluster_igb_ethtool.c" {
+			style=filled
+			"commit_igb_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="253\n2008-01-24"];
+			"igb_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="igb_ethtool.c\n"];
+			"structs-igb_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall2-igb_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmsleep_interruptible\nmemset\nnetif_*\nmdelay\nvmalloc\npci_*\nptp_*\nrequest_irq\ndev_*\nskb_*\n"];
+			"funccall1-igb_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\ndevice_*\nmemcpy\ndma_*\nethtool_*\nalloc_skb\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_igb_main.c" {
+			style=filled
+			"commit_igb_main.c" [style=filled, fillcolor=black, fontcolor=white, label="935\n2008-01-24"];
+			"igb_main.c" [style=filled, fillcolor=white, fontcolor=black, label="igb_main.c\n"];
+			"structs-igb_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\ni2c_algo_bit_data\nnet_device_ops\nnotifier_block\npci_driver\npci_error_handlers\n"];
+			"funccall4-igb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\n__skb_alloc_page\nif_*\nnetif_*\nmdelay\npci_*\nput_page\nkzalloc\nread_*\neth_zero_addr\nprefetchw\nmod_timer\nskb_*\n"];
+			"funccall3-igb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\nregister_netdev\n__skb_*\nprefetch\nnapi_*\nigb_free_irq\ndma_*\ncontainer_of\nioremap*\nschedule_work\nnetdev_*\nis_valid_ether_addr\npcie_*\n"];
+			"funccall2-igb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="unregister_netdev\n__free_page\nnetdev_alloc_skb_ip_align\nalloc_etherdev_mq\nmemset\nsetup_timer\nvlan_*\npage_*\nsynchronize_irq\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\n"];
+			"funccall1-igb_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\nigb_request_irq\ndel_timer_sync\natomic_*\nmsleep\n"];
+		}
+		subgraph "cluster_igb.h" {
+			style=filled
+			"commit_igb.h" [style=filled, fillcolor=black, fontcolor=white, label="277\n2008-01-24"];
+			"igb.h" [style=filled, fillcolor=white, fontcolor=black, label="igb.h\n"];
+			"structs-igb.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-igb.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		"K:IGB" [label="Kconfig: IGB\n /drivers/net/ethernet/intel/igb\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+	//Symbol: I2C
+	subgraph "cluster_I2C"{
+		subgraph "cluster_i2c-core.h" {
+			style=filled
+			"commit_i2c-core.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-04-16"];
+			"i2c-core.h" [style=filled, fillcolor=white, fontcolor=black, label="i2c-core.h\n"];
+		}
+		subgraph "cluster_i2c-core.c" {
+			style=filled
+			"commit_i2c-core.c" [style=filled, fillcolor=black, fontcolor=white, label="413\n2005-04-16"];
+			"i2c-core.c" [style=filled, fillcolor=white, fontcolor=black, label="i2c-core.c\n"];
+			"structs-i2c-core.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="DEVICE_ATTR\nattribute_group\nattribute_group\nattribute_group\nattribute_group\ndev_pm_ops\n"];
+			"funccall0-i2c-core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nkfree*\nwait_for_completion\nmemcpy\ndevice_*\nkzalloc\nof_*\n"];
+		}
+		"K:I2C" [label="Kconfig: I2C\n /drivers/i2c\n ", shape=box];
+	}
+	//Symbol: I2C_ALGOBIT
+	subgraph "cluster_I2C_ALGOBIT"{
+		subgraph "cluster_i2c-algo-bit.c" {
+			style=filled
+			"commit_i2c-algo-bit.c" [style=filled, fillcolor=black, fontcolor=white, label="73\n2005-04-16"];
+			"i2c-algo-bit.c" [style=filled, fillcolor=white, fontcolor=black, label="i2c-algo-bit.c\n"];
+			"funccall0-i2c-algo-bit.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\ndev_*\ncpu_relax\n"];
+		}
+		"K:I2C_ALGOBIT" [label="Kconfig: I2C_ALGOBIT\n /drivers/i2c/algos\n  !I2C_HELPER_AUTO ", shape=box];
+	}
+"igb_hwmon.c" -> "e1000_hw.h"[color=blue];
+"igb_hwmon.c" -> "igb.h"[color=blue];
+"igb_hwmon.c" -> "e1000_82575.h"[color=blue];
+"e1000_hw.h" -> "e1000_phy.h"[color=blue];
+"e1000_hw.h" -> "e1000_mac.h"[color=blue];
+"e1000_hw.h" -> "e1000_regs.h"[color=blue];
+"e1000_hw.h" -> "e1000_mbx.h"[color=blue];
+"e1000_hw.h" -> "e1000_defines.h"[color=blue];
+"e1000_hw.h" -> "e1000_nvm.h"[color=blue];
+"igb_ptp.c" -> "igb.h"[color=blue];
+"e1000_i210.c" -> "e1000_hw.h"[color=blue];
+"e1000_i210.c" -> "e1000_i210.h"[color=blue];
+"e1000_mbx.h" -> "e1000_hw.h"[color=blue];
+"e1000_mbx.c" -> "e1000_mbx.h"[color=blue];
+"e1000_phy.c" -> "e1000_phy.h"[color=blue];
+"e1000_phy.c" -> "e1000_mac.h"[color=blue];
+"e1000_nvm.c" -> "e1000_mac.h"[color=blue];
+"e1000_nvm.c" -> "e1000_nvm.h"[color=blue];
+"e1000_mac.h" -> "e1000_phy.h"[color=blue];
+"e1000_mac.h" -> "e1000_hw.h"[color=blue];
+"e1000_mac.h" -> "e1000_i210.h"[color=blue];
+"e1000_mac.h" -> "e1000_defines.h"[color=blue];
+"e1000_mac.h" -> "e1000_nvm.h"[color=blue];
+"e1000_mac.c" -> "e1000_mac.h"[color=blue];
+"e1000_mac.c" -> "igb.h"[color=blue];
+"e1000_82575.c" -> "e1000_mac.h"[color=blue];
+"e1000_82575.c" -> "e1000_i210.h"[color=blue];
+"e1000_82575.c" -> "e1000_82575.h"[color=blue];
+"igb_ethtool.c" -> "igb.h"[color=blue];
+"igb_main.c" -> "igb.h"[color=blue];
+"igb.h" -> "e1000_mac.h"[color=blue];
+"igb.h" -> "e1000_82575.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+"i2c-core.c" -> "i2c-core.h"[color=blue];
+}

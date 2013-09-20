@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: EL3
+	subgraph "cluster_EL3"{
+		subgraph "cluster_3c509.c" {
+			style=filled
+			"commit_3c509.c" [style=filled, fillcolor=black, fontcolor=white, label="105\n2005-04-16"];
+			"3c509.c" [style=filled, fillcolor=white, fontcolor=black, label="3c509.c\n"];
+			"structs-3c509.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\neisa_device_id\npnp_device_id\neisa_driver\nethtool_ops\nethtool_ops\nisa_driver\nisa_driver\nnet_device_ops\npnp_driver\neisa_device_id\n"];
+			"funccall2-3c509.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nunregister_netdev\nnetif_*\nmdelay\nudelay\nread_*\nfree_netdev\nrequest_irq\ndev_*\nskb_*\nregister_netdev\n"];
+			"funccall1-3c509.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nmemcmp\nmemcpy\nrelease_region\nethtool_*\nnetdev_alloc_skb\npnp_*\nenable_irq\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:EL3" [label="Kconfig: EL3\n /drivers/net/ethernet/3com\n  ISA || EISA ", shape=box, fontcolor=red];
+	}
+}

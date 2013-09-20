@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: LASI_82596
+	subgraph "cluster_LASI_82596"{
+		subgraph "cluster_lasi_82596.c" {
+			style=filled
+			"commit_lasi_82596.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2005-04-16"];
+			"lasi_82596.c" [style=filled, fillcolor=white, fontcolor=black, label="lasi_82596.c\n"];
+			"funccall0-lasi_82596.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\ndma_*\nunregister_netdev\nfree_netdev\nnetdev_*\n"];
+		}
+		subgraph "cluster_lib82596.c" {
+			style=filled
+			"commit_lib82596.c" [style=filled, fillcolor=black, fontcolor=white, label="49\n2007-06-28"];
+			"lib82596.c" [style=filled, fillcolor=white, fontcolor=black, label="lib82596.c\n"];
+			"structs-lib82596.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall2-lib82596.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetdev_alloc_skb_ip_align\nmemset\nnetif_*\nudelay\nrequest_irq\ndev_*\nskb_*\n"];
+			"funccall1-lib82596.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\neth_type_trans\nspin_*\nmemcpy\ndma_*\nenable_irq\ndisable_irq\nnetdev_*\n"];
+		}
+		"K:LASI_82596" [label="Kconfig: LASI_82596\n /drivers/net/ethernet/i825xx\n  GSC ", shape=box, fontcolor=red];
+	}
+"lasi_82596.c" -> "lib82596.c"[color=blue];
+}

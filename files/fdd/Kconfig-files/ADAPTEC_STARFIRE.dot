@@ -1,0 +1,26 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ADAPTEC_STARFIRE
+	subgraph "cluster_ADAPTEC_STARFIRE"{
+		subgraph "cluster_starfire.c" {
+			style=filled
+			"commit_starfire.c" [style=filled, fillcolor=black, fontcolor=white, label="163\n2005-04-16"];
+			"starfire.c" [style=filled, fillcolor=white, fontcolor=black, label="starfire.c\n"];
+			"structs-starfire.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall2-starfire.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nunregister_netdev\nmemset\nnetif_*\npci_release_regions\nmdelay\nudelay\npci_*\nrequest_irq\nfree_netdev\npci_request_regions\nrequest_firmware\ndev_*\n"];
+			"funccall1-starfire.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nmii_*\nether_crc_le\nregister_netdev\neth_type_trans\nnapi_*\nspin_*\ndma_*\ncontainer_of\nnetdev_alloc_skb\nioremap*\nrelease_firmware\nnetdev_*\n"];
+		}
+		"K:ADAPTEC_STARFIRE" [label="Kconfig: ADAPTEC_STARFIRE\n /drivers/net/ethernet/adaptec\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

@@ -1,0 +1,241 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ENIC
+	subgraph "cluster_ENIC"{
+		subgraph "cluster_vnic_vic.h" {
+			style=filled
+			"commit_vnic_vic.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2010-05-17"];
+			"vnic_vic.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_vic.h\n"];
+		}
+		subgraph "cluster_vnic_vic.c" {
+			style=filled
+			"commit_vnic_vic.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2010-05-17"];
+			"vnic_vic.c" [style=filled, fillcolor=white, fontcolor=black, label="vnic_vic.c\n"];
+			"funccall0-vnic_vic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nkzalloc\nkfree*\n"];
+		}
+		subgraph "cluster_vnic_rq.h" {
+			style=filled
+			"commit_vnic_rq.h" [style=filled, fillcolor=black, fontcolor=white, label="19\n2008-09-15"];
+			"vnic_rq.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_rq.h\n"];
+		}
+		subgraph "cluster_vnic_resource.h" {
+			style=filled
+			"commit_vnic_resource.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2008-09-15"];
+			"vnic_resource.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_resource.h\n"];
+		}
+		subgraph "cluster_vnic_devcmd.h" {
+			style=filled
+			"commit_vnic_devcmd.h" [style=filled, fillcolor=black, fontcolor=white, label="29\n2008-09-15"];
+			"vnic_devcmd.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_devcmd.h\n"];
+		}
+		subgraph "cluster_cq_desc.h" {
+			style=filled
+			"commit_cq_desc.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2008-09-15"];
+			"cq_desc.h" [style=filled, fillcolor=white, fontcolor=black, label="cq_desc.h\n"];
+		}
+		subgraph "cluster_vnic_rq.c" {
+			style=filled
+			"commit_vnic_rq.c" [style=filled, fillcolor=black, fontcolor=white, label="23\n2008-09-15"];
+			"vnic_rq.c" [style=filled, fillcolor=white, fontcolor=black, label="vnic_rq.c\n"];
+			"funccall0-vnic_rq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nkzalloc\nkfree*\n"];
+		}
+		subgraph "cluster_vnic_dev.h" {
+			style=filled
+			"commit_vnic_dev.h" [style=filled, fillcolor=black, fontcolor=white, label="47\n2008-09-15"];
+			"vnic_dev.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_dev.h\n"];
+		}
+		subgraph "cluster_vnic_dev.c" {
+			style=filled
+			"commit_vnic_dev.c" [style=filled, fillcolor=black, fontcolor=white, label="67\n2008-09-15"];
+			"vnic_dev.c" [style=filled, fillcolor=white, fontcolor=black, label="vnic_dev.c\n"];
+			"funccall0-vnic_dev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmemcpy\npci_*\nkzalloc\nmemset\nkfree*\n"];
+		}
+		subgraph "cluster_vnic_stats.h" {
+			style=filled
+			"commit_vnic_stats.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2008-09-15"];
+			"vnic_stats.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_stats.h\n"];
+		}
+		subgraph "cluster_enic_pp.h" {
+			style=filled
+			"commit_enic_pp.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2008-09-15"];
+			"enic_pp.h" [style=filled, fillcolor=white, fontcolor=black, label="enic_pp.h\n"];
+		}
+		subgraph "cluster_enic_pp.c" {
+			style=filled
+			"commit_enic_pp.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-03-29"];
+			"enic_pp.c" [style=filled, fillcolor=white, fontcolor=black, label="enic_pp.c\n"];
+			"funccall0-enic_pp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcmp\nis_zero_ether_addr\nnetdev_*\n"];
+		}
+		subgraph "cluster_wq_enet_desc.h" {
+			style=filled
+			"commit_wq_enet_desc.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2008-09-15"];
+			"wq_enet_desc.h" [style=filled, fillcolor=white, fontcolor=black, label="wq_enet_desc.h\n"];
+		}
+		subgraph "cluster_rq_enet_desc.h" {
+			style=filled
+			"commit_rq_enet_desc.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2008-09-15"];
+			"rq_enet_desc.h" [style=filled, fillcolor=white, fontcolor=black, label="rq_enet_desc.h\n"];
+		}
+		subgraph "cluster_vnic_enet.h" {
+			style=filled
+			"commit_vnic_enet.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2008-09-15"];
+			"vnic_enet.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_enet.h\n"];
+		}
+		subgraph "cluster_vnic_nic.h" {
+			style=filled
+			"commit_vnic_nic.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2008-09-15"];
+			"vnic_nic.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_nic.h\n"];
+		}
+		subgraph "cluster_vnic_rss.h" {
+			style=filled
+			"commit_vnic_rss.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2008-09-15"];
+			"vnic_rss.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_rss.h\n"];
+		}
+		subgraph "cluster_enic_dev.h" {
+			style=filled
+			"commit_enic_dev.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2011-02-04"];
+			"enic_dev.h" [style=filled, fillcolor=white, fontcolor=black, label="enic_dev.h\n"];
+			"funccall0-enic_dev.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\n"];
+		}
+		subgraph "cluster_enic_dev.c" {
+			style=filled
+			"commit_enic_dev.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2011-02-04"];
+			"enic_dev.c" [style=filled, fillcolor=white, fontcolor=black, label="enic_dev.c\n"];
+			"funccall0-enic_dev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nnetdev_*\nspin_*\n"];
+		}
+		subgraph "cluster_enic_res.h" {
+			style=filled
+			"commit_enic_res.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2008-09-15"];
+			"enic_res.h" [style=filled, fillcolor=white, fontcolor=black, label="enic_res.h\n"];
+		}
+		subgraph "cluster_enic_res.c" {
+			style=filled
+			"commit_enic_res.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2008-09-15"];
+			"enic_res.c" [style=filled, fillcolor=white, fontcolor=black, label="enic_res.c\n"];
+			"funccall0-enic_res.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n"];
+		}
+		subgraph "cluster_cq_enet_desc.h" {
+			style=filled
+			"commit_cq_enet_desc.h" [style=filled, fillcolor=black, fontcolor=white, label="11\n2008-09-15"];
+			"cq_enet_desc.h" [style=filled, fillcolor=white, fontcolor=black, label="cq_enet_desc.h\n"];
+		}
+		subgraph "cluster_vnic_wq.h" {
+			style=filled
+			"commit_vnic_wq.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2008-09-15"];
+			"vnic_wq.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_wq.h\n"];
+		}
+		subgraph "cluster_vnic_wq.c" {
+			style=filled
+			"commit_vnic_wq.c" [style=filled, fillcolor=black, fontcolor=white, label="23\n2008-09-15"];
+			"vnic_wq.c" [style=filled, fillcolor=white, fontcolor=black, label="vnic_wq.c\n"];
+			"funccall0-vnic_wq.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nkzalloc\nkfree*\n"];
+		}
+		subgraph "cluster_vnic_intr.h" {
+			style=filled
+			"commit_vnic_intr.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2008-09-15"];
+			"vnic_intr.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_intr.h\n"];
+		}
+		subgraph "cluster_vnic_intr.c" {
+			style=filled
+			"commit_vnic_intr.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2008-09-15"];
+			"vnic_intr.c" [style=filled, fillcolor=white, fontcolor=black, label="vnic_intr.c\n"];
+		}
+		subgraph "cluster_vnic_cq.h" {
+			style=filled
+			"commit_vnic_cq.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2008-09-15"];
+			"vnic_cq.h" [style=filled, fillcolor=white, fontcolor=black, label="vnic_cq.h\n"];
+		}
+		subgraph "cluster_vnic_cq.c" {
+			style=filled
+			"commit_vnic_cq.c" [style=filled, fillcolor=black, fontcolor=white, label="9\n2008-09-15"];
+			"vnic_cq.c" [style=filled, fillcolor=white, fontcolor=black, label="vnic_cq.c\n"];
+		}
+		subgraph "cluster_enic_main.c" {
+			style=filled
+			"commit_enic_main.c" [style=filled, fillcolor=black, fontcolor=white, label="259\n2008-09-15"];
+			"enic_main.c" [style=filled, fillcolor=white, fontcolor=black, label="enic_main.c\n"];
+			"structs-enic_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nethtool_ops\nnet_device_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-enic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nenic_iounmap\nnetif_*\npci_*\nmod_timer\npci_request_regions\nskb_*\niounmap\nregister_netdev\nprefetch\nnapi_*\nethtool_*\n"];
+			"funccall2-enic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nschedule_work\nnetdev_*\nis_valid_ether_addr\nenic_synchronize_irqs\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\npci_release_regions\nvlan_*\nsynchronize_irq\nfree_netdev\n"];
+			"funccall1-enic_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nkcalloc\nether_addr_equal\ndev_*\neth_type_trans\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nis_zero_ether_addr\neth_hw_addr_random\ninit_timer\n"];
+		}
+		subgraph "cluster_enic.h" {
+			style=filled
+			"commit_enic.h" [style=filled, fillcolor=black, fontcolor=white, label="121\n2008-09-15"];
+			"enic.h" [style=filled, fillcolor=white, fontcolor=black, label="enic.h\n"];
+		}
+		"K:ENIC" [label="Kconfig: ENIC\n /drivers/net/ethernet/cisco/enic\n  PCI ", shape=box, fontcolor=red];
+	}
+"vnic_vic.c" -> "vnic_vic.h"[color=blue];
+"vnic_rq.h" -> "vnic_cq.h"[color=blue];
+"vnic_rq.h" -> "vnic_dev.h"[color=blue];
+"vnic_rq.c" -> "vnic_rq.h"[color=blue];
+"vnic_rq.c" -> "vnic_dev.h"[color=blue];
+"vnic_dev.h" -> "vnic_devcmd.h"[color=blue];
+"vnic_dev.h" -> "vnic_resource.h"[color=blue];
+"vnic_dev.c" -> "vnic_devcmd.h"[color=blue];
+"vnic_dev.c" -> "vnic_stats.h"[color=blue];
+"vnic_dev.c" -> "vnic_resource.h"[color=blue];
+"vnic_dev.c" -> "vnic_dev.h"[color=blue];
+"enic_pp.c" -> "enic_dev.h"[color=blue];
+"enic_pp.c" -> "enic.h"[color=blue];
+"enic_pp.c" -> "vnic_vic.h"[color=blue];
+"enic_pp.c" -> "enic_res.h"[color=blue];
+"enic_pp.c" -> "enic_pp.h"[color=blue];
+"enic_dev.h" -> "vnic_dev.h"[color=blue];
+"enic_dev.c" -> "enic_dev.h"[color=blue];
+"enic_dev.c" -> "enic.h"[color=blue];
+"enic_dev.c" -> "vnic_vic.h"[color=blue];
+"enic_dev.c" -> "enic_res.h"[color=blue];
+"enic_dev.c" -> "vnic_dev.h"[color=blue];
+"enic_res.h" -> "vnic_rq.h"[color=blue];
+"enic_res.h" -> "vnic_wq.h"[color=blue];
+"enic_res.h" -> "rq_enet_desc.h"[color=blue];
+"enic_res.h" -> "wq_enet_desc.h"[color=blue];
+"enic_res.c" -> "cq_enet_desc.h"[color=blue];
+"enic_res.c" -> "enic.h"[color=blue];
+"enic_res.c" -> "vnic_cq.h"[color=blue];
+"enic_res.c" -> "rq_enet_desc.h"[color=blue];
+"enic_res.c" -> "wq_enet_desc.h"[color=blue];
+"enic_res.c" -> "vnic_intr.h"[color=blue];
+"enic_res.c" -> "vnic_rss.h"[color=blue];
+"enic_res.c" -> "vnic_stats.h"[color=blue];
+"enic_res.c" -> "enic_res.h"[color=blue];
+"enic_res.c" -> "vnic_resource.h"[color=blue];
+"enic_res.c" -> "vnic_enet.h"[color=blue];
+"enic_res.c" -> "vnic_rq.h"[color=blue];
+"enic_res.c" -> "vnic_wq.h"[color=blue];
+"enic_res.c" -> "vnic_nic.h"[color=blue];
+"enic_res.c" -> "vnic_dev.h"[color=blue];
+"cq_enet_desc.h" -> "cq_desc.h"[color=blue];
+"vnic_wq.h" -> "vnic_cq.h"[color=blue];
+"vnic_wq.h" -> "vnic_dev.h"[color=blue];
+"vnic_wq.c" -> "vnic_wq.h"[color=blue];
+"vnic_wq.c" -> "vnic_dev.h"[color=blue];
+"vnic_intr.h" -> "vnic_dev.h"[color=blue];
+"vnic_intr.c" -> "vnic_intr.h"[color=blue];
+"vnic_intr.c" -> "vnic_dev.h"[color=blue];
+"vnic_cq.h" -> "cq_desc.h"[color=blue];
+"vnic_cq.h" -> "vnic_dev.h"[color=blue];
+"vnic_cq.c" -> "vnic_cq.h"[color=blue];
+"vnic_cq.c" -> "vnic_dev.h"[color=blue];
+"enic_main.c" -> "cq_enet_desc.h"[color=blue];
+"enic_main.c" -> "enic.h"[color=blue];
+"enic_main.c" -> "vnic_intr.h"[color=blue];
+"enic_main.c" -> "enic_dev.h"[color=blue];
+"enic_main.c" -> "vnic_stats.h"[color=blue];
+"enic_main.c" -> "vnic_vic.h"[color=blue];
+"enic_main.c" -> "enic_res.h"[color=blue];
+"enic_main.c" -> "vnic_dev.h"[color=blue];
+"enic_main.c" -> "enic_pp.h"[color=blue];
+"enic.h" -> "vnic_cq.h"[color=blue];
+"enic.h" -> "vnic_intr.h"[color=blue];
+"enic.h" -> "vnic_rss.h"[color=blue];
+"enic.h" -> "vnic_stats.h"[color=blue];
+"enic.h" -> "vnic_enet.h"[color=blue];
+"enic.h" -> "vnic_rq.h"[color=blue];
+"enic.h" -> "vnic_wq.h"[color=blue];
+"enic.h" -> "vnic_nic.h"[color=blue];
+"enic.h" -> "vnic_dev.h"[color=blue];
+}

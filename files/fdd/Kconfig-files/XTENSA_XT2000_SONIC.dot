@@ -1,0 +1,29 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: XTENSA_XT2000_SONIC
+	subgraph "cluster_XTENSA_XT2000_SONIC"{
+		subgraph "cluster_xtsonic.c" {
+			style=filled
+			"commit_xtsonic.c" [style=filled, fillcolor=black, fontcolor=white, label="29\n2008-05-05"];
+			"xtsonic.c" [style=filled, fillcolor=white, fontcolor=black, label="xtsonic.c\n"];
+			"structs-xtsonic.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nplatform_driver\n"];
+			"funccall0-xtsonic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nregister_netdev\nunregister_netdev\nrequest_mem_region\nrelease_region\ndma_*\nplatform_*\nfree_netdev\nrequest_irq\nnetdev_*\n"];
+		}
+		subgraph "cluster_sonic.h" {
+			style=filled
+			"commit_sonic.h" [style=filled, fillcolor=black, fontcolor=white, label="13\n2005-04-16"];
+			"sonic.h" [style=filled, fillcolor=white, fontcolor=black, label="sonic.h\n"];
+			"funccall0-sonic.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		subgraph "cluster_sonic.c" {
+			style=filled
+			"commit_sonic.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2005-04-16"];
+			"sonic.c" [style=filled, fillcolor=white, fontcolor=black, label="sonic.c\n"];
+			"funccall0-sonic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dma_*\nskb_*\ndev_*\nnetdev_alloc_skb\neth_type_trans\nnetdev_*\nnetif_*\n"];
+		}
+		"K:XTENSA_XT2000_SONIC" [label="Kconfig: XTENSA_XT2000_SONIC\n /drivers/net/ethernet/natsemi\n  XTENSA_PLATFORM_XT2000 ", shape=box, fontcolor=red];
+	}
+"xtsonic.c" -> "sonic.h"[color=blue];
+"xtsonic.c" -> "sonic.c"[color=blue];
+}

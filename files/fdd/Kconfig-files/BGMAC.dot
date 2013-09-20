@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: BGMAC
+	subgraph "cluster_BGMAC"{
+		subgraph "cluster_bgmac.h" {
+			style=filled
+			"commit_bgmac.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2013-01-08"];
+			"bgmac.h" [style=filled, fillcolor=white, fontcolor=black, label="bgmac.h\n"];
+			"funccall0-bgmac.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\n"];
+		}
+		subgraph "cluster_bgmac.c" {
+			style=filled
+			"commit_bgmac.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2013-01-08"];
+			"bgmac.c" [style=filled, fillcolor=white, fontcolor=black, label="bgmac.c\n"];
+			"structs-bgmac.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\ngmac\ngmac\ngmac\ngmac\nnet_device_ops\n"];
+			"funccall2-bgmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nkmalloc_array\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nnetif_*\nmdiobus_*\nudelay\neth_commit_mac_addr_change\nrequest_irq\nfree_netdev\ndev_*\n"];
+			"funccall1-bgmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\neth_random_addr\nregister_netdev\neth_type_trans\nnapi_*\nkfree*\neth_prepare_mac_addr_change\nmemcpy\ndma_*\nethtool_*\ncontainer_of\nnetdev_alloc_skb\nnetdev_*\n"];
+		}
+		"K:BGMAC" [label="Kconfig: BGMAC\n /drivers/net/ethernet/broadcom\n  BCMA_HOST_SOC && HAS_DMA ", shape=box, fontcolor=red];
+	}
+"bgmac.c" -> "bgmac.h"[color=blue];
+}

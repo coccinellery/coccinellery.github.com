@@ -1,0 +1,16 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SUNLANCE
+	subgraph "cluster_SUNLANCE"{
+		subgraph "cluster_sunlance.c" {
+			style=filled
+			"commit_sunlance.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-04-16"];
+			"sunlance.c" [style=filled, fillcolor=white, fontcolor=black, label="sunlance.c\n"];
+			"structs-sunlance.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall2-sunlance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nunregister_netdev\nmemset\nnetif_*\nudelay\nsbus_*\nfree_netdev\nrequest_irq\nmod_timer\ndev_*\nskb_*\n"];
+			"funccall1-sunlance.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="of_iounmap\nether_crc_le\nregister_netdev\neth_type_trans\nspin_*\ndma_*\ndel_timer_sync\nnetdev_alloc_skb\nof_*\ninit_timer\nnetdev_*\n"];
+		}
+		"K:SUNLANCE" [label="Kconfig: SUNLANCE\n /drivers/net/ethernet/amd\n  SBUS ", shape=box, fontcolor=red];
+	}
+}

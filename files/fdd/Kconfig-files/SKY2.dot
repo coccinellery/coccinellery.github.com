@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SKY2
+	subgraph "cluster_SKY2"{
+		subgraph "cluster_sky2.h" {
+			style=filled
+			"commit_sky2.h" [style=filled, fillcolor=black, fontcolor=white, label="267\n2005-05-12"];
+			"sky2.h" [style=filled, fillcolor=white, fontcolor=black, label="sky2.h\n"];
+		}
+		subgraph "cluster_sky2.c" {
+			style=filled
+			"commit_sky2.c" [style=filled, fillcolor=black, fontcolor=white, label="1049\n2005-08-16"];
+			"sky2.c" [style=filled, fillcolor=white, fontcolor=black, label="sky2.c\n"];
+			"structs-sky2.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="SIMPLE_DEV_PM_OPS\nnet_device\nethtool_ops\nfile_operations\nnet_device_ops\nnotifier_block\npci_driver\n"];
+			"funccall4-sky2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdelay\nudelay\npci_*\nkzalloc\nmod_timer\npci_request_regions\nmemcpy_toio\nskb_*\niounmap\nregister_netdev\n"];
+			"funccall3-sky2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="__skb_*\nether_crc\nprefetch\nnapi_*\nregister_netdevice_notifier\nunregister_netdevice_notifier\nmemcmp\ndma_*\nethtool_*\ncontainer_of\nioremap*\nschedule_work\nmemcpy_fromio\n"];
+			"funccall2-sky2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc\nsky2_prefetch_init\nnetdev_*\nis_valid_ether_addr\n__netdev_alloc_skb\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nsetup_timer\npci_release_regions\nvlan_*\nsynchronize_irq\nfree_netdev\n"];
+			"funccall1-sky2.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="request_irq\nkcalloc\ndev_*\neth_type_trans\nalloc_page\nwait_event_timeout\nspin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\ndel_timer_sync\n"];
+		}
+		"K:SKY2" [label="Kconfig: SKY2\n /drivers/net/ethernet/marvell\n  PCI ", shape=box, fontcolor=red];
+	}
+"sky2.c" -> "sky2.h"[color=blue];
+}

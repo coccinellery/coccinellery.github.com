@@ -1,0 +1,23 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: TSI108_ETH
+	subgraph "cluster_TSI108_ETH"{
+		subgraph "cluster_tsi108_eth.h" {
+			style=filled
+			"commit_tsi108_eth.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2006-11-08"];
+			"tsi108_eth.h" [style=filled, fillcolor=white, fontcolor=black, label="tsi108_eth.h\n"];
+		}
+		subgraph "cluster_tsi108_eth.c" {
+			style=filled
+			"commit_tsi108_eth.c" [style=filled, fillcolor=black, fontcolor=white, label="93\n2006-11-08"];
+			"tsi108_eth.c" [style=filled, fillcolor=white, fontcolor=black, label="tsi108_eth.c\n"];
+			"structs-tsi108_eth.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\n"];
+			"funccall3-tsi108_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nif_*\nunregister_netdev\nnetdev_alloc_skb_ip_align\nmemset\nsetup_timer\nnetif_*\nudelay\npci_*\nrequest_irq\n"];
+			"funccall2-tsi108_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nmod_timer\ndev_*\nskb_*\niounmap\nmii_*\nregister_netdev\nether_crc\neth_type_trans\nnapi_*\ncpu_relax\n"];
+			"funccall1-tsi108_eth.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dump_eth_one\nspin_*\ndel_timer_sync\ndma_*\nplatform_*\ncontainer_of\nioremap*\nmsleep\nnetdev_*\n"];
+		}
+		"K:TSI108_ETH" [label="Kconfig: TSI108_ETH\n /drivers/net/ethernet/tundra\n  TSI108_BRIDGE ", shape=box, fontcolor=red];
+	}
+"tsi108_eth.c" -> "tsi108_eth.h"[color=blue];
+}

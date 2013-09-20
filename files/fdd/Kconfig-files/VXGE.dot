@@ -1,0 +1,84 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: VXGE
+	subgraph "cluster_VXGE"{
+		subgraph "cluster_vxge-main.h" {
+			style=filled
+			"commit_vxge-main.h" [style=filled, fillcolor=black, fontcolor=white, label="59\n2009-04-01"];
+			"vxge-main.h" [style=filled, fillcolor=white, fontcolor=black, label="vxge-main.h\n"];
+			"structs-vxge-main.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-vxge-main.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\nskb_*\ninit_timer\n"];
+		}
+		subgraph "cluster_vxge-version.h" {
+			style=filled
+			"commit_vxge-version.h" [style=filled, fillcolor=black, fontcolor=white, label="33\n2009-04-01"];
+			"vxge-version.h" [style=filled, fillcolor=white, fontcolor=black, label="vxge-version.h\n"];
+		}
+		subgraph "cluster_vxge-reg.h" {
+			style=filled
+			"commit_vxge-reg.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2009-04-01"];
+			"vxge-reg.h" [style=filled, fillcolor=white, fontcolor=black, label="vxge-reg.h\n"];
+		}
+		subgraph "cluster_vxge-main.c" {
+			style=filled
+			"commit_vxge-main.c" [style=filled, fillcolor=black, fontcolor=white, label="217\n2009-04-01"];
+			"vxge-main.c" [style=filled, fillcolor=white, fontcolor=black, label="vxge-main.c\n"];
+			"structs-vxge-main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall3-vxge-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nnetif_*\npci_*\nkzalloc\nmod_timer\nrequest_firmware\nskb_*\niounmap\npci_release_region\nregister_netdev\nprefetch\nsmp_wmb\nnapi_*\ncopy_*\n"];
+			"funccall2-vxge-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_request_region\nmemcmp\nis_multicast_ether_addr\ndma_*\ncontainer_of\nschedule_work\nrelease_firmware\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nalloc_etherdev_mq\nmemset\nvlan_*\nsynchronize_irq\n"];
+			"funccall1-vxge-main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nrequest_irq\nkcalloc\ndev_*\neth_type_trans\nkfree*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nenable_irq\nmsleep\ndisable_irq\n"];
+		}
+		subgraph "cluster_vxge-ethtool.h" {
+			style=filled
+			"commit_vxge-ethtool.h" [style=filled, fillcolor=black, fontcolor=white, label="5\n2009-04-01"];
+			"vxge-ethtool.h" [style=filled, fillcolor=white, fontcolor=black, label="vxge-ethtool.h\n"];
+		}
+		subgraph "cluster_vxge-ethtool.c" {
+			style=filled
+			"commit_vxge-ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="33\n2009-04-01"];
+			"vxge-ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="vxge-ethtool.c\n"];
+			"structs-vxge-ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-vxge-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\nkfree*\nmemcpy\npci_*\nethtool_*\nkzalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_vxge-traffic.h" {
+			style=filled
+			"commit_vxge-traffic.h" [style=filled, fillcolor=black, fontcolor=white, label="35\n2009-04-01"];
+			"vxge-traffic.h" [style=filled, fillcolor=white, fontcolor=black, label="vxge-traffic.h\n"];
+		}
+		subgraph "cluster_vxge-traffic.c" {
+			style=filled
+			"commit_vxge-traffic.c" [style=filled, fillcolor=black, fontcolor=white, label="53\n2009-04-01"];
+			"vxge-traffic.c" [style=filled, fillcolor=white, fontcolor=black, label="vxge-traffic.c\n"];
+			"funccall0-vxge-traffic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nprefetch\n"];
+		}
+		subgraph "cluster_vxge-config.h" {
+			style=filled
+			"commit_vxge-config.h" [style=filled, fillcolor=black, fontcolor=white, label="49\n2009-04-01"];
+			"vxge-config.h" [style=filled, fillcolor=white, fontcolor=black, label="vxge-config.h\n"];
+			"funccall0-vxge-config.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kmalloc\nkfree*\n"];
+		}
+		subgraph "cluster_vxge-config.c" {
+			style=filled
+			"commit_vxge-config.c" [style=filled, fillcolor=black, fontcolor=white, label="79\n2009-04-01"];
+			"vxge-config.c" [style=filled, fillcolor=white, fontcolor=black, label="vxge-config.c\n"];
+			"funccall0-vxge-config.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\npcie_*\nmemset\nspin_*\nkfree*\nmdelay\nmemcpy\nudelay\nvmalloc\npci_*\nkzalloc\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		"K:VXGE" [label="Kconfig: VXGE\n /drivers/net/ethernet/neterion/vxge\n  PCI ", shape=box, fontcolor=red];
+	}
+"vxge-main.h" -> "vxge-version.h"[color=blue];
+"vxge-main.h" -> "vxge-config.h"[color=blue];
+"vxge-main.h" -> "vxge-traffic.h"[color=blue];
+"vxge-main.c" -> "vxge-reg.h"[color=blue];
+"vxge-main.c" -> "vxge-main.h"[color=blue];
+"vxge-ethtool.h" -> "vxge-main.h"[color=blue];
+"vxge-ethtool.c" -> "vxge-ethtool.h"[color=blue];
+"vxge-traffic.h" -> "vxge-version.h"[color=blue];
+"vxge-traffic.h" -> "vxge-reg.h"[color=blue];
+"vxge-traffic.c" -> "vxge-config.h"[color=blue];
+"vxge-traffic.c" -> "vxge-main.h"[color=blue];
+"vxge-traffic.c" -> "vxge-traffic.h"[color=blue];
+"vxge-config.c" -> "vxge-config.h"[color=blue];
+"vxge-config.c" -> "vxge-main.h"[color=blue];
+"vxge-config.c" -> "vxge-traffic.h"[color=blue];
+}

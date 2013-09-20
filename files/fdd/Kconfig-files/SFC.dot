@@ -1,0 +1,452 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: SFC
+	subgraph "cluster_SFC"{
+		subgraph "cluster_ptp.c" {
+			style=filled
+			"commit_ptp.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2012-09-03"];
+			"ptp.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp.c\n"];
+			"funccall0-ptp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ndev_*\nlocal_*\n__skb_*\nmemset\ncopy_*\nnetif_*\nspin_*\nkfree*\nudelay\ndestroy_workqueue\ncontainer_of\nptp_*\nkzalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_net_driver.h" {
+			style=filled
+			"commit_net_driver.h" [style=filled, fillcolor=black, fontcolor=white, label="411\n2008-04-27"];
+			"net_driver.h" [style=filled, fillcolor=white, fontcolor=black, label="net_driver.h\n"];
+			"funccall0-net_driver.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ncontainer_of\n"];
+		}
+		subgraph "cluster_mcdi_pcol.h" {
+			style=filled
+			"commit_mcdi_pcol.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2009-11-29"];
+			"mcdi_pcol.h" [style=filled, fillcolor=white, fontcolor=black, label="mcdi_pcol.h\n"];
+		}
+		subgraph "cluster_io.h" {
+			style=filled
+			"commit_io.h" [style=filled, fillcolor=black, fontcolor=white, label="23\n2009-10-23"];
+			"io.h" [style=filled, fillcolor=white, fontcolor=black, label="io.h\n"];
+			"funccall0-io.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netif_*\nspin_*\n"];
+		}
+		subgraph "cluster_regs.h" {
+			style=filled
+			"commit_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2009-10-23"];
+			"regs.h" [style=filled, fillcolor=white, fontcolor=black, label="regs.h\n"];
+		}
+		subgraph "cluster_enum.h" {
+			style=filled
+			"commit_enum.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2008-04-27"];
+			"enum.h" [style=filled, fillcolor=white, fontcolor=black, label="enum.h\n"];
+		}
+		subgraph "cluster_bitfield.h" {
+			style=filled
+			"commit_bitfield.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2008-04-27"];
+			"bitfield.h" [style=filled, fillcolor=white, fontcolor=black, label="bitfield.h\n"];
+		}
+		subgraph "cluster_spi.h" {
+			style=filled
+			"commit_spi.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2008-04-27"];
+			"spi.h" [style=filled, fillcolor=white, fontcolor=black, label="spi.h\n"];
+		}
+		subgraph "cluster_mcdi_mon.c" {
+			style=filled
+			"commit_mcdi_mon.c" [style=filled, fillcolor=black, fontcolor=white, label="5\n2012-01-06"];
+			"mcdi_mon.c" [style=filled, fillcolor=white, fontcolor=black, label="mcdi_mon.c\n"];
+			"funccall0-mcdi_mon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\ncontainer_of\nkcalloc\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_mcdi_phy.c" {
+			style=filled
+			"commit_mcdi_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="41\n2009-11-29"];
+			"mcdi_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="mcdi_phy.c\n"];
+			"funccall0-mcdi_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nethtool_*\nmutex_*\nkzalloc\nmsleep\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_phy.h" {
+			style=filled
+			"commit_phy.h" [style=filled, fillcolor=black, fontcolor=white, label="31\n2008-04-27"];
+			"phy.h" [style=filled, fillcolor=white, fontcolor=black, label="phy.h\n"];
+		}
+		subgraph "cluster_mcdi.h" {
+			style=filled
+			"commit_mcdi.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-11-29"];
+			"mcdi.h" [style=filled, fillcolor=white, fontcolor=black, label="mcdi.h\n"];
+		}
+		subgraph "cluster_mcdi.c" {
+			style=filled
+			"commit_mcdi.c" [style=filled, fillcolor=black, fontcolor=white, label="69\n2009-11-29"];
+			"mcdi.c" [style=filled, fillcolor=white, fontcolor=black, label="mcdi.c\n"];
+			"funccall0-mcdi.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="wait_event_timeout\nmemset\nnetif_*\nspin_*\nkfree*\nmemcpy\nudelay\natomic_*\nkmalloc\nmsleep\n"];
+		}
+		subgraph "cluster_falcon_boards.c" {
+			style=filled
+			"commit_falcon_boards.c" [style=filled, fillcolor=black, fontcolor=white, label="93\n2008-04-27"];
+			"falcon_boards.c" [style=filled, fillcolor=white, fontcolor=black, label="falcon_boards.c\n"];
+			"structs-falcon_boards.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="i2c_board_info\ni2c_board_info\ni2c_board_info\ni2c_board_info\n"];
+			"funccall0-falcon_boards.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\npci_*\nmsleep\nnetif_*\n"];
+		}
+		subgraph "cluster_workarounds.h" {
+			style=filled
+			"commit_workarounds.h" [style=filled, fillcolor=black, fontcolor=white, label="49\n2008-04-27"];
+			"workarounds.h" [style=filled, fillcolor=white, fontcolor=black, label="workarounds.h\n"];
+		}
+		subgraph "cluster_txc43128_phy.c" {
+			style=filled
+			"commit_txc43128_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2010-09-22"];
+			"txc43128_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="txc43128_phy.c\n"];
+			"funccall0-txc43128_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nkzalloc\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_tenxpress.c" {
+			style=filled
+			"commit_tenxpress.c" [style=filled, fillcolor=black, fontcolor=white, label="129\n2008-04-27"];
+			"tenxpress.c" [style=filled, fillcolor=white, fontcolor=black, label="tenxpress.c\n"];
+			"funccall0-tenxpress.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nethtool_*\nkzalloc\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_mdio_10g.h" {
+			style=filled
+			"commit_mdio_10g.h" [style=filled, fillcolor=black, fontcolor=white, label="47\n2008-04-27"];
+			"mdio_10g.h" [style=filled, fillcolor=white, fontcolor=black, label="mdio_10g.h\n"];
+			"funccall0-mdio_10g.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netif_*\n"];
+		}
+		subgraph "cluster_mdio_10g.c" {
+			style=filled
+			"commit_mdio_10g.c" [style=filled, fillcolor=black, fontcolor=white, label="69\n2008-04-27"];
+			"mdio_10g.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_10g.c\n"];
+			"funccall0-mdio_10g.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nmutex_*\nmsleep\nnetif_*\n"];
+		}
+		subgraph "cluster_qt202x_phy.c" {
+			style=filled
+			"commit_qt202x_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="97\n2008-04-27"];
+			"qt202x_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="qt202x_phy.c\n"];
+			"funccall0-qt202x_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kzalloc\nmsleep\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_ethtool.c" {
+			style=filled
+			"commit_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="239\n2008-04-27"];
+			"ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ethtool.c\n"];
+			"structs-ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall2-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="efx_filter_set_eth_local\nefx_filter_get_eth_local\nmemset\nnetif_*\npci_*\nkzalloc\ndev_*\nether_addr_equal\nmutex_*\n"];
+			"funccall1-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_broadcast_ether_addr\nkfree*\nspin_*\nmemcpy\nis_multicast_ether_addr\nethtool_*\natomic_*\nis_zero_ether_addr\nnetdev_*\n"];
+		}
+		subgraph "cluster_selftest.h" {
+			style=filled
+			"commit_selftest.h" [style=filled, fillcolor=black, fontcolor=white, label="25\n2008-05-07"];
+			"selftest.h" [style=filled, fillcolor=white, fontcolor=black, label="selftest.h\n"];
+		}
+		subgraph "cluster_selftest.c" {
+			style=filled
+			"commit_selftest.c" [style=filled, fillcolor=black, fontcolor=white, label="161\n2008-05-07"];
+			"selftest.c" [style=filled, fillcolor=white, fontcolor=black, label="selftest.c\n"];
+			"funccall2-selftest.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netif_*\nkzalloc\nkcalloc\ndev_*\nskb_*\nmutex_*\nnapi_*\nsmp_wmb\n"];
+			"funccall1-selftest.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nmemcpy\nmemcmp\ncontainer_of\natomic_*\nalloc_skb\ncancel_delayed_work_sync\nmsleep\n"];
+		}
+		subgraph "cluster_mcdi_mac.c" {
+			style=filled
+			"commit_mcdi_mac.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-11-29"];
+			"mcdi_mac.c" [style=filled, fillcolor=white, fontcolor=black, label="mcdi_mac.c\n"];
+			"funccall0-mcdi_mac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nmutex_*\nnetif_*\n"];
+		}
+		subgraph "cluster_falcon_xmac.c" {
+			style=filled
+			"commit_falcon_xmac.c" [style=filled, fillcolor=black, fontcolor=white, label="93\n2008-04-27"];
+			"falcon_xmac.c" [style=filled, fillcolor=white, fontcolor=black, label="falcon_xmac.c\n"];
+			"funccall0-falcon_xmac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmemcpy\nnetif_*\n"];
+		}
+		subgraph "cluster_filter.h" {
+			style=filled
+			"commit_filter.h" [style=filled, fillcolor=black, fontcolor=white, label="17\n2010-09-20"];
+			"filter.h" [style=filled, fillcolor=white, fontcolor=black, label="filter.h\n"];
+		}
+		subgraph "cluster_filter.c" {
+			style=filled
+			"commit_filter.c" [style=filled, fillcolor=black, fontcolor=white, label="53\n2010-09-20"];
+			"filter.c" [style=filled, fillcolor=white, fontcolor=black, label="filter.c\n"];
+			"funccall0-filter.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nmemset\nnetif_*\nspin_*\nkfree*\nmemcmp\nkzalloc\nkcalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_rx.c" {
+			style=filled
+			"commit_rx.c" [style=filled, fillcolor=black, fontcolor=white, label="171\n2008-04-27"];
+			"rx.c" [style=filled, fillcolor=white, fontcolor=black, label="rx.c\n"];
+			"funccall2-rx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netif_*\npage_*\nput_page\nkcalloc\nskb_*\nprefetch\neth_type_trans\n__skb_*\nalloc_pages\n"];
+			"funccall1-rx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nkfree*\n__free_pages\nmemcpy\ndel_timer_sync\ndma_*\nnetdev_alloc_skb\nnetdev_*\n"];
+		}
+		subgraph "cluster_tx.c" {
+			style=filled
+			"commit_tx.c" [style=filled, fillcolor=black, fontcolor=white, label="129\n2008-04-27"];
+			"tx.c" [style=filled, fillcolor=white, fontcolor=black, label="tx.c\n"];
+			"funccall0-tx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ndev_*\nnetif_*\nkfree*\nmemcpy\nsmp_mb\ndma_*\nkmalloc\nkcalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_siena.c" {
+			style=filled
+			"commit_siena.c" [style=filled, fillcolor=black, fontcolor=white, label="93\n2009-11-29"];
+			"siena.c" [style=filled, fillcolor=white, fontcolor=black, label="siena.c\n"];
+			"funccall0-siena.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nnetif_*\nkfree*\nmemcpy\nudelay\npci_*\nkzalloc\nof_*\nnetdev_*\n"];
+		}
+		subgraph "cluster_falcon.c" {
+			style=filled
+			"commit_falcon.c" [style=filled, fillcolor=black, fontcolor=white, label="331\n2008-04-27"];
+			"falcon.c" [style=filled, fillcolor=white, fontcolor=black, label="falcon.c\n"];
+			"structs-falcon.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="i2c_algo_bit_data\n"];
+			"funccall2-falcon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\nsetup_timer\nnetif_*\nudelay\npci_*\nkzalloc\nraw_smp_processor_id\nmod_timer\nmutex_*\n"];
+			"funccall1-falcon.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\nmemcpy\nmemcmp\ndel_timer_sync\natomic_*\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_nic.h" {
+			style=filled
+			"commit_nic.h" [style=filled, fillcolor=black, fontcolor=white, label="135\n2008-04-27"];
+			"nic.h" [style=filled, fillcolor=white, fontcolor=black, label="nic.h\n"];
+		}
+		subgraph "cluster_nic.c" {
+			style=filled
+			"commit_nic.c" [style=filled, fillcolor=black, fontcolor=white, label="131\n2009-11-29"];
+			"nic.c" [style=filled, fillcolor=white, fontcolor=black, label="nic.c\n"];
+			"funccall0-nic.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nwait_event_timeout\nsmp_wmb\nmemset\nnetif_*\nsmp_mb\npci_*\ndma_*\natomic_*\nrequest_irq\nraw_smp_processor_id\n"];
+		}
+		subgraph "cluster_efx.h" {
+			style=filled
+			"commit_efx.h" [style=filled, fillcolor=black, fontcolor=white, label="119\n2008-04-27"];
+			"efx.h" [style=filled, fillcolor=white, fontcolor=black, label="efx.h\n"];
+			"funccall0-efx.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="napi_*\nraw_smp_processor_id\nnetif_*\n"];
+		}
+		subgraph "cluster_efx.c" {
+			style=filled
+			"commit_efx.c" [style=filled, fillcolor=black, fontcolor=white, label="497\n2008-04-27"];
+			"efx.c" [style=filled, fillcolor=white, fontcolor=black, label="efx.c\n"];
+			"structs-efx.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nnet_device_ops\nnotifier_block\npci_driver\npci_error_handlers\n"];
+			"funccall3-efx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="if_*\nnetif_*\npci_*\nefx_unregister_netdev\nkzalloc\nmod_timer\niounmap\nether_crc_le\npci_release_region\nefx_register_netdev\nsmp_wmb\nnapi_*\nregister_netdevice_notifier\nunregister_netdevice\n"];
+			"funccall2-efx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="unregister_netdevice_notifier\npci_request_region\ndma_*\nethtool_*\ncontainer_of\nioremap*\nkmalloc\nnetdev_*\nis_valid_ether_addr\nmemset\nsetup_timer\ndestroy_workqueue\nregister_netdevice\nsynchronize_irq\n"];
+			"funccall1-efx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_netdev\nraw_smp_processor_id\ndev_*\nalloc_etherdev_mqs\nmutex_*\nspin_*\nkfree*\nmemcpy\nfree_irq_cpu_rmap\ndevice_*\nsmp_mb\ncancel_delayed_work_sync\nof_*\n"];
+		}
+		"K:SFC" [label="Kconfig: SFC\n /drivers/net/ethernet/sfc\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: SFC_MTD
+	subgraph "cluster_SFC_MTD"{
+		subgraph "cluster_mtd.c" {
+			style=filled
+			"commit_mtd.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2008-11-04"];
+			"mtd.c" [style=filled, fillcolor=white, fontcolor=black, label="mtd.c\n"];
+			"funccall0-mtd.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcmp\nmutex_*\ncontainer_of\nkzalloc\nmemset\nkfree*\n"];
+		}
+		"K:SFC_MTD" [label="Kconfig: SFC_MTD\n /drivers/net/ethernet/sfc\n  SFC && MTD && !(SFC = y && MTD = m) ", shape=box];
+	}
+	//Symbol: SFC_SRIOV
+	subgraph "cluster_SFC_SRIOV"{
+		subgraph "cluster_siena_sriov.c" {
+			style=filled
+			"commit_siena_sriov.c" [style=filled, fillcolor=black, fontcolor=white, label="13\n2012-02-14"];
+			"siena_sriov.c" [style=filled, fillcolor=white, fontcolor=black, label="siena_sriov.c\n"];
+			"funccall2-siena_sriov.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="efx_filter_set_eth_local\nmemset\nnetif_*\ndestroy_workqueue\npci_*\nkzalloc\nkcalloc\nefx_sriov_memcpy\nmutex_*\nwait_event_timeout\n"];
+			"funccall1-siena_sriov.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="smp_wmb\nkfree*\nmemcpy\nsmp_mb\ndma_*\ncontainer_of\natomic_*\nkmalloc\nis_zero_ether_addr\nnetdev_*\n"];
+		}
+		subgraph "cluster_vfdi.h" {
+			style=filled
+			"commit_vfdi.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2012-02-14"];
+			"vfdi.h" [style=filled, fillcolor=white, fontcolor=black, label="vfdi.h\n"];
+		}
+		"K:SFC_SRIOV" [label="Kconfig: SFC_SRIOV\n /drivers/net/ethernet/sfc\n  SFC && PCI_IOV ", shape=box];
+	}
+	//Symbol: MDIO
+	subgraph "cluster_MDIO"{
+		subgraph "cluster_mdio.c" {
+			style=filled
+			"commit_mdio.c" [style=filled, fillcolor=black, fontcolor=white, label="25\n2009-04-29"];
+			"mdio.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio.c\n"];
+			"funccall0-mdio.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\n"];
+		}
+		"K:MDIO" [label="Kconfig: MDIO\n /drivers/net\n ", shape=box];
+	}
+	//Symbol: I2C
+	subgraph "cluster_I2C"{
+		subgraph "cluster_i2c-core.h" {
+			style=filled
+			"commit_i2c-core.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-04-16"];
+			"i2c-core.h" [style=filled, fillcolor=white, fontcolor=black, label="i2c-core.h\n"];
+		}
+		subgraph "cluster_i2c-core.c" {
+			style=filled
+			"commit_i2c-core.c" [style=filled, fillcolor=black, fontcolor=white, label="413\n2005-04-16"];
+			"i2c-core.c" [style=filled, fillcolor=white, fontcolor=black, label="i2c-core.c\n"];
+			"structs-i2c-core.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="DEVICE_ATTR\nattribute_group\nattribute_group\nattribute_group\nattribute_group\ndev_pm_ops\n"];
+			"funccall0-i2c-core.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nkfree*\nwait_for_completion\nmemcpy\ndevice_*\nkzalloc\nof_*\n"];
+		}
+		"K:I2C" [label="Kconfig: I2C\n /drivers/i2c\n ", shape=box];
+	}
+	//Symbol: I2C_ALGOBIT
+	subgraph "cluster_I2C_ALGOBIT"{
+		subgraph "cluster_i2c-algo-bit.c" {
+			style=filled
+			"commit_i2c-algo-bit.c" [style=filled, fillcolor=black, fontcolor=white, label="73\n2005-04-16"];
+			"i2c-algo-bit.c" [style=filled, fillcolor=white, fontcolor=black, label="i2c-algo-bit.c\n"];
+			"funccall0-i2c-algo-bit.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\ndev_*\ncpu_relax\n"];
+		}
+		"K:I2C_ALGOBIT" [label="Kconfig: I2C_ALGOBIT\n /drivers/i2c/algos\n  !I2C_HELPER_AUTO ", shape=box];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+"ptp.c" -> "nic.h"[color=blue];
+"ptp.c" -> "mcdi.h"[color=blue];
+"ptp.c" -> "mcdi_pcol.h"[color=blue];
+"ptp.c" -> "regs.h"[color=blue];
+"ptp.c" -> "io.h"[color=blue];
+"ptp.c" -> "efx.h"[color=blue];
+"ptp.c" -> "net_driver.h"[color=blue];
+"net_driver.h" -> "bitfield.h"[color=blue];
+"net_driver.h" -> "enum.h"[color=blue];
+"spi.h" -> "net_driver.h"[color=blue];
+"mcdi_mon.c" -> "nic.h"[color=blue];
+"mcdi_mon.c" -> "mcdi.h"[color=blue];
+"mcdi_mon.c" -> "mcdi_pcol.h"[color=blue];
+"mcdi_mon.c" -> "net_driver.h"[color=blue];
+"mcdi_phy.c" -> "phy.h"[color=blue];
+"mcdi_phy.c" -> "nic.h"[color=blue];
+"mcdi_phy.c" -> "mcdi.h"[color=blue];
+"mcdi_phy.c" -> "selftest.h"[color=blue];
+"mcdi_phy.c" -> "mcdi_pcol.h"[color=blue];
+"mcdi_phy.c" -> "efx.h"[color=blue];
+"mcdi.c" -> "phy.h"[color=blue];
+"mcdi.c" -> "nic.h"[color=blue];
+"mcdi.c" -> "mcdi_pcol.h"[color=blue];
+"mcdi.c" -> "regs.h"[color=blue];
+"mcdi.c" -> "io.h"[color=blue];
+"mcdi.c" -> "net_driver.h"[color=blue];
+"falcon_boards.c" -> "phy.h"[color=blue];
+"falcon_boards.c" -> "nic.h"[color=blue];
+"falcon_boards.c" -> "workarounds.h"[color=blue];
+"falcon_boards.c" -> "efx.h"[color=blue];
+"falcon_boards.c" -> "net_driver.h"[color=blue];
+"txc43128_phy.c" -> "phy.h"[color=blue];
+"txc43128_phy.c" -> "nic.h"[color=blue];
+"txc43128_phy.c" -> "efx.h"[color=blue];
+"txc43128_phy.c" -> "mdio_10g.h"[color=blue];
+"tenxpress.c" -> "phy.h"[color=blue];
+"tenxpress.c" -> "nic.h"[color=blue];
+"tenxpress.c" -> "workarounds.h"[color=blue];
+"tenxpress.c" -> "efx.h"[color=blue];
+"tenxpress.c" -> "mdio_10g.h"[color=blue];
+"mdio_10g.h" -> "efx.h"[color=blue];
+"mdio_10g.c" -> "workarounds.h"[color=blue];
+"mdio_10g.c" -> "net_driver.h"[color=blue];
+"mdio_10g.c" -> "mdio_10g.h"[color=blue];
+"qt202x_phy.c" -> "phy.h"[color=blue];
+"qt202x_phy.c" -> "nic.h"[color=blue];
+"qt202x_phy.c" -> "efx.h"[color=blue];
+"qt202x_phy.c" -> "mdio_10g.h"[color=blue];
+"ethtool.c" -> "filter.h"[color=blue];
+"ethtool.c" -> "nic.h"[color=blue];
+"ethtool.c" -> "selftest.h"[color=blue];
+"ethtool.c" -> "workarounds.h"[color=blue];
+"ethtool.c" -> "efx.h"[color=blue];
+"ethtool.c" -> "net_driver.h"[color=blue];
+"selftest.h" -> "net_driver.h"[color=blue];
+"selftest.c" -> "nic.h"[color=blue];
+"selftest.c" -> "workarounds.h"[color=blue];
+"selftest.c" -> "selftest.h"[color=blue];
+"selftest.c" -> "efx.h"[color=blue];
+"selftest.c" -> "net_driver.h"[color=blue];
+"mcdi_mac.c" -> "mcdi.h"[color=blue];
+"mcdi_mac.c" -> "mcdi_pcol.h"[color=blue];
+"mcdi_mac.c" -> "efx.h"[color=blue];
+"mcdi_mac.c" -> "net_driver.h"[color=blue];
+"falcon_xmac.c" -> "nic.h"[color=blue];
+"falcon_xmac.c" -> "workarounds.h"[color=blue];
+"falcon_xmac.c" -> "io.h"[color=blue];
+"falcon_xmac.c" -> "regs.h"[color=blue];
+"falcon_xmac.c" -> "efx.h"[color=blue];
+"falcon_xmac.c" -> "net_driver.h"[color=blue];
+"falcon_xmac.c" -> "mdio_10g.h"[color=blue];
+"filter.c" -> "filter.h"[color=blue];
+"filter.c" -> "nic.h"[color=blue];
+"filter.c" -> "regs.h"[color=blue];
+"filter.c" -> "io.h"[color=blue];
+"filter.c" -> "efx.h"[color=blue];
+"rx.c" -> "nic.h"[color=blue];
+"rx.c" -> "workarounds.h"[color=blue];
+"rx.c" -> "selftest.h"[color=blue];
+"rx.c" -> "efx.h"[color=blue];
+"rx.c" -> "net_driver.h"[color=blue];
+"tx.c" -> "nic.h"[color=blue];
+"tx.c" -> "workarounds.h"[color=blue];
+"tx.c" -> "efx.h"[color=blue];
+"tx.c" -> "net_driver.h"[color=blue];
+"siena.c" -> "mcdi.h"[color=blue];
+"siena.c" -> "spi.h"[color=blue];
+"siena.c" -> "selftest.h"[color=blue];
+"siena.c" -> "workarounds.h"[color=blue];
+"siena.c" -> "io.h"[color=blue];
+"siena.c" -> "efx.h"[color=blue];
+"siena.c" -> "net_driver.h"[color=blue];
+"siena.c" -> "phy.h"[color=blue];
+"siena.c" -> "nic.h"[color=blue];
+"siena.c" -> "bitfield.h"[color=blue];
+"siena.c" -> "mcdi_pcol.h"[color=blue];
+"siena.c" -> "regs.h"[color=blue];
+"falcon.c" -> "spi.h"[color=blue];
+"falcon.c" -> "selftest.h"[color=blue];
+"falcon.c" -> "workarounds.h"[color=blue];
+"falcon.c" -> "io.h"[color=blue];
+"falcon.c" -> "efx.h"[color=blue];
+"falcon.c" -> "net_driver.h"[color=blue];
+"falcon.c" -> "phy.h"[color=blue];
+"falcon.c" -> "nic.h"[color=blue];
+"falcon.c" -> "bitfield.h"[color=blue];
+"falcon.c" -> "regs.h"[color=blue];
+"nic.h" -> "mcdi.h"[color=blue];
+"nic.h" -> "spi.h"[color=blue];
+"nic.h" -> "efx.h"[color=blue];
+"nic.h" -> "net_driver.h"[color=blue];
+"nic.c" -> "nic.h"[color=blue];
+"nic.c" -> "bitfield.h"[color=blue];
+"nic.c" -> "workarounds.h"[color=blue];
+"nic.c" -> "io.h"[color=blue];
+"nic.c" -> "regs.h"[color=blue];
+"nic.c" -> "efx.h"[color=blue];
+"nic.c" -> "net_driver.h"[color=blue];
+"efx.h" -> "filter.h"[color=blue];
+"efx.h" -> "net_driver.h"[color=blue];
+"efx.c" -> "nic.h"[color=blue];
+"efx.c" -> "mcdi.h"[color=blue];
+"efx.c" -> "workarounds.h"[color=blue];
+"efx.c" -> "selftest.h"[color=blue];
+"efx.c" -> "efx.h"[color=blue];
+"efx.c" -> "net_driver.h"[color=blue];
+"mtd.c" -> "nic.h"[color=blue];
+"mtd.c" -> "mcdi.h"[color=blue];
+"mtd.c" -> "spi.h"[color=blue];
+"mtd.c" -> "mcdi_pcol.h"[color=blue];
+"mtd.c" -> "efx.h"[color=blue];
+"mtd.c" -> "net_driver.h"[color=blue];
+"siena_sriov.c" -> "vfdi.h"[color=blue];
+"siena_sriov.c" -> "mcdi.h"[color=blue];
+"siena_sriov.c" -> "io.h"[color=blue];
+"siena_sriov.c" -> "efx.h"[color=blue];
+"siena_sriov.c" -> "net_driver.h"[color=blue];
+"siena_sriov.c" -> "filter.h"[color=blue];
+"siena_sriov.c" -> "nic.h"[color=blue];
+"siena_sriov.c" -> "mcdi_pcol.h"[color=blue];
+"siena_sriov.c" -> "regs.h"[color=blue];
+"i2c-core.c" -> "i2c-core.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+}

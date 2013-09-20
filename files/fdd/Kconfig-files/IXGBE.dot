@@ -1,0 +1,246 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: IXGBE
+	subgraph "cluster_IXGBE"{
+		subgraph "cluster_ixgbe_ptp.c" {
+			style=filled
+			"commit_ixgbe_ptp.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2012-05-01"];
+			"ixgbe_ptp.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_ptp.c\n"];
+			"funccall0-ixgbe_ptp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\ndev_*\nmemset\ncopy_*\nspin_*\nsmp_mb\ncontainer_of\nptp_*\nschedule_work\n"];
+		}
+		subgraph "cluster_ixgbe_type.h" {
+			style=filled
+			"commit_ixgbe_type.h" [style=filled, fillcolor=black, fontcolor=white, label="345\n2007-09-15"];
+			"ixgbe_type.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_type.h\n"];
+		}
+		subgraph "cluster_ixgbe_fcoe.h" {
+			style=filled
+			"commit_ixgbe_fcoe.h" [style=filled, fillcolor=black, fontcolor=white, label="53\n2005-04-16"];
+			"ixgbe_fcoe.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_fcoe.h\n"];
+		}
+		subgraph "cluster_ixgbe_fcoe.c" {
+			style=filled
+			"commit_ixgbe_fcoe.c" [style=filled, fillcolor=black, fontcolor=white, label="149\n2005-04-16"];
+			"ixgbe_fcoe.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_fcoe.c\n"];
+			"funccall0-ixgbe_fcoe.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nskb_*\ndev_*\neth_hdr\nnetif_*\nspin_*\nkfree*\nudelay\npci_*\ndma_*\natomic_*\nkmalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_ixgbe_lib.c" {
+			style=filled
+			"commit_ixgbe_lib.c" [style=filled, fillcolor=black, fontcolor=white, label="45\n2012-02-18"];
+			"ixgbe_lib.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_lib.c\n"];
+			"funccall0-ixgbe_lib.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_*\nkzalloc\nkcalloc\nnetdev_*\nkzalloc_node\nnetif_*\nkfree*\n"];
+		}
+		subgraph "cluster_ixgbe_x540.c" {
+			style=filled
+			"commit_ixgbe_x540.c" [style=filled, fillcolor=black, fontcolor=white, label="83\n2010-11-16"];
+			"ixgbe_x540.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_x540.c\n"];
+			"funccall0-ixgbe_x540.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nudelay\nmsleep\n"];
+		}
+		subgraph "cluster_ixgbe_mbx.h" {
+			style=filled
+			"commit_ixgbe_mbx.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2010-01-09"];
+			"ixgbe_mbx.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_mbx.h\n"];
+		}
+		subgraph "cluster_ixgbe_mbx.c" {
+			style=filled
+			"commit_ixgbe_mbx.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2009-02-19"];
+			"ixgbe_mbx.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_mbx.c\n"];
+			"funccall0-ixgbe_mbx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_ixgbe_sriov.h" {
+			style=filled
+			"commit_ixgbe_sriov.h" [style=filled, fillcolor=black, fontcolor=white, label="55\n2005-04-16"];
+			"ixgbe_sriov.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_sriov.h\n"];
+		}
+		subgraph "cluster_ixgbe_sriov.c" {
+			style=filled
+			"commit_ixgbe_sriov.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2010-01-09"];
+			"ixgbe_sriov.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_sriov.c\n"];
+			"funccall0-ixgbe_sriov.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\ndev_*\nkfree*\nmemcmp\nmemcpy\npci_*\nis_zero_ether_addr\neth_zero_addr\nmsleep\nkcalloc\nnetdev_*\n"];
+		}
+		subgraph "cluster_ixgbe_phy.h" {
+			style=filled
+			"commit_ixgbe_phy.h" [style=filled, fillcolor=black, fontcolor=white, label="57\n2005-04-16"];
+			"ixgbe_phy.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_phy.h\n"];
+			"structs-ixgbe_phy.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="firmware\n"];
+		}
+		subgraph "cluster_ixgbe_phy.c" {
+			style=filled
+			"commit_ixgbe_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="103\n2007-09-15"];
+			"ixgbe_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_phy.c\n"];
+			"funccall0-ixgbe_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nmsleep\n"];
+		}
+		subgraph "cluster_ixgbe_82598.c" {
+			style=filled
+			"commit_ixgbe_82598.c" [style=filled, fillcolor=black, fontcolor=white, label="165\n2007-09-15"];
+			"ixgbe_82598.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_82598.c\n"];
+			"funccall0-ixgbe_82598.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\npci_*\nmsleep\n"];
+		}
+		subgraph "cluster_ixgbe_82599.c" {
+			style=filled
+			"commit_ixgbe_82599.c" [style=filled, fillcolor=black, fontcolor=white, label="229\n2009-02-27"];
+			"ixgbe_82599.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_82599.c\n"];
+			"funccall0-ixgbe_82599.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nmdelay\nudelay\nmsleep\n"];
+		}
+		subgraph "cluster_ixgbe_ethtool.c" {
+			style=filled
+			"commit_ixgbe_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="395\n2007-09-15"];
+			"ixgbe_ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_ethtool.c\n"];
+			"structs-ixgbe_ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall2-ixgbe_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmsleep_interruptible\nmemset\nnetif_*\nvmalloc\npci_*\nptp_*\nkzalloc\nrequest_irq\ndev_*\nskb_*\n"];
+			"funccall1-ixgbe_ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="kfree*\nspin_*\ndevice_*\nmemcmp\nmemcpy\ndma_*\nethtool_*\nalloc_skb\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_ixgbe_common.h" {
+			style=filled
+			"commit_ixgbe_common.h" [style=filled, fillcolor=black, fontcolor=white, label="91\n2007-09-15"];
+			"ixgbe_common.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_common.h\n"];
+			"funccall0-ixgbe_common.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_ixgbe_common.c" {
+			style=filled
+			"commit_ixgbe_common.c" [style=filled, fillcolor=black, fontcolor=white, label="215\n2007-09-15"];
+			"ixgbe_common.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_common.c\n"];
+			"funccall0-ixgbe_common.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nudelay\npci_*\nmsleep\nmemset\nnetdev_*\n"];
+		}
+		subgraph "cluster_ixgbe_main.c" {
+			style=filled
+			"commit_ixgbe_main.c" [style=filled, fillcolor=black, fontcolor=white, label="1537\n2007-09-15"];
+			"ixgbe_main.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_main.c\n"];
+			"structs-ixgbe_main.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\nnotifier_block\npci_driver\npci_error_handlers\n"];
+			"funccall4-ixgbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nudelay\npci_*\nput_page\nis_unicast_ether_addr\nread_*\nprefetchw\nmod_timer\niounmap\nskb_*\n__skb_alloc_pages\n"];
+			"funccall3-ixgbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\n__skb_*\nprefetch\nnapi_*\n__free_pages\nis_link_local_ether_addr\nis_multicast_ether_addr\ndma_*\ncontainer_of\nioremap*\nschedule_work\nsmp_mb__before_clear_bit\nnetdev_*\n"];
+			"funccall2-ixgbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nunregister_netdev\nnetdev_alloc_skb_ip_align\nalloc_etherdev_mq\nmemset\nsetup_timer\nvlan_*\npage_*\nrcu_*\nsynchronize_irq\nfree_netdev\nrequest_irq\nixgbe_free_irq\n"];
+			"funccall1-ixgbe_main.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\neth_type_trans\nspin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\ndel_timer_sync\natomic_*\nixgbe_request_irq\nmsleep\nsmp_processor_id\n"];
+		}
+		subgraph "cluster_ixgbe.h" {
+			style=filled
+			"commit_ixgbe.h" [style=filled, fillcolor=black, fontcolor=white, label="419\n2007-09-15"];
+			"ixgbe.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe.h\n"];
+			"structs-ixgbe.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-ixgbe.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_*\n"];
+		}
+		"K:IXGBE" [label="Kconfig: IXGBE\n /drivers/net/ethernet/intel/ixgbe\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: IXGBE_DCB
+	subgraph "cluster_IXGBE_DCB"{
+		subgraph "cluster_ixgbe_dcb_nl.c" {
+			style=filled
+			"commit_ixgbe_dcb_nl.c" [style=filled, fillcolor=black, fontcolor=white, label="163\n2008-11-20"];
+			"ixgbe_dcb_nl.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb_nl.c\n"];
+			"structs-ixgbe_dcb_nl.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dcbnl_rtnl_ops\n"];
+			"funccall0-ixgbe_dcb_nl.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memcpy\nkmalloc\nmemset\nnetdev_*\nnetif_*\n"];
+		}
+		subgraph "cluster_ixgbe_dcb_82599.h" {
+			style=filled
+			"commit_ixgbe_dcb_82599.h" [style=filled, fillcolor=black, fontcolor=white, label="27\n2009-02-27"];
+			"ixgbe_dcb_82599.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb_82599.h\n"];
+		}
+		subgraph "cluster_ixgbe_dcb_82599.c" {
+			style=filled
+			"commit_ixgbe_dcb_82599.c" [style=filled, fillcolor=black, fontcolor=white, label="57\n2009-02-27"];
+			"ixgbe_dcb_82599.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb_82599.c\n"];
+		}
+		subgraph "cluster_ixgbe_dcb_82598.h" {
+			style=filled
+			"commit_ixgbe_dcb_82598.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2008-11-20"];
+			"ixgbe_dcb_82598.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb_82598.h\n"];
+		}
+		subgraph "cluster_ixgbe_dcb_82598.c" {
+			style=filled
+			"commit_ixgbe_dcb_82598.c" [style=filled, fillcolor=black, fontcolor=white, label="43\n2008-11-20"];
+			"ixgbe_dcb_82598.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb_82598.c\n"];
+		}
+		subgraph "cluster_ixgbe_dcb.h" {
+			style=filled
+			"commit_ixgbe_dcb.h" [style=filled, fillcolor=black, fontcolor=white, label="43\n2008-11-20"];
+			"ixgbe_dcb.h" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb.h\n"];
+		}
+		subgraph "cluster_ixgbe_dcb.c" {
+			style=filled
+			"commit_ixgbe_dcb.c" [style=filled, fillcolor=black, fontcolor=white, label="51\n2008-11-20"];
+			"ixgbe_dcb.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_dcb.c\n"];
+		}
+		"K:IXGBE_DCB" [label="Kconfig: IXGBE_DCB\n /drivers/net/ethernet/intel/ixgbe\n  IXGBE && DCB ", shape=box];
+	}
+	//Symbol: IXGBE_HWMON
+	subgraph "cluster_IXGBE_HWMON"{
+		subgraph "cluster_ixgbe_sysfs.c" {
+			style=filled
+			"commit_ixgbe_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2012-04-12"];
+			"ixgbe_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_sysfs.c\n"];
+			"funccall0-ixgbe_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ncontainer_of\nkcalloc\nkfree*\n"];
+		}
+		"K:IXGBE_HWMON" [label="Kconfig: IXGBE_HWMON\n /drivers/net/ethernet/intel/ixgbe\n  IXGBE && HWMON && !(IXGBE = y && HWMON = m) ", shape=box];
+	}
+	//Symbol: DEBUG_FS
+	subgraph "cluster_DEBUG_FS"{
+		subgraph "cluster_ixgbe_debugfs.c" {
+			style=filled
+			"commit_ixgbe_debugfs.c" [style=filled, fillcolor=black, fontcolor=white, label="15\n2012-08-10"];
+			"ixgbe_debugfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ixgbe_debugfs.c\n"];
+			"structs-ixgbe_debugfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="file_operations\nfile_operations\n"];
+			"funccall0-ixgbe_debugfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="pci_*\nkfree*\n"];
+		}
+		"K:DEBUG_FS" [label="Kconfig: DEBUG_FS\n /drivers/net/ethernet/intel/ixgbe\n ", shape=box];
+	}
+"ixgbe_ptp.c" -> "ixgbe.h"[color=blue];
+"ixgbe_type.h" -> "ixgbe_mbx.h"[color=blue];
+"ixgbe_fcoe.c" -> "ixgbe.h"[color=blue];
+"ixgbe_lib.c" -> "ixgbe.h"[color=blue];
+"ixgbe_lib.c" -> "ixgbe_sriov.h"[color=blue];
+"ixgbe_x540.c" -> "ixgbe_phy.h"[color=blue];
+"ixgbe_x540.c" -> "ixgbe.h"[color=blue];
+"ixgbe_mbx.h" -> "ixgbe_type.h"[color=blue];
+"ixgbe_mbx.c" -> "ixgbe_type.h"[color=blue];
+"ixgbe_mbx.c" -> "ixgbe_mbx.h"[color=blue];
+"ixgbe_mbx.c" -> "ixgbe_common.h"[color=blue];
+"ixgbe_sriov.c" -> "ixgbe_type.h"[color=blue];
+"ixgbe_sriov.c" -> "ixgbe.h"[color=blue];
+"ixgbe_sriov.c" -> "ixgbe_sriov.h"[color=blue];
+"ixgbe_phy.h" -> "ixgbe_type.h"[color=blue];
+"ixgbe_phy.c" -> "ixgbe_phy.h"[color=blue];
+"ixgbe_phy.c" -> "ixgbe_common.h"[color=blue];
+"ixgbe_82598.c" -> "ixgbe_phy.h"[color=blue];
+"ixgbe_82598.c" -> "ixgbe.h"[color=blue];
+"ixgbe_82599.c" -> "ixgbe_phy.h"[color=blue];
+"ixgbe_82599.c" -> "ixgbe.h"[color=blue];
+"ixgbe_82599.c" -> "ixgbe_mbx.h"[color=blue];
+"ixgbe_ethtool.c" -> "ixgbe_phy.h"[color=blue];
+"ixgbe_ethtool.c" -> "ixgbe.h"[color=blue];
+"ixgbe_common.h" -> "ixgbe_type.h"[color=blue];
+"ixgbe_common.h" -> "ixgbe.h"[color=blue];
+"ixgbe_common.c" -> "ixgbe_phy.h"[color=blue];
+"ixgbe_common.c" -> "ixgbe.h"[color=blue];
+"ixgbe_common.c" -> "ixgbe_common.h"[color=blue];
+"ixgbe_main.c" -> "ixgbe_dcb_82599.h"[color=blue];
+"ixgbe_main.c" -> "ixgbe.h"[color=blue];
+"ixgbe_main.c" -> "ixgbe_common.h"[color=blue];
+"ixgbe_main.c" -> "ixgbe_sriov.h"[color=blue];
+"ixgbe.h" -> "ixgbe_fcoe.h"[color=blue];
+"ixgbe.h" -> "ixgbe_type.h"[color=blue];
+"ixgbe.h" -> "ixgbe_common.h"[color=blue];
+"ixgbe.h" -> "ixgbe_dcb.h"[color=blue];
+"ixgbe_dcb_nl.c" -> "ixgbe_dcb_82599.h"[color=blue];
+"ixgbe_dcb_nl.c" -> "ixgbe_dcb_82598.h"[color=blue];
+"ixgbe_dcb_nl.c" -> "ixgbe.h"[color=blue];
+"ixgbe_dcb_nl.c" -> "ixgbe_sriov.h"[color=blue];
+"ixgbe_dcb_82599.c" -> "ixgbe_dcb_82599.h"[color=blue];
+"ixgbe_dcb_82599.c" -> "ixgbe_type.h"[color=blue];
+"ixgbe_dcb_82599.c" -> "ixgbe.h"[color=blue];
+"ixgbe_dcb_82599.c" -> "ixgbe_dcb.h"[color=blue];
+"ixgbe_dcb_82598.c" -> "ixgbe_dcb_82598.h"[color=blue];
+"ixgbe_dcb_82598.c" -> "ixgbe_type.h"[color=blue];
+"ixgbe_dcb_82598.c" -> "ixgbe.h"[color=blue];
+"ixgbe_dcb_82598.c" -> "ixgbe_dcb.h"[color=blue];
+"ixgbe_dcb.h" -> "ixgbe_type.h"[color=blue];
+"ixgbe_dcb.c" -> "ixgbe_dcb_82599.h"[color=blue];
+"ixgbe_dcb.c" -> "ixgbe_dcb_82598.h"[color=blue];
+"ixgbe_dcb.c" -> "ixgbe_type.h"[color=blue];
+"ixgbe_dcb.c" -> "ixgbe.h"[color=blue];
+"ixgbe_dcb.c" -> "ixgbe_dcb.h"[color=blue];
+"ixgbe_sysfs.c" -> "ixgbe_type.h"[color=blue];
+"ixgbe_sysfs.c" -> "ixgbe.h"[color=blue];
+"ixgbe_sysfs.c" -> "ixgbe_common.h"[color=blue];
+"ixgbe_debugfs.c" -> "ixgbe.h"[color=blue];
+}

@@ -1,0 +1,75 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: FEC_MPC52xx
+	subgraph "cluster_FEC_MPC52xx"{
+		subgraph "cluster_fec_mpc52xx_phy.c" {
+			style=filled
+			"commit_fec_mpc52xx_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="37\n2007-10-26"];
+			"fec_mpc52xx_phy.c" [style=filled, fillcolor=white, fontcolor=black, label="fec_mpc52xx_phy.c\n"];
+			"structs-fec_mpc52xx_phy.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="dio_driver\nplatform_driver\nof_device_id\n"];
+			"funccall0-fec_mpc52xx_phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="iounmap\ndev_*\nkfree*\nmdiobus_*\nkzalloc\nioremap*\nof_*\nmsleep\n"];
+		}
+		subgraph "cluster_fec_mpc52xx.h" {
+			style=filled
+			"commit_fec_mpc52xx.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2007-10-26"];
+			"fec_mpc52xx.h" [style=filled, fillcolor=white, fontcolor=black, label="fec_mpc52xx.h\n"];
+		}
+		subgraph "cluster_fec_mpc52xx.c" {
+			style=filled
+			"commit_fec_mpc52xx.c" [style=filled, fillcolor=black, fontcolor=white, label="105\n2007-10-26"];
+			"fec_mpc52xx.c" [style=filled, fillcolor=white, fontcolor=black, label="fec_mpc52xx.c\n"];
+			"structs-fec_mpc52xx.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nethtool_ops\nnet_device_ops\nplatform_driver\nof_device_id\n"];
+			"funccall3-fec_mpc52xx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_valid_ether_addr\nfree_irq\nunregister_netdev\nrequest_mem_region\nmemset_io\nmemset\nnetif_*\nudelay\nrequest_irq\nfree_netdev\ndev_*\n"];
+			"funccall2-fec_mpc52xx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\niounmap\nether_crc_le\nregister_netdev\neth_type_trans\nkfree*\nspin_*\nmemcpy\ndma_*\nplatform_*\nnetdev_alloc_skb\n"];
+			"funccall1-fec_mpc52xx.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ioremap*\nrelease_mem_region\nof_*\nenable_irq\neth_hw_addr_random\nphy_*\ndisable_irq\nmsleep\nnetdev_*\n"];
+		}
+		"K:FEC_MPC52xx" [label="Kconfig: FEC_MPC52xx\n /drivers/net/ethernet/freescale\n  PPC_MPC52xx && PPC_BESTCOMM ", shape=box, fontcolor=red];
+	}
+	//Symbol: PHYLIB
+	subgraph "cluster_PHYLIB"{
+		subgraph "cluster_mdio_bus.c" {
+			style=filled
+			"commit_mdio_bus.c" [style=filled, fillcolor=black, fontcolor=white, label="99\n2005-07-30"];
+			"mdio_bus.c" [style=filled, fillcolor=white, fontcolor=black, label="mdio_bus.c\n"];
+			"structs-mdio_bus.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\ndev_pm_ops\n"];
+			"funccall0-mdio_bus.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nkzalloc\nof_*\nphy_*\n"];
+		}
+		subgraph "cluster_phy_device.c" {
+			style=filled
+			"commit_phy_device.c" [style=filled, fillcolor=black, fontcolor=white, label="125\n2005-07-30"];
+			"phy_device.c" [style=filled, fillcolor=white, fontcolor=black, label="phy_device.c\n"];
+			"funccall0-phy_device.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nkfree*\nmdiobus_*\ndevice_*\nethtool_*\nkzalloc\nphy_*\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="121\n2005-07-30"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall2-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nif_*\nnetif_*\nmdiobus_*\nrequest_irq\ndev_*\ndisable_irq_nosync\nmutex_*\n"];
+			"funccall1-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="ethtool_*\ncontainer_of\natomic_*\nschedule_work\nenable_irq\ncancel_delayed_work_sync\ndisable_irq\nphy_*\n"];
+		}
+		"K:PHYLIB" [label="Kconfig: PHYLIB\n /drivers/net/phy\n  NETDEVICES ", shape=box];
+	}
+	//Symbol: PPC_BESTCOMM_FEC
+	subgraph "cluster_PPC_BESTCOMM_FEC"{
+		subgraph "cluster_bcom_fec_tx_task.c" {
+			style=filled
+			"commit_bcom_fec_tx_task.c" [style=filled, fillcolor=black, fontcolor=white, label="3\n2007-09-16"];
+			"bcom_fec_tx_task.c" [style=filled, fillcolor=white, fontcolor=black, label="bcom_fec_tx_task.c\n"];
+		}
+		subgraph "cluster_bcom_fec_rx_task.c" {
+			style=filled
+			"commit_bcom_fec_rx_task.c" [style=filled, fillcolor=black, fontcolor=white, label="3\n2007-09-16"];
+			"bcom_fec_rx_task.c" [style=filled, fillcolor=white, fontcolor=black, label="bcom_fec_rx_task.c\n"];
+		}
+		subgraph "cluster_fec.c" {
+			style=filled
+			"commit_fec.c" [style=filled, fillcolor=black, fontcolor=white, label="3\n2007-09-16"];
+			"fec.c" [style=filled, fillcolor=white, fontcolor=black, label="fec.c\n"];
+			"funccall0-fec.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="memset\n"];
+		}
+		"K:PPC_BESTCOMM_FEC" [label="Kconfig: PPC_BESTCOMM_FEC\n /drivers/dma/bestcomm\n ", shape=box];
+	}
+"fec_mpc52xx_phy.c" -> "fec_mpc52xx.h"[color=blue];
+"fec_mpc52xx.c" -> "fec_mpc52xx.h"[color=blue];
+}

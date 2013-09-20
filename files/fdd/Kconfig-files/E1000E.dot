@@ -1,0 +1,190 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: E1000E
+	subgraph "cluster_E1000E"{
+		subgraph "cluster_ptp.c" {
+			style=filled
+			"commit_ptp.c" [style=filled, fillcolor=black, fontcolor=white, label="7\n2013-01-19"];
+			"ptp.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp.c\n"];
+			"structs-ptp.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ptp_clock_info\n"];
+			"funccall0-ptp.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="container_of\nptp_*\ncancel_delayed_work_sync\nspin_*\n"];
+		}
+		subgraph "cluster_e1000.h" {
+			style=filled
+			"commit_e1000.h" [style=filled, fillcolor=black, fontcolor=white, label="269\n2007-09-17"];
+			"e1000.h" [style=filled, fillcolor=white, fontcolor=black, label="e1000.h\n"];
+			"structs-e1000.h" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall0-e1000.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\nnetdev_*\n"];
+		}
+		subgraph "cluster_hw.h" {
+			style=filled
+			"commit_hw.h" [style=filled, fillcolor=black, fontcolor=white, label="181\n2007-09-17"];
+			"hw.h" [style=filled, fillcolor=white, fontcolor=black, label="hw.h\n"];
+		}
+		subgraph "cluster_regs.h" {
+			style=filled
+			"commit_regs.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2013-02-05"];
+			"regs.h" [style=filled, fillcolor=white, fontcolor=black, label="regs.h\n"];
+		}
+		subgraph "cluster_defines.h" {
+			style=filled
+			"commit_defines.h" [style=filled, fillcolor=black, fontcolor=white, label="127\n2007-09-17"];
+			"defines.h" [style=filled, fillcolor=white, fontcolor=black, label="defines.h\n"];
+		}
+		subgraph "cluster_netdev.c" {
+			style=filled
+			"commit_netdev.c" [style=filled, fillcolor=black, fontcolor=white, label="749\n2007-09-17"];
+			"netdev.c" [style=filled, fillcolor=white, fontcolor=black, label="netdev.c\n"];
+			"structs-netdev.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\ndev_pm_ops\nnet_device_ops\npci_driver\npci_error_handlers\n"];
+			"funccall4-netdev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\ne1000_free_irq\nif_*\nnetif_*\nvlan_eth_hdr\npci_*\nput_page\nkzalloc\ne1000_request_irq\nmod_timer\nskb_*\niounmap\n"];
+			"funccall3-netdev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="register_netdev\nprefetch\nnapi_*\ncopy_*\ndma_*\ncontainer_of\nioremap*\nschedule_work\nnetdev_*\nis_valid_ether_addr\npcie_*\nunregister_netdev\n"];
+			"funccall2-netdev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="netdev_alloc_skb_ip_align\nmemset\nvlan_*\npage_*\nsynchronize_irq\nfree_netdev\nrequest_irq\nkcalloc\n__netdev_alloc_skb_ip_align\ndev_*\neth_type_trans\nalloc_page\n"];
+			"funccall1-netdev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nkfree*\ndevice_*\nmemcpy\nsmp_mb\ndel_timer_sync\nenable_irq\nmsleep\ndisable_irq\ninit_timer\n"];
+		}
+		subgraph "cluster_ethtool.c" {
+			style=filled
+			"commit_ethtool.c" [style=filled, fillcolor=black, fontcolor=white, label="277\n2007-09-17"];
+			"ethtool.c" [style=filled, fillcolor=white, fontcolor=black, label="ethtool.c\n"];
+			"structs-ethtool.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="ethtool_ops\n"];
+			"funccall2-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nmsleep_interruptible\nmemset\nnetif_*\nvmalloc\npci_*\nptp_*\nkcalloc\nrequest_irq\ndev_*\n"];
+			"funccall1-ethtool.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="skb_*\nkfree*\ndevice_*\nmemcpy\ndma_*\nethtool_*\nalloc_skb\nkmalloc\nmsleep\nnetdev_*\n"];
+		}
+		subgraph "cluster_param.c" {
+			style=filled
+			"commit_param.c" [style=filled, fillcolor=black, fontcolor=white, label="83\n2007-09-17"];
+			"param.c" [style=filled, fillcolor=white, fontcolor=black, label="param.c\n"];
+			"funccall0-param.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nkfree*\n"];
+		}
+		subgraph "cluster_phy.h" {
+			style=filled
+			"commit_phy.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-01-22"];
+			"phy.h" [style=filled, fillcolor=white, fontcolor=black, label="phy.h\n"];
+		}
+		subgraph "cluster_phy.c" {
+			style=filled
+			"commit_phy.c" [style=filled, fillcolor=black, fontcolor=white, label="187\n2007-09-17"];
+			"phy.c" [style=filled, fillcolor=white, fontcolor=black, label="phy.c\n"];
+			"funccall0-phy.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\nmsleep\n"];
+		}
+		subgraph "cluster_nvm.h" {
+			style=filled
+			"commit_nvm.h" [style=filled, fillcolor=black, fontcolor=white, label="21\n2005-04-16"];
+			"nvm.h" [style=filled, fillcolor=white, fontcolor=black, label="nvm.h\n"];
+		}
+		subgraph "cluster_nvm.c" {
+			style=filled
+			"commit_nvm.c" [style=filled, fillcolor=black, fontcolor=white, label="45\n2008-01-24"];
+			"nvm.c" [style=filled, fillcolor=white, fontcolor=black, label="nvm.c\n"];
+			"funccall0-nvm.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="udelay\n"];
+		}
+		subgraph "cluster_manage.h" {
+			style=filled
+			"commit_manage.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-01-22"];
+			"manage.h" [style=filled, fillcolor=white, fontcolor=black, label="manage.h\n"];
+		}
+		subgraph "cluster_manage.c" {
+			style=filled
+			"commit_manage.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-12-21"];
+			"manage.c" [style=filled, fillcolor=white, fontcolor=black, label="manage.c\n"];
+			"funccall0-manage.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\n"];
+		}
+		subgraph "cluster_mac.h" {
+			style=filled
+			"commit_mac.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-01-22"];
+			"mac.h" [style=filled, fillcolor=white, fontcolor=black, label="mac.h\n"];
+		}
+		subgraph "cluster_mac.c" {
+			style=filled
+			"commit_mac.c" [style=filled, fillcolor=black, fontcolor=white, label="167\n2007-09-17"];
+			"mac.c" [style=filled, fillcolor=white, fontcolor=black, label="mac.c\n"];
+			"funccall0-mac.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="is_multicast_ether_addr\npci_*\nmemset\n"];
+		}
+		subgraph "cluster_80003es2lan.h" {
+			style=filled
+			"commit_80003es2lan.h" [style=filled, fillcolor=black, fontcolor=white, label="1\n2013-01-22"];
+			"80003es2lan.h" [style=filled, fillcolor=white, fontcolor=black, label="80003es2lan.h\n"];
+		}
+		subgraph "cluster_80003es2lan.c" {
+			style=filled
+			"commit_80003es2lan.c" [style=filled, fillcolor=black, fontcolor=white, label="161\n2007-09-17"];
+			"80003es2lan.c" [style=filled, fillcolor=white, fontcolor=black, label="80003es2lan.c\n"];
+			"funccall0-80003es2lan.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\n"];
+		}
+		subgraph "cluster_ich8lan.h" {
+			style=filled
+			"commit_ich8lan.h" [style=filled, fillcolor=black, fontcolor=white, label="9\n2013-01-22"];
+			"ich8lan.h" [style=filled, fillcolor=white, fontcolor=black, label="ich8lan.h\n"];
+		}
+		subgraph "cluster_ich8lan.c" {
+			style=filled
+			"commit_ich8lan.c" [style=filled, fillcolor=black, fontcolor=white, label="389\n2007-09-17"];
+			"ich8lan.c" [style=filled, fillcolor=white, fontcolor=black, label="ich8lan.c\n"];
+			"funccall0-ich8lan.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mdelay\nudelay\npci_*\nether_crc_le\nmsleep\n"];
+		}
+		subgraph "cluster_82571.h" {
+			style=filled
+			"commit_82571.h" [style=filled, fillcolor=black, fontcolor=white, label="29\n2005-04-16"];
+			"82571.h" [style=filled, fillcolor=white, fontcolor=black, label="82571.h\n"];
+		}
+		subgraph "cluster_82571.c" {
+			style=filled
+			"commit_82571.c" [style=filled, fillcolor=black, fontcolor=white, label="237\n2007-09-17"];
+			"82571.c" [style=filled, fillcolor=white, fontcolor=black, label="82571.c\n"];
+			"funccall0-82571.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\nmsleep\n"];
+		}
+		"K:E1000E" [label="Kconfig: E1000E\n /drivers/net/ethernet/intel/e1000e\n  PCI && (!SPARC32 || BROKEN) ", shape=box, fontcolor=red];
+	}
+	//Symbol: PTP_1588_CLOCK
+	subgraph "cluster_PTP_1588_CLOCK"{
+		subgraph "cluster_ptp_sysfs.c" {
+			style=filled
+			"commit_ptp_sysfs.c" [style=filled, fillcolor=black, fontcolor=white, label="1\n2011-04-22"];
+			"ptp_sysfs.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_sysfs.c\n"];
+			"structs-ptp_sysfs.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="device_attribute\n"];
+			"funccall0-ptp_sysfs.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="device_*\ndev_*\nmutex_*\nmemset\nspin_*\n"];
+		}
+		subgraph "cluster_ptp_private.h" {
+			style=filled
+			"commit_ptp_private.h" [style=filled, fillcolor=black, fontcolor=white, label="3\n2011-04-22"];
+			"ptp_private.h" [style=filled, fillcolor=white, fontcolor=black, label="ptp_private.h\n"];
+		}
+		subgraph "cluster_ptp_chardev.c" {
+			style=filled
+			"commit_ptp_chardev.c" [style=filled, fillcolor=black, fontcolor=white, label="11\n2011-04-22"];
+			"ptp_chardev.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_chardev.c\n"];
+			"funccall0-ptp_chardev.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mutex_*\ncontainer_of\nkmalloc\nmemset\ncopy_*\nspin_*\nkfree*\n"];
+		}
+		subgraph "cluster_ptp_clock.c" {
+			style=filled
+			"commit_ptp_clock.c" [style=filled, fillcolor=black, fontcolor=white, label="17\n2011-04-22"];
+			"ptp_clock.c" [style=filled, fillcolor=white, fontcolor=black, label="ptp_clock.c\n"];
+			"funccall0-ptp_clock.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nmutex_*\nmemset\nspin_*\nkfree*\ndevice_*\ncontainer_of\nptp_*\nkzalloc\n"];
+		}
+		"K:PTP_1588_CLOCK" [label="Kconfig: PTP_1588_CLOCK\n /drivers/ptp\n ", shape=box];
+	}
+"ptp.c" -> "e1000.h"[color=blue];
+"e1000.h" -> "hw.h"[color=blue];
+"hw.h" -> "manage.h"[color=blue];
+"hw.h" -> "phy.h"[color=blue];
+"hw.h" -> "80003es2lan.h"[color=blue];
+"hw.h" -> "82571.h"[color=blue];
+"hw.h" -> "mac.h"[color=blue];
+"hw.h" -> "ich8lan.h"[color=blue];
+"hw.h" -> "nvm.h"[color=blue];
+"hw.h" -> "regs.h"[color=blue];
+"hw.h" -> "defines.h"[color=blue];
+"netdev.c" -> "e1000.h"[color=blue];
+"ethtool.c" -> "e1000.h"[color=blue];
+"param.c" -> "e1000.h"[color=blue];
+"phy.c" -> "e1000.h"[color=blue];
+"nvm.c" -> "e1000.h"[color=blue];
+"manage.c" -> "e1000.h"[color=blue];
+"mac.c" -> "e1000.h"[color=blue];
+"80003es2lan.c" -> "e1000.h"[color=blue];
+"ich8lan.c" -> "e1000.h"[color=blue];
+"82571.c" -> "e1000.h"[color=blue];
+"ptp_sysfs.c" -> "ptp_private.h"[color=blue];
+"ptp_chardev.c" -> "ptp_private.h"[color=blue];
+"ptp_clock.c" -> "ptp_private.h"[color=blue];
+}

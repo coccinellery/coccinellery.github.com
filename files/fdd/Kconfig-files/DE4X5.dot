@@ -1,0 +1,24 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: DE4X5
+	subgraph "cluster_DE4X5"{
+		subgraph "cluster_de4x5.h" {
+			style=filled
+			"commit_de4x5.h" [style=filled, fillcolor=black, fontcolor=white, label="15\n2005-04-16"];
+			"de4x5.h" [style=filled, fillcolor=white, fontcolor=black, label="de4x5.h\n"];
+			"funccall0-de4x5.h" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\n"];
+		}
+		subgraph "cluster_de4x5.c" {
+			style=filled
+			"commit_de4x5.c" [style=filled, fillcolor=black, fontcolor=white, label="127\n2005-04-16"];
+			"de4x5.c" [style=filled, fillcolor=white, fontcolor=black, label="de4x5.c\n"];
+			"structs-de4x5.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\neisa_device_id\neisa_driver\nisa_driver\nnet_device_ops\npci_driver\neisa_device_id\n"];
+			"funccall3-de4x5.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nunregister_netdev\nmemset\nnetif_*\nmdelay\nudelay\npci_*\nsynchronize_irq\nrequest_irq\nfree_netdev\n"];
+			"funccall2-de4x5.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mod_timer\nether_addr_equal\ndev_*\nskb_*\nmii_*\nether_crc_le\nis_broadcast_ether_addr\nregister_netdev\n__skb_*\neth_type_trans\ncopy_*\n"];
+			"funccall1-de4x5.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="spin_*\nmemcpy\nis_multicast_ether_addr\nrelease_region\ndel_timer_sync\ndma_*\nnetdev_alloc_skb\ninit_timer\nnetdev_*\n"];
+		}
+		"K:DE4X5" [label="Kconfig: DE4X5\n /drivers/net/ethernet/dec/tulip\n  (PCI || EISA) && (VIRT_TO_BUS || ALPHA || PPC || SPARC) ", shape=box, fontcolor=red];
+	}
+"de4x5.c" -> "de4x5.h"[color=blue];
+}

@@ -1,0 +1,27 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: PCNET32
+	subgraph "cluster_PCNET32"{
+		subgraph "cluster_pcnet32.c" {
+			style=filled
+			"commit_pcnet32.c" [style=filled, fillcolor=black, fontcolor=white, label="201\n2005-04-16"];
+			"pcnet32.c" [style=filled, fillcolor=white, fontcolor=black, label="pcnet32.c\n"];
+			"structs-pcnet32.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device\nethtool_ops\nnet_device_ops\npci_driver\n"];
+			"funccall3-pcnet32.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nrequest_region\nif_*\nnetif_*\nmdelay\npci_*\nmod_timer\nskb_*\nether_crc_le\nregister_netdev\nnapi_*\nmemcmp\n"];
+			"funccall2-pcnet32.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="release_region\nethtool_*\ncontainer_of\nnetdev_*\nis_valid_ether_addr\nunregister_netdev\nmemset\nfree_netdev\nrequest_irq\nkcalloc\ndev_*\nmii_*\n"];
+			"funccall1-pcnet32.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="eth_type_trans\nspin_*\nkfree*\nmemcpy\ndel_timer_sync\nnetdev_alloc_skb\nenable_irq\nmsleep\ndisable_irq\ninit_timer\n"];
+		}
+		"K:PCNET32" [label="Kconfig: PCNET32\n /drivers/net/ethernet/amd\n  PCI ", shape=box, fontcolor=red];
+	}
+	//Symbol: MII
+	subgraph "cluster_MII"{
+		subgraph "cluster_mii.c" {
+			style=filled
+			"commit_mii.c" [style=filled, fillcolor=black, fontcolor=white, label="27\n2005-04-16"];
+			"mii.c" [style=filled, fillcolor=white, fontcolor=black, label="mii.c\n"];
+			"funccall0-mii.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="mii_*\nethtool_*\nnetdev_*\nnetif_*\n"];
+		}
+		"K:MII" [label="Kconfig: MII\n /drivers/net\n ", shape=box];
+	}
+}

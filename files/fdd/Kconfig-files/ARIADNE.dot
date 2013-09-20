@@ -1,0 +1,22 @@
+digraph Driver {
+	ranksep=2;
+	splines=ortho;
+	//Symbol: ARIADNE
+	subgraph "cluster_ARIADNE"{
+		subgraph "cluster_ariadne.h" {
+			style=filled
+			"commit_ariadne.h" [style=filled, fillcolor=black, fontcolor=white, label="7\n2005-04-16"];
+			"ariadne.h" [style=filled, fillcolor=white, fontcolor=black, label="ariadne.h\n"];
+		}
+		subgraph "cluster_ariadne.c" {
+			style=filled
+			"commit_ariadne.c" [style=filled, fillcolor=black, fontcolor=white, label="65\n2005-04-16"];
+			"ariadne.c" [style=filled, fillcolor=white, fontcolor=black, label="ariadne.c\n"];
+			"structs-ariadne.c" [style="filled,dashed" shape=box, fillcolor=grey55, fontcolor=black, label="net_device\nnet_device_ops\n"];
+			"funccall2-ariadne.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="free_irq\nlocal_*\nunregister_netdev\nrequest_mem_region\nmemset\nnetif_*\nfree_netdev\nrequest_irq\n"];
+			"funccall1-ariadne.c" [style="filled,dotted" shape=box, fillcolor=white, fontcolor=black, label="dev_*\nskb_*\nregister_netdev\neth_type_trans\nmemcpyw\nnetdev_alloc_skb\nrelease_mem_region\nnetdev_*\n"];
+		}
+		"K:ARIADNE" [label="Kconfig: ARIADNE\n /drivers/net/ethernet/amd\n  ZORRO ", shape=box, fontcolor=red];
+	}
+"ariadne.c" -> "ariadne.h"[color=blue];
+}
