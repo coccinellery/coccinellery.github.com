@@ -283,10 +283,20 @@ All files are stored in a git repository that can be accessed <a href="https://g
 	have added a goto to the end of the function where there was already such a
 	call.
 </pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/array_and_size/array_and_size_clean.cocci>array_and_size/array_and_size_clean.cocci</A>  -  use ARRAY_AND_SIZE consistently
+<pre>
+	Because ARRAY_AND_SIZE changes the apparent arity of a function, if it is
+	used for one call to a given function, it would be better, if possible, to
+	use it for all of them.
+</pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/arraysize/array.cocci>arraysize/array.cocci</A>  -  Use ARRAY_SIZE
 <pre>
 	ARRAY_SIZE is more concise to use when the size of an array is divided by
 	the size of its type or the size of its first element.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/arraytest/arraytest.cocci>arraytest/arraytest.cocci</A>  -  delete unnecessary null test on array
+<pre>
+	Delete NULL test on array (always false)
 </pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/arref/arref.cocci>arref/arref.cocci</A>  -  Adjust array index
 <pre>
@@ -314,6 +324,11 @@ All files are stored in a git repository that can be accessed <a href="https://g
 	The pattern !E &amp;&amp; !E-&gt;fld is nonsensical.  The patch below updates this
 	according to the assumption that &amp;&amp; should be ||.  But perhaps another
 	solution was intended.
+</pre>
+<A HREF=https://github.com/coccinelle/coccinellery/tree/master/badcheck/badcheck.cocci>badcheck/badcheck.cocci</A>  -  fix devm_ioremap_resource error detection code
+<pre>
+	devm_ioremap_resource returns an ERR_PTR value, not NULL, on failure.
+	Furthermore, the value returned by devm_ioremap_resource should be tested.
 </pre>
 <A HREF=https://github.com/coccinelle/coccinellery/tree/master/badftest/badftest.cocci>badftest/badftest.cocci</A>  -  Correct NULL test
 <pre>
